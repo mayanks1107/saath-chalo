@@ -1,0 +1,29 @@
+/* .img-main{
+    width: 100%;
+    height: 400px;
+} */
+.input-from{
+    /*color: gray;*/
+    border-radius: 25px 0 0 25px;
+}
+.input-to{
+    /*color: gray;*/
+    border-style: solid black;
+    border-width: 2px;
+}
+
+.inp{
+    height: 50px;
+    width: 220px;
+}
+.search-form{
+    position: relative;
+    bottom: 3px;
+    border-radius: 0 25px 25px 0;
+}
+.form-submit{
+    margin-top: 20px;
+}
+.inp::placeholder{
+    padding-left: 15px;
+}

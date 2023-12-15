@@ -1,0 +1,26 @@
+.navbar{
+    background-color: rgb(253, 165, 33);
+}
+/*
+.nav-content{
+    position: absolute;
+    right: 0;
+}*/
+.navbar-brand{
+    padding-left: 45px;
+}
+.image-plus, .a-create{
+    display: inline;
+}
+.search{
+    padding-right: 32%;
+}
+.nv-right-ele{
+    position: relative;
+    padding-right: 5px;
+    left: 73%;
+}
+.create-ride-nav{
+    padding-top: 9%;
+    
+}
