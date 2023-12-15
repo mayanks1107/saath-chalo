@@ -45,17 +45,17 @@ function App() {
               </div>
 
               <div className="d-flex flex-row align-items-center mb-4">
-                <MDBIcon fas icon="lock me-3" size='lg'/>
+                <MDBIcon fas icon="address-card me-3" size='lg'/>
                 <MDBInput label='License Number' id='form3' type='password'/>
               </div>
 
               <div className="d-flex flex-row align-items-center mb-4">
-                <MDBIcon fas icon="key me-3" size='lg'/>
+                <MDBIcon fas icon="truck-fast me-3" size='lg'/>
                 <MDBInput label='Vehicle Number' id='form4' type='password'/>
               </div>
 
               <div className="d-flex flex-row align-items-center mb-4">
-                <MDBIcon fas icon="key me-3" size='lg'/>
+                <MDBIcon fas icon="address-book me-3" size='lg'/>
                 <MDBInput label='(RC) Registration Number' id='form4' type='password'/>
               </div>
 
