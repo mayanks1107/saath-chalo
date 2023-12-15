@@ -36,12 +36,12 @@ function App() {
             <p className="text-center fw-bold mx-3 mb-0">Or</p>
           </div>
 
-          <MDBInput wrapperClass='mb-4' label='Email address' id='formControlLg' type='email' size="lg"/>
-          <MDBInput wrapperClass='mb-4' label='Password' id='formControlLg' type='password' size="lg"/>
+          <MDBInput wrapperClass='mb-4' label='Phone number' id='formControlLg' type='phone' size="lg"/>
+          <MDBInput wrapperClass='mb-4' label='One time password' id='formControlLg' type='password' size="lg"/>
 
           <div className="d-flex justify-content-between mb-4">
             <MDBCheckbox name='flexCheck' value='' id='flexCheckDefault' label='Remember me' />
-            <a href="!#">Forgot password?</a>
+            <a href="!#">Didn't received OTP ?</a>
           </div>
 
           <div className='text-center text-md-start mt-4 pt-2'>
@@ -56,7 +56,7 @@ function App() {
       <div className="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
 
         <div className="text-white mb-3 mb-md-0">
-          Copyright © 2020. All rights reserved.
+          Copyright © 2023. All rights reserved.
         </div>
 
         <div>

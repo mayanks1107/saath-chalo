@@ -6,7 +6,6 @@ function App() {
     <div className="App">
       <Headers/>
       <Main/>
-      
     </div>
   );
 }
