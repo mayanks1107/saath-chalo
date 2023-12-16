@@ -1,0 +1,42 @@
+.footer{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}
+.right-container{
+    display: inline-block;
+    padding-left: 0;
+    margin-top: 90px;
+    
+}
+MDBInput{
+    border: 5px;
+}
+.vl {
+    border-left: 2px solid rgb(0, 0, 0);
+    height: 150px;
+    position: absolute;
+    left: 49%;
+    margin-left: -3px;
+    top: 25%;
+  }
+  .or{
+    position: absolute;
+    left: 47.25%;
+    top: 45%;
+  }
+  .vl-2{
+    border-left: 2px solid rgb(0, 0, 0);
+    height: 150px;
+    position: absolute;
+    left: 49%;
+    margin-left: -3px;
+    top: 48%;
+  }
+  .log-img{
+    position: absolute;
+    left: 0px;
+    width: 40%;
+    bottom: 220px;
+  }

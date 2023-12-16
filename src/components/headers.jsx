@@ -2,6 +2,7 @@ import React from "react";
 import "./headers.css";
 import plus from "../assets/plus.png";
 import profilePic from "../assets/proflic-pic.png";
+import { Link, useNavigate } from "react-router-dom";
 export default function Headers(){
     return(
         <div className="head">
@@ -23,7 +24,7 @@ export default function Headers(){
           <img className="image-plus" src={profilePic} alt = "plus"/>
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Login</a></li>
+            <li><Link class="dropdown-item" to='/login'>Login</Link></li>
             <li><a class="dropdown-item" href="#">Register</a></li>
             
           </ul>

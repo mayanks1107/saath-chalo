@@ -1,18 +1,19 @@
 import './App.css';
-import Headers from './components/headers';
-import Main from './components/main';
-import login from './components/login';
-import Signup from './components/signup';
-import Signupforrider from './components/signupForRider';
+import Home from './components/home';
+import Login from './components/login';
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 function App() {
-  return (
+  return(
     <div className="App">
-      <Headers/>
-      {/* <Main/> */}
-      
-      <Signupforrider/>
+        <Router>
+            <Routes>
+                <Route exact path="/" element={<Home/>}/>
+                <Route exact path="/login" element={<Login/>}/>
+                
+            </Routes>
+        </Router>
     </div>
-  );
+)
 }
 
 export default App;
