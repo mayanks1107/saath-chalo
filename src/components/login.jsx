@@ -1,7 +1,7 @@
 import React from 'react';
 import {MDBContainer, MDBCol, MDBRow, MDBBtn, MDBIcon, MDBInput, MDBCheckbox } from 'mdb-react-ui-kit';
-
-function App() {
+import "./login.css"
+export default function Login() {
 
   return (
     <MDBContainer fluid className="p-3 my-5 h-custom">
@@ -9,12 +9,12 @@ function App() {
       <MDBRow>
 
         <MDBCol col='10' md='6'>
-          <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp" class="img-fluid" alt="Sample image" />
+          <img className='log-img' src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp" class="img-fluid" alt="Sample image" />
         </MDBCol>
 
-        <MDBCol col='4' md='6'>
+        <MDBCol className='right-container' col='4' md='6'>
 
-          <div className="d-flex flex-row align-items-center justify-content-center">
+          <div className="r d-flex flex-row align-items-center justify-content-center">
 
             <p className="lead fw-normal mb-0 me-3">Sign in with</p>
 
@@ -32,12 +32,16 @@ function App() {
 
           </div>
 
+          <div class="vl"></div>
+
           <div className="divider d-flex align-items-center my-4">
-            <p className="text-center fw-bold mx-3 mb-0">Or</p>
+            <p className="or text-center fw-bold mx-3 mb-0">Or</p>
           </div>
 
-          <MDBInput wrapperClass='mb-4' label='Phone number' id='formControlLg' type='phone' size="lg"/>
-          <MDBInput wrapperClass='mb-4' label='One time password' id='formControlLg' type='password' size="lg"/>
+          <div class="vl-2"></div>
+
+          <MDBInput className='inp-login' wrapperClass='mb-4' label='Phone number' id='formControlLg' type='phone' size="lg"/>
+          <MDBInput className='inp-login' wrapperClass='mb-4' label='One time password' id='formControlLg' type='password' size="lg"/>
 
           <div className="d-flex justify-content-between mb-4">
             <MDBCheckbox name='flexCheck' value='' id='flexCheckDefault' label='Remember me' />
@@ -53,7 +57,7 @@ function App() {
 
       </MDBRow>
 
-      <div className="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
+      <div className="footer d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
 
         <div className="text-white mb-3 mb-md-0">
           Copyright © 2023. All rights reserved.
@@ -85,4 +89,3 @@ function App() {
   );
 }
 
-export default App;
