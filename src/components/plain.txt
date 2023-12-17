@@ -17,26 +17,27 @@ import { useNavigate } from 'react-router-dom';
 import {createUserWithEmailAndPassword} from "firebase/auth" 
 
 function Signup() {
-    const [Value,setValues] =useState({
-      Name:"",
-      Email:"",
-      Password:"",
-      Licenseno:"",
-      Vehicleno:"",
-      Rc: ""
+    const [Value,setValue] =useState({
+      "Name":Name,
+      "Email":Email,
+      "Password":Password,
+      "Licenseno":licenseno,
+      "Vehicleno":Vehicleno,
+      "Rc": Rc
     })
-   
+    const [Name, setName] = useState("");
+    const [Email,setEmail]= useState("");
+    const [Password,setPassword]= useState("");
+    const [licenseno,setlicenseno]= useState("");
+    const [Vehicleno,setVehicleno] = useState("");
+    const [,setRc]= useState("");
 const Register =()=>{
-  
-  // if (localStorage.getItem('Score')==null) {
-  //   console.err("isBlank");
-  // }else{
-  //   console.warn("not null");
-  // }
-  createUserWithEmailAndPassword(auth,Value.Email,Value.Password).then(async(res)=>{
+  console.log(Email);
+  console.log(Password);
+  createUserWithEmailAndPassword(auth,Email,Password).then(async(res)=>{
     console.log(res);
-     localStorage.setItem('Score',JSON.stringify( Value));
-    navigate('/succes',{state:{user:Email}})
+    localStorage.setItem('Score', ("Name",Name,"Email:-",Email,"licesecono:- ",licenseno,"Vehicleno:-",Vehicleno,"RC:-",Rc));
+    // navigate('/succes',{state:{user:Email}})
 
    }).catch((erro)=>{
     console.log(erro.message);
@@ -54,17 +55,17 @@ const Register =()=>{
 
               <div className="d-flex flex-row align-items-center mb-4 ">
                 <MDBIcon fas icon="user me-3" size='lg'/>
-                <MDBInput label='Your Name' id='form1'onChange={(e)=>setValues((prev)=>({...prev ,Name:e.target.value}))} type='text' className='w-100'/>
+                <MDBInput label='Your Name' id='form1'onChange={(e)=>setName(e.target.value)}  type='text' className='w-100'/>
               </div>
 
               <div className="d-flex flex-row align-items-center mb-4">
                 <MDBIcon fas icon="envelope me-3" size='lg'/>
-                <MDBInput label='Your Email' id='form2' onChange={(e)=>setValues((prev)=>({...prev ,Email:e.target.value}))} type='email'/>
+                <MDBInput label='Your Email' id='form2' onChange={(e)=>setEmail(e.target.value)} type='email'/>
               </div>
 
               <div className="d-flex flex-row align-items-center mb-4">
                 <MDBIcon fas icon="unlock-alt me-3" />
-                <MDBInput label='Password' onChange={(e)=>setValues((prev)=>({...prev ,Password:e.target.value}))} id='form2' type='number'/>
+                <MDBInput label='Password' onChange={(e)=>setPassword(e.target.value)} id='form2' type='number'/>
               </div>
 
               {/* <div className="d-flex flex-row align-items-center mb-4">
@@ -74,17 +75,17 @@ const Register =()=>{
 
               <div className="d-flex flex-row align-items-center mb-4">
                 <MDBIcon fas icon="address-card me-3" size='lg'/>
-                <MDBInput label='License Number' onChange={(e)=>setValues((prev)=>({...prev ,Licenseno:e.target.value}))} id='form3' type='text'/>
+                <MDBInput label='License Number' onChange={(e)=>setlicenseno(e.target.value)} id='form3' type='text'/>
               </div>
 
               <div className="d-flex flex-row align-items-center mb-4">
                 <MDBIcon fas icon="truck-fast me-3" size='lg'/>
-                <MDBInput label='Vehicle Number' id='form4' onChange={(e)=>setValues((prev)=>({...prev ,Vehicleno:e.target.value}))} type='text'/>
+                <MDBInput label='Vehicle Number' id='form4' onChange={(e)=>setVehicleno(e.target.value)} type='text'/>
               </div>
 
               <div className="d-flex flex-row align-items-center mb-4">
                 <MDBIcon fas icon="address-book me-3" size='lg'/>
-                <MDBInput label='(RC) Registration Number' id='form4' onChange={(e)=>setValues((prev)=>({...prev ,Rc:e.target.value}))} type='text'/>
+                <MDBInput label='(RC) Registration Number' id='form4' onChange={(e)=>setRc(e.target.value)} type='text'/>
               </div>
 
               <div className='mb-4'>
