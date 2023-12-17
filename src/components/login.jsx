@@ -14,6 +14,7 @@ import OtpInput from "otp-input-react";
 
 import PhoneInput from "react-phone-input-2";
 import 'react-phone-input-2/lib/style.css'
+import { toast, Toaster } from "react-hot-toast";
 
 import "./login.css"
 
@@ -30,7 +31,7 @@ export default function Login() {
   const [user,setUser] = useState(null);
   const [otp,setOtp] = useState("");
 
-  const [user2, setUser2] = useState(null);
+  // const [user2, setUser2] = useState(null);
   const [loading, setLoading] = useState(false);
 
 
@@ -40,6 +41,7 @@ const sendOTp = async() => {
     try {
         const recaptcha = new RecaptchaVerifier(auth, "recaptcha", {})
         const confirmation = await signInWithPhoneNumber(auth, phone, recaptcha)
+        toast.success('OTP SENT SUCCESSFULY');
         setUser(confirmation);
 
     } catch (error) {
@@ -52,7 +54,7 @@ const verifyOtp = async() => {
         .then(async (res) => {
           console.log(res);
           //setUser2(res.user);
-          setLoading(false);
+          setLoading(true);
         });
         console.log(data);
 
@@ -62,28 +64,31 @@ const verifyOtp = async() => {
 
 }
 const  checkEMailAndpassword = ()=>{
-console.log(Email);
-console.log(phone);
-  signInWithEmailAndPassword(auth,Email,Password).then(async(res)=>{
+  if (Email==null||Password==null) {
+    toast.error(" Email or password is Missing ");
+    
+  }else{
+       signInWithEmailAndPassword(auth,Email,Password).then(async(res)=>{
        console.log('OK');
-        console.log(res);
+       
       // navigate('/succes',{state:{user:Email}})
-    alert('User created');
+      toast.success('User created');
  
     }).catch((erro)=>{
     console.log(erro);
     });
+  }
 }
 
   return (
     <MDBContainer fluid className="p-3 my-5 h-custom">
-
+        <Toaster toastOptions={{ duration: 4000 }} />
       <MDBRow>
 
         <MDBCol col='10' md='6'>
-          <img className='log-img' src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp" class="img-fluid" alt="Sample image" />
+         {/* eslint-disable-next-line */}
+          <img className='log-img' src={'https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp'} class="img-fluid" alt="Sample image" />
         </MDBCol>
-
         <MDBCol className='right-container' col='4' md='6'>
 
           <div className="r d-flex flex-row align-items-center justify-content-center">
@@ -120,14 +125,9 @@ console.log(phone);
             <>
             <MDBInput className='inp-login' wrapperClass='mb-4' onChange={(e) =>setPassword(e.target.value)} label='password' id='formControlLg' type='password' size="lg"/>
             <MDBInput className='inp-login' wrapperClass='mb-4' onChange={(e) =>setEmail(e.target.value)} label='Emailid' id='formControlLg' type='email' size="lg"/>
+        
           </> 
           }
-    
-    
-       
-    
-    
-
           <div className="d-flex justify-content-between mb-4">
             <MDBCheckbox name='flexCheck' value='' id='flexCheckDefault' label='Remember me' />
             <a href="!#">Didn't received OTP ?</a>
@@ -156,7 +156,7 @@ console.log(phone);
         <MDBModalDialog>
           <MDBModalContent>
             <MDBModalHeader>
-              <MDBModalTitle>Modal title</MDBModalTitle>
+              <MDBModalTitle>{loading ? <>`<h1>sign succfull</h1>`</> :null}</MDBModalTitle>
               <MDBBtn className='btn-close' color='none' onClick={toggleOpen}></MDBBtn>
             </MDBModalHeader>
             <MDBModalBody>

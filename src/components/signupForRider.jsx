@@ -13,7 +13,7 @@ import {
 }
 from 'mdb-react-ui-kit';
 import { auth } from '../Firbase/firbase';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import {createUserWithEmailAndPassword} from "firebase/auth" 
 
 function Signup() {

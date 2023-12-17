@@ -2,14 +2,13 @@ import React from "react";
 import "./headers.css";
 import plus from "../assets/plus.png";
 import profilePic from "../assets/proflic-pic.png";
-// import { CiCirclePlus } from "react-icons/ci";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 export default function Headers(){
     return(
         <div className="head">
             <nav class="navbar navbar-expand-lg">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/">Saath me Chalo</a>
+    <a class="navbar-brand" href="#">Saath me Chalo</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -18,19 +17,15 @@ export default function Headers(){
         
         <li class="create-ride-nav nav-item">
         <img className="image-plus" src={plus} alt = "plus"/>
-        {/* <div className="white">
-            <CiCirclePlus color="blue" size={"2.4em"}/>
-          </div> */}
-          <a class="a-create nav-link" href="/">Create a Ride</a>
+          <a class="a-create nav-link" href="#">Create a Ride</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
           <img className="image-plus" src={profilePic} alt = "plus"/>
-          
           </a>
           <ul class="dropdown-menu">
             <li><Link class="dropdown-item" to='/login'>Login</Link></li>
-            <li><a class="dropdown-item" href="/">Register</a></li>
+            <li><a class="dropdown-item" href="#">Register</a></li>
             
           </ul>
         </li>
