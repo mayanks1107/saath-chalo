@@ -36,7 +36,7 @@ const Register =()=>{
   createUserWithEmailAndPassword(auth,Value.Email,Value.Password).then(async(res)=>{
     console.log(res);
      localStorage.setItem('Score',JSON.stringify( Value));
-    navigate('/succes',{state:{user:Email}})
+    // navigate('/succes',{state:{user:Email}})
 
    }).catch((erro)=>{
     console.log(erro.message);
