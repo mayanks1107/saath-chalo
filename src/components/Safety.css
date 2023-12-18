@@ -1,0 +1,26 @@
+.safety{
+    padding-top: 100px;
+    padding-left: 100px;
+    padding-bottom: 350px;
+    position: relative;
+}
+.saf-p{
+    text-align: left;
+    margin-top: 50px;
+    width: 700px;
+}
+.what{
+    margin-top: 50px;
+}
+.what-p{
+    text-align: left;
+    margin-top: 50px;
+    width: 700px;
+    margin-left: 650px;
+}
+.what-img{
+    width: 30%;
+    position: absolute;
+    top: 440px;
+    left: 90px;
+}
