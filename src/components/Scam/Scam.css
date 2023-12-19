@@ -32,6 +32,7 @@
   }
   .con3 {
     display: flex;
+    margin: 0 55px 27px 45px;
   }
   
   .box {
@@ -46,8 +47,8 @@
 }  
 .con4{
     border: 1px solid black;
-    background-color: darkgreen;
-    color: white;
+    background-color: rgb(25, 238, 118);
+    color: black;
     margin: 20px 60px 0 50px;
 }
 .con4-header{
@@ -68,12 +69,30 @@
 .con4-box{
     margin: 5px 2px 5px 2px;
 }
-.con4-box > div > p{
-   
-    padding: 5px;
+.con4-box > div {
+    color: blue;
+    padding: 25px;
+
 }
-.con5-box{
-    margin: 15px 45px 95px 15px;
+.con4-box{
+    /* margin: 15px 45px 5px 05px; */
     padding: 5px;
     align-items: center;
+}
+.ser-img{
+    float: left;
+}
+.con4-contai{
+    text-align: justify; /* Aligns text to justify, creating even spacing between words */
+  text-align-last: left; /* Centers the last line of text in the justified block */
+   /* Adds space between letters for a symmetrical look */
+  word-spacing: 0.5px;
+}
+.con5-box{
+    margin: 2px 30px 15px 30px;
+}
+.con5-body1{
+    display: inline-block;
+   text-align: left;
+   text-align-last: left;
 }
