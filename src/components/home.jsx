@@ -5,6 +5,8 @@ import Cards from './Cards';
 import Safety from './Safety';
 import Services from './Services';
 import HelpHome from './helpHome';
+import HelpCom from './HelpCom';
+import Footer from './footer';
 function Home() {
   return (
     <div className="App">
@@ -14,6 +16,8 @@ function Home() {
       <Safety/>
       <Services/>
       <HelpHome/>
+      <HelpCom/>
+      <Footer/>
     </div>
   );
 }

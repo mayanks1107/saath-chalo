@@ -1,0 +1,26 @@
+.hCom{
+    margin-top: 400px;
+    position: relative;
+    margin-bottom: 100px;
+}
+.help-h3{
+    text-align: left;
+}
+.h-p{
+    text-align: left;
+    width: 40%;
+}
+.h-cards{
+    padding-left: 50px;
+    padding-top: 50px;
+    
+}
+.h-cards-right{
+    position: absolute;
+    top: 100px;
+    left: 900px;
+    padding-right: 100px;
+}
+.p-right-h{
+    width: 100%;
+}
