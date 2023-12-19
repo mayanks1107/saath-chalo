@@ -21,6 +21,7 @@
     "react-phone-input-2": "^2.15.1",
     "react-router-dom": "^6.21.0",
     "react-scripts": "5.0.1",
+    "react-svg": "^16.1.32",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

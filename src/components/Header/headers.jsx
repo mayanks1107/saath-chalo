@@ -1,7 +1,7 @@
 import React from "react";
 import "./headers.css";
-import plus from "../assets/plus.png";
-import profilePic from "../assets/proflic-pic.png";
+import plus from "../../assets/plus.png";
+import profilePic from "../../assets/proflic-pic.png";
 // import { CiCirclePlus } from "react-icons/ci";
 import { Link } from "react-router-dom";
 export default function Headers(){

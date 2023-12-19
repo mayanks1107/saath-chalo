@@ -1,5 +1,5 @@
 import React,{useState } from 'react';
-import {auth} from '../Firbase/firbase';
+import {auth} from '../../Firbase/firbase';
 import {RecaptchaVerifier, signInWithPhoneNumber,signInWithEmailAndPassword} from 'firebase/auth';
 import {MDBContainer, MDBCol, MDBRow,
     MDBBtn,
