@@ -3,7 +3,7 @@ import './Scam.css'
 import image from '../../assets/scam.png'
 import leftquote from "../../assets/left-quote.png";
 import block from "../../assets/block.png";
-import coins from "../../assets/dollar.png";
+// import coins from "../../assets/dollar.png";
 import { FcDisclaimer } from "react-icons/fc";
 import { FaExclamationTriangle } from "react-icons/fa";
 import { ReactSVG } from 'react-svg'
@@ -29,7 +29,7 @@ function Scam() {
           <p>Some fake drivers could try to make you pay outside our app by sending a link, a phone number or an email address.</p>
       </div>
       <div class="box">
-          <img className='ser-img' src={coins} alt="coins" />
+          <img className='ser-img' src={block} alt="coins" />
           <h3>For cash-only rides, always pay in the car</h3>
           <p>Scammers are getting increasingly sophisticated in their attempts to get your money or payment details. Always pay in cash, in the car, upon departure.</p>
       </div>
