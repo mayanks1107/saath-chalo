@@ -25,7 +25,7 @@ function Scam() {
 
   <AvoidScam block={block} leftquote={leftquote} coins={coins}/>
   {/* <Fake/>  */}
-  <ScamYou/>
+  {/* <ScamYou/> */}
     
           <div className='notice-div'>
             <h1>Noticed something suspicious? Report it</h1>
