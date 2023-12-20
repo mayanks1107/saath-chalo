@@ -6,7 +6,7 @@ import Safety from './Home/Safety';
 import Services from './Home/Services';
 import HelpHome from './Home/helpHome';
 import HelpCom from './Home/HelpCom';
-import Footer from './Footer/footer';
+import Footer from './Footer/Footer';
 function Home() {
   return (
     <div className="App">

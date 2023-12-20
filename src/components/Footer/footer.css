@@ -1,9 +1,7 @@
 .container-foot{
-    margin-bottom: 0;
-    /* background-color: #0F9D58; */
-    position: relative;
-    top: 25px;
-    height: 110px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .foot-text{
     color: black;
@@ -11,4 +9,10 @@
 .ms-3{
     color: black;
     height: 70%;
+}
+footer >ul  {
+    list-style-type: none;
+    background-color: aqua;
+    display: inline-block;
+
 }
