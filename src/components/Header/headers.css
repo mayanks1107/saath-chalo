@@ -27,4 +27,5 @@
 .white{
     background-color: white;
     display: inline-block;
+    border-radius: 40%;
 }

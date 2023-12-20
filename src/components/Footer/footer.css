@@ -1,0 +1,18 @@
+.container-foot{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.foot-text{
+    color: black;
+}
+.ms-3{
+    color: black;
+    height: 70%;
+}
+footer >ul  {
+    list-style-type: none;
+    background-color: aqua;
+    display: inline-block;
+
+}
