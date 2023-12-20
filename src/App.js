@@ -4,6 +4,7 @@ import Login from './components/Login/login';
 import Signup from './components/Register/signupForRider';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import Scam from './components/Scam/Scam';
+import CreateRide from './components/createRide';
 
 function App() {
   return(
@@ -14,7 +15,8 @@ function App() {
                 <Route exact path="/login" element={<Login/>}/>
                 <Route exact path="/register" element={<Signup/>}/>
                 <Route exact path="/scam" element={<Scam/>}/>
-                {/* <Route exact path='/scam2' element={<Security/>}/> */}
+                <Route exact path="/createRide" element={<CreateRide/>}/>
+                
                 
             </Routes>
         </Router>
