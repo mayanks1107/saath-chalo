@@ -1,8 +1,8 @@
 import React from "react";
 import "./HelpHome.css";
-import safe from "../assets/safe.jpg";
-import traffic from "../assets/traffic.jpg";
-import friends from "../assets/friends.png";
+import safe from "../../assets/safe.jpg";
+import traffic from "../../assets/traffic.jpg";
+import friends from "../../assets/friends.png";
 export default function HelpHome(){
     return (
         <div className="helpHome">

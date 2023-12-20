@@ -1,12 +1,12 @@
 import '../App.css';
 import Headers from './Header/headers';
-import Main from './main';
-import Cards from './Cards';
-import Safety from './Safety';
-import Services from './Services';
-import HelpHome from './helpHome';
-import HelpCom from './HelpCom';
-import Footer from './footer';
+import Main from './Home/main';
+import Cards from './Home/Cards';
+import Safety from './Home/Safety';
+import Services from './Home/Services';
+import HelpHome from './Home/helpHome';
+import HelpCom from './Home/HelpCom';
+import Footer from './Footer/Footer';
 function Home() {
   return (
     <div className="App">
