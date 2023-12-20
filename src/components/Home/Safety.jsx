@@ -1,6 +1,6 @@
 import React from "react";
 import "./Safety.css";
-import what from "../assets/what.png"
+import what from "../../assets/what.png"
 export default function Safety(){
     return(
         <div className="safety">

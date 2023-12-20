@@ -6,13 +6,13 @@ import block from "../../assets/block.png";
 import coins from "../../assets/dollar.png";
 import { FcDisclaimer } from "react-icons/fc";
 import { FaExclamationTriangle } from "react-icons/fa";
-import { ReactSVG } from 'react-svg'
+
 function Scam() {
   return (
     <>
     <div class="container">
         <div class="image">
-        <img  className='Scam-image' src={image} alt="Image"/>
+        <img  className='Scam-image' src={image} alt="scam"/>
         </div>
         <div class="text">
         <p>Help us keep you safe from scams</p>
