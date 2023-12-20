@@ -2,7 +2,7 @@ import React from "react";
 import "./headers.css";
 import plus from "../../assets/plus.png";
 import profilePic from "../../assets/proflic-pic.png";
-// import { CiCirclePlus } from "react-icons/ci";
+import { CiCirclePlus } from "react-icons/ci";
 import { Link } from "react-router-dom";
 export default function Headers(){
     return(
@@ -17,10 +17,10 @@ export default function Headers(){
       <ul class="nv-right-ele navbar-nav me-auto mb-2 mb-lg-0">
         
         <li class="create-ride-nav nav-item">
-        <img className="image-plus" src={plus} alt = "plus"/>
-        {/* <div className="white">
-            <CiCirclePlus color="blue" size={"2.4em"}/>
-          </div> */}
+        {/* <img className="image-plus" src={plus} alt = "plus"/> */}
+        <div className="white">
+            <CiCirclePlus color="#52D3D8" size={"2.4em"}/>
+          </div>
           <a class="a-create nav-link" href="/">Create a Ride</a>
         </li>
         <li class="nav-item dropdown">
@@ -30,7 +30,7 @@ export default function Headers(){
           </a>
           <ul class="dropdown-menu">
             <li><Link class="dropdown-item" to='/login'>Login</Link></li>
-            <li><a class="dropdown-item" href="/">Register</a></li>
+            <li><Link class="dropdown-item" to="/register">Register</Link></li>
             
           </ul>
         </li>

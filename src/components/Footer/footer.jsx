@@ -14,9 +14,9 @@ export default function Footer(){
               </div>
 
               <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-                <li class="ms-3"><a class="text-muted" href="#"><FontAwesomeIcon icon={faInstagram} /></a></li>
-                <li class="ms-3"><a class="text-muted" href="#"><FontAwesomeIcon icon={faTwitter}/></a></li>
-                <li class="ms-3"><a class="text-muted" href="#"><FontAwesomeIcon icon={faFacebook} /></a></li>
+                <li class="ms-3"><a class="text-muted" href="/"><FontAwesomeIcon icon={faInstagram} /></a></li>
+                <li class="ms-3"><a class="text-muted" href="/"><FontAwesomeIcon icon={faTwitter}/></a></li>
+                <li class="ms-3"><a class="text-muted" href="/"><FontAwesomeIcon icon={faFacebook} /></a></li>
               </ul>
             </footer>
         </div>
