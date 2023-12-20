@@ -5,7 +5,7 @@ import leftquote from "../../assets/left-quote.png";
 import block from "../../assets/block.png";
 import coins from "../../assets/dollar.png";
 
-import Footer from '../Footer/Footer'
+import Footer from '../Footer/Footer';
 import OnlineSecurity from './OnlineSecurity';
 import ScamYou from './ScamYou';
 import Fake from './Fake';
@@ -24,8 +24,8 @@ function Scam() {
       </div>
 
   <AvoidScam block={block} leftquote={leftquote} coins={coins}/>
-  {/* <Fake/>  */}
-  {/* <ScamYou/> */}
+  <Fake/> 
+  <ScamYou/>
     
           <div className='notice-div'>
             <h1>Noticed something suspicious? Report it</h1>
