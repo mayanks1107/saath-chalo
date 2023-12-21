@@ -1,5 +1,9 @@
 .navbar{
     background-color: rgb(253, 165, 33);
+    padding-bottom: 15px;
+}
+.logo-brand{
+    width: 37%;
 }
 /*
 .nav-content{
@@ -11,14 +15,21 @@
 }
 .image-plus, .a-create{
     display: inline;
+
+}
+
+.dropdown-menu, .dropdown{
+    position: absolute;
+    left: 155px;
+    top: -15px;
 }
 .search{
-    padding-right: 32%;
+    padding-right: 45%;
 }
 .nv-right-ele{
     position: relative;
     padding-right: 5px;
-    left: 73%;
+    left: 65%;
 }
 .create-ride-nav{
     padding-top: 9%;

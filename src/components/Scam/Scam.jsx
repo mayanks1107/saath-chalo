@@ -4,7 +4,7 @@ import image from '../../assets/scam.png'
 import leftquote from "../../assets/left-quote.png";
 import block from "../../assets/block.png";
 import coins from "../../assets/dollar.png";
-
+import Headers from '../Header/headers';
 import Footer from '../Footer/Footer';
 import OnlineSecurity from './OnlineSecurity';
 import ScamYou from './ScamYou';
@@ -14,7 +14,9 @@ import AvoidScam from './AvoidScam';
 function Scam() {
   return (
     <>
+    <Headers/>
       <div class="container">
+      
         <div class="image">
           <img  className='Scam-image' src={image} alt="scam"/>
         </div>

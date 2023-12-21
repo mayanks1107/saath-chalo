@@ -1,8 +1,8 @@
 .container{
     margin-top: 80px;
-    display:flex;
-    width: 1680px; 
-    height: 400px;
+    /* display:flex; */
+    /* width: 1680px; 
+    height: 400px; */
     background-color: rgb(0, 102, 255);
 }
 .Scam-image{
