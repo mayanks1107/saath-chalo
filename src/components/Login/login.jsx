@@ -17,6 +17,8 @@ import 'react-phone-input-2/lib/style.css'
 import { toast, Toaster } from "react-hot-toast";
 
 import "./login.css"
+import Footer from '../Footer/Footer';
+import Header from '../Header/headers'
 
 export default function Login() {
   const [basicModal, setBasicModal] = useState(false);
@@ -105,6 +107,8 @@ const verifyOtp = async() => {
 
 
   return (
+    <>
+    <Header/>
     <MDBContainer fluid className="p-3 my-5 h-custom">
         <Toaster toastOptions={{ duration: 4000 }} />
       <MDBRow>
@@ -115,23 +119,7 @@ const verifyOtp = async() => {
         </MDBCol>
         <MDBCol className='right-container' col='4' md='6'>
 
-          <div className="r d-flex flex-row align-items-center justify-content-center">
-
-            <p className="lead fw-normal mb-0 me-3">Sign in with</p>
-
-            <MDBBtn floating size='md' tag='a' className='me-2'>
-              <MDBIcon fab icon='facebook-f' />
-            </MDBBtn>
-
-            <MDBBtn floating size='md' tag='a'  className='me-2'>
-              <MDBIcon fab icon='twitter' />
-            </MDBBtn>
-
-            <MDBBtn floating size='md' tag='a'  className='me-2'>
-              <MDBIcon fab icon='linkedin-in' />
-            </MDBBtn>
-
-          </div>
+         
 
           {/* <div class="vl-3"></div> */}
 
@@ -144,9 +132,14 @@ const verifyOtp = async() => {
             <>
             <PhoneInput style={{width: "1250px;"}}  country={"in"} value={phone} onChange={(phone) => setPhone("+" + phone)}/><br/>
            </>
-          OR
+           
+               OR
+          <br />
+          <br />
+          
+
             <div className='email-form'>
-            <MDBInput className='inp-login' wrapperClass='mb-4' onChange={(e) =>setEmail(e.target.value)} label='Emailid' id='formControlLg' type='email' size="lg"/>
+            <MDBInput className='inp-login' wrapperClass='mb-4' onChange={(e) =>setEmail(e.target.value)} label='Email Id' id='formControlLg' type='email' size="lg"/>
             <MDBInput className='inp-login' wrapperClass='mb-4' onChange={(e) =>setPassword(e.target.value)} label='password' id='formControlLg' type='password' size="lg"/>
         
           </div> 
@@ -160,7 +153,7 @@ const verifyOtp = async() => {
           <div className='text-center text-md-start mt-4 pt-2'>
             
            
-             <MDBBtn className="mb-0 px-5 btn-login" onClick={LoginWithNoEmail} size='lg'>Login </MDBBtn>
+             <MDBBtn className="mb-0 px-5 btn-login " color='success' onClick={LoginWithNoEmail} size='lg'>Login </MDBBtn>
 
             <p className="small fw-bold mt-2 pt-1 mb-2">Don't have an account? <a href="/register" className="link-danger">Register</a></p>
             
@@ -205,34 +198,12 @@ const verifyOtp = async() => {
       
       
 
-      <div className="footer d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
-
-        <div className="text-white mb-3 mb-md-0">
-          Copyright © 2023. All rights reserved.
-        </div>
-
-        <div>
-
-          <MDBBtn tag='a' color='none' className='mx-3' style={{ color: 'white' }}>
-            <MDBIcon fab icon='facebook-f' size="md"/>
-          </MDBBtn>
-
-          <MDBBtn tag='a' color='none' className='mx-3' style={{ color: 'white'  }}>
-            <MDBIcon fab icon='twitter' size="md"/>
-          </MDBBtn>
-
-          <MDBBtn tag='a' color='none' className='mx-3' style={{ color: 'white'  }}>
-            <MDBIcon fab icon='google' size="md"/>
-          </MDBBtn>
-
-          <MDBBtn tag='a' color='none' className='mx-3' style={{ color: 'white'  }}>
-            <MDBIcon fab icon='linkedin-in' size="md"/>
-          </MDBBtn>
-
-        </div>
-
-      </div>
+      
 
     </MDBContainer>
+    <div className="Botton">
+          <Footer/>
+      </div>
+    </>
   );
 }

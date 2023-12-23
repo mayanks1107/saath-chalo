@@ -14,7 +14,7 @@
     padding-top: 100px;
     text-align: left;
     position: relative;
-    background-color: rgb(150, 179, 222);
+    background-color: #fff;
     padding-bottom: 70px;
     border-radius: 25px 25px 25px 25px;
     width: 90%;
@@ -72,3 +72,6 @@
 .form-create{
     margin-bottom: 50px;
 }
+/* .form-create > label{
+
+} */

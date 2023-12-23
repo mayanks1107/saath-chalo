@@ -13,6 +13,7 @@ import {
 }
 from 'mdb-react-ui-kit';
 import Footer from "../Footer/Footer"
+import Header from  "../Header/headers"
 import { auth } from '../../Firbase/firbase';
 import './regi.css'
 
@@ -47,8 +48,10 @@ function Signup() {
 //   });
 // }
   return (
+    <>
+      <Header/>
     <MDBContainer fluid>
-
+      
       <MDBCard className='text-black m-5' style={{borderRadius: '25px'}}>
         <MDBCardBody>
           <MDBRow>
@@ -113,6 +116,7 @@ function Signup() {
       </div>
 
     </MDBContainer>
+    </>
   );
 }
 
