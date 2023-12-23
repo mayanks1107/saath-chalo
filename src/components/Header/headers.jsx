@@ -2,6 +2,8 @@ import React from "react";
 import "./headers.css";
 import plus from "../../assets/plus.png";
 import profilePic from "../../assets/proflic-pic.png";
+import { FaUser } from "react-icons/fa";
+
 import { CiCirclePlus } from "react-icons/ci";
 import { Link } from "react-router-dom";
 import a from "../../assets/LOGO.png";
@@ -19,19 +21,19 @@ export default function Headers(){
         
         <li class="create-ride-nav nav-item">
         {/* <img className="image-plus" src={plus} alt = "plus"/> */}
-        <div className="white">
-            <CiCirclePlus color="#52D3D8" size={"2.4em"}/>
+        <div className="bor-rad">
+            <CiCirclePlus color="green" size={"2.4em"}/>
+          <a class="a-create nav-link" href="/createRide">Create a Ride</a>
           </div>
-          <a class="a-create nav-link" href="/">Create a Ride</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          <img className="image-plus" src={profilePic} alt = "plus"/>
-          
+          <a class="nav-link dropdown-toggle" style={{marginTop: "14px", marginLeft:"5px"}} href="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          {/* <img className="image-plus" src={profilePic} alt = "plus"/> */}
+          <FaUser className="user-icon" size={"2rem"}/>
           </a>
           <ul class="dropdown-menu">
             <li><Link class="dropdown-item" to='/login'>Login</Link></li>
-            <li><Link class="dropdown-item" to="/register">Register</Link></li>
+            <li><Link class="dropdown-item" to="/user-register">Register</Link></li>
             
           </ul>
         </li>

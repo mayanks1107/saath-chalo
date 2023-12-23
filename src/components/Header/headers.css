@@ -35,8 +35,11 @@
     padding-top: 9%;
     
 }
-.white{
-    background-color: white;
+.bor-rad{
+    /* background-color: white; */
     display: inline-block;
     border-radius: 40%;
+}
+.user-icon{
+    margin: 2px 2px 5px 5px;
 }
