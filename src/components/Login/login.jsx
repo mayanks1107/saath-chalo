@@ -11,7 +11,7 @@ import {MDBContainer, MDBCol, MDBRow,
     MDBModalBody,
     MDBModalFooter } from 'mdb-react-ui-kit';
 import OtpInput from "otp-input-react";
-
+import { Link } from "react-router-dom";
 import PhoneInput from "react-phone-input-2";
 import 'react-phone-input-2/lib/style.css'
 import { toast, Toaster } from "react-hot-toast";
@@ -144,7 +144,7 @@ const  checkEMailAndpassword = ()=>{
             }        
               <MDBBtn className="mb-0 px-5" onClick={()=>phoneOpen()} size='lg'>Login with Otp</MDBBtn>
 
-            <p className="small fw-bold mt-2 pt-1 mb-2">Don't have an account? <a href="#!" className="link-danger">Register</a></p>
+            <p className="small fw-bold mt-2 pt-1 mb-2">Don't have an account? <Link class="link-danget" to="/register">Register</Link></p>
           </div>
 
         </MDBCol>
