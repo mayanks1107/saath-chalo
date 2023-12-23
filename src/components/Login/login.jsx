@@ -11,7 +11,7 @@ import {MDBContainer, MDBCol, MDBRow,
     MDBModalBody,
     MDBModalFooter } from 'mdb-react-ui-kit';
 import OtpInput from "otp-input-react";
-import { Link } from "react-router-dom";
+
 import PhoneInput from "react-phone-input-2";
 import 'react-phone-input-2/lib/style.css'
 import { toast, Toaster } from "react-hot-toast";
@@ -20,9 +20,10 @@ import "./login.css"
 
 export default function Login() {
   const [basicModal, setBasicModal] = useState(false);
-  const [phoneModal, setphoneModal] = useState(false);
+  const [Urider, setUrider] = useState(false);
   const toggleOpen = () => setBasicModal(!basicModal);
-  const phoneOpen = () => setphoneModal(!phoneModal);
+
+  const AreuRider = () => setUrider(!Urider);
 
   const [phone,setPhone] = useState(null);
   const [Email,setEmail] = useState(null);
@@ -34,20 +35,59 @@ export default function Login() {
   // const [user2, setUser2] = useState(null);
   const [loading, setLoading] = useState(false);
 
-
-const sendOTp = async() => {
-  toggleOpen();
-  console.log(phone);
-    try {
-        const recaptcha = new RecaptchaVerifier(auth, "recaptcha", {})
-        const confirmation = await signInWithPhoneNumber(auth, phone, recaptcha)
-        toast.success('OTP SENT SUCCESSFULY');
-        setUser(confirmation);
-
-    } catch (error) {
-        console.log(error);
-    }
+const EmailAndPassword = async()=>{
+    signInWithEmailAndPassword(auth,Email,Password).then(async(res)=>{
+      console.log('OK');
+      // navigate('/succes',{state:{user:Email}})
+      toast.success('User created');
+    }).catch((erro)=>{
+      console.log(erro);
+    });
 }
+const LoginWithNoEmail = async() => {
+  console.log(Urider);
+  if ((Email==null || Password==null) && phone == null) {
+      toast.error("Email,phone or password is Missing ");
+  }else{
+       if(phone==null ){
+        //  Email And Password
+        EmailAndPassword();
+       }else{
+        //  Login With Phone NUmber
+          PhoneLogin();
+       }
+}
+
+//  Email And Password
+
+
+//  Login With Phone NUmber
+const PhoneLogin = async()=>{
+  if(phone!= null){
+    toggleOpen();
+    console.log(phone);
+      try {
+        const response = await fetch(
+          `http://localhost:4000/user/getphone/${phone}`
+        );
+        const IsPresent = await response.json();
+        console.log(`IsPresent ${IsPresent}`)
+        if(IsPresent == true){
+          alert('Phone And Email already exists. Please choose a number and email.');
+        }
+          const recaptcha = new RecaptchaVerifier(auth, "recaptcha", {})
+          const confirmation = await signInWithPhoneNumber(auth, phone, recaptcha)
+          toast.success('OTP SENT SUCCESSFULY');
+          setUser(confirmation);
+        }catch (error) {
+          console.log(error);
+        }
+      }else{
+      toast.error("Phone number is Missing");
+      }
+  }
+}
+
 const verifyOtp = async() => {
     try {
         const data = await user.confirm(otp)
@@ -61,24 +101,8 @@ const verifyOtp = async() => {
     } catch (error) {
         console.error(error)
     }
+}
 
-}
-const  checkEMailAndpassword = ()=>{
-  if (Email==null||Password==null) {
-    toast.error(" Email or password is Missing ");
-    
-  }else{
-       signInWithEmailAndPassword(auth,Email,Password).then(async(res)=>{
-       console.log('OK');
-       
-      // navigate('/succes',{state:{user:Email}})
-      toast.success('User created');
- 
-    }).catch((erro)=>{
-    console.log(erro);
-    });
-  }
-}
 
   return (
     <MDBContainer fluid className="p-3 my-5 h-custom">
@@ -116,35 +140,31 @@ const  checkEMailAndpassword = ()=>{
           </div>
 
           {/* <div class="vl-2"></div> */}
-          {
-            phoneModal ? 
-            <>
-            <PhoneInput country={"in"} value={phone} onChange={(phone) => setPhone("+" + phone)}/><br/>
-            <MDBInput className='inp-login' wrapperClass='mb-4'onChange={(e) => setEmail(e.target.value)} label='Emailid' id='formControlLg' type='email' size="lg"/>
-          </>:
-            <>
-            <MDBInput className='inp-login' wrapperClass='mb-4' onChange={(e) =>setPassword(e.target.value)} label='password' id='formControlLg' type='password' size="lg"/>
-            <MDBInput className='inp-login' wrapperClass='mb-4' onChange={(e) =>setEmail(e.target.value)} label='Emailid' id='formControlLg' type='email' size="lg"/>
         
-          </> 
-          }
+            <>
+            <PhoneInput style={{width: "1250px;"}}  country={"in"} value={phone} onChange={(phone) => setPhone("+" + phone)}/><br/>
+           </>
+          OR
+            <div className='email-form'>
+            <MDBInput className='inp-login' wrapperClass='mb-4' onChange={(e) =>setEmail(e.target.value)} label='Emailid' id='formControlLg' type='email' size="lg"/>
+            <MDBInput className='inp-login' wrapperClass='mb-4' onChange={(e) =>setPassword(e.target.value)} label='password' id='formControlLg' type='password' size="lg"/>
+        
+          </div> 
+          
           <div className="d-flex justify-content-between mb-4">
-            <MDBCheckbox name='flexCheck' value='' id='flexCheckDefault' label='Remember me' />
-            <a href="!#">Didn't received OTP ?</a>
+            
+            <MDBCheckbox name='flexCheck' value={Urider}  onClick={()=>AreuRider()} id='flexCheckChecked' label='Are You a Rider' />
+            
           </div>
 
           <div className='text-center text-md-start mt-4 pt-2'>
-            {phoneModal ? 
-            <>
-             <MDBBtn className="mb-0 px-5 btn-login" onClick={sendOTp} size='lg'>Login </MDBBtn>
-            </>
-            :<>
-              <MDBBtn className="mb-0 px-5 btn-login" onClick={checkEMailAndpassword} size='lg'>Login</MDBBtn>
-            </>
-            }        
-              <MDBBtn className="mb-0 px-5" onClick={()=>phoneOpen()} size='lg'>Login with Otp</MDBBtn>
+            
+           
+             <MDBBtn className="mb-0 px-5 btn-login" onClick={LoginWithNoEmail} size='lg'>Login </MDBBtn>
 
-            <p className="small fw-bold mt-2 pt-1 mb-2">Don't have an account? <Link class="link-danget" to="/register">Register</Link></p>
+            <p className="small fw-bold mt-2 pt-1 mb-2">Don't have an account? <a href="/register" className="link-danger">Register</a></p>
+            
+
           </div>
 
         </MDBCol>
@@ -156,7 +176,7 @@ const  checkEMailAndpassword = ()=>{
         <MDBModalDialog>
           <MDBModalContent>
             <MDBModalHeader>
-              <MDBModalTitle>{loading ? <>`<h1>sign succfull</h1>`</> :null}</MDBModalTitle>
+              <MDBModalTitle>{loading ? <>`<h1>Signup SUCCESSFULY</h1>`</> :null}</MDBModalTitle>
               <MDBBtn className='btn-close' color='none' onClick={toggleOpen}></MDBBtn>
             </MDBModalHeader>
             <MDBModalBody>
@@ -216,4 +236,3 @@ const  checkEMailAndpassword = ()=>{
     </MDBContainer>
   );
 }
-

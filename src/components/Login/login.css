@@ -10,6 +10,9 @@
     margin-top: 90px;
     
 }
+.react-tel-input .form-control{
+  width: 750px
+}
 MDBInput{
     border: 5px;
 }

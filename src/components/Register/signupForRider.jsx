@@ -11,10 +11,7 @@ import {
   MDBIcon,
   MDBCheckbox
 }
-
 from 'mdb-react-ui-kit';
-import Headers from "../Header/headers";
-import Footer from '../Footer/Footer';
 import { auth } from '../../Firbase/firbase';
 // import { useNavigate } from 'react-router-dom';
 import {createUserWithEmailAndPassword} from "firebase/auth" 
@@ -46,10 +43,8 @@ const Register =()=>{
   });
 }
   return (
-    <>
-    <Headers/>
     <MDBContainer fluid>
-  
+
       <MDBCard className='text-black m-5' style={{borderRadius: '25px'}}>
         <MDBCardBody>
           <MDBRow>
@@ -97,6 +92,7 @@ const Register =()=>{
               </div>
 
               <MDBBtn className='mb-4' size='lg' onClick={()=>Register()}>Register</MDBBtn>
+              {/* <MDBBtn className='mb-4' size='lg' onClick={()=>Register()}>Register</MDBBtn> */}
 
             </MDBCol>
 
@@ -109,8 +105,6 @@ const Register =()=>{
       </MDBCard>
 
     </MDBContainer>
-    <Footer/>
-    </>
   );
 }
 
