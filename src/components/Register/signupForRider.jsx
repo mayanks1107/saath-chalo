@@ -12,7 +12,11 @@ import {
   MDBCheckbox
 }
 from 'mdb-react-ui-kit';
+import Footer from "../Footer/Footer"
 import { auth } from '../../Firbase/firbase';
+import './regi.css'
+
+
 // import { useNavigate } from 'react-router-dom';
 import {createUserWithEmailAndPassword} from "firebase/auth" 
 
@@ -26,22 +30,22 @@ function Signup() {
       Rc: ""
     })
    
-const Register =()=>{
+// const Register =()=>{
   
-  // if (localStorage.getItem('Score')==null) {
-  //   console.err("isBlank");
-  // }else{
-  //   console.warn("not null");
-  // }
-  createUserWithEmailAndPassword(auth,Value.Email,Value.Password).then(async(res)=>{
-    console.log(res);
-     localStorage.setItem('Score',JSON.stringify( Value));
-    // navigate('/succes',{state:{user:Email}})
+//   // if (localStorage.getItem('Score')==null) {
+//   //   console.err("isBlank");
+//   // }else{
+//   //   console.warn("not null");
+//   // }
+//   createUserWithEmailAndPassword(auth,Value.Email,Value.Password).then(async(res)=>{
+//     console.log(res);
+//      localStorage.setItem('Score',JSON.stringify( Value));
+//     // navigate('/succes',{state:{user:Email}})
 
-   }).catch((erro)=>{
-    console.log(erro.message);
-  });
-}
+//    }).catch((erro)=>{
+//     console.log(erro.message);
+//   });
+// }
   return (
     <MDBContainer fluid>
 
@@ -103,6 +107,10 @@ const Register =()=>{
           </MDBRow>
         </MDBCardBody>
       </MDBCard>
+      <div className="Botton">
+        <Footer/>
+
+      </div>
 
     </MDBContainer>
   );

@@ -1,6 +1,9 @@
 import React from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFacebook, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
+
+
+import { FaInstagram } from "react-icons/fa6";
+import { FaXTwitter } from "react-icons/fa6";
+import { FaFacebookSquare } from "react-icons/fa";
 import "./footer.css";
 export default function Footer(){
     return(
@@ -12,9 +15,9 @@ export default function Footer(){
               </div>
 
               <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-                <li class="ms-3"><a class="text-muted" href="/"><FontAwesomeIcon icon={faInstagram} /></a></li>
-                <li class="ms-3"><a class="text-muted" href="/"><FontAwesomeIcon icon={faTwitter}/></a></li>
-                <li class="ms-3"><a class="text-muted" href="/"><FontAwesomeIcon icon={faFacebook} /></a></li>
+                <li class="ms-3"><a class="text-muted" href="/"><FaInstagram size={"2em"} color="white" /></a></li>
+                <li class="ms-3"><a class="text-muted" href="/"><FaXTwitter size={"2em"} color="white" /></a></li>
+                <li class="ms-3"><a class="text-muted" href="/"><FaFacebookSquare size={"2em"} color="white" /></a></li>
               </ul>
             
         </div>
