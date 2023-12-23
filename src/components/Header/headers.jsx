@@ -6,7 +6,7 @@ import { FaUser } from "react-icons/fa";
 
 import { CiCirclePlus } from "react-icons/ci";
 import { Link } from "react-router-dom";
-import a from "../../assets/LOGO.png";
+import a from "../../assets/logo-green.png";
 export default function Headers(){
     return(
         <div className="head">
@@ -33,7 +33,7 @@ export default function Headers(){
           </a>
           <ul class="dropdown-menu">
             <li><Link class="dropdown-item" to='/login'>Login</Link></li>
-            <li><Link class="dropdown-item" to="/user-register">Register</Link></li>
+            <li><Link class="dropdown-item" to="/register">Register</Link></li>
             
           </ul>
         </li>
