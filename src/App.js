@@ -5,6 +5,7 @@ import Signup from './components/Register/signupForRider';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import Scam from './components/Scam/Scam';
 import CreateRide from './components/createRide';
+import BookRide from './components/bookRide';
 
 function App() {
   return(
@@ -16,6 +17,7 @@ function App() {
                 <Route exact path="/register" element={<Signup/>}/>
                 <Route exact path="/scam" element={<Scam/>}/>
                 <Route exact path="/createRide" element={<CreateRide/>}/>
+                <Route exact path="/bookRide" element={<BookRide/>}/>
                 
                 
             </Routes>
