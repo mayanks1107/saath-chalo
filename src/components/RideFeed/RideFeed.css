@@ -1,0 +1,71 @@
+.form-submit{
+    margin-top: 50px;
+    position: relative;
+}
+.card{
+    width: 25rem;
+    height: 10rem;
+    padding: 10px;
+    border: 4px;
+    position: absolute;
+    left: 22%;
+    top: 45%;
+}
+.price{
+    position: absolute;
+    right: 35px;
+    top: 20px;
+}
+#myhr
+ {
+   background-color:#000000;
+   color:#000000;
+   -webkit-transform:rotate(90deg);
+   width: 60px;
+   position: absolute;
+   left: 50px;
+   height: 2px;
+   
+   
+ }
+ .from{
+    position: absolute;
+    left: 100px;
+    top: 15px;
+ }
+ .to{
+    position: absolute;
+    left: 100px;
+    top: 65px;
+ }
+ .strt{
+    position: absolute;
+    left: 20px;
+    top: 15px;
+ }
+ .end{
+    position: absolute;
+    left: 20px;
+    top: 65px;
+ }
+ .pic{
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    width: 12%;
+ }
+ .name{
+    position: absolute;
+    bottom: 17px;
+    left: 85px;
+ }
+ .rating{
+    position: absolute;
+    bottom: 5px;
+    left: 85px;
+ }
+ .text-feed{
+    position: absolute;
+    top: 250px;
+    left: 330px;
+ }
