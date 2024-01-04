@@ -1,0 +1,120 @@
+.sourceImage{
+    height: 20px;
+    display: inline-block;
+}
+.sourceDistanceText{
+    display: inline;
+    float: inline-block;
+    color: orange;
+    font-size: 15px;
+}
+.source>h5{
+    margin-bottom: 0px;
+}
+.source>p{
+    margin-bottom: 0px;
+}
+.destinationImage{
+    height: 20px;
+    display: inline-block;
+}
+.destinationDistanceText{
+    display: 50px;
+    display: inline-block;
+    color: rgb(26, 213, 26);
+    font-size: 15px;
+}
+.destination{
+    margin-bottom: 10px;
+}
+.destination>h5{
+    margin-bottom: 0px;
+}
+.destination>p{
+    margin-bottom: 0px;
+}
+.bookHeading{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+}
+.dateText{
+    font-size: 20px;
+    color: brown;
+    font-style: italic;
+}
+.sourceToDestinationImage{
+    height: 60px;
+}
+.breakAsBorder{
+    border: 3px solid rgb(198, 195, 195);
+    margin-left: 20rem;
+    margin-right: 20rem;
+}
+.pricePerPerson>h3{
+    display: inline-block;
+    color: rgb(171, 172, 173);
+}
+.pricePerPerson>p{
+    display: inline-block;
+    font-size: 25px;
+}
+.riderDetails>h4{
+    display: inline-block;
+}
+.riderDetails>img{
+    display: inline-block;
+    margin-inline: 10px;
+    height: 50px;
+}
+.riderDetails{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.breakAsBorder1{
+    border: 2px solid rgb(198, 195, 195);
+    margin-left: 20rem;
+    margin-right: 20rem;
+}
+.askQues{
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+.askQues>img{
+    display: inline-block;
+    height: 20px;
+    margin-inline: 10px;
+}
+.askQues>p{
+    display: inline-block;
+}
+.vehicleInfo>h4{
+    font-size: 20px;
+    margin-bottom: 0px;
+}
+.vehicleInfo>p{
+    font-size: 15px;
+}
+.bottomLine{
+    border: 2px solid rgb(96, 93, 93);
+}
+.bookButton{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-top: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: inline-block;
+    border: 5px solid green;
+    background-color: green;
+    border-radius: 20px;
+}
+.bookButton>img{
+    height: 20px;
+    margin-inline-end: 10px;
+    display: inline-block;
+}
+.bookButton>p{
+    color: aliceblue;
+    font-size: 15px;
+    display: inline-block;
+}
