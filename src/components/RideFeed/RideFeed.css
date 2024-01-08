@@ -1,71 +1,203 @@
 .form-submit{
-    margin-top: 50px;
-    position: relative;
+   margin-top: 50px;
+   position: relative;
 }
 .card{
-    width: 25rem;
-    height: 10rem;
-    padding: 10px;
-    border: 4px;
-    position: absolute;
-    left: 22%;
-    top: 45%;
+   width: 25rem;
+   height: 10rem;
+   padding: 10px;
+   border: 4px;
+   position: absolute;
+   left: 22%;
+   top: 45%;
 }
 .price{
-    position: absolute;
-    right: 35px;
-    top: 20px;
+   position: absolute;
+   right: 35px;
+   top: 20px;
 }
 #myhr
- {
-   background-color:#000000;
-   color:#000000;
-   -webkit-transform:rotate(90deg);
-   width: 60px;
+{
+  background-color:#000000;
+  color:#000000;
+  -webkit-transform:rotate(90deg);
+  width: 60px;
+  position: absolute;
+  left: 50px;
+  height: 2px;
+  
+  
+}
+.from{
    position: absolute;
-   left: 50px;
-   height: 2px;
-   
-   
- }
- .from{
-    position: absolute;
-    left: 100px;
-    top: 15px;
- }
- .to{
-    position: absolute;
-    left: 100px;
-    top: 65px;
- }
- .strt{
-    position: absolute;
-    left: 20px;
-    top: 15px;
- }
- .end{
-    position: absolute;
-    left: 20px;
-    top: 65px;
- }
- .pic{
-    position: absolute;
-    bottom: 10px;
-    left: 20px;
-    width: 12%;
- }
- .name{
-    position: absolute;
-    bottom: 17px;
-    left: 85px;
- }
- .rating{
-    position: absolute;
-    bottom: 5px;
-    left: 85px;
- }
- .text-feed{
-    position: absolute;
-    top: 250px;
-    left: 330px;
- }
+   left: 100px;
+   top: 15px;
+}
+.to{
+   position: absolute;
+   left: 100px;
+   top: 65px;
+}
+.strt{
+   position: absolute;
+   left: 20px;
+   top: 15px;
+}
+.end{
+   position: absolute;
+   left: 20px;
+   top: 65px;
+}
+.pic{
+   position: absolute;
+   bottom: 10px;
+   left: 20px;
+   width: 12%;
+}
+.name{
+   position: absolute;
+   bottom: 17px;
+   left: 85px;
+}
+.rating{
+   position: absolute;
+   bottom: 5px;
+   left: 85px;
+}
+.text-feed{
+   position: absolute;
+   top: 250px;
+   left: 330px;
+}
+.h2-sort{
+  position: absolute;
+  top: 250px;
+  left: 62%;
+}
+.h3-clear{
+  position: absolute;
+  top: 250px;
+  left: 75%;
+}
+.dep{
+  position: absolute;
+  top: 40%;
+  left: 64%;
+}
+.dep-rad{
+  position: absolute;
+  top: 40.9%;
+  left: 75%;
+}
+.low{
+  position: absolute;
+  top: 45%;
+  left: 64%;
+}
+.low-rad{
+  position: absolute;
+  top: 45.9%;
+  left: 75%;
+}
+.close-dep{
+  position: absolute;
+  top: 50%;
+  left: 64%;
+}
+.close-dep-rad{
+  position: absolute;
+  top: 50.9%;
+  left: 75%;
+}
+
+.close-arr{
+  position: absolute;
+  top: 55%;
+  left: 64%;
+}
+
+.close-arr-rad{
+  position: absolute;
+  top: 55.9%;
+}
+
+.short-ride{
+  position: absolute;
+  top: 60%;
+  left: 64%;
+}
+
+.short-ride-rad{
+  position: absolute;
+  top: 60.9%;
+}
+
+.rad{
+  position: absolute;
+  left: 77%;
+}
+.sep-top{
+  position: absolute;
+  top: 70%;
+  left: 60%;
+}
+.h2-departure{
+  position: absolute;
+  top: 75%;
+  left: 62%;
+}
+.p-before-6{
+  position: absolute;
+  top: 80%;
+  left: 64%;
+}
+.p-6-12{
+  position: absolute;
+  top: 85%;
+  left: 64%;
+}
+.p-12-8{
+  position: absolute;
+  top: 90%;
+  left: 64%;
+}
+.p-after-18{
+  position: absolute;
+  top: 95%;
+  left: 64%;
+}
+.sq-6{
+  position: absolute;
+  top: 80.5%;
+  left: 77%;
+}
+.sq-6-12{
+  position: absolute;
+  top: 85.5%;
+  left: 77%;
+}
+.sq-12-18{
+  position: absolute;
+  top: 90.5%;
+  left: 77%;
+}
+.sq-after-18{
+  position: absolute;
+  top: 95.5%;
+  left: 77%;
+}
+.sep-btm{
+  position: absolute;
+  top: 105%;
+  left: 60%;
+}
+.h3-trust{
+  position: absolute;
+  top: 110%;
+  left: 64%;
+}
+.foot{
+  position: absolute;
+  top: 120%;
+  width: 100%;
+}
