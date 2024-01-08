@@ -1,6 +1,8 @@
 .helpHome{
     position: relative;
     padding: 35px;
+    margin-left: 60px;
+    margin-right: 60px;
 }
 .hh-h2, .hh-h3{
     text-align: left;

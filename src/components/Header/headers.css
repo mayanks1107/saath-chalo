@@ -1,6 +1,7 @@
 .navbar{
     background-color: #0F9D58;
-    padding-bottom: 15px;
+    padding-bottom: 0;
+    padding-top: 3px;
 }
 .logo-brand{
     width: 37%;
@@ -32,7 +33,7 @@
     left: 65%;
 }
 .create-ride-nav{
-    padding-top: 9%;
+    padding-top: 7%;
     
 }
 .bor-rad{
