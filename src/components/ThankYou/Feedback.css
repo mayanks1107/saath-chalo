@@ -1,0 +1,47 @@
+.feedback ._body {
+    margin: -70px 0 30px;
+}
+.feedback ._body ._box {
+    margin: auto;
+    max-width: 80%;
+    padding: 50px;
+    background: white;
+    border-radius: 3px;
+    box-shadow: 0 0 35px rgba(10, 10, 10,0.12);
+    -moz-box-shadow: 0 0 35px rgba(10, 10, 10,0.12);
+    -webkit-box-shadow: 0 0 35px rgba(10, 10, 10,0.12);
+}
+.feedback ._body ._box h2 {
+    font-size: 32px;
+    font-weight: 600;
+    color: #4ab74a;
+}
+.feedback ._body ._box .input-field {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    padding: 10px;
+}
+
+.feedback ._body ._box button {
+    padding: 10px 20px;
+    line-height: 1.5;
+    font-size: 16px;
+}
+
+.feedback ._body ._box label {
+    line-height: 30px;
+    margin-right: 20px;
+}
+
+@media screen and (min-width: 725px) {
+    .feedback ._body ._box .input-field {
+        flex-direction: row;
+        justify-content: stretch;
+    }
+    .feedback ._body ._box form {
+        display: flex;
+        justify-content: stretch;
+    }
+}
