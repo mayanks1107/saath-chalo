@@ -1,7 +1,8 @@
 import './App.css';
 import Home from './components/home';
 import Login from './components/Login/login';
-import Signup from './components/Register/signupForRider';
+import RiderSignup from './components/Register/signupForRider';
+import UserSignup from './components/Register/signupForUser'
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import Scam from './components/Scam/Scam';
 import CreateRide from './components/createRide';
@@ -14,8 +15,11 @@ function App() {
         <Router>
             <Routes>
                 <Route exact path="/" element={<Home/>}/>
+                {/* login and Register page */}
                 <Route exact path="/login" element={<Login/>}/>
-                <Route exact path="/register" element={<Signup/>}/>
+                <Route exact path="/rider-register" element={<RiderSignup/>}/>
+                <Route exact path="/user-register" element={<UserSignup/>}/>
+                {/*  */}
                 <Route exact path="/scam" element={<Scam/>}/>
                 <Route exact path="/createRide" element={<CreateRide/>}/>
                 <Route exact path="/bookRide" element={<BookRide/>}/>
