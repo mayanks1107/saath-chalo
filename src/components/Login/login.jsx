@@ -2,15 +2,14 @@ import React,{useState } from 'react';
 import {auth} from '../../Firbase/firbase';
 import {RecaptchaVerifier, signInWithPhoneNumber,signInWithEmailAndPassword} from 'firebase/auth';
 import {MDBContainer, MDBCol, MDBRow,
-    MDBBtn,
-    MDBIcon, MDBInput, MDBCheckbox,MDBModal,
-    MDBModalDialog,
-    MDBModalContent,
+    MDBBtn, MDBInput, MDBCheckbox,MDBModal,
+    MDBModalDialog,MDBModalContent,
     MDBModalHeader,
     MDBModalTitle,
     MDBModalBody,
     MDBModalFooter } from 'mdb-react-ui-kit';
 import OtpInput from "otp-input-react";
+import axios from 'axios'
 
 import PhoneInput from "react-phone-input-2";
 import 'react-phone-input-2/lib/style.css'
@@ -33,10 +32,10 @@ export default function Login() {
 
   const [user,setUser] = useState(null);
   const [otp,setOtp] = useState("");
-
   // const [user2, setUser2] = useState(null);
   const [loading, setLoading] = useState(false);
 
+//  Email And Password
 const EmailAndPassword = async()=>{
     signInWithEmailAndPassword(auth,Email,Password).then(async(res)=>{
       console.log('OK');
@@ -45,6 +44,14 @@ const EmailAndPassword = async()=>{
     }).catch((erro)=>{
       console.log(erro);
     });
+
+
+
+
+
+
+
+    
 }
 const LoginWithNoEmail = async() => {
   console.log(Urider);
@@ -53,14 +60,16 @@ const LoginWithNoEmail = async() => {
   }else{
        if(phone==null ){
         //  Email And Password
-        EmailAndPassword();
+        // EmailAndPassword();
        }else{
         //  Login With Phone NUmber
-          PhoneLogin();
+          // PhoneLogin();
        }
 }
+}
 
-//  Email And Password
+
+
 
 
 //  Login With Phone NUmber
@@ -88,7 +97,7 @@ const PhoneLogin = async()=>{
       toast.error("Phone number is Missing");
       }
   }
-}
+
 
 const verifyOtp = async() => {
     try {
@@ -104,6 +113,16 @@ const verifyOtp = async() => {
         console.error(error)
     }
 }
+const LoginWithRider = async()=>{
+  const response = await axios.post(`http://localhost:4000/riderlogin/adminLogin`,
+  {
+    Email: Email,
+    Password:Password
+  })
+  console.log(response);
+  
+}
+
 
 
   return (
@@ -152,9 +171,10 @@ const verifyOtp = async() => {
 
           <div className='text-center text-md-start mt-4 pt-2'>
             
-           
+           {Urider ?
              <MDBBtn className="mb-0 px-5 btn-login " color='success' onClick={LoginWithNoEmail} size='lg'>Login </MDBBtn>
-
+             :<MDBBtn className="mb-0 px-5 btn-login " color='primary' onClick={LoginWithRider} size='lg'>LoginWithRider </MDBBtn>
+           }
             <p className="small fw-bold mt-2 pt-1 mb-2">Don't have an account? <a href="/register" className="link-danger">Register</a></p>
             
 
