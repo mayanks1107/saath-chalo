@@ -13,44 +13,52 @@ import {
 }
 from 'mdb-react-ui-kit';
 import Footer from "../Footer/Footer"
+import axios from 'axios'
 import Header from  "../Header/headers"
-import { auth } from '../../Firbase/firbase';
+// import { auth } from '../../Firbase/firbase';
+import { toast, Toaster } from "react-hot-toast";
 import './regi.css'
 
 
 // import { useNavigate } from 'react-router-dom';
-import {createUserWithEmailAndPassword} from "firebase/auth" 
+// import {createUserWithEmailAndPassword} from "firebase/auth" 
 
 function Signup() {
     const [Value,setValues] =useState({
       Name:"",
       Email:"",
       Password:"",
+      PhoneNumber:"",
       Licenseno:"",
       Vehicleno:"",
       Rc: ""
     })
    
-// const Register =()=>{
+const Register =async()=>{
   
-//   // if (localStorage.getItem('Score')==null) {
-//   //   console.err("isBlank");
-//   // }else{
-//   //   console.warn("not null");
-//   // }
-//   createUserWithEmailAndPassword(auth,Value.Email,Value.Password).then(async(res)=>{
-//     console.log(res);
-//      localStorage.setItem('Score',JSON.stringify( Value));
-//     // navigate('/succes',{state:{user:Email}})
-
-//    }).catch((erro)=>{
-//     console.log(erro.message);
-//   });
-// }
+  try {
+    console.log(Value);
+    
+    let response =await axios.post(`http://localhost:4000/riderlogin/post`,{
+      Name:Value.Name,
+      Email:Value.Email,
+      Password:Value.Password,
+      PhoneNumber:Value.PhoneNumber,
+      Licenseno:Value.Licenseno,
+      Vehicleno:Value.Vehicleno,
+      Rc:Value.Rc,
+      IsRider:true
+})
+                toast.success(response.data);
+} catch (error) {
+    console.log(error);  
+}
+}
   return (
     <>
       <Header/>
     <MDBContainer fluid>
+    <Toaster toastOptions={{ duration: 4000 }} />
       
       <MDBCard className='text-black m-5' style={{borderRadius: '25px'}}>
         <MDBCardBody>
@@ -74,10 +82,10 @@ function Signup() {
                 <MDBInput label='Password' onChange={(e)=>setValues((prev)=>({...prev ,Password:e.target.value}))} id='form2' type='number'/>
               </div>
 
-              {/* <div className="d-flex flex-row align-items-center mb-4">
+              <div className="d-flex flex-row align-items-center mb-4">
                 <MDBIcon fas icon="lock me-3" size='lg'/>
-                <MDBInput label='Enter OTP for Phone Number Verification' id='form2' type='number'/>
-              </div> */}
+                <MDBInput label='Enter OTP for Phone Number Verification'onChange={(e)=>setValues((prev)=>({...prev ,PhoneNumber:e.target.value}))} id='form2' type='number'/>
+              </div>
 
               <div className="d-flex flex-row align-items-center mb-4">
                 <MDBIcon fas icon="address-card me-3" size='lg'/>
@@ -98,8 +106,9 @@ function Signup() {
                 <MDBCheckbox name='flexCheck' value='' id='flexCheckDefault' label='Subscribe to our newsletter' />
               </div>
 
-              <MDBBtn className='mb-4' size='lg'>Register</MDBBtn>
+              {/* <MDBBtn className='mb-4' size='lg'>Register</MDBBtn> */}
               {/* <MDBBtn className='mb-4' size='lg' onClick={()=>Register()}>Register</MDBBtn> */}
+               <MDBBtn className='mb-4' size='lg' onClick={()=>Register()}>Register</MDBBtn> 
 
             </MDBCol>
 
