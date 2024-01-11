@@ -1,3 +1,4 @@
+import "./regi.css";
 import React, { useState } from 'react';
 import { auth } from '../../Firbase/firbase';
 import axios from 'axios'

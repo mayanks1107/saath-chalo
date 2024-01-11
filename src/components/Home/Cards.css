@@ -1,11 +1,26 @@
 .ban-1{
     display: inline-block;
+    left: 50px;
+    
+}
+.ban-2{
+    position: absolute;
+    
+    left: 580px;
+}
+.ban-3{
+    position: absolute;
+    right: 50px;
 }
 .cards{
-    margin-top: 30px;
+    position: relative;
+    height: 200px;
     background-color: #0F9D58;
-    padding: 100px;
+    padding: 200px;
 }
-.ban-1{
-    margin-left: 45px;
+.card{
+    position: absolute;
+    top: 100px;
+    
+    width: 25rem;
 }
