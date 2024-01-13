@@ -26,6 +26,7 @@ function App() {
                 <Route exact path="/bookRide" element={<BookRide/>}/>
                 <Route exact path="/thankyou" element={<Thankyou/>}/>
                 <Route exact path="/rideRequest" element={<RideRequest/>}/>
+                <Route exact path="/register" element={<RiderSignup/>}/>
                 
             </Routes>
         </Router>
