@@ -8,6 +8,7 @@ import Scam from './components/Scam/Scam';
 import CreateRide from './components/createRide';
 import BookRide from './components/bookRide';
 import Thankyou from './components/ThankYou/Thankyou'
+import RideRequest from './components/RideRequest/rideRequest'
 
 function App() {
   return(
@@ -24,6 +25,7 @@ function App() {
                 <Route exact path="/createRide" element={<CreateRide/>}/>
                 <Route exact path="/bookRide" element={<BookRide/>}/>
                 <Route exact path="/thankyou" element={<Thankyou/>}/>
+                <Route exact path="/rideRequest" element={<RideRequest/>}/>
                 
             </Routes>
         </Router>
