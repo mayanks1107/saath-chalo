@@ -1,120 +1,55 @@
-.sourceImage{
-    height: 20px;
-    display: inline-block;
-}
-.sourceDistanceText{
-    display: inline;
-    float: inline-block;
-    color: orange;
-    font-size: 15px;
-}
-.source>h5{
-    margin-bottom: 0px;
-}
-.source>p{
-    margin-bottom: 0px;
-}
-.destinationImage{
-    height: 20px;
-    display: inline-block;
-}
-.destinationDistanceText{
-    display: 50px;
-    display: inline-block;
-    color: rgb(26, 213, 26);
-    font-size: 15px;
-}
-.destination{
-    margin-bottom: 10px;
-}
-.destination>h5{
-    margin-bottom: 0px;
-}
-.destination>p{
-    margin-bottom: 0px;
-}
-.bookHeading{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 20px;
-}
-.dateText{
-    font-size: 20px;
-    color: brown;
-    font-style: italic;
-}
-.sourceToDestinationImage{
-    height: 60px;
-}
-.breakAsBorder{
-    border: 3px solid rgb(198, 195, 195);
-    margin-left: 20rem;
-    margin-right: 20rem;
-}
-.pricePerPerson>h3{
-    display: inline-block;
-    color: rgb(171, 172, 173);
-}
-.pricePerPerson>p{
-    display: inline-block;
-    font-size: 25px;
-}
-.riderDetails>h4{
-    display: inline-block;
-}
-.riderDetails>img{
-    display: inline-block;
-    margin-inline: 10px;
-    height: 50px;
-}
-.riderDetails{
+.b-r-h1{
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
 }
-.breakAsBorder1{
-    border: 2px solid rgb(198, 195, 195);
-    margin-left: 20rem;
-    margin-right: 20rem;
+.top-card{
+    position: relative;
 }
-.askQues{
-    margin-top: 10px;
-    margin-bottom: 5px;
+.strt-time{
+    position: absolute;
+    left: 25%;
+    top: 5%;
 }
-.askQues>img{
-    display: inline-block;
-    height: 20px;
-    margin-inline: 10px;
+.src-state{
+    position: absolute;
+    left: 31.7%;
 }
-.askQues>p{
-    display: inline-block;
+.end-time{
+    position: absolute;
+    left: 25%;
+    top: 220%;
 }
-.vehicleInfo>h4{
-    font-size: 20px;
-    margin-bottom: 0px;
+.dest{
+    position: absolute;
+    left: 31%;
+    top: 200%;
+    text-align: left;
 }
-.vehicleInfo>p{
-    font-size: 15px;
+.dest-state{
+    position: relative;
+    right: 15.6%;
+    top: 155px;
 }
-.bottomLine{
-    border: 2px solid rgb(96, 93, 93);
+.dot-up{
+    position: relative;
+    left: 29%;
+    top: 27px;
 }
-.bookButton{
-    margin-top: 20px;
-    margin-bottom: 20px;
-    padding-top: 15px;
-    padding-left: 10px;
-    padding-right: 10px;
-    display: inline-block;
-    border: 5px solid green;
-    background-color: green;
-    border-radius: 20px;
+.dot-down{
+    position: relative;
+    left: 29%;
+    top: 145px;
 }
-.bookButton>img{
-    height: 20px;
-    margin-inline-end: 10px;
-    display: inline-block;
-}
-.bookButton>p{
-    color: aliceblue;
-    font-size: 15px;
-    display: inline-block;
+.hr-vertical{
+
+  background-color:#000000;
+  color:#000000;
+  -webkit-transform:rotate(90deg);
+  width: 98px;
+  position: absolute;
+  left: 401px;
+  top: 55px;
+  height: 2.7px;
+  
+  
 }

@@ -9,7 +9,7 @@ import CreateRide from './components/createRide';
 import BookRide from './components/bookRide';
 import Thankyou from './components/ThankYou/Thankyou'
 import RideRequest from './components/RideRequest/rideRequest'
-
+import RideFeed from './components/RideFeed/RideFeed';
 function App() {
   return(
     <div className="App">
@@ -27,6 +27,7 @@ function App() {
                 <Route exact path="/thankyou" element={<Thankyou/>}/>
                 <Route exact path="/rideRequest" element={<RideRequest/>}/>
                 <Route exact path="/register" element={<RiderSignup/>}/>
+                <Route exact path="/ride-feed" element={<RideFeed/>}/>
                 
             </Routes>
         </Router>

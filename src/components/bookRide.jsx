@@ -1,83 +1,23 @@
-import React from 'react'
-import Header from './Header/headers'
-import "../components/bookRide.css"
-import Footer from './Footer/Footer'
-import Sourcepic from '../assets/source.png'
-import RiderPic from '../assets/man.png'
-import ChatPic from '../assets/chat.png'
-import Flash from '../assets/flash.png'
-import ArrowDownImage from '../assets/arrow-down.png'
-import Departurepic from '../assets/departure.png'
-
-function bookRide() {
-  return (
-    <>
-      <Header />
-      <div className="bookHeading">Book Your Ride</div>
-      <p className='dateText'> Sun, 17 December</p>
-      <div className='source'>
-        <h5><strong>Rzw 277, Mahipalpur - Rangpuri Rd, New Delhi, Delhi</strong></h5>
-        <p>New Delhi</p>
-        <img src={Sourcepic} alt="" className="sourceImage" />
-        <p className='sourceDistanceText'>17 km from your departure</p>
-
-      </div>
-      <div >
-        <img className='sourceToDestinationImage' src={ArrowDownImage} alt="" />
-      </div>
-      <div className='destination'>
-        <h5><strong>Chandigarh Bus Terminus, ISBT Road, 17G, 17F, Sector 17</strong></h5>
-        <p>Chandigarh</p>
-        <img src={Departurepic} alt="" className="destinationImage" />
-        <p className='destinationDistanceText'>257 m from your arrival</p>
-
-      </div>
-      <div className="breakAsBorder"></div>
-      <div className='pricePerPerson'>
-        <h3>Total price for 1 passenger</h3>
-        <p>💲600</p>
-      </div>
-      <div className="breakAsBorder"></div>
-
-      <div className="riderDetails">
-        <img src={RiderPic} alt="" />
-        <h4 >Justin Krishtoper</h4>
-
-      </div>
-
-      <div className="breakAsBorder1"></div>
-
-      <div className="askQues">
-        <img src={ChatPic} alt="" />
-        <p>Ask Rider a question</p>
-      </div>
-
-      <div className="breakAsBorder1"></div>
-
-      <div className="askQues">
-        <img src={Flash} alt="" />
-        <p>Your booking will be confirmed instantly.</p>
-      </div>
-
-      <div className="breakAsBorder1"></div>
-
-      <div className="vehicleInfo">
-        <h4>HYUNDAI AURA</h4>
-        <p>white</p>
-      </div>
-
-      <div className="bottomLine"></div>
-
-      <div className="bookButton">
-        <img src={Flash} alt="" />
-        <p>Book</p>
-      </div>
+import React from "react";
+import Headers from './Header/headers';
+import './bookRide.css'
+export default function BookRide(){
+  return(
+    <div className="book-ride">
+      <Headers/>
+      <h1 className="b-r-h1">Sun, 17 December</h1>
+      <div className="dot-up" style={{width: 10, height: 10, background: 'white', borderRadius: 9999, border: '1px #054652 solid'}} />
+      <div className="dot-down" style={{width: 10, height: 10, background: 'white', borderRadius: 9999, border: '1px #054652 solid'}} />
+      <div className="top-card">
       
-
-      <Footer className="foot"/>
-    </>
-
+        <p className="strt-time">19:50</p>
+        <h4 className="strt-src">Rzw 277, Mahipalput - Rangpuri Rd, New Delhi, Delhi</h4>
+        <p className="src-state">New Delhi</p>
+        <hr className="hr-vertical"></hr>
+        <p className="end-time">01:20</p>
+        <h4 className="dest">Chandigarh Bus Terminal, ISBT Road, 17G, 17F, Sector 17,<br/>Chandigarh</h4>
+        <p className="dest-state">Chandigarh</p>
+      </div>
+    </div>
   )
 }
-
-export default bookRide
