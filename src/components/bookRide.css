@@ -48,8 +48,81 @@
   width: 98px;
   position: absolute;
   left: 401px;
-  top: 55px;
+  top: 57.5px;
   height: 2.7px;
   
   
+}
+.sep-top-book{
+    position: absolute;
+    top: 180px;
+    left: 18%;
+}
+.mid-card-book{
+    position: relative;
+}
+.price-p{
+    position: absolute;
+    left: 22.5%;
+    top: 220px;
+}
+.price-p-amount{
+    position: absolute;
+    right: 22.5%;
+    top: 220px;
+}
+.sep-btm-book{
+    position: absolute;
+    left: 18%;
+    top: 280px;
+}
+.info-card{
+    position: relative;
+}
+.info-p{
+    position: absolute;
+    left: 22.7%;
+    top: 320px;
+}
+.sep-btm-info{
+    position: absolute;
+    left: 18%;
+    top: 380px;
+}
+.ask-p{
+    position: absolute;
+    top: 410px;
+    left: 22.7%;
+}
+.sep-btm-ask{
+    position: absolute;
+    left: 18%;
+    top: 450px;
+}
+.car-type{
+    position: absolute;
+    left: 22.7%;
+    top: 480px;
+}
+.color-p{
+    position: absolute;
+    left: 22.7%;
+    top: 510px;
+}
+.bottom-card-book{
+    position: relative;
+    margin-bottom: 150px;
+}
+.rule{
+    position: relative;
+    top: 580px;
+   
+}
+.book-book{
+    position: absolute;
+    top: 620px;
+}.foot-book{
+    position: absolute;
+    top: 1000px;
+    width: 100%;
 }
