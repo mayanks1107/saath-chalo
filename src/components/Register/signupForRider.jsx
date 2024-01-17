@@ -119,12 +119,13 @@ const Register =async()=>{
           </MDBRow>
         </MDBCardBody>
       </MDBCard>
-      <div className="Botton">
-        <Footer/>
+      
+        
 
-      </div>
+      
 
     </MDBContainer>
+    <Footer/>
     </>
   );
 }
