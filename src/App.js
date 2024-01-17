@@ -27,7 +27,7 @@ function App() {
                 <Route exact path="/thankyou" element={<Thankyou/>}/>
                 <Route exact path="/rideRequest" element={<RideRequest/>}/>
                 <Route exact path="/register" element={<RiderSignup/>}/>
-                <Route exact path="/ride-feed" element={<RideFeed/>}/>
+                <Route exact path="/rideFeed" element={<RideFeed/>}/>
                 
             </Routes>
         </Router>

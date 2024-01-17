@@ -6,7 +6,7 @@ import pic from "../../assets/proflic-pic.png";
 export default function FeedCard(props){
     return(
         <div className="fCard">
-            <div class="card">
+            <div class="card carda">
               <div class="card-body">
                 <h5 class="card-title from">{props.from}</h5>
                 <hr id="myhr"></hr>
