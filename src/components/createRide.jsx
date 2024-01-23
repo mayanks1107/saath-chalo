@@ -52,7 +52,7 @@ function CreateRide() {
                 <br/>
                 <br/>
                 <label for="destination">Destination</label>
-                <input className='dest input-create' type="text"  onChange={(e)=>setValues((prev)=>({...prev ,DestinationPlace:e.target.value}))}name="destination" id="destination" placeholder='Destination' />
+                <input className='desti input-create' type="text"  onChange={(e)=>setValues((prev)=>({...prev ,DestinationPlace:e.target.value}))}name="destination" id="destination" placeholder='Destination' />
                 <br/>
                 <br/>
                 <label for="typeOfTrip">Type Of Trip</label>

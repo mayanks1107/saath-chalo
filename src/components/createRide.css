@@ -31,10 +31,10 @@
     left: 300px;
     top: 150px;
 }
-.dest{
+.desti{
     position: absolute;
     left: 300px;
-    top: 200px;
+    
 }
 .trip{
     position: absolute;
@@ -74,6 +74,9 @@
 /* create ride button */
 .createRideButton{
     margin-bottom: 20px;
+}
+.btn-login{
+    margin-bottom: 30px;
 }
 /* .form-create > label{
 
