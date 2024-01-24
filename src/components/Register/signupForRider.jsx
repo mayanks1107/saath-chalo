@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   MDBBtn,
   MDBContainer,
@@ -24,6 +24,7 @@ import './regi.css'
 // import {createUserWithEmailAndPassword} from "firebase/auth" 
 
 function Signup() {
+  const[checked, setChecked] = useState(false);
     const [Value,setValues] =useState({
       Name:"",
       Email:"",
@@ -53,6 +54,13 @@ const Register =async()=>{
 } catch (error) {
     console.log(error);  
 }
+}
+function clickHelper(){
+  console.log(document.getElementById("inp-check-rider").checked)
+  setChecked(document.getElementById("inp-check-rider").checked);
+}
+if(!checked){
+  document.getElementsByClassName("foot-div-change")[0].style.marginTop="86px";
 }
   return (
     <>
@@ -86,7 +94,13 @@ const Register =async()=>{
                 <MDBIcon fas icon="lock me-3" size='lg'/>
                 <MDBInput label='Enter OTP for Phone Number Verification'onChange={(e)=>setValues((prev)=>({...prev ,PhoneNumber:e.target.value}))} id='form2' type='number'/>
               </div>
-
+              <div>
+                <input onChange={(() => clickHelper())} id = "inp-check-rider" className='bool-radio' type = "checkbox"/>
+                <h4 className='are-rider'>Are you a rider?</h4>
+              </div>
+             {
+              checked?
+              <>
               <div className="d-flex flex-row align-items-center mb-4">
                 <MDBIcon fas icon="address-card me-3" size='lg'/>
                 <MDBInput label='License Number' onChange={(e)=>setValues((prev)=>({...prev ,Licenseno:e.target.value}))} id='form3' type='text'/>
@@ -101,10 +115,10 @@ const Register =async()=>{
                 <MDBIcon fas icon="address-book me-3" size='lg'/>
                 <MDBInput label='(RC) Registration Number' id='form4' onChange={(e)=>setValues((prev)=>({...prev ,Rc:e.target.value}))} type='text'/>
               </div>
-
-              <div className='mb-4'>
-                <MDBCheckbox name='flexCheck' value='' id='flexCheckDefault' label='Subscribe to our newsletter' />
-              </div>
+              </>
+                :
+                <p></p>
+             }
 
               {/* <MDBBtn className='mb-4' size='lg'>Register</MDBBtn> */}
               {/* <MDBBtn className='mb-4' size='lg' onClick={()=>Register()}>Register</MDBBtn> */}
@@ -123,9 +137,11 @@ const Register =async()=>{
         
 
       
-
+      
     </MDBContainer>
-    <Footer/>
+    <div className='foot-div-change'>
+      <Footer  />
+    </div>
     </>
   );
 }
