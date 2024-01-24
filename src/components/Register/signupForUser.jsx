@@ -41,23 +41,16 @@ function App() {
           alert('Phone And Email already exists. Please choose a number and email.');
         }
         else{
-                createUserWithEmailAndPassword(auth,Value.Email,Value.Password).then(async (res)=>{
-                        console.log(res)
+                
                       let response =await axios.post(`http://localhost:4000/user/post`,{
                           
                           FullName:Value.Name,
                           Email:Value.Email,
                           PhoneNumber:Value.PhoneNumber,
+                          Password:Value.Password,
                           IsRider:false
                         })
                         toast.success(response.data);
-                        
-                
-                      }).catch((erro)=>{
-                        // toast.war(erro.message);
-                        toast.error(erro.message)
-
-                      });
           }
         
       } catch (error) {
@@ -114,8 +107,8 @@ function App() {
                 <MDBCheckbox name='flexCheck' value='' id='flexCheckDefault' label='Subscribe to our newsletter' />
               </div>
 
-              <MDBBtn className='mb-4' size='lg' >Register</MDBBtn>
-              {/* <MDBBtn className='mb-4' size='lg' onClick={Register}>Register</MDBBtn> */}
+              {/* <MDBBtn className='mb-4' size='lg' >Register</MDBBtn> */}
+              <MDBBtn className='mb-4' size='lg' onClick={Register}>Register</MDBBtn>
 
             </MDBCol>
 

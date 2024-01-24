@@ -49,7 +49,10 @@ const Register =async()=>{
       Rc:Value.Rc,
       IsRider:true
 })
-                toast.success(response.data);
+console.log(response);
+
+
+                // toast.success(response.data);
 } catch (error) {
     console.log(error);  
 }

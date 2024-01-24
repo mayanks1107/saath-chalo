@@ -18,7 +18,7 @@ function App() {
                 <Route exact path="/" element={<Home/>}/>
                 {/* login and Register page */}
                 <Route exact path="/login" element={<Login/>}/>
-                <Route exact path="/rider-register" element={<RiderSignup/>}/>
+                <Route exact path="/register" element={<RiderSignup/>}/>
                 <Route exact path="/user-register" element={<UserSignup/>}/>
                 {/*  */}
                 <Route exact path="/scam" element={<Scam/>}/>
@@ -26,7 +26,7 @@ function App() {
                 <Route exact path="/bookRide" element={<BookRide/>}/>
                 <Route exact path="/thankyou" element={<Thankyou/>}/>
                 <Route exact path="/rideRequest" element={<RideRequest/>}/>
-                <Route exact path="/register" element={<RiderSignup/>}/>
+                
                 <Route exact path="/rideFeed" element={<RideFeed/>}/>
                 
             </Routes>
