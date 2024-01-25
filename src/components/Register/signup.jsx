@@ -25,6 +25,7 @@ import './regi.css'
 
 function Signup() {
   const[checked, setChecked] = useState(false);
+ 
     const [Value,setValues] =useState({
       Name:"",
       Email:"",
@@ -55,9 +56,8 @@ console.log(response);
 }
 const RegisterForUser =async()=>{
   // e.preventDefault();
-  if (Value.Password === Value.RepeatPassword) {
-    console.log('Passwords match!');
-    setPasswordMatch(true);
+  
+  
     try {
       
       const response = await fetch(
@@ -82,13 +82,9 @@ const RegisterForUser =async()=>{
         }
       
     } catch (error) {
-      toast.error(error)
+      toast.error("error")
     }
-  } else {
-      setPasswordMatch(false);
-      
   }
-}
 
 function clickHelper(){
   
@@ -124,7 +120,8 @@ function clickHelper(){
 
               <div className="d-flex flex-row align-items-center mb-4">
                 <MDBIcon fas icon="unlock-alt me-3" />
-                <MDBInput label='Password' onChange={(e)=>setValues((prev)=>({...prev ,Password:e.target.value}))} id='form2' type='number'/>
+                <MDBInput label='Password' onChange={(e)=>setValues((prev)=>({...prev ,Password:e.target.value}))} id='form2' type='password'/>
+                {/* {!passwordMatch && <p style={{ color: 'red' }}>Passwords do not match!</p>} */}
               </div>
 
               <div className="d-flex flex-row align-items-center mb-4">

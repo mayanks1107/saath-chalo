@@ -21,7 +21,7 @@ import Header from '../Header/headers'
 import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
-  const navigate  = useNavigate
+  const navigate  = useNavigate();
   const [basicModal, setBasicModal] = useState(false);
   const [Urider, setUrider] = useState(false);
   const toggleOpen = () => setBasicModal(!basicModal);
@@ -122,22 +122,31 @@ const LoginWithRider = async()=>{
     Email: Email,
     Password:Password
   })
+ 
+  
   console.log(response);
-  // if(response!= null){
-  //   if(response.data){
-  //     toast.success("Congratulation you  are good to go!");
+  if(response!=null){
+       if(response.data){
+      if(response.data.success){
+        localStorage.setItem("token",JSON.stringify(response.data.result));
+        console.log("true");
+        
+      }else if(response.data.success ===false){
+        toast.error(response.data.message);  
+      }
+      else{
+        
+      toast.error("Something went Wrong") 
+      }
+    }else{
+      console.log("54");
       
-      
-  //   }else{
-  //     console.log("failed");
-  //     toast.error("Failed");
-      
-  //   }
-  // }
-  //  if true 
-  //  redirect
-  // if false
-  // stop
+      // toast.error(response.data.message)
+    }
+  }else{
+    toast.error("Failed");  
+  }
+ 
 }
 
 
