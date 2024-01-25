@@ -18,8 +18,10 @@ import { toast, Toaster } from "react-hot-toast";
 import "./login.css"
 import Footer from '../Footer/Footer';
 import Header from '../Header/headers'
+import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
+  const navigate  = useNavigate();
   const [basicModal, setBasicModal] = useState(false);
   const [Urider, setUrider] = useState(false);
   const toggleOpen = () => setBasicModal(!basicModal);
@@ -37,33 +39,32 @@ export default function Login() {
 
 //  Email And Password
 const EmailAndPassword = async()=>{
-    signInWithEmailAndPassword(auth,Email,Password).then(async(res)=>{
-      console.log('OK');
-      // navigate('/succes',{state:{user:Email}})
-      toast.success('User created');
-    }).catch((erro)=>{
-      console.log(erro);
-    });
-
-
-
-
-
-
-
+    // signInWithEmailAndPassword(auth,Email,Password).then(async(res)=>{
+    //   console.log('OK');
+    //   // navigate('/succes',{state:{user:Email}})
+    //   toast.success('User created');
+    // }).catch((erro)=>{
+    //   console.log(erro);
+    // });
+    const response = await axios.post(`http://localhost:4000/user/adminLogin`,
+    {
+      Email: Email,
+      Password:Password
+    })
+    console.log(response)
     
 }
 const LoginWithNoEmail = async() => {
-  console.log(Urider);
+  console.log("you are not rider");
   if ((Email==null || Password==null) && phone == null) {
       toast.error("Email,phone or password is Missing ");
   }else{
        if(phone==null ){
         //  Email And Password
-        // EmailAndPassword();
+        EmailAndPassword();
        }else{
         //  Login With Phone NUmber
-          // PhoneLogin();
+          PhoneLogin();
        }
 }
 }
@@ -114,13 +115,38 @@ const verifyOtp = async() => {
     }
 }
 const LoginWithRider = async()=>{
+  console.log("U are rider");
+  
   const response = await axios.post(`http://localhost:4000/riderlogin/adminLogin`,
   {
     Email: Email,
     Password:Password
   })
-  console.log(response);
+ 
   
+  console.log(response);
+  if(response!=null){
+       if(response.data){
+      if(response.data.success){
+        localStorage.setItem("token",JSON.stringify(response.data.result));
+        console.log("true");
+        
+      }else if(response.data.success ===false){
+        toast.error(response.data.message);  
+      }
+      else{
+        
+      toast.error("Something went Wrong") 
+      }
+    }else{
+      console.log("54");
+      
+      // toast.error(response.data.message)
+    }
+  }else{
+    toast.error("Failed");  
+  }
+ 
 }
 
 
@@ -171,7 +197,7 @@ const LoginWithRider = async()=>{
 
           <div className='text-center text-md-start mt-4 pt-2'>
             
-           {Urider ?
+           {(!Urider) ?
              <MDBBtn className="mb-0 px-5 btn-login " color='success' onClick={LoginWithNoEmail} size='lg'>Login </MDBBtn>
              :<MDBBtn className="mb-0 px-5 btn-login " color='primary' onClick={LoginWithRider} size='lg'>LoginWithRider </MDBBtn>
            }

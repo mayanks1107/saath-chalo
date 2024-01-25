@@ -35,6 +35,7 @@ export default function Headers(){
             <li><Link class="dropdown-item" to='/login'>Login</Link></li>
             <li><Link class="dropdown-item" to="/register">Register</Link></li>
             
+            
           </ul>
         </li>
         

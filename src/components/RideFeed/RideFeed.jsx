@@ -1,9 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Headers from "../Header/headers";
 import "./RideFeed.css";
 import FeedCard from "./FeedCard";
 import Footer from "../Footer/Footer";
 export default function RideFeed(){
+    const [RiderInfo,setRiderInfo] = useState([]);
+    const Riderhandle= async()=>{
+        const response = await fetch(
+            `http://localhost:4000/rider/get`
+          ).then(res=>res.json());
+          setRiderInfo(response);
+          
+    }
+   useEffect(()=>{
+    Riderhandle()
+   },[]) 
+// console.log(RiderInfo.length);
+console.log(RiderInfo);
+
+
+
     return(
         <div className="rFeed">
             <Headers/>
@@ -18,7 +34,12 @@ export default function RideFeed(){
             </div>
             <h2 className="text-feed">Today</h2>
             <div className="cards-left">
-                <FeedCard name="Kulbir" from = "Delhi" to = "Chandigarh" price = "460" timeStrt = "18:45" timeEnd = "22:55" rating = "2.5"/>
+            {RiderInfo.map((info=>
+                    <>
+                      {/* {(cil.DepartmentClosingtime== null) ?  <td>Unavailable </td> : <td>{cil.DepartmentClosingtime}</td>} */}
+                      <FeedCard name="Kulbir" from = "Delhi" to = "Chandigarh" price = "460" timeStrt = "18:45" timeEnd = "22:55" rating = "2.5"/>
+                    </> 
+                   ))} 
             </div>
             <div className = "right">
                 <h4 className="h2-sort">Sort By</h4>

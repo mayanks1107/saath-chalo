@@ -1,10 +1,11 @@
-import React,{useState}from 'react'
+import React,{useEffect, useState}from 'react'
 import './createRide.css';
 import axios from 'axios'
 import Headers from './Header/headers';
 import Footer from './Footer/Footer'
 import { toast, Toaster } from "react-hot-toast";
 import {MDBBtn} from 'mdb-react-ui-kit';
+import { useNavigate } from 'react-router-dom';
 function CreateRide() {
     const [Value,setValues] =useState({
         vehicleNumber:"",
@@ -16,7 +17,8 @@ function CreateRide() {
         availableSeat:"",
         PhoneNumber:""
       })
-
+    //  const [GetlocalData,setlocalData]=useState();
+      const navigate = useNavigate();
     const handleChange= async()=>{
         try {
             console.log(Value);
@@ -38,6 +40,18 @@ function CreateRide() {
         }
                     
     }
+    const CheckData =()=>{
+        if(localStorage.getItem("token")!=null){
+          setValues(JSON.parse(localStorage.getItem("token")));
+            
+        }else{
+            toast.error("Not Found");
+            navigate('/login');  
+        }
+    }
+    useEffect(()=>{
+        CheckData()
+       },[]) 
     return (
         <div className='create-ride'>
             <Headers/>
