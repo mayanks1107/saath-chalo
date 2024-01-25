@@ -1,79 +1,111 @@
-import "./regi.css";
-import React, { useState } from 'react';
-import { auth } from '../../Firbase/firbase';
+import React, { useEffect, useState } from 'react';
+import {
+  MDBBtn,
+  MDBContainer,
+  MDBRow,
+  MDBCol,
+  MDBCard,
+  MDBCardBody,
+  MDBCardImage,
+  MDBInput,
+  MDBIcon,
+  MDBCheckbox
+}
+from 'mdb-react-ui-kit';
+import Footer from "../Footer/Footer"
 import axios from 'axios'
-// import { useNavigate } from 'react-router-dom';
-import {createUserWithEmailAndPassword} from "firebase/auth" 
-import 'react-phone-input-2/lib/style.css'
+import Header from  "../Header/headers"
+// import { auth } from '../../Firbase/firbase';
 import { toast, Toaster } from "react-hot-toast";
+import './regi.css'
 
-import {MDBBtn,MDBContainer,MDBRow,MDBCol,MDBCard,MDBCardBody,MDBCardImage,MDBInput,MDBIcon,MDBCheckbox} from 'mdb-react-ui-kit';
 
-function App() {
-  
-  const [Value,setValues] =useState({
-    Name:"",
-    Email:"",
-    PhoneNumber:"",
-    Otp:"",
-    Password:"",
-    RepeatPassword:""
-  })
-  const [passwordMatch, setPasswordMatch] = useState(true);
-  const [user,setUser] = useState(null);
-  const [otp,setOtp] = useState("");
+// import { useNavigate } from 'react-router-dom';
+// import {createUserWithEmailAndPassword} from "firebase/auth" 
 
-  // const [user2, setUser2] = useState(null);
-  const [loading, setLoading] = useState(false);
-
-  const Register =async()=>{
-    // e.preventDefault();
-    if (Value.Password === Value.RepeatPassword) {
-      console.log('Passwords match!');
-      setPasswordMatch(true);
-      try {
-        
-        const response = await fetch(
-          `http://localhost:4000/user/getboth/${Value.Email}/${Value.PhoneNumber}`
-        );
-        const IsPresent = await response.json();
-        console.log(`IsPresent ${IsPresent}`)
-        if(IsPresent == true){
-          alert('Phone And Email already exists. Please choose a number and email.');
-        }
-        else{
-                createUserWithEmailAndPassword(auth,Value.Email,Value.Password).then(async (res)=>{
-                        console.log(res)
-                      let response =await axios.post(`http://localhost:4000/user/post`,{
-                          
-                          FullName:Value.Name,
-                          Email:Value.Email,
-                          PhoneNumber:Value.PhoneNumber,
-                          IsRider:false
-                        })
-                        toast.success(response.data);
-                        
-                
-                      }).catch((erro)=>{
-                        // toast.war(erro.message);
-                        toast.error(erro.message)
-
-                      });
-          }
-        
-      } catch (error) {
-        toast.error(error)
+function Signup() {
+  const[checked, setChecked] = useState(false);
+    const [Value,setValues] =useState({
+      Name:"",
+      Email:"",
+      Password:"",
+      PhoneNumber:"",
+      Licenseno:"",
+      Vehicleno:"",
+      Rc: ""
+    })
+   
+const RegisterForRider =async()=>{
+  try {
+    let response =await axios.post(`http://localhost:4000/riderlogin/post`,{
+      Name:Value.Name,
+      Email:Value.Email,
+      Password:Value.Password,
+      PhoneNumber:Value.PhoneNumber,
+      Licenseno:Value.Licenseno,
+      Vehicleno:Value.Vehicleno,
+      Rc:Value.Rc,
+      IsRider:true
+})
+console.log(response);
+                // toast.success(response.data);
+} catch (error) {
+    console.log(error);  
+}
+}
+const RegisterForUser =async()=>{
+  // e.preventDefault();
+  if (Value.Password === Value.RepeatPassword) {
+    console.log('Passwords match!');
+    setPasswordMatch(true);
+    try {
+      
+      const response = await fetch(
+        `http://localhost:4000/user/getboth/${Value.Email}/${Value.PhoneNumber}`
+      );
+      const IsPresent = await response.json();
+      console.log(`IsPresent ${IsPresent}`)
+      if(IsPresent == true){
+        alert('Phone And Email already exists. Please choose a number and email.');
       }
-    } else {
-        setPasswordMatch(false);
-        
+      else{
+              
+                    let response =await axios.post(`http://localhost:4000/user/post`,{
+                        
+                        FullName:Value.Name,
+                        Email:Value.Email,
+                        PhoneNumber:Value.PhoneNumber,
+                        Password:Value.Password,
+                        IsRider:false
+                      })
+                      toast.success(response.data);
+        }
+      
+    } catch (error) {
+      toast.error(error)
     }
+  } else {
+      setPasswordMatch(false);
+      
   }
-  return (
-    <MDBContainer fluid>
+}
 
+function clickHelper(){
+  
+  console.log(document.getElementById("inp-check-rider").checked)
+  setChecked(document.getElementById("inp-check-rider").checked);
+}
+
+// if(!checked){
+//   // document.getElementsByClassName("foot-div-change")[0].style.marginTop="86px";
+// }
+  return (
+    <>
+      <Header/>
+    <MDBContainer fluid>
+    <Toaster toastOptions={{ duration: 4000 }} />
+      
       <MDBCard className='text-black m-5' style={{borderRadius: '25px'}}>
-      <Toaster toastOptions={{ duration: 4000 }} />
         <MDBCardBody>
           <MDBRow>
             <MDBCol md='10' lg='6' className='order-2 order-lg-1 d-flex flex-column align-items-center'>
@@ -82,41 +114,56 @@ function App() {
 
               <div className="d-flex flex-row align-items-center mb-4 ">
                 <MDBIcon fas icon="user me-3" size='lg'/>
-                <MDBInput label='Your Name' onChange={(e)=>setValues((prev)=>({...prev ,Name:e.target.value}))} id='form1' type='text' className='w-100'/>
+                <MDBInput label='Your Name' id='form1'onChange={(e)=>setValues((prev)=>({...prev ,Name:e.target.value}))} type='text' className='w-100'/>
               </div>
 
               <div className="d-flex flex-row align-items-center mb-4">
                 <MDBIcon fas icon="envelope me-3" size='lg'/>
-                <MDBInput label='Your Email' onChange={(e)=>setValues((prev)=>({...prev ,Email:e.target.value}))}id='form2' type='email'/>
+                <MDBInput label='Your Email' id='form2' onChange={(e)=>setValues((prev)=>({...prev ,Email:e.target.value}))} type='email'/>
               </div>
 
               <div className="d-flex flex-row align-items-center mb-4">
-                <MDBIcon fas icon="phone me-3" size='lg'/>
-                <MDBInput label='Phone Number' onChange={(e)=>setValues((prev)=>({...prev ,PhoneNumber:e.target.value}))} id='form2' type='number'/>
-              </div>
-
-              <div className="d-flex flex-row align-items-center mb-4">
-                <MDBIcon fas icon="lock me-3" size='lg'/>
-                <MDBInput label='Enter OTP for Phone Number Verification' id='form2' type='number'/>
+                <MDBIcon fas icon="unlock-alt me-3" />
+                <MDBInput label='Password' onChange={(e)=>setValues((prev)=>({...prev ,Password:e.target.value}))} id='form2' type='number'/>
               </div>
 
               <div className="d-flex flex-row align-items-center mb-4">
                 <MDBIcon fas icon="lock me-3" size='lg'/>
-                <MDBInput label='Password' id='form3' onChange={(e)=>setValues((prev)=>({...prev ,Password:e.target.value}))} type='password'/>
+                <MDBInput label='Enter OTP for Phone Number Verification'onChange={(e)=>setValues((prev)=>({...prev ,PhoneNumber:e.target.value}))} id='form2' type='number'/>
+              </div>
+              <div>
+                <input onChange={(() => clickHelper())} id = "inp-check-rider" className='bool-radio' type = "checkbox"/>
+                <h6 className='are-rider'>Are you a rider?</h6>
+              </div>
+             {
+              checked?
+              <>
+              <div className="d-flex flex-row align-items-center mb-4">
+                <MDBIcon fas icon="address-card me-3" size='lg'/>
+                <MDBInput label='License Number' onChange={(e)=>setValues((prev)=>({...prev ,Licenseno:e.target.value}))} id='form3' type='text'/>
               </div>
 
               <div className="d-flex flex-row align-items-center mb-4">
-                <MDBIcon fas icon="key me-3" size='lg'/>
-                <MDBInput label='Repeat your password' id='form4' onChange={(e)=>setValues((prev)=>({...prev,RepeatPassword:e.target.value}))}type='password'/>
-                {!passwordMatch && <p style={{ color: 'red' }}>Passwords do not match!</p>}
+                <MDBIcon fas icon="truck-fast me-3" size='lg'/>
+                <MDBInput label='Vehicle Number' id='form4' onChange={(e)=>setValues((prev)=>({...prev ,Vehicleno:e.target.value}))} type='text'/>
               </div>
 
-              <div className='mb-4'>
-                <MDBCheckbox name='flexCheck' value='' id='flexCheckDefault' label='Subscribe to our newsletter' />
+              <div className="d-flex flex-row align-items-center mb-4">
+                <MDBIcon fas icon="address-book me-3" size='lg'/>
+                <MDBInput label='(RC) Registration Number' id='form4' onChange={(e)=>setValues((prev)=>({...prev ,Rc:e.target.value}))} type='text'/>
               </div>
+              </>
+                :
+                <p></p>
+             }
 
-              <MDBBtn className='mb-4' size='lg' >Register</MDBBtn>
-              {/* <MDBBtn className='mb-4' size='lg' onClick={Register}>Register</MDBBtn> */}
+              {/* <MDBBtn className='mb-4' size='lg'>Register</MDBBtn> */}
+              {/* <MDBBtn className='mb-4' size='lg' onClick={()=>Register()}>Register</MDBBtn> */}
+              {checked ?
+              <MDBBtn className='mb-4' size='lg' onClick={()=>RegisterForRider()}>RegisterForRider</MDBBtn> 
+              :
+              <MDBBtn className='mb-4' size='lg' onClick={()=>RegisterForUser()}>RegisterForUser</MDBBtn> 
+              }
 
             </MDBCol>
 
@@ -127,9 +174,18 @@ function App() {
           </MDBRow>
         </MDBCardBody>
       </MDBCard>
+      
+        
 
+      
+      
     </MDBContainer>
+    <div style={(!checked) ? {marginTop:"86px"} : null}>
+    {/* <div > */}
+      <Footer  />
+    </div>
+    </>
   );
 }
 
-export default App;
+export default Signup;
