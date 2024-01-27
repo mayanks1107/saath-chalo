@@ -91,6 +91,7 @@ const PhoneLogin = async()=>{
           const confirmation = await signInWithPhoneNumber(auth, phone, recaptcha)
           toast.success('OTP SENT SUCCESSFULY');
           setUser(confirmation);
+          // 
         }catch (error) {
           console.log(error);
         }
@@ -130,7 +131,7 @@ const LoginWithRider = async()=>{
       if(response.data.success){
         localStorage.setItem("token",JSON.stringify(response.data.result));
         console.log("true");
-        
+        navigate("/rideRequest")
       }else if(response.data.success ===false){
         toast.error(response.data.message);  
       }
