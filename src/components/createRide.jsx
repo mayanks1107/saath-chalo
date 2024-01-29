@@ -42,7 +42,7 @@ function CreateRide() {
     }
     const CheckData =()=>{
         if(localStorage.getItem("token")!=null){
-          setValues(JSON.parse(localStorage.getItem("token")));
+          JSON.parse(localStorage.getItem("token"))
             
         }else{
             toast.error("Not Found");
@@ -89,7 +89,7 @@ function CreateRide() {
                 <input className='phone input-create' type="number"  onChange={(e)=>setValues((prev)=>({...prev ,PhoneNumber:e.target.value}))} name="phoneNumber" id="phoneNumber" placeholder='Phone Number'/>
                 <img src={'https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp'} alt='img-create' className='img-create'/>
             </div>
-                <MDBBtn className="mb-45 py-45 px-5 btn-login" onClick={handleChange} size='lg'>Register as Rider</MDBBtn>
+                <MDBBtn className="mb-45 py-45 px-5 btn-login" onClick={handleChange} size='lg'>Create  Ride</MDBBtn>
             <Footer className="foot"/>
         </div>
     )

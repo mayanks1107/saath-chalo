@@ -1,24 +1,54 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState,useRef } from "react";
 import Headers from "../Header/headers";
+import axios from 'axios'
 import "./RideFeed.css";
 import FeedCard from "./FeedCard";
+import { toast, Toaster } from "react-hot-toast";
+
+
 import Footer from "../Footer/Footer";
+import { useNavigate } from "react-router-dom";
 export default function RideFeed(){
-    const [RiderInfo,setRiderInfo] = useState([]);
-    const Riderhandle= async()=>{
-        const response = await fetch(
-            `http://localhost:4000/rider/get`
-          ).then(res=>res.json());
-          setRiderInfo(response);
-          
-    }
-   useEffect(()=>{
+    // const [RiderInfo,setRiderInfo] = useState([]);
+    const [riderInfo, setRiderInfo] = useState([])
+    const navigate = useNavigate();
+    useEffect(()=>{
+    const Riderhandle = async () => {
+        try {
+            const url = 'http://localhost:4000/rider/get';
+            const response = await fetch(url);
+    
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+    
+            const data = await response.json();
+            // console.log(data);
+            setRiderInfo(data);
+            // console.log(riderInfo);
+        } catch (error) {
+            console.error('Error fetching rider data:', error);
+        }
+    };
     Riderhandle()
    },[]) 
 // console.log(RiderInfo.length);
-console.log(RiderInfo);
+// console.log(RiderInfo);
+const CheckData =()=>{
+    if(localStorage.getItem("token")!=null){
+      JSON.parse(localStorage.getItem("token"))
+    //   setRiderInfo(localStorage.getItem("token"))
+        
+    }else{
+        toast.error("Not Found");
+        navigate('/login');  
+    }
+}
+useEffect(()=>{
+    CheckData()
+   },[]) 
 
-
+   console.log(riderInfo.length);
 
     return(
         <div className="rFeed">
@@ -34,12 +64,12 @@ console.log(RiderInfo);
             </div>
             <h2 className="text-feed">Today</h2>
             <div className="cards-left">
-            {RiderInfo.map((info=>
-                    <>
-                      {/* {(cil.DepartmentClosingtime== null) ?  <td>Unavailable </td> : <td>{cil.DepartmentClosingtime}</td>} */}
-                      <FeedCard name="Kulbir" from = "Delhi" to = "Chandigarh" price = "460" timeStrt = "18:45" timeEnd = "22:55" rating = "2.5"/>
-                    </> 
-                   ))} 
+
+                {riderInfo.map((info) => (
+                    <FeedCard key={info.id} {...info} />
+                ))}
+
+
             </div>
             <div className = "right">
                 <h4 className="h2-sort">Sort By</h4>
@@ -75,3 +105,25 @@ console.log(RiderInfo);
         </div>
     )
 }
+
+
+{/* <tr key={info._id}>
+<div className="fCard">
+    <div class="card carda">
+      <div class="card-body">
+        <h5 class="card-title from">{info.SourcePlace}</h5>
+        <hr id="myhr"></hr>
+        <h5 class="card-title to">{info.DestinationPlace}</h5>
+        <p class="card-text price">{"56"}</p>
+        <p class="card-text price">₹{props.price}.00</p>
+        <p class="card-text strt">{info.typeOfTript}</p>
+        <p class="card-text end">{info.timeOfTrip}</p>
+        <a href="#" class="card-link">Card link</a>
+        <a href="#" class="card-link">Another link</a>
+        <img className = "pic" src = {pic} alt = "profile pic"/>
+        <p class="card-text name">{info.PhoneNumber}</p>
+        <p class="card-text rating">{info.availableSeat}⭐</p>
+      </div>
+    </div>
+</div>
+</tr> */}
