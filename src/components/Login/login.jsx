@@ -39,20 +39,32 @@ export default function Login() {
 
 //  Email And Password
 const EmailAndPassword = async()=>{
-    // signInWithEmailAndPassword(auth,Email,Password).then(async(res)=>{
-    //   console.log('OK');
-    //   // navigate('/succes',{state:{user:Email}})
-    //   toast.success('User created');
-    // }).catch((erro)=>{
-    //   console.log(erro);
-    // });
+    
     const response = await axios.post(`http://localhost:4000/user/adminLogin`,
     {
       Email: Email,
       Password:Password
     })
-    console.log(response)
-    
+    if(response!=null){
+      if(response.data){
+     if(response.data.success){
+       localStorage.setItem("token",JSON.stringify(response.data.result));
+     
+     }else if(response.data.success ===false){
+       toast.error(response.data.message);  
+     }
+     else{
+       
+     toast.error("Something went Wrong") 
+     }
+   }else{
+     console.log("54");
+     
+     // toast.error(response.data.message)
+   }
+ }else{
+   toast.error("Failed");  
+ }
 }
 const LoginWithNoEmail = async() => {
   console.log("you are not rider");
