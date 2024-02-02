@@ -1,7 +1,7 @@
 .navbar{
     background-color: #0F9D58;
     padding-bottom: 0;
-    padding-top: 3px;
+    padding-top: 0.2%;
 }
 .logo-brand{
     width: 37%;
@@ -12,7 +12,7 @@
     right: 0;
 }*/
 .navbar-brand{
-    padding-left: 45px;
+    padding-left: 3.5%;
 }
 .image-plus, .a-create{
     display: inline;
@@ -21,15 +21,15 @@
 
 .dropdown-menu, .dropdown{
     position: absolute;
-    left: 155px;
-    top: -15px;
+    left: 107%;
+    top: -25%;
 }
 .search{
     padding-right: 45%;
 }
 .nv-right-ele{
     position: relative;
-    padding-right: 5px;
+    padding-right: 0.1%;
     left: 65%;
 }
 .create-ride-nav{

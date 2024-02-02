@@ -1,8 +1,8 @@
 .helpHome{
     position: relative;
-    padding: 35px;
-    margin-left: 60px;
-    margin-right: 60px;
+    padding: 2.2%;
+    margin-left: 4%;
+    margin-right: 4%;
 }
 .hh-h2, .hh-h3{
     text-align: left;
@@ -13,8 +13,8 @@
 .safe{
     margin-left: 0;
     position: absolute;
-    left: 50px;
-    top: 370px;
+    left: 3.5%;
+    top: 150%;
 }
 .hh-h3{
     display: inline-block;
@@ -22,27 +22,27 @@
 .traffic{
     width: 25%;
     position: absolute;
-    top: 340px;
-    left: 500px;
+    top: 142%;
+    left: 35.3%;
 }
 .h3-safe{
     position: absolute;
-    top: 240px;
-    left: 40px;
+    top: 102%;
+    left: 2.8%;
 }
 .h3-traffic{
     position: absolute;
-    top: 240px;
-    left: 480px;
+    top: 101%;
+    left: 34%;
 }
 .friends{
     width: 20%;
     position: absolute;
-    top: 300px;
-    right: 100px;
+    top: 128%;
+    right: 7%;
 }
 .h3-friends{
     position: absolute;
-    top: 240px;
-    right: 250px;
+    top: 101%;
+    right: 17.5%;
 }
