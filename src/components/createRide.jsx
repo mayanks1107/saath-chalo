@@ -35,6 +35,8 @@ function CreateRide() {
             IsRider:true
         })
                         toast.success(response.data);
+                        console.log("aytyshdu ");
+                        
         } catch (error) {
             console.log(error);  
         }
