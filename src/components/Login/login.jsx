@@ -172,6 +172,8 @@ const EmailAndPassword = async () => {
     Password: Password,
   });
   if (response != null) {
+    console.log(response);
+    
     if (response.data) {
       if (response.data.success) {
         console.log("yes");
@@ -194,7 +196,7 @@ const EmailAndPassword = async () => {
     <>
       <Header />
       <MDBContainer fluid className="p-3 my-5 h-custom">
-        <Toaster toastOptions={{ duration: 4000 }} />
+        <Toaster toastOptions={{ duration: 6000 }} />
         <MDBRow>
           <MDBCol col="10" md="6">
             {/* eslint-disable-next-line */}

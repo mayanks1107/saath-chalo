@@ -18,14 +18,12 @@ import Header from  "../Header/headers"
 // import { auth } from '../../Firbase/firbase';
 import { toast, Toaster } from "react-hot-toast";
 import './regi.css'
-
-
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 // import {createUserWithEmailAndPassword} from "firebase/auth" 
 
 function Signup() {
   const[checked, setChecked] = useState(false);
- 
+  const navigate = useNavigate();
     const [Value,setValues] =useState({
       Name:"",
       Email:"",
@@ -54,12 +52,10 @@ console.log(response);
     console.log(error);  
 }
 }
+
 const RegisterForUser =async()=>{
   // e.preventDefault();
-  
-  
-    try {
-      
+  try {
       const response = await fetch(
         `http://localhost:4000/user/getboth/${Value.Email}/${Value.PhoneNumber}`
       );
@@ -69,17 +65,17 @@ const RegisterForUser =async()=>{
         alert('Phone And Email already exists. Please choose a number and email.');
       }
       else{
-              
-                    let response =await axios.post(`http://localhost:4000/user/post`,{
-                        
-                        FullName:Value.Name,
-                        Email:Value.Email,
-                        PhoneNumber:Value.PhoneNumber,
-                        Password:Value.Password,
-                        IsRider:false
-                      })
-                      toast.success(response.data);
-        }
+            let response =await axios.post(`http://localhost:4000/user/post`,{
+                
+                FullName:Value.Name,
+                Email:Value.Email,
+                PhoneNumber:Value.PhoneNumber,
+                Password:Value.Password,
+                IsRider:false
+              })
+              toast.success(response.data);
+              setInterval(navigate('/login'),5000);
+          }
       
     } catch (error) {
       toast.error("error")
@@ -91,10 +87,6 @@ function clickHelper(){
   console.log(document.getElementById("inp-check-rider").checked)
   setChecked(document.getElementById("inp-check-rider").checked);
 }
-
-// if(!checked){
-//   // document.getElementsByClassName("foot-div-change")[0].style.marginTop="86px";
-// }
   return (
     <>
       <Header/>
@@ -125,8 +117,8 @@ function clickHelper(){
               </div>
 
               <div className="d-flex flex-row align-items-center mb-4">
-                <MDBIcon fas icon="lock me-3" size='lg'/>
-                <MDBInput label='Enter OTP for Phone Number Verification'onChange={(e)=>setValues((prev)=>({...prev ,PhoneNumber:e.target.value}))} id='form2' type='number'/>
+                <MDBIcon fas icon="phone me-3" size='lg'/>
+                <MDBInput label='Enter  Phone Number 'onChange={(e)=>setValues((prev)=>({...prev ,PhoneNumber:e.target.value}))} id='form2' type='number'/>
               </div>
               <div>
                 <input onChange={(() => clickHelper())} id = "inp-check-rider" className='bool-radio' type = "checkbox"/>
