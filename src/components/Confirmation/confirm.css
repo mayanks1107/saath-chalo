@@ -1,0 +1,40 @@
+.rider-details-comp{
+    position: absolute;
+    width: 100%;
+    left: 60%;
+    top: 25%;
+    text-align: left;
+}
+.rider-name-head{
+    display: inline-block
+}
+.rider-name-p{
+    display: inline;
+    margin-left: 1.5%;
+}
+.vehicle-number-head{
+    display: inline-block;
+}
+.vehicle-number-p{
+    display: inline;
+    margin-left: 1.5%;
+}
+.vehicle-name-head{
+    display: inline-block;
+}
+.vehicle-name-p{
+    display: inline;
+    margin-left: 1.5%;
+}
+.location-head{
+    display: inline-block;
+}
+.location-p{
+    display: inline;
+    margin-left: 1.5%;
+}
+.foot-con{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}

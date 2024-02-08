@@ -177,7 +177,7 @@ function clickHelper(){
       
       
     </MDBContainer>
-    <div style={(!checked) ? {marginTop:"86px"} : null}>
+    <div style={(!checked) ? {marginTop:"100px"} : null}>
     {/* <div > */}
       <Footer  />
     </div>

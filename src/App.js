@@ -10,6 +10,7 @@ import BookRide from './components/bookRide';
 import Thankyou from './components/ThankYou/Thankyou'
 import RideRequest from './components/RideRequest/rideRequest'
 import RideFeed from './components/RideFeed/RideFeed';
+import Confirm from './components/Confirmation/confirm';
 function App() {
   return(
     <div className="App">
@@ -28,7 +29,7 @@ function App() {
                 <Route exact path="/rideRequest" element={<RideRequest/>}/>
                 
                 <Route exact path="/rideFeed" element={<RideFeed/>}/>
-                
+                <Route exact path = "/confirm" element={<Confirm/>}/>
             </Routes>
         </Router>
     </div>
