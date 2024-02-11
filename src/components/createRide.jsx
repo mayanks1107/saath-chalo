@@ -22,8 +22,12 @@ function CreateRide() {
     //  const [GetlocalData,setlocalData]=useState();
       const navigate = useNavigate();
     const handleChange= async()=>{
+        var Name=jsonObject.Fullname;
+        
+        
         try {
             let response =await axios.post(`${Server}/tripdet/post`,{
+            Name:Name,
             vehicleNumber:Value.vehicleNumber,
             SourcePlace:Value.SourcePlace,
             DestinationPlace:Value.DestinationPlace,
@@ -45,11 +49,12 @@ function CreateRide() {
         jsonObject = JSON.parse(localStorage.getItem("token"));
         if(!jsonObject.IsRider){
             toast.error("You Are Not Rider");
-            setInterval(navigate('/register'),12000);
+            setTimeout(navigate('/register'),200000)
+            // setInterval(navigate('/register'),200000);
         }
         }else{
             toast.error("Not Found"); 
-            setInterval(navigate('/register'),12000);
+            setInterval(navigate('/register'),2000000000);
         }
     }
     useEffect(()=>{

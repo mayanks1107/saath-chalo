@@ -1,6 +1,7 @@
 import React, { useEffect, useState,useRef } from "react";
 import Headers from "../Header/headers";
 import axios from 'axios'
+import {Server} from "../Server/Server"
 import "./RideFeed.css";
 import FeedCard from "./FeedCard";
 import { toast, Toaster } from "react-hot-toast";
@@ -15,7 +16,7 @@ export default function RideFeed(){
     useEffect(()=>{
     const Riderhandle = async () => {
         try {
-            const url = 'http://localhost:4000/rider/get';
+            const url = `${Server}/tripdet/get`;
             const response = await fetch(url);
     
             if (!response.ok) {
@@ -23,7 +24,7 @@ export default function RideFeed(){
             }
     
             const data = await response.json();
-            // console.log(data);
+            console.log(data);
             setRiderInfo(data);
             // console.log(riderInfo);
         } catch (error) {

@@ -161,7 +161,7 @@ function Signup() {
                   {/* {!passwordMatch && <p style={{ color: 'red' }}>Passwords do not match!</p>} */}
                 </div>
 
-                <div className="d-flex flex-row align-items-center mb-4">
+                <div className="d-flex flex-row align-items-center ">
                   <MDBIcon fas icon="phone me-3" size="lg" />
                   <MDBInput
                     label="Enter  Phone Number "
@@ -174,18 +174,20 @@ function Signup() {
                     id="form2"
                     type="tel"
                   />
-                  {!phoneMatch && (
-                    <p style={{ color: "red" }}>Phone Number 10 length!</p>
-                  )}
                 </div>
-                <div>
+                {!phoneMatch && (
+                    <div className="py-0">
+                      <p style={{ color: "red" }}>Phone Number must  10 length!</p>
+                    </div>
+                  )}
+                <div className="d-flex flex-row align-items-center" >
                   <input
                     onChange={() => clickHelper()}
                     id="inp-check-rider"
                     className="bool-radio"
                     type="checkbox"
                   />
-                  <h6 className="are-rider">Are you a rider?</h6>
+                  <h6 className="are-rider flex-row ">Are you a rider?</h6>
                 </div>
                 {checked ? (
                   <>
@@ -243,7 +245,7 @@ function Signup() {
                     size="lg"
                     onClick={() => RegisterForRider()}
                   >
-                    RegisterForRider
+                    Rider Register
                   </MDBBtn>
                 ) : (
                   <MDBBtn
@@ -251,7 +253,7 @@ function Signup() {
                     size="lg"
                     onClick={() => RegisterForUser()}
                   >
-                    RegisterForUser
+                    User Register
                   </MDBBtn>
                 )}
               </MDBCol>

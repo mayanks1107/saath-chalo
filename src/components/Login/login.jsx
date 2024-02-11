@@ -203,7 +203,7 @@ const EmailAndPassword = async () => {
       if (response.data.success) {
         console.log("yes");
         localStorage.setItem("token", JSON.stringify(response.data.result));
-        navigate("/rideRequest");
+        navigate("/rideFeed");
       } else if (response.data.success === false) {
         console.log(response.data.message);
         toast.error(response.data.message);
