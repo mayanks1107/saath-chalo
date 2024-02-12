@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useContext } from "react";
 import { auth } from "../../Firbase/firbase";
 import {
   RecaptchaVerifier,
@@ -20,6 +20,7 @@ import {
   MDBModalBody,
   MDBModalFooter,
 } from "mdb-react-ui-kit";
+import {Server} from "../Server/Server"
 import OtpInput from "otp-input-react";
 import axios from "axios";
 
@@ -31,8 +32,10 @@ import "./login.css";
 import Footer from "../Footer/Footer";
 import Header from "../Header/headers";
 import { useNavigate } from "react-router-dom";
-
+import { URLContext } from "../Server/URLContent";
+// import { useValue } from '../Context/ContextProvider';
 export default function Login() {
+  // const { currentUser } = useValue();
   const navigate = useNavigate();
   const [basicModal, setBasicModal] = useState(false);
   const [Urider, setUrider] = useState(false);
@@ -47,18 +50,29 @@ export default function Login() {
   const [user, setUser] = useState(null);
   const [otp, setOtp] = useState("");
   const [loading, setLoading] = useState(false);
-
+  
+  
+  const handleChange=()=>{
+    //  console.log(initialState);
+    //  console.log(Context);
+     
+     
+    }
   
   
   const LogEmailANDNoForUser = async () => {
     // console.log("you are not rider");
     if ((Email == null || Password == null) && phone == null) {
       toast.error("Email,phone or password is Missing ");
+    
     } else {
+     
+      
       if (phone == null) {
         //  Email And Password for User
         EmailAndPassword();
       } else {
+        
         //  Login With Phone NUmber
         PhoneLogin();
       }
@@ -71,7 +85,7 @@ export default function Login() {
       console.log(phone);
       try {
         const response = await fetch(
-          `http://localhost:4000/user/getphone/${phone}`
+          `${Server}/user/getphone/${phone}`
         );
         const IsPresent = await response.json();
         console.log(`IsPresent ${IsPresent}`);
@@ -123,6 +137,8 @@ export default function Login() {
     if ((Email == null || Password == null) && phone == null) {
       toast.error("Email,phone or password is Missing ");
     } else {
+      console.log(Server);
+      
       if (phone == null) {
         //  Email And Password  for Rider
         LoginWithRider();
@@ -133,41 +149,50 @@ export default function Login() {
     }
   };
   const LoginWithRider = async () => {
-    console.log("U are rider");
-
-    const response = await axios.post(
-      `http://localhost:4000/riderlogin/adminLogin`,
-      {
-        Email: Email,
-        Password: Password,
-      }
-    );
-
-    if (response != null) {
-      if (response.data) {
-        if (response.data.success) {
-          localStorage.setItem("token", JSON.stringify(response.data.result));
-          console.log("true");
-          navigate("/rideRequest");
-        } else if (response.data.success === false) {
-          console.log("siu");
-
-          toast.error(response.data.message);
+    try {
+      console.log("U are rider");
+      console.log(Server);
+      
+      const response = await axios.post(
+        `${Server}/rider/adminLogin`,
+        {
+          Email: Email,
+          Password: Password,
+        }
+      );
+  
+      if (response != null) {
+        if (response.data) {
+          if (response.data.success) {
+            localStorage.setItem("token", JSON.stringify(response.data.result));
+            console.log("true");
+            navigate("/rideRequest");
+          } else if (response.data.success === false) {
+            console.log("siu");
+  
+            toast.error(response.data.message);
+          } else {
+            toast.error("Something went Wrong");
+          }
         } else {
-          toast.error("Something went Wrong");
+          console.log("54");
+  
+          // toast.error(response.data.message)
         }
       } else {
-        console.log("54");
-
-        // toast.error(response.data.message)
+        toast.error("Failed");
       }
-    } else {
-      toast.error("Failed");
+    } catch (error) {
+      console.log(error);
+      
     }
+   
   };
 //  Email And Password For User
 const EmailAndPassword = async () => {
-  const response = await axios.post(`http://localhost:4000/user/adminLogin`, {
+  console.log(Server);
+  
+  const response = await axios.post(`${Server}/user/adminLogin`, {
     Email: Email,
     Password: Password,
   });
@@ -178,7 +203,7 @@ const EmailAndPassword = async () => {
       if (response.data.success) {
         console.log("yes");
         localStorage.setItem("token", JSON.stringify(response.data.result));
-        navigate("/rideRequest");
+        navigate("/rideFeed");
       } else if (response.data.success === false) {
         console.log(response.data.message);
         toast.error(response.data.message);
@@ -192,6 +217,7 @@ const EmailAndPassword = async () => {
     toast.error("Failed");
   }
 };
+
   return (
     <>
       <Header />
@@ -285,6 +311,7 @@ const EmailAndPassword = async () => {
             </div>
           </MDBCol>
         </MDBRow>
+        <MDBBtn color="secondary" onClick={handleChange}>Testing</MDBBtn>
         {/* Modal */}
 
         <MDBModal open={basicModal} setopen={setBasicModal} tabIndex="-1">
@@ -327,6 +354,7 @@ const EmailAndPassword = async () => {
           </MDBModalDialog>
         </MDBModal>
       </MDBContainer>
+       
       <div className="Botton">
         <Footer />
       </div>

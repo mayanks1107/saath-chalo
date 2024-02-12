@@ -2,7 +2,7 @@ import './App.css';
 import Home from './components/home';
 import Login from './components/Login/login';
 import Signup from './components/Register/signup';
-
+// import  {ContextProvider} from './components/Context/ContextProvider';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import Scam from './components/Scam/Scam';
 import CreateRide from './components/createRide';
@@ -15,6 +15,7 @@ function App() {
   return(
     <div className="App">
         <Router>
+             {/* <ContextProvider> */}
             <Routes>
                 <Route exact path="/" element={<Home/>}/>
                 {/* login and Register page */}
@@ -31,6 +32,7 @@ function App() {
                 <Route exact path="/rideFeed" element={<RideFeed/>}/>
                 <Route exact path = "/confirm" element={<Confirm/>}/>
             </Routes>
+            {/* </ContextProvider> */}
         </Router>
     </div>
 )

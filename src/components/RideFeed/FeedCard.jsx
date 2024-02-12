@@ -12,17 +12,35 @@ export default function FeedCard(props){
                 <h5 class="card-title from">{props.SourcePlace}</h5>
                 <hr id="myhr"></hr>
                 <h5 class="card-title to">{props.DestinationPlace}</h5>
-                <p class="card-text price">{props.PhoneNumber}</p>
-                {/* <p class="card-text price">₹{props.price}.00</p> */}
-                <p class="card-text strt">{props.timeOfTrip}</p>
+                <p class="card-text price">₹{"100"}.00</p>
+                <p class="card-text strt">{props.dateOfTrip}</p>
                 <p class="card-text end">{props.timeOfTrip}</p>
                 {/* <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a> */}
-                {/* <img className = "pic" src = {pic} alt = "profile pic"/> */}
-                <p class="card-text name">{props.VehicleNumber}</p>
-                <p class="card-text rating">10⭐</p>
+                // <a href="#" class="card-link">Another link</a> */}
+                <img className = "pic" src = {pic} alt = "profile pic"/>
+                <p class="card-text name">{props.Fullname}</p>
+                <p class="card-text rating">{props.Rating}⭐</p>
               </div>
             </div>
         </div>
     )
 }
+
+
+{/* <div className="fCard">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title from">{props.from}</h5>
+                <hr id="myhr"></hr>
+                <h5 class="card-title to">{props.to}</h5>
+                <p class="card-text price">₹{props.price}.00</p>
+                <p class="card-text strt">{props.timeStrt}</p>
+                <p class="card-text end">{props.timeEnd}</p>
+                //  <a href="#" class="card-link">Card link</a>
+                // <a href="#" class="card-link">Another link</a>
+                <img className = "pic" src = {pic} alt = "profile pic"/>
+                <p class="card-text name">{props.name}</p>
+                <p class="card-text rating">{props.rating}⭐</p>
+              </div>
+            </div>
+        </div> */}

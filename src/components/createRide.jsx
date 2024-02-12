@@ -6,7 +6,9 @@ import Footer from './Footer/Footer'
 import { toast, Toaster } from "react-hot-toast";
 import {MDBBtn} from 'mdb-react-ui-kit';
 import { useNavigate } from 'react-router-dom';
+import {Server} from "./Server/Server"
 function CreateRide() {
+    var jsonObject;
     const [Value,setValues] =useState({
         vehicleNumber:"",
         SourcePlace:"",
@@ -20,10 +22,12 @@ function CreateRide() {
     //  const [GetlocalData,setlocalData]=useState();
       const navigate = useNavigate();
     const handleChange= async()=>{
+        var Name=jsonObject.Fullname;
+        
+        
         try {
-            console.log(Value);
-            
-            let response =await axios.post(`http://localhost:4000/rider/post`,{
+            let response =await axios.post(`${Server}/tripdet/post`,{
+            Name:Name,
             vehicleNumber:Value.vehicleNumber,
             SourcePlace:Value.SourcePlace,
             DestinationPlace:Value.DestinationPlace,
@@ -34,21 +38,23 @@ function CreateRide() {
             PhoneNumber:Value.availableSeat,
             IsRider:true
         })
+        console.log(response.data);
                         toast.success(response.data);
-                        console.log("aytyshdu ");
-                        
         } catch (error) {
             console.log(error);  
-        }
-                    
+        }            
     }
     const CheckData =()=>{
         if(localStorage.getItem("token")!=null){
-          JSON.parse(localStorage.getItem("token"))
-            
+        jsonObject = JSON.parse(localStorage.getItem("token"));
+        if(!jsonObject.IsRider){
+            toast.error("You Are Not Rider");
+            setTimeout(navigate('/register'),200000)
+            // setInterval(navigate('/register'),200000);
+        }
         }else{
-            toast.error("Not Found");
-            navigate('/login');  
+            toast.error("Not Found"); 
+            setInterval(navigate('/register'),2000000000);
         }
     }
     useEffect(()=>{
