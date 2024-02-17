@@ -16,7 +16,7 @@ export default function RideFeed(){
     useEffect(()=>{
     const Riderhandle = async () => {
         try {
-            const url = `${Server}/tripdet/get`;
+            const url = `${Server}/tripdet`;
             const response = await fetch(url);
     
             if (!response.ok) {

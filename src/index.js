@@ -9,12 +9,14 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import {ContextProvider } from './components/Context/ContextProvider';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+    <ContextProvider>
+        <App />
+    </ContextProvider>
+  
 );
 
 // If you want to start measuring performance in your app, pass a function

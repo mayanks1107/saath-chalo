@@ -8,7 +8,7 @@ export const useValue = () => {
 }
 
 export const ContextProvider = ({ children }) => {
-    const [state, setState] = useState(initialState);
+    const [state, setState] = useState("ayush");
 
     useEffect(() => {
         const currentUser = JSON.parse(localStorage.getItem('token'));
