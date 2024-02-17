@@ -19,6 +19,9 @@ export default function Confirm(){
                 <h3 className="vehicle-name-head">Vehicle Name: </h3>
                 <p className="vehicle-name-p">Dummy Name</p>
                 <br/>
+                <h3 className = "vehicle-color-head">Vehicle Color: </h3>
+                <p className="vehicle-color-p">Dummy Color</p>
+                <br/>
                 <h3 className="location-head">Pick up location: </h3>
                 <p className="location-p">Dummy location</p>
                 <br/>
