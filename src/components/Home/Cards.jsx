@@ -1,6 +1,6 @@
 import React from "react";
 // import "./cards.css"
-import "./Cards.css"
+import "./cards.css"
 export default function Cards(){
     return(
         <div className="cards">

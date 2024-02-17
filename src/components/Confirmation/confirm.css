@@ -5,10 +5,10 @@
     top: 25%;
     text-align: left;
 }
-.rider-name-head{
+.rider-name-head, .vehicle-color-head{
     display: inline-block
 }
-.rider-name-p{
+.rider-name-p, .vehicle-color-p{
     display: inline;
     margin-left: 5%;
 }
