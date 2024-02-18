@@ -1,5 +1,5 @@
 import './App.css';
-import Home from './components/home';
+import Home from './components/Home/home';
 import Login from './components/Login/login';
 import Signup from './components/Register/signup';
 // import  {ContextProvider} from './components/Context/ContextProvider';
