@@ -1,4 +1,4 @@
-import '../App.css';
+import '../../App.css';
 import Headers from '../Header/headers';
 import Main from './main';
 import Cards from './Cards';
