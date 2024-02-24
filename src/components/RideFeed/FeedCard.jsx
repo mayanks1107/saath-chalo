@@ -14,6 +14,7 @@ export default function FeedCard(props){
                   
                   <h5 class="card-title to">{props.DestinationPlace}</h5>
                 </div>
+                <hr id="myhr" className="myhr-rideFeed"></hr>
                 <p class="card-text price">₹{"100"}.00</p>
                 <p class="card-text strt">{props.dateOfTrip}</p>
                 <p class="card-text end">{props.timeOfTrip}</p>

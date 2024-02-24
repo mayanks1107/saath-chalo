@@ -217,4 +217,10 @@
 .source-dest{
   position: absolute;
   top: 0;
+  
+}
+.myhr-rideFeed{
+  position: absolute;
+  bottom: 90px;
+  margin-left: 45px;  
 }
