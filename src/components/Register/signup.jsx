@@ -50,6 +50,7 @@ function Signup() {
       });
       console.log(response.data);
       toast.success(response.data.message);
+      setInterval(navigate("/login"), 5000);
     } catch (error) {
       toast.error(error.response.data.message);
     }

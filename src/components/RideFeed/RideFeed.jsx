@@ -17,6 +17,8 @@ export default function RideFeed(){
     const Riderhandle = async () => {
         try {
             const url = `${Server}/tripdet`;
+            // const url =`http://localhost:4000/tripdet`
+            // const url =`http://localhost:4000/tripdet`
             const response = await fetch(url);
     
             if (!response.ok) {
