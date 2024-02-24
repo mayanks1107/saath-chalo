@@ -6,7 +6,7 @@ import "./RideFeed.css";
 import FeedCard from "./FeedCard";
 import { toast, Toaster } from "react-hot-toast";
 
-
+import pic from "../../assets/proflic-pic.png";
 import Footer from "../Footer/Footer";
 import { useNavigate } from "react-router-dom";
 export default function RideFeed(){
@@ -16,7 +16,8 @@ export default function RideFeed(){
     useEffect(()=>{
     const Riderhandle = async () => {
         try {
-            const url = `${Server}/tripdet`;
+            const url = `https://saatchalo.onrender.com/tripdet`;
+            
             const response = await fetch(url);
     
             if (!response.ok) {
@@ -24,7 +25,7 @@ export default function RideFeed(){
             }
     
             const data = await response.json();
-            console.log(data);
+            console.log("efiefiebi",data);
             setRiderInfo(data);
             // console.log(riderInfo);
         } catch (error) {
@@ -49,7 +50,7 @@ useEffect(()=>{
     CheckData()
    },[]) 
 
-   console.log(riderInfo.length);
+   console.log(riderInfo);
 
     return(
         <div className="rFeed">
@@ -64,14 +65,23 @@ useEffect(()=>{
                 
             </div>
             <h2 className="text-feed">Today</h2>
+            
             <div className="cards-left">
-
+                
+                {/* <FeedCard className = "abcd" SourcePlace = "Delhi" DestinationPlace = "Gurgaon" dateOfTrip="2024-01-02" timeOfTrip="05:20" FullName = "Mayank" Rating = "5"/>
+                
+                <FeedCard SourcePlace = "Delhi" DestinationPlace = "Gurgaon" dateOfTrip="2024-01-02" timeOfTrip="05:20" FullName = "Mayank" Rating = "5"/> */}
+                
                 {riderInfo.map((info) => (
                     <FeedCard key={info.id} {...info} />
                 ))}
 
 
-            </div>
+            
+                                  
+                    
+                </div>
+                
             <div className = "right">
                 <h4 className="h2-sort">Sort By</h4>
                 <h5 className="h3-clear">Clear all</h5>

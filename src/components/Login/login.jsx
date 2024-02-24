@@ -85,7 +85,7 @@ export default function Login() {
       console.log(phone);
       try {
         const response = await fetch(
-          `${Server}/user/getphone/${phone}`
+          `https://saatchalo.onrender.com/user/getphone/${phone}`
         );
         const IsPresent = await response.json();
         console.log(`IsPresent ${IsPresent}`);
@@ -154,7 +154,7 @@ export default function Login() {
       console.log(Server);
       
       const response = await axios.post(
-        `${Server}/rider/adminLogin`,
+        `https://saatchalo.onrender.com/rider/adminLogin`,
         {
           Email: Email,
           Password: Password,
@@ -192,7 +192,7 @@ export default function Login() {
 const EmailAndPassword = async () => {
   console.log(Server);
   
-  const response = await axios.post(`${Server}/user/adminLogin`, {
+  const response = await axios.post(`https://saatchalo.onrender.com/user/adminLogin`, {
     Email: Email,
     Password: Password,
   });
