@@ -6,7 +6,7 @@ import Signup from './components/Register/signup';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import Scam from './components/Scam/Scam';
 import CreateRide from './components/createRide';
-import BookRide from './components/bookRide';
+import BookRide from './components/Bookride/bookRide';
 import Thankyou from './components/ThankYou/Thankyou'
 import RideRequest from './components/RideRequest/rideRequest'
 import RideFeed from './components/RideFeed/RideFeed';

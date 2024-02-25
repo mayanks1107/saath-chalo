@@ -6,7 +6,8 @@ import pic from "../../assets/proflic-pic.png";
 export default function FeedCard(props){
    console.log(props);
     return(
-        
+        <>
+        <span onClick={()=>props.handleCard(props._id)}>
             <div class="card carda">
               <div class="card-body">
                 <div className="source-dest">
@@ -25,7 +26,8 @@ export default function FeedCard(props){
                 <p class="card-text rating">{props.Rating}⭐</p>
               </div>
             </div>
-        
+        </span>
+            </>
     )
 }
 
