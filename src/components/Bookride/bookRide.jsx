@@ -49,7 +49,7 @@ console.log(location.state.list[0]);
       <div className="info-card">
         <h5 className="info-p"><b>{FullName}</b> Phone no :- {PhoneNumber}</h5>
         <div className="sep-btm-info" style={{width: 997.33, height: 5, background: '#EDEDED', borderRadius: 16}} />
-        <h5 className="ask-p">Ask RiderA a question</h5>
+        <h5 className="ask-p">Ask {FullName} a question</h5>
         <div className="sep-btm-ask" style={{width: 997.33, height: 5, background: '#EDEDED', borderRadius: 16}} />
         <h5 className="car-type">{VehicleName}</h5>
         <p className="color-p">White</p>
