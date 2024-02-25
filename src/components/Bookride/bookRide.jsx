@@ -18,6 +18,7 @@ console.log(location.state.list[0]);
   const Price= location.state.list[0].Price;
   const VehicleName= location.state.list[0].VehicleName;
   const timeOfTrip  = location.state.list[0].timeOfTrip;
+  const VehicleColour = location.state.list[0].VehicleColour
   
   
 
@@ -52,7 +53,7 @@ console.log(location.state.list[0]);
         <h5 className="ask-p">Ask {FullName} a question</h5>
         <div className="sep-btm-ask" style={{width: 997.33, height: 5, background: '#EDEDED', borderRadius: 16}} />
         <h5 className="car-type">{VehicleName}</h5>
-        <p className="color-p">White</p>
+        <p className="color-p">{VehicleColour}</p>
       </div>
       <div className="bottom-card-book">
         <hr className="rule"></hr>

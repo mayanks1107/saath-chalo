@@ -30,6 +30,7 @@ function CreateRide() {
             let response =await axios.post(`${Server}/tripdet/post`,{
             Name:Name,
             vehicleNumber:Value.vehicleNumber,
+            VehicleColour:Value.vehColor,
             SourcePlace:Value.SourcePlace,
             DestinationPlace:Value.DestinationPlace,
             typeOfTrip:Value.typeOfTrip,

@@ -19,7 +19,7 @@ import { toast, Toaster } from "react-hot-toast";
 import "./regi.css";
 import { useNavigate } from "react-router-dom";
 import { Server } from "../Server/Server"; 
-// import {createUserWithEmailAndPassword} from "firebase/auth"
+
 
 function Signup() {
   const [checked, setChecked] = useState(false);
@@ -32,6 +32,7 @@ function Signup() {
     Password: "",
     PhoneNumber: "",
     Licenseno: "",
+    AadharNo:"",
     Vehicleno: "",
     Rc: "",
   });
@@ -46,6 +47,7 @@ function Signup() {
         Licenseno: Value.Licenseno,
         Vehicleno: Value.Vehicleno,
         Rc: Value.Rc,
+        AadharNo:Value.AadharNo,
         IsRider: true,
       });
       console.log(response.data);
@@ -206,6 +208,20 @@ function Signup() {
                       />
                     </div>
 
+                    <div className="d-flex flex-row align-items-center mb-4">
+                      <MDBIcon fas icon="id-card  me-3" size="lg"/>
+                      <MDBInput
+                        label="Aaadhar Number"
+                        id="form4"
+                        onChange={(e) =>
+                          setValues((prev) => ({
+                            ...prev,
+                            AadharNo: e.target.value,
+                          }))
+                        }
+                        type="text"
+                      />
+                    </div>
                     <div className="d-flex flex-row align-items-center mb-4">
                       <MDBIcon fas icon="truck-fast me-3" size="lg" />
                       <MDBInput
