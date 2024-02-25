@@ -78,6 +78,10 @@
 .btn-login{
     margin-bottom: 30px;
 }
+.veh-color{
+    position: absolute;
+    left: 300px;
+}
 /* .form-create > label{
 
 } */

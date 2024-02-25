@@ -17,7 +17,8 @@ function CreateRide() {
         dateOfTrip:"",
         timeOfTrip:"",
         availableSeat:"",
-        PhoneNumber:""
+        PhoneNumber:"",
+        vehColor: ""
       })
     //  const [GetlocalData,setlocalData]=useState();
       const navigate = useNavigate();
@@ -94,6 +95,12 @@ function CreateRide() {
                 <br/>
                 <br/>
                 <label for="phoneNumber">Phone Number</label>
+                <br/>
+                <br/>
+                <label for="availableSeat">Vehicle Color</label>
+                <input className='veh-color input-create' type="text" onChange={(e)=>setValues((prev)=>({...prev ,vehColor:e.target.value}))} name="vehColor" id="vehColor" placeholder='Vehicle Color'/>
+                <br/>
+                <br/>
                 <input className='phone input-create' type="number"  onChange={(e)=>setValues((prev)=>({...prev ,PhoneNumber:e.target.value}))} name="phoneNumber" id="phoneNumber" placeholder='Phone Number'/>
                 <img src={'https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp'} alt='img-create' className='img-create'/>
             </div>
