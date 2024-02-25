@@ -4,25 +4,28 @@ import "bootstrap/dist/js/bootstrap";
 import "./RideFeed.css";
 import pic from "../../assets/proflic-pic.png";
 export default function FeedCard(props){
-  // console.log(props);
+   console.log(props);
     return(
-        <div className="fCard">
+        
             <div class="card carda">
               <div class="card-body">
-                <h5 class="card-title from">{props.SourcePlace}</h5>
-                <hr id="myhr"></hr>
-                <h5 class="card-title to">{props.DestinationPlace}</h5>
+                <div className="source-dest">
+                  <h5 class="card-title from">{props.SourcePlace}</h5>
+                  
+                  <h5 class="card-title to">{props.DestinationPlace}</h5>
+                </div>
+                <hr id="myhr" className="myhr-rideFeed"></hr>
                 <p class="card-text price">₹{"100"}.00</p>
                 <p class="card-text strt">{props.dateOfTrip}</p>
                 <p class="card-text end">{props.timeOfTrip}</p>
                 {/* <a href="#" class="card-link">Card link</a>
                 // <a href="#" class="card-link">Another link</a> */}
                 <img className = "pic" src = {pic} alt = "profile pic"/>
-                <p class="card-text name">{props.Fullname}</p>
+                <p class="card-text name">{props.FullName}</p>
                 <p class="card-text rating">{props.Rating}⭐</p>
               </div>
             </div>
-        </div>
+        
     )
 }
 
