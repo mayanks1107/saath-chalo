@@ -27,8 +27,8 @@
 }
 .dest-state{
     position: relative;
-    right: 15.6%;
-    top: 155px;
+    right:17%;
+    top: 120px;
 }
 .dot-up{
     position: relative;
@@ -37,7 +37,7 @@
 }
 .dot-down{
     position: relative;
-    left: 29%;
+    left: 26%;
     top: 145px;
 }
 .hr-vertical{
@@ -47,7 +47,7 @@
   -webkit-transform:rotate(90deg);
   width: 98px;
   position: absolute;
-  left: 401px;
+  left: 350px;
   top: 57.5px;
   height: 2.7px;
   

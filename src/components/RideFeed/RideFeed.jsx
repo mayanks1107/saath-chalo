@@ -1,12 +1,10 @@
-import React, { useEffect, useState,useRef } from "react";
+import React, { useEffect, useState } from "react";
 import Headers from "../Header/headers";
-import axios from 'axios'
+
 import {Server} from "../Server/Server"
 import "./RideFeed.css";
 import FeedCard from "./FeedCard";
 import { toast, Toaster } from "react-hot-toast";
-
-import pic from "../../assets/proflic-pic.png";
 import Footer from "../Footer/Footer";
 import { useNavigate } from "react-router-dom";
 export default function RideFeed(){
@@ -35,8 +33,15 @@ export default function RideFeed(){
     };
     Riderhandle()
    },[]) 
-// console.log(RiderInfo.length);
-// console.log(RiderInfo);
+    // To Handle the Paticular Card   
+   function handleCard(id){
+    console.log("hello");
+    const newlist=riderInfo.filter(rider=> rider._id ===id);   
+    navigate('/bookRide',{ state: { list:newlist} }); 
+    
+    
+   }
+//  Checking the Rider Is a Valid or not
 const CheckData =()=>{
     if(localStorage.getItem("token")!=null){
       JSON.parse(localStorage.getItem("token"))
@@ -56,7 +61,7 @@ useEffect(()=>{
     return(
         <div className="rFeed">
             <Headers/>
-            
+            <Toaster toastOptions={{ duration: 16000 }} />
             <div className="form-submit">
                 <input className="inp input-from" type="text" placeholder="from" name="from"/>
                 <input className="inp input-to" type="text" placeholder="to" name="to"/>
@@ -74,7 +79,7 @@ useEffect(()=>{
                 <FeedCard SourcePlace = "Delhi" DestinationPlace = "Gurgaon" dateOfTrip="2024-01-02" timeOfTrip="05:20" FullName = "Mayank" Rating = "5"/> */}
                 
                 {riderInfo.map((info) => (
-                    <FeedCard key={info.id} {...info} />
+                    <FeedCard key={info.id} {...info} handleCard={handleCard} />
                 ))}
 
 

@@ -1,12 +1,12 @@
 import React,{useEffect, useState}from 'react'
 import './createRide.css';
 import axios from 'axios'
-import Headers from './Header/headers';
-import Footer from './Footer/Footer'
+import Headers from '../Header/headers';
+import Footer from '../Footer/Footer'
 import { toast, Toaster } from "react-hot-toast";
 import {MDBBtn} from 'mdb-react-ui-kit';
 import { useNavigate } from 'react-router-dom';
-import {Server} from "./Server/Server"
+import {Server} from "../Server/Server"
 function CreateRide() {
     var jsonObject;
     const [Value,setValues] =useState({
