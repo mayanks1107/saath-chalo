@@ -117,8 +117,8 @@ useEffect(()=>{
                 <div className="sep-btm" style={{width: 397.33, height: 8, background: '#EDEDED', borderRadius: 16}} />
                 <h3 className="h3-trust">Trust and Safety</h3>
             </div>
-            <div className="foot">
-            <Footer/>
+            <div className = "r-f-foot">
+                <Footer/>
             </div>
         </div>
     )
