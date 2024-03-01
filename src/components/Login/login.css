@@ -7,11 +7,11 @@
 .right-container{
   display: inline-block;
   padding-left: 0;
-  margin-top: 10px;
+  margin-top: 0.7%;
   
 }
 .react-tel-input .form-control{
-width: 750px
+width: 100%
 }
 MDBInput{
   border: 5px;

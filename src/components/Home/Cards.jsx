@@ -4,6 +4,8 @@ import "./cards.css"
 export default function Cards(){
     return(
         <div className="cards">
+        <div class="row">
+        <div class="col-sm-6 mb-3 mb-sm-0">
             <div class="ban-1 card carde">
               <div class="card-body">
                 <h5 class="card-title">Your choice of transportation at affordable rates.</h5>
@@ -12,6 +14,8 @@ export default function Cards(){
 
               </div>
             </div>
+            </div>
+            <div class="col-sm-6 mb-3 mb-sm-0">
             <div class="ban-2 c-2 card carde">
               <div class="card-body">
                 <h5 class="card-title">Rely on those you journey with</h5>
@@ -20,6 +24,8 @@ export default function Cards(){
                 
               </div>
             </div>
+            </div>
+            <div class="col-sm-6 mb-3 mb-sm-0">
             <div class="ban-3 card carde">
               <div class="card-body">
                 <h5 class="card-title">Scroll, click, tap, and you're on your way!</h5>
@@ -27,6 +33,8 @@ export default function Cards(){
                 <p class="card-text">Securing a ride is now effortlessly convenient! With our user-friendly app driven by cutting-edge technology, booking a nearby ride takes just minutes.</p>
                 
               </div>
+              </div>
+            </div>
             </div>
         </div>
     )

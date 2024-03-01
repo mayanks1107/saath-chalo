@@ -311,7 +311,7 @@ const EmailAndPassword = async () => {
             </div>
           </MDBCol>
         </MDBRow>
-        <MDBBtn color="secondary" onClick={handleChange}>Testing</MDBBtn>
+        {/* <MDBBtn color="secondary" onClick={handleChange}>Testing</MDBBtn> */}
         {/* Modal */}
 
         <MDBModal open={basicModal} setopen={setBasicModal} tabIndex="-1">
