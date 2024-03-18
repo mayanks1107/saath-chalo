@@ -26,12 +26,12 @@ export default function Headers(){
           <a class="a-create nav-link" href="/createRide">Create a Ride</a>
           </div>
         </li>
-        <li class="nav-item dropdown">
+        <li class="media-log nav-item dropdown">
           <a class="nav-link dropdown-toggle" style={{marginTop: "14px", marginLeft:"5px"}} href="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
           {/* <img className="image-plus" src={profilePic} alt = "plus"/> */}
           <FaUser className="user-icon" size={"2rem"}/>
           </a>
-          <ul class="dropdown-menu">
+          <ul class="media-drop dropdown-menu">
             <li><Link class="dropdown-item" to='/login'>Login</Link></li>
             <li><Link class="dropdown-item" to="/register">Register</Link></li>
             
@@ -42,7 +42,7 @@ export default function Headers(){
       </ul>
       <form class="search d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-        <button class="btn btn-outline-success" type="submit">Search</button>
+        <button class="btn btn-primary" type="submit">Search</button>
       </form>
     </div>
   </div>

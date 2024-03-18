@@ -1,16 +1,19 @@
+@media only screen  and (min-width : 1224px){
 .ban-1{
     display: inline-block;
     left: 4%;
-    
+    position: absolute;
+    top: 80px;
 }
 .ban-2{
     position: absolute;
-    
-    left: 37.5%;
+    top: 0;
+    left: 500px;
 }
 .ban-3{
     position: absolute;
-    right: 3.3%;
+    top: 0;
+    left: 253.3%;
 }
 .cards{
     position: relative;
@@ -20,7 +23,32 @@
 }
 .carde{
     position: absolute;
-    top: 25%;
+   
     
     width: 25rem;
+}
+}
+@media only screen and (max-width : 480px){
+    .cards{
+        
+        position: relative;
+        height: 60rem;
+        background-color: #0F9D58;
+        padding-top: 12.5%;
+        padding-left: 8%;
+     
+    }
+    .carde{
+        position: absolute;
+       
+        
+        width: 25rem;
+    }
+    .ban-2{
+        margin-top: 280px;
+        
+    }
+    .ban-3{
+        margin-top: 560px;
+    }
 }

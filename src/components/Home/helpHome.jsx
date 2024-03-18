@@ -14,7 +14,7 @@ export default function HelpHome(){
             <h3 className="hh-h3 h3-traffic">Reduce Traffic</h3>
             <img className="traffic hh-img" src = {traffic} alt="traffic"/>
             <h3 className="hh-h3 h3-friends">Make friends</h3>
-            <img className="friends hh-img" src = {friends} alt="friends"/>
+            <img className="friends hh-img friend-img" src = {friends} alt="friends"/>
         </div>
     )
 }

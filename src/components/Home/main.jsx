@@ -10,7 +10,7 @@ export default function Main(){
             <div className="form-submit">
                 <input className="inp input-from" type="text" placeholder="from" name="from"/>
                 <input className="inp input-to" type="text" placeholder="to" name="to"/>
-                <input className="inp input-to" type="date" placeholder="date" name="date"/>
+                <input className="inp-media-from inp input-to" type="date" placeholder="date" name="date"/>
                 <input className="inp input-to" type="number" placeholder="number" name="number"/>
                 <button className="inp search-form btn btn-primary">Search</button>
                 

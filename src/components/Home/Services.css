@@ -1,3 +1,4 @@
+@media only screen  and (min-width : 1224px) {
 .service{
     position: relative;
     background-color: #0F9D58;
@@ -37,4 +38,26 @@
     bottom: 45px;
     left: 15%;
     
+}
+}
+@media only screen and (max-width : 480px){
+    .service{
+        position: relative;
+        background-color: #0F9D58;
+        padding: 10%;
+        color: white;
+    }
+    .home-img{
+        width: 80%;
+        margin-bottom: 10%;
+    }
+    .p-left{
+        
+        text-align: left;
+        margin-top: 10%;
+    }
+    .p-right{
+        margin-top: 10%;
+        text-align: left;
+    }
 }

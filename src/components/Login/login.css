@@ -47,3 +47,9 @@ MDBInput{
   margin-right: 12px;
   
 }
+@media only screen and (max-width : 480px){
+  .Botton{
+    position: absolute;
+    top: 120%;
+  }
+}

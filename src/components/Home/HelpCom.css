@@ -1,3 +1,4 @@
+@media only screen  and (min-width : 1224px) {
 .hCom{
     margin-top: 26%;
     margin-left: 6.6%;
@@ -25,4 +26,17 @@
 }
 .p-right-h{
     width: 100%;
+}
+}
+@media only screen and (max-width : 480px){
+    .hCom{
+        margin-top: 10%;
+        margin-left: 6.6%;
+        margin-right: 4%;
+        position: relative;
+        margin-bottom: 6.5%;
+    }
+    .h-p{
+        text-align: left;
+    }
 }

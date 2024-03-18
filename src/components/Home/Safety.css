@@ -1,4 +1,5 @@
-.safety{
+@media only screen  and (min-width : 1224px) {
+    .safety{
     padding-top: 3.3%;
     padding-left: 3%;
     padding-bottom: 8%;
@@ -28,4 +29,26 @@
     top: 320px;
     left: 140px;
     
+}
+}
+@media only screen and (max-width : 480px){
+    .safety{
+        padding: 5%;
+        position: relative;
+    }
+    .saf-p{
+        text-align: left;
+    }
+    .what-img{
+        left: 5%;
+        top: 25%;
+        position: absolute;
+        width: 85%;
+    }
+    .what{
+        margin-top: 100%;
+    }
+    .what-p{
+        text-align: left;
+    }
 }
