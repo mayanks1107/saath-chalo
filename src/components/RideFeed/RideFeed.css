@@ -1,3 +1,4 @@
+@media only screen  and (min-width : 1224px){
 .form-submit{
    margin-top: 50px;
    position: relative;
@@ -227,4 +228,138 @@
 .r-f-foot{
   position: absolute;
   width: 100%;
+}
+}
+@media only screen and (max-width : 480px)  {
+  .form-submit{
+    margin-top: 7%;
+  }
+  .input-from{
+      /*color: gray;*/
+      border-radius: 25px 0 0 25px;
+      padding-right: 20px;
+      padding-left: 20px;
+  }
+  .input-to{
+      /*color: gray;*/
+      border-radius: 0 25px 25px 0;
+      padding-left: 20px;
+      border-style: solid black;
+      border-width: 2px;
+  }
+  .inp-media-from{
+      border-radius: 25px 0 0 25px;
+      padding-right: 20px;
+      padding-left: 20px;
+      margin-left: 2.5%;
+      margin-top: 3%;
+      margin-bottom: 5%;
+  }
+  .search-form{
+      margin-bottom: 5%;
+  }
+  .img-main{
+      width: 100%;
+  }
+  .h2-sort{
+    position: absolute;
+    top: 32%;
+    left: 15%;
+  }
+  .h3-clear{
+    position: absolute;
+    top: 32%;
+    left: 75%;
+  }
+  .dep{
+    position: absolute;
+    top: 40%;
+    left: 20%;
+  }
+  .dep-rad{
+    position: absolute;
+    top: 41%;
+    left: 70%;
+  }
+  .low{
+    position: absolute;
+    top: 45%;
+    left: 20%;
+  }
+  .low-rad{
+    position: absolute;
+    top: 46%;
+    left: 70%;
+  }
+  .close-dep{
+    position: absolute;
+    top: 49%;
+    left: 20%;
+  }
+  .close-dep-rad{
+    position: absolute;
+    top: 50%;
+    left: 70%;
+  }
+  .close-arr{
+    position: absolute;
+    top: 54%;
+    left: 20%;
+  }
+  .close-arr-rad{
+    position: absolute;
+    top: 55%;
+    left: 70%;
+  }
+  .short-ride{
+    position: absolute;
+    top: 58%;
+    left: 20%;
+  }
+  .short-ride-rad{
+    position: absolute;
+    top: 59%;
+    left: 70%;
+  }
+  .sep-top{
+    position: relative;
+    top: 100%;
+  }
+  .helper-media{
+    margin-top: 70%;
+    margin-left: 6.5%;
+    margin-bottom: 15%;
+  }
+  .h2-departure{
+    margin-top: 35px;
+    margin-bottom: 30px;
+  }
+  .media-p{
+    text-align: left;
+    margin-left: 18%;
+  }
+  .media-sq{
+    margin-left:68%;
+  }
+  .m-s-6{
+    position: relative;
+    top:-35px;
+  }
+  .carda{
+    background-color: #cfd5d2;
+    width: 80%;
+    height: 100%;
+    padding: 10px;
+    border: 4px;
+    
+    margin-bottom: 50px;
+    margin-left: 10%;
+ }
+ .cards-left{
+  margin-bottom: 300px;
+ }
+ .media-r-f-foot{
+  position: absolute;
+  width: 100%;
+ }
 }

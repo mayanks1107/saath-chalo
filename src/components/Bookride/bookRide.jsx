@@ -29,8 +29,8 @@ console.log(location.state.list[0]);
     <div className="book-ride">
       <Headers/>      
       <h1 className="b-r-h1">{date}</h1>
-      <div className="dot-up"  />
-      <div className="dot-down" style={{width: 10, height: 10, background: 'white', borderRadius: 9999, border: '1px #054652 solid'}} />
+      {/* <div className="dot-up"  /> */}
+      {/* <div className="dot-down" style={{width: 10, height: 10, background: 'white', borderRadius: 9999, border: '1px #054652 solid'}} /> */}
       <div className="top-card">
       
         <p className="strt-time">{timeOfTrip}</p>
@@ -42,16 +42,16 @@ console.log(location.state.list[0]);
         <p className="dest-state">{DestinationPlace}</p>
       </div>
       <div className="mid-card-book">
-        <div className="sep-top-book" style={{width: 997.33, height: 8, background: '#EDEDED', borderRadius: 16}} />
+        <div className="sep-top-book" style={{height: 8, background: '#EDEDED', borderRadius: 16}} />
         <h4 className="price-p">Total price for 1 passenger</h4>
         <h4 className="price-p-amount">{Price}</h4>
-        <div className="sep-btm-book" style={{width: 997.33, height: 8, background: '#EDEDED', borderRadius: 16}} />
+        <div className="sep-btm-book" style={{height: 8, background: '#EDEDED', borderRadius: 16}} />
       </div>
       <div className="info-card">
         <h5 className="info-p"><b>{FullName}</b> Phone no :- {PhoneNumber}</h5>
-        <div className="sep-btm-info" style={{width: 997.33, height: 5, background: '#EDEDED', borderRadius: 16}} />
+        <div className="sep-btm-info" style={{ height: 5, background: '#EDEDED', borderRadius: 16}} />
         <h5 className="ask-p">Ask {FullName} a question</h5>
-        <div className="sep-btm-ask" style={{width: 997.33, height: 5, background: '#EDEDED', borderRadius: 16}} />
+        <div className="sep-btm-ask" style={{ height: 5, background: '#EDEDED', borderRadius: 16}} />
         <h5 className="car-type">{VehicleName}</h5>
         <p className="color-p">{VehicleColour}</p>
       </div>

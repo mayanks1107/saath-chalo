@@ -1,5 +1,5 @@
 import React from 'react'
-
+import './Scam.css';
 function AvoidScam(props) {
   return (
     <>

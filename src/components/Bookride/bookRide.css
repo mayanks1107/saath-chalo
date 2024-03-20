@@ -1,3 +1,4 @@
+@media only screen  and (min-width : 1224px){
 .b-r-h1{
     margin-top: 20px;
     margin-bottom: 50px;
@@ -7,12 +8,12 @@
 }
 .strt-time{
     position: absolute;
-    left: 25%;
-    top: 5%;
+    left: 60%;
+    top: -80px;
 }
 .src-state{
     position: absolute;
-    left: 31.7%;
+    left: 33.5%;
 }
 .end-time{
     position: absolute;
@@ -21,13 +22,13 @@
 }
 .dest{
     position: absolute;
-    left: 31%;
+    left: 55%;
     top: 200%;
     text-align: left;
 }
 .dest-state{
     position: relative;
-    right:17%;
+    right:15%;
     top: 120px;
 }
 .dot-up{
@@ -47,7 +48,7 @@
   -webkit-transform:rotate(90deg);
   width: 98px;
   position: absolute;
-  left: 350px;
+  left: 455px;
   top: 57.5px;
   height: 2.7px;
   
@@ -56,6 +57,7 @@
 .sep-top-book{
     position: absolute;
     top: 180px;
+    width: 997.33px;
     left: 18%;
 }
 .mid-card-book{
@@ -75,6 +77,7 @@
     position: absolute;
     left: 18%;
     top: 280px;
+    width: 997.33px;
 }
 .info-card{
     position: relative;
@@ -88,6 +91,7 @@
     position: absolute;
     left: 18%;
     top: 380px;
+    width: 997.33px;
 }
 .ask-p{
     position: absolute;
@@ -98,6 +102,7 @@
     position: absolute;
     left: 18%;
     top: 450px;
+    width: 997.33px;
 }
 .car-type{
     position: absolute;
@@ -126,4 +131,74 @@
     position: absolute;
     top: 1000px;
     width: 100%;
+}
+}
+@media only screen and (max-width : 480px){
+    .b-r-h1{
+        margin-top: 40px;
+    }
+    .strt-time{
+        margin-left: 45%;
+        margin-top: 5%;
+    }
+    .src-state{
+        margin-left: 75px;
+        margin-top: 50px;
+    }
+    .dest-state{
+        margin-left: 75px;
+    }
+    .hr-vertical{
+        background-color:#000000;
+        color:#000000;
+        -webkit-transform:rotate(90deg);
+        width: 98px;
+        margin-left: 4%;
+        position: relative;
+        top: 15px;
+        height: 2.7px;
+    }
+    .top-card{
+        margin-left: 7%;
+        margin-bottom: 50px;
+    }
+    .dest{
+        margin-left: 30%;
+        
+    }
+    .price-p{
+        margin-top: 5%;
+        
+    }
+    .sep-btm-book{
+        margin-top: 20px;
+        width: 100%;
+    }
+    .sep-top-book{
+        width: 100%;
+    }
+    .info-p{
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+    .sep-btm-ask{
+        width: 100%;
+    }
+    .ask-p{
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .car-type{
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .book-book{
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .foot-book{
+        position: absolute;
+        width: 100%;
+        margin-top: 50px;
+    }
 }

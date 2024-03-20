@@ -8,21 +8,11 @@ html,body {
     text-align: center;
     background: #34a853 url(https://codexcourier.com/images/main_page.jpg) center/cover no-repeat;
 }
-.thankyou-page ._header .logo {
-    max-width: 200px;
-    margin: 0 auto 50px;
-}
-.thankyou-page ._header .logo img {
-    width: 100%;
-}
 .thankyou-page ._header h1 {
     font-size: 65px;
     font-weight: 800;
     color: white;
     margin: 0;
-}
-.thankyou-page ._body {
-    margin: -70px 0 30px;
 }
 .thankyou-page ._body ._box {
     margin: auto;
@@ -39,6 +29,23 @@ html,body {
     font-weight: 600;
     color: #4ab74a;
 }
+.gap {
+    margin-top: 100px;
+}
+@media only screen  and (min-width : 1224px){
+.thankyou-page ._header .logo {
+    max-width: 200px;
+    margin: 0 auto 50px;
+}
+.thankyou-page ._header .logo img {
+    width: 100%;
+}
+
+.thankyou-page ._body {
+    margin: -70px 0 30px;
+}
+
+
 .thankyou-page ._footer {
     text-align: center;
     padding: 50px 30px;
@@ -56,6 +63,11 @@ html,body {
     text-transform: uppercase;
 }
 
-.gap {
-    margin-top: 100px;
+
+}
+@media only screen and (max-width : 480px){
+    .media-thank-h2{
+        text-align: left;
+    }
+   
 }

@@ -30,7 +30,7 @@ export default function Feedback() {
                         <br />
                         <div className="input-field">
                             <label>Feedback:</label>
-                            <textarea value={feedback} onChange={(e) => setFeedback(e.target.value)} required />
+                            <textarea rows="1" cols="15" value={feedback} onChange={(e) => setFeedback(e.target.value)} required />
                         </div>
                         <br />
                         <button type="submit">Submit</button>

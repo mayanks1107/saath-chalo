@@ -15,7 +15,7 @@ function Thankyou() {
       
       <div className="_body">
         <div className="_box">
-          <h2>
+          <h2 className='media-thank-h2'>
             Your contribution to <strong>reducing emissions </strong> and <strong> traffic congestion </strong> is appreciated.
           </h2>
 
