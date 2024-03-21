@@ -61,9 +61,9 @@ function Signup() {
     // e.preventDefault();
     try {
       //  Checking the phone is already exist or not
-      const response = await fetch(
-        `${Server}/user/getboth/${Value.Email}/${Value.PhoneNumber}`
-      );
+      let url = `${Server}/user/getboth/${Value.Email}/${Value.PhoneNumber}`;
+      // let url  = `http://localhost:4000/user/getboth/${Value.Email}/${Value.PhoneNumber}`;
+      const response = await fetch(url,{method: 'GET',headers: {'Content-Type': 'application/json'},});
       const IsPresent = await response.json();
       console.log(`IsPresent ${IsPresent}`);
       if (IsPresent == true) {
@@ -92,7 +92,7 @@ function Signup() {
           }
         }
         // toast.success(response.data);
-        // After 5 sec the  nagivate to login page 
+        // After 5 sec the  navigate to login page 
         setInterval(navigate("/login"), 5000);
       }
     } catch (error) {

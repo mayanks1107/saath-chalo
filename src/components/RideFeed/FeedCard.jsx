@@ -5,6 +5,7 @@ import "./RideFeed.css";
 import pic from "../../assets/proflic-pic.png";
 export default function FeedCard(props){
    console.log(props);
+  //  d
     return(
         <>
         <span onClick={()=>props.handleCard(props._id)}>

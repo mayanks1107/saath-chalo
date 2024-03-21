@@ -33,6 +33,7 @@ import Footer from "../Footer/Footer";
 import Header from "../Header/headers";
 import { useNavigate } from "react-router-dom";
 import { URLContext } from "../Server/URLContent";
+
 // import { useValue } from '../Context/ContextProvider';
 export default function Login() {
   // const { currentUser } = useValue();
@@ -84,8 +85,9 @@ export default function Login() {
       toggleOpen();
       console.log(phone);
       try {
-        const response = await fetch(
-          `https://saatchalo.onrender.com/user/getphone/${phone}`
+        const url = `https://saatchalo.onrender.com/user/getphone/${phone}`;
+
+        const response = await fetch(url, { method: "GET" }
         );
         const IsPresent = await response.json();
         console.log(`IsPresent ${IsPresent}`);
@@ -152,9 +154,9 @@ export default function Login() {
     try {
       console.log("U are rider");
       console.log(Server);
-      
+      let url = 'https://saatchalo.onrender.com/rider/adminLogin'
       const response = await axios.post(
-        `https://saatchalo.onrender.com/rider/adminLogin`,
+        url,
         {
           Email: Email,
           Password: Password,
