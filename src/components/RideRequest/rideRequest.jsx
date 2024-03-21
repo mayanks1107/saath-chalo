@@ -6,7 +6,7 @@ import Footer from "../Footer/Footer"
 import PassengerList from "../RideRequest/PassengerList"
 import { Server } from '../Server/Server'
 
-function rideRequest() {
+function RideRequest() {
     const [ passenger, setPassenger ] = useState([]);
     useEffect(()=>{
         const PassengerList = async () => {
@@ -97,4 +97,4 @@ function rideRequest() {
     )
 }
 
-export default rideRequest;
+export default RideRequest;
