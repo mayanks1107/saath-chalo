@@ -48,7 +48,7 @@ function RideRequest() {
                 <div class="rectangular-box">
                     {/* <!-- Row 1 --> */}
                     <div class="row profilePic">
-                        <img src={Profile} />
+                        <img src={Profile} alt='profile' />
                         <div class="column">Passenger Name : <br /><span class="font">Manmohan</span></div>
                         <div class="column"></div>
                     </div>

@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react'
-import  {Server} from "../Server/Server";
+import React from 'react'
+
 function PassengerList(props) {
     
 

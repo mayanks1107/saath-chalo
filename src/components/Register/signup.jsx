@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import {
   MDBBtn,
   MDBContainer,
@@ -23,8 +23,8 @@ import { Server } from "../Server/Server";
 
 function Signup() {
   const [checked, setChecked] = useState(false);
-  const [phoneMatch, setphoneMatch] = useState(false);
-  const phoneOpen = () => setphoneMatch(!phoneMatch);
+  // const [phoneMatch, setphoneMatch] = useState(false);
+  // const phoneOpen = () => setphoneMatch(!phoneMatch);
   const navigate = useNavigate();
   const [Value, setValues] = useState({
     Name: "",
@@ -67,7 +67,7 @@ function Signup() {
       const response = await fetch(url,{method: 'GET',headers: {'Content-Type': 'application/json'},});
       const IsPresent = await response.json();
       console.log(`IsPresent ${IsPresent}`);
-      if (IsPresent == true) {
+      if (IsPresent === true) {
         alert(
           "Phone And Email already exists. Please choose a number and email."
         );
@@ -178,11 +178,11 @@ function Signup() {
                     type="tel"
                   />
                 </div>
-                {!phoneMatch && (
+                {/* {!phoneMatch && (
                     <div className="py-0">
                       <p style={{ color: "red" }}>Phone Number must  10 length!</p>
                     </div>
-                  )}
+                  )} */}
                 <div className="d-flex flex-row align-items-center" >
                   <input
                     onChange={() => clickHelper()}

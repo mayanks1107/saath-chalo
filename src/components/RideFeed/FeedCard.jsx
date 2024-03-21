@@ -33,7 +33,7 @@ export default function FeedCard(props){
 }
 
 
-{/* <div className="fCard">
+/* <div className="fCard">
             <div class="card">
               <div class="card-body">
                 <h5 class="card-title from">{props.from}</h5>
@@ -49,4 +49,4 @@ export default function FeedCard(props){
                 <p class="card-text rating">{props.rating}⭐</p>
               </div>
             </div>
-        </div> */}
+        </div> */

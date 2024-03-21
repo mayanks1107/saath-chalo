@@ -1,12 +1,12 @@
-import React, { useEffect, useState,useRef } from "react";
+import React, { useEffect, useState } from "react";
 import Headers from "../Header/headers";
-import axios from 'axios'
+// import axios from 'axios'
 import {Server} from "../Server/Server"
 import "./RideFeed.css";
 import FeedCard from "./FeedCard";
 import { toast, Toaster } from "react-hot-toast";
 
-import pic from "../../assets/proflic-pic.png";
+// import pic from "../../assets/proflic-pic.png";
 import Footer from "../Footer/Footer";
 import { useNavigate } from "react-router-dom";
 export default function RideFeed(){
@@ -34,6 +34,7 @@ export default function RideFeed(){
         }
     };
     Riderhandle()
+     // eslint-disable-next-line react-hooks/exhaustive-deps
    },[]) 
   // To Handle the Paticular Card   
   function handleCard(id){
