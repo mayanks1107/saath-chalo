@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Headers from '../Header/headers';
 import './bookRide.css'
 import Footer from "../Footer/Footer";
-import { FaMessages, FaMugHot } from "react-icons/fa";
+// import { FaMessages, FaMugHot } from "react-icons/fa";
 import { useLocation } from "react-router-dom";
 export default function BookRide(){
   

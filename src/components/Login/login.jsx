@@ -1,9 +1,10 @@
-import React, { useState,useContext } from "react";
+import React, { useState } from "react";
+// import {useContext} from "react";
 import { auth } from "../../Firbase/firbase";
 import {
   RecaptchaVerifier,
   signInWithPhoneNumber,
-  signInWithEmailAndPassword,
+ 
 } from "firebase/auth";
 import {
   MDBContainer,
@@ -32,7 +33,7 @@ import "./login.css";
 import Footer from "../Footer/Footer";
 import Header from "../Header/headers";
 import { useNavigate } from "react-router-dom";
-import { URLContext } from "../Server/URLContent";
+// import { URLContext } from "../Server/URLContent";
 
 // import { useValue } from '../Context/ContextProvider';
 export default function Login() {
@@ -53,12 +54,12 @@ export default function Login() {
   const [loading, setLoading] = useState(false);
   
   
-  const handleChange=()=>{
-    //  console.log(initialState);
-    //  console.log(Context);
+  // const handleChange=()=>{
+  //   //  console.log(initialState);
+  //   //  console.log(Context);
      
      
-    }
+  //   }
   
   
   const LogEmailANDNoForUser = async () => {
@@ -92,7 +93,7 @@ export default function Login() {
         );
         const IsPresent = await response.json();
         console.log(`IsPresent ${IsPresent}`);
-        if (IsPresent == true) {
+        if (IsPresent === true) {
           alert(
             "Phone And Email already exists. Please choose a number and email."
           );
