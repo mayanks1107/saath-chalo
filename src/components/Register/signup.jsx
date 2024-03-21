@@ -61,6 +61,7 @@ function Signup() {
     // e.preventDefault();
     try {
       //  Checking the phone is already exist or not
+      // let url = `https://saatchalo.onrender.com/user/getphone/${Value.PhoneNumber}`;
       let url = `${Server}/user/getboth/${Value.Email}/${Value.PhoneNumber}`;
       // let url  = `http://localhost:4000/user/getboth/${Value.Email}/${Value.PhoneNumber}`;
       const response = await fetch(url,{method: 'GET',headers: {'Content-Type': 'application/json'},});

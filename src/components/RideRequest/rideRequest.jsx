@@ -4,6 +4,7 @@ import Profile from "../../assets/Profile.jpg"
 import Header from "../Header/headers"
 import Footer from "../Footer/Footer"
 import PassengerList from "../RideRequest/PassengerList"
+import { Server } from '../Server/Server'
 
 function rideRequest() {
     const [ passenger, setPassenger ] = useState([]);
@@ -11,7 +12,8 @@ function rideRequest() {
         const PassengerList = async () => {
             try {
                 // const url = `http://localhost:4000/passenger/get`;
-                const url = `https://saatchalo.onrender.com/passenger/get`;
+                // const url = `https://saatchalo.onrender.com/passenger/get`;
+                const url = `${Server}/passenger/get`;
                 
                 const response = await fetch(url, {method: 'GET', headers: {
                     "Content-Type": "application/json",
