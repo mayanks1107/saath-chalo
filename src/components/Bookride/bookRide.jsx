@@ -34,7 +34,7 @@ console.log(location.state.list[0]);
       <div className="top-card">
       
         <p className="strt-time">{timeOfTrip}</p>
-        <h4 className="strt-src"></h4>
+        {/* <h4 className="strt-src"></h4> */}
         <p className="src-state">{SourcePlace}</p>
         <hr className="hr-vertical"/>
         
