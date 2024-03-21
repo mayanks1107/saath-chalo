@@ -82,7 +82,7 @@ function Signup() {
         });
         if (response != null) {
           if (response.data !== null) {
-            if (response.data.success == true) {
+            if (response.data.success === true) {
               toast.success(response.data.message);
             } else {
               toast.error(response.data.message);
