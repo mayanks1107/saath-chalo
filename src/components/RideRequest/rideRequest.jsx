@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState,useEffect}from 'react'
 import "../RideRequest/rideRequest.css"
 import Profile from "../../assets/Profile.jpg"
 import Header from "../Header/headers"
@@ -6,6 +6,33 @@ import Footer from "../Footer/Footer"
 import PassengerList from "../RideRequest/PassengerList"
 
 function rideRequest() {
+    const [ passenger, setPassenger ] = useState([]);
+    useEffect(()=>{
+        const PassengerList = async () => {
+            try {
+                const url = `http://localhost:4000/passenger/get`;
+                
+                const response = await fetch(url, {method: 'GET', headers: {
+                    "Content-Type": "application/json",
+                  }});
+        
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+        
+                const data = await response.json();
+                console.log("this is data:-",data);
+                setPassenger(data);
+                // console.log(riderInfo);
+            } catch (error) {
+                console.error('Error fetching rider data:', error);
+            }
+        }
+        
+        PassengerList()
+    },[]);
+    console.log(passenger);
+    
     return (
         <>
             <Header />
@@ -46,7 +73,11 @@ function rideRequest() {
 
                     </div>
                 </div>
+                {passenger.map((passenger) => (
+                    <PassengerList key={passenger.id} {...passenger} Profile={Profile} />
+                ))}
 
+                
                 {/* <PassengerList Profile={Profile}/> */}
 
             </div>

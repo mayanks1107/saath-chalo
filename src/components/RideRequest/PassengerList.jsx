@@ -1,32 +1,7 @@
 import React, { useEffect } from 'react'
 import  {Server} from "../Server/Server";
 function PassengerList(props) {
-    const [ passenger, setPassenger ] = useState([]);
-    useEffect(()=>{
-        const PassengerList = async () => {
-            try {
-                const url = `http://localhost:4000/passenger`;
-                
-                const response = await fetch(url, {method: 'GET', headers: {
-                    "Content-Type": "application/json",
-                  }});
-        
-                if (!response.ok) {
-                    throw new Error(`HTTP error! Status: ${response.status}`);
-                }
-        
-                const data = await response.json();
-                console.log("this is data:-",data);
-                setPassenger(data);
-                // console.log(riderInfo);
-            } catch (error) {
-                console.error('Error fetching rider data:', error);
-            }
-        }
-        
-        PassengerList()
-    },[]);
-    console.log(passenger);
+    
 
 
   return (
