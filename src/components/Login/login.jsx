@@ -85,7 +85,8 @@ export default function Login() {
       toggleOpen();
       console.log(phone);
       try {
-        const url = `https://saatchalo.onrender.com/user/getphone/${phone}`;
+        // const url = `https://saatchalo.onrender.com/user/getphone/${phone}`;
+        const url = `${Server}/user/getphone/${phone}`;
 
         const response = await fetch(url, { method: "GET" }
         );
@@ -154,7 +155,8 @@ export default function Login() {
     try {
       console.log("U are rider");
       console.log(Server);
-      let url = 'https://saatchalo.onrender.com/rider/adminLogin'
+      // let url = 'https://saatchalo.onrender.com/rider/adminLogin'
+      let url = `${Server}/rider/adminLogin`
       const response = await axios.post(
         url,
         {
@@ -193,8 +195,10 @@ export default function Login() {
 //  Email And Password For User
 const EmailAndPassword = async () => {
   console.log(Server);
+  let url = `${Server}/user/adminLogin`;
+  // let url = `https://saatchalo.onrender.com/user/adminLogin`;
   
-  const response = await axios.post(`https://saatchalo.onrender.com/user/adminLogin`, {
+  const response = await axios.post(url, {
     Email: Email,
     Password: Password,
   });
