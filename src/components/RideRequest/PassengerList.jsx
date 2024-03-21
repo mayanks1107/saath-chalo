@@ -10,7 +10,7 @@ function PassengerList(props) {
                 <div class="rectangular-box">
                     {/* <!-- Row 1 --> */}
                     <div class="row profilePic">
-                        <img src={props.Profile} />
+                        <img src={props.Profile} alt='profile' />
                         <div class="column">Passenger Name : <br /><span class="font">{props.FullName}</span></div>
                         <div class="column"></div>
                     </div>
