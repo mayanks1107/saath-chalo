@@ -10,7 +10,8 @@ function rideRequest() {
     useEffect(()=>{
         const PassengerList = async () => {
             try {
-                const url = `http://localhost:4000/passenger/get`;
+                // const url = `http://localhost:4000/passenger/get`;
+                const url = `https://saatchalo.onrender.com/passenger/get`;
                 
                 const response = await fetch(url, {method: 'GET', headers: {
                     "Content-Type": "application/json",
