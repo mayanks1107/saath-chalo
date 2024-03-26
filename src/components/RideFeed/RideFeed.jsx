@@ -26,7 +26,7 @@ export default function RideFeed(){
             }
     
             const data = await response.json();
-            console.log("efiefiebi",data);
+            // console.log("efiefiebi",data);
             setRiderInfo(data);
             // console.log(riderInfo);
         } catch (error) {
@@ -131,20 +131,20 @@ useEffect(()=>{
 
 {/* <tr key={info._id}>
 <div className="fCard">
-    <div class="card carda">
-      <div class="card-body">
-        <h5 class="card-title from">{info.SourcePlace}</h5>
+    <div className="card carda">
+      <div className="card-body">
+        <h5 className="card-title from">{info.SourcePlace}</h5>
         <hr id="myhr"></hr>
-        <h5 class="card-title to">{info.DestinationPlace}</h5>
-        <p class="card-text price">{"56"}</p>
-        <p class="card-text price">₹{props.price}.00</p>
-        <p class="card-text strt">{info.typeOfTript}</p>
-        <p class="card-text end">{info.timeOfTrip}</p>
-        <a href="#" class="card-link">Card link</a>
-        <a href="#" class="card-link">Another link</a>
+        <h5 className="card-title to">{info.DestinationPlace}</h5>
+        <p className="card-text price">{"56"}</p>
+        <p className="card-text price">₹{props.price}.00</p>
+        <p className="card-text strt">{info.typeOfTript}</p>
+        <p className="card-text end">{info.timeOfTrip}</p>
+        <a href="#" className="card-link">Card link</a>
+        <a href="#" className="card-link">Another link</a>
         <img className = "pic" src = {pic} alt = "profile pic"/>
-        <p class="card-text name">{info.PhoneNumber}</p>
-        <p class="card-text rating">{info.availableSeat}⭐</p>
+        <p className="card-text name">{info.PhoneNumber}</p>
+        <p className="card-text rating">{info.availableSeat}⭐</p>
       </div>
     </div>
 </div>

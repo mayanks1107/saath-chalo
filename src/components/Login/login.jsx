@@ -39,9 +39,11 @@ import { useNavigate } from "react-router-dom";
 export default function Login() {
   // const { currentUser } = useValue();
   const navigate = useNavigate();
+
+  // For Modal and OTP
   const [basicModal, setBasicModal] = useState(false);
-  const [Urider, setUrider] = useState(false);
   const toggleOpen = () => setBasicModal(!basicModal);
+  const [Urider, setUrider] = useState(false);
 
   const AreuRider = () => setUrider(!Urider);
 
@@ -238,16 +240,16 @@ const EmailAndPassword = async () => {
               src={
                 "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
               }
-              class="img-fluid"
+              className="img-fluid"
               alt="Sample image"
             />
           </MDBCol>
           <MDBCol className="right-container" col="4" md="6">
-            {/* <div class="vl-3"></div> */}
+            {/* <div className="vl-3"></div> */}
             <div className="divider d-flex align-items-center my-4">
               <p className="or text-center fw-bold mx-3 mb-0"></p>
             </div>
-            {/* <div class="vl-2"></div> */}
+            {/* <div className="vl-2"></div> */}
             <>
               <PhoneInput
                 style={{ width: "1250px;" }}
@@ -263,7 +265,7 @@ const EmailAndPassword = async () => {
             <div className="email-form">
               <MDBInput
                 className="inp-login"
-                wrapperClass="mb-4"
+                wrapperclassName="mb-4"
                 onChange={(e) => setEmail(e.target.value)}
                 label="Email Id"
                 id="formControlLg"
@@ -272,7 +274,7 @@ const EmailAndPassword = async () => {
               />
               <MDBInput
                 className="inp-login"
-                wrapperClass="mb-4"
+                wrapperclassName="mb-4"
                 onChange={(e) => setPassword(e.target.value)}
                 label="password"
                 id="formControlLg"

@@ -9,6 +9,13 @@ import {
   MDBCardImage,
   MDBInput,
   MDBIcon,
+  MDBModal,
+  MDBModalDialog,
+  MDBModalContent,
+  MDBModalHeader,
+  MDBModalTitle,
+  MDBModalBody,
+  MDBModalFooter,
 
 } from "mdb-react-ui-kit";
 import Footer from "../Footer/Footer";
@@ -22,6 +29,10 @@ import { Server } from "../Server/Server";
 
 
 function Signup() {
+      // For Modal and OTP
+  const [basicModal, setBasicModal] = useState(false);
+  const toggleOpen = () => setBasicModal(!basicModal);
+  
   const [checked, setChecked] = useState(false);
   // const [phoneMatch, setphoneMatch] = useState(false);
   // const phoneOpen = () => setphoneMatch(!phoneMatch);
@@ -52,6 +63,7 @@ function Signup() {
       });
       console.log(response.data);
       toast.success(response.data.message);
+      setInterval(navigate("/login"), 5000);
     } catch (error) {
       toast.error(error.response.data.message);
     }
@@ -288,7 +300,39 @@ function Signup() {
             </MDBRow>
           </MDBCardBody>
         </MDBCard>
+        <MDBModal open={basicModal} setopen={setBasicModal} tabIndex="12">
+          <MDBModalDialog centered>
+            <MDBModalContent>
+              <MDBModalHeader>
+                <MDBModalTitle>
+                  {/* {loading ? (
+                    <>
+                      `<h1>Signup SUCCESSFULY</h1>`
+                    </>
+                  ) : null} */}
+                </MDBModalTitle>
+                <MDBBtn
+                  className="btn-close"
+                  color="none"
+                  onClick={toggleOpen}
+                ></MDBBtn>
+              </MDBModalHeader>
+              <MDBModalBody>
+                df
+              </MDBModalBody>
+
+              <MDBModalFooter>
+                <MDBBtn color="secondary" onClick={toggleOpen}>
+                  Close
+                </MDBBtn>
+                <MDBBtn onClick={""}>Save changes</MDBBtn>
+              </MDBModalFooter>
+            </MDBModalContent>
+          </MDBModalDialog>
+        </MDBModal>
       </MDBContainer>
+      
+      
       <div style={!checked ? { marginTop: "86px" } : null}>
         {/* <div > */}
         <Footer />
