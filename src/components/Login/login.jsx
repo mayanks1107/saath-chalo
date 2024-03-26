@@ -229,7 +229,7 @@ const EmailAndPassword = async () => {
 
   return (
     <>
-      <Header />
+    <Header />
       <MDBContainer fluid className="p-3 my-5 h-custom">
         <Toaster toastOptions={{ duration: 6000 }} />
         <MDBRow>
@@ -240,16 +240,16 @@ const EmailAndPassword = async () => {
               src={
                 "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
               }
-              className="img-fluid"
+              class="img-fluid"
               alt="Sample image"
             />
           </MDBCol>
           <MDBCol className="right-container" col="4" md="6">
-            {/* <div className="vl-3"></div> */}
+            {/* <div class="vl-3"></div> */}
             <div className="divider d-flex align-items-center my-4">
               <p className="or text-center fw-bold mx-3 mb-0"></p>
             </div>
-            {/* <div className="vl-2"></div> */}
+            {/* <div class="vl-2"></div> */}
             <>
               <PhoneInput
                 style={{ width: "1250px;" }}
@@ -265,7 +265,7 @@ const EmailAndPassword = async () => {
             <div className="email-form">
               <MDBInput
                 className="inp-login"
-                wrapperclassName="mb-4"
+                wrapperClass="mb-4"
                 onChange={(e) => setEmail(e.target.value)}
                 label="Email Id"
                 id="formControlLg"
@@ -274,7 +274,7 @@ const EmailAndPassword = async () => {
               />
               <MDBInput
                 className="inp-login"
-                wrapperclassName="mb-4"
+                wrapperClass="mb-4"
                 onChange={(e) => setPassword(e.target.value)}
                 label="password"
                 id="formControlLg"
@@ -367,6 +367,7 @@ const EmailAndPassword = async () => {
       <div className="Botton">
         <Footer />
       </div>
+    
     </>
   );
 }
