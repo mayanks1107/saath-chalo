@@ -5,80 +5,80 @@ import Header from "../Header/headers"
 import Footer from "../Footer/Footer"
 import PassengerList from "../RideRequest/PassengerList"
 import { Server } from '../Server/Server'
+import { useLocation, useParams } from 'react-router-dom'
 
 function RideRequest() {
+    let { Email } = useParams();
+    console.log(Email);
     const [ passenger, setPassenger ] = useState([]);
-    useEffect(()=>{
-        const PassengerList = async () => {
-            try {
-                // const url = `http://localhost:4000/passenger/get`;
-                // const url = `https://saatchalo.onrender.com/passenger/get`;
-                const url = `${Server}/passenger/get`;
-                
-                const response = await fetch(url, {method: 'GET', headers: {
-                    "Content-Type": "application/json",
-                  }});
-        
-                if (!response.ok) {
-                    throw new Error(`HTTP error! Status: ${response.status}`);
-                }
-        
-                const data = await response.json();
-                console.log("this is data:-",data);
-                setPassenger(data);
-                // console.log(riderInfo);
-            } catch (error) {
-                console.error('Error fetching rider data:', error);
-            }
-        }
-        
-        PassengerList()
-    },[]);
-    console.log(passenger);
+  
+    const [qValue, setQValue] = useState(null);
+  
+    useEffect(() => {
+        // Get the current URL
+        const url = window.location.href;
+    
+        // Parse the URL
+        const urlParams = new URLSearchParams(url);
+    
+        // Retrieve the value after 'q='
+        const qValue = urlParams.get('q');
+        const qValue2 = urlParams.get('?q=');
+        console.log(qValue2 + " " + qValue);
+    
+
+        // Set the state with the retrieved value
+        setQValue(qValue);
+    
+        // If you want to do something with the retrieved value, you can use it here
+    
+      }, []); // Ensure this effect runs only once when the component mounts
+    
+console.log(qValue);
     
     return (
         <>
             <Header />
-            <div class="wrapper1">
+            <div className="wrapper1">
                 <h1 >Ride Requests</h1>
-                <h2 class="font">Today</h2>
+                <h2 className="font">Today</h2>
             </div>
 
-            <div class="wrapper">
-                <div class="rectangular-box">
+            <div className="wrapper">
+                <div className="rectangular-box">
                     {/* <!-- Row 1 --> */}
-                    <div class="row profilePic">
+                    <div className="row profilePic">
                         <img src={Profile} alt='profile' />
-                        <div class="column">Passenger Name : <br /><span class="font">Manmohan</span></div>
-                        <div class="column"></div>
+                        <div className="column">Passenger Name : <br /><span className="font">Manmohan</span></div>
+                        <div className="column"></div>
                     </div>
 
                     {/* <!-- Row 2 --> */}
-                    <div class="row">
-                        <div class="column1"></div>
-                        <div class="column">Source : <br /><span class="font">Chandigarh</span></div>
-                        <div class="column">Destination : <br /><span class="font">Delhi</span></div>
+                    <div className="row">
+                        <div className="column1"></div>
+                        <div className="column">Source : <br /><span className="font">Chandigarh</span></div>
+                        <div className="column">Destination : <br /><span className="font">Delhi</span></div>
                     </div>
 
                     {/* <!-- Row 3 --> */}
-                    <div class="row">
-                        <div class="column1"></div>
-                        <div class="column">Time : <br /><span class="font">19:00</span></div>
-                        <div class="column">Date : <br /><span class="font">01-01-2024</span></div>
+                    <div className="row">
+                        <div className="column1"></div>
+                        <div className="column">Time : <br /><span className="font">19:00</span></div>
+                        <div className="column">Date : <br /><span className="font">01-01-2024</span></div>
 
                     </div>
 
                     {/* <!-- Row 4 --> */}
-                    <div class="row">
-                        <div class="column1"></div>
-                        <div class="column">Gender : <br /><span class="font">Male</span></div>
-                        <div class="column">Amount : <br /><span class="font">1000 K</span></div>
+                    <div className="row">
+                        <div className="column1"></div>
+                        <div className="column">Gender : <br /><span className="font">Male</span></div>
+                        <div className="column">Amount : <br /><span className="font">1000 K</span></div>
 
                     </div>
                 </div>
-                {passenger.map((passenger) => (
+                {/* {passenger.map((passenger) => (
                     <PassengerList key={passenger.id} {...passenger} Profile={Profile} />
-                ))}
+                ))} */}
 
                 
                 {/* <PassengerList Profile={Profile}/> */}
