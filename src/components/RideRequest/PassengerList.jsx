@@ -2,6 +2,7 @@ import React from 'react'
 
 function PassengerList(props) {
     
+ console.log(props._id)
 
 
   return (
@@ -37,8 +38,8 @@ function PassengerList(props) {
                         <div class="column">Amount : <br /><span class="font">{props.Price}</span></div>
 
                     </div>
-                    <button onClick={props.Bookride}>Book⚡</button>
-                    <button onClick={props.RejectRide}>Reject⚡</button>
+                    <button onClick={()=>props.Bookride(props._id)}>Book⚡</button>
+                    <button onClick={()=>props.RejectRide(props._id)}>Reject⚡</button>
 
                 </div>
 
