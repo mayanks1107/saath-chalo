@@ -3,31 +3,47 @@ import Headers from '../Header/headers';
 import './bookRide.css'
 import Footer from "../Footer/Footer";
 // import { FaMessages, FaMugHot } from "react-icons/fa";
-import { useLocation } from "react-router-dom";
+import {useNavigate, useLocation } from "react-router-dom";
+import axios from "axios";
+import { Server } from "../Server/Server";
+import { toast, Toaster } from "react-hot-toast";
 export default function BookRide(){
   
   let location = useLocation() || undefined;
+  let navigate = useNavigate();
 console.log(location.state.list[0]);
 
   const date =location.state.list[0].dateOfTrip  || null;
   const SourcePlace = location.state.list[0].SourcePlace;
   const DestinationPlace = location.state.list[0].DestinationPlace;
   const FullName = location.state.list[0].FullName;
-  const Distace = location.state.list[0].Distance;
+  const Distance = location.state.list[0].Distance;
   const PhoneNumber=location.state.list[0].PhoneNumber;
   const Price= location.state.list[0].Price;
   const VehicleName= location.state.list[0].VehicleName;
   const timeOfTrip  = location.state.list[0].timeOfTrip;
-  const VehicleColour = location.state.list[0].VehicleColour
+  const VehicleDolour = location.state.list[0].VehicleColour
   
+  const bookCab = async() => {
+   let RiderEmail = location.state.list[0].Email;
+   let UserEmail = JSON.parse(localStorage.getItem("token")).Email;
+  //  alert(Email+" Cab Booked Successfully"+Id)
+   const url = `${Server}/passenger/update/${UserEmail}`;
+   const res =  await axios.put(url, {RiderEmail: RiderEmail});
+  if(res.data.success === true){
+    toast.success(res.data.message);
   
-
-
-
-  
+  }else{
+    toast.error("Cab Not Booked");
+  }
+  const RejectCab = () => {
+    alert("Cab Rejected")
+  } 
+}
   return(
     <div className="book-ride">
-      <Headers/>      
+      <Headers/>  
+      <Toaster toastOptions={{ duration: 6000 }} />    
       <h1 className="b-r-h1">{date}</h1>
       {/* <div className="dot-up"  /> */}
       {/* <div className="dot-down" style={{width: 10, height: 10, background: 'white', borderRadius: 9999, border: '1px #054652 solid'}} /> */}
@@ -38,7 +54,7 @@ console.log(location.state.list[0]);
         <p className="src-state">{SourcePlace}</p>
         <hr className="hr-vertical"/>
         
-        <h4 className="dest">{Distace}</h4>
+        <h4 className="dest">{Distance}</h4>
         <p className="dest-state">{DestinationPlace}</p>
       </div>
       <div className="mid-card-book">
@@ -53,11 +69,11 @@ console.log(location.state.list[0]);
         <h5 className="ask-p">Ask {FullName} a question</h5>
         <div className="sep-btm-ask" style={{ height: 5, background: '#EDEDED', borderRadius: 16}} />
         <h5 className="car-type">{VehicleName}</h5>
-        <p className="color-p">{VehicleColour}</p>
+        <p className="color-p">{VehicleDolour}</p>
       </div>
       <div className="bottom-card-book">
         <hr className="rule"></hr>
-        <button className="book-book btn btn-primary">Book⚡</button>
+        <button className="book-book btn btn-primary" onClick={()=>bookCab()}>Book⚡</button>
       </div>
       <div className="foot-book">
         <Footer/>

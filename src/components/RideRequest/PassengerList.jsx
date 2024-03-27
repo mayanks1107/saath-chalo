@@ -37,6 +37,9 @@ function PassengerList(props) {
                         <div class="column">Amount : <br /><span class="font">{props.Price}</span></div>
 
                     </div>
+                    <button onClick={props.Bookride}>Book⚡</button>
+                    <button onClick={props.RejectRide}>Reject⚡</button>
+
                 </div>
 
 
