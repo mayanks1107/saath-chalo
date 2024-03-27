@@ -31,11 +31,23 @@ function RideRequest() {
         }
         getPassenger();
       }, []); 
-    const Bookride =()=>{
-        alert("ride is booked")
+    const Bookride =async (id)=>{
+        const url = `${Server}/passenger/confirm/${id}`;
+        const response = await fetch(url, {method: 'PUT', headers: {'Content-Type': 'application/json'}});
+        if (response.ok) {
+            const data = await response.json();
+            alert("ride booked "+data.message);
+            // window.location.reload();
+        }
     }
-    const RejectRide =()=>{
-    alert("ride rejected");
+    const RejectRide =async(id)=>{
+        const url = `${Server}/passenger/reject/${id}`;
+        const response = await fetch(url, {method: 'PUT', headers: {'Content-Type': 'application/json'}});
+        if (response.ok) {
+            const data = await response.json();
+            alert("ride booked "+data.message);
+            // window.location.reload();
+        }
     }
 
     
@@ -54,10 +66,10 @@ function RideRequest() {
                     <div>
                         <PassengerList
                         {...passenger}
-                        key={passenger.id}
+                        key={passenger._id}
                         Profile={Profile}
-                        Bookride={()=>Bookride()}
-                        RejectRide={()=>RejectRide()}
+                        Bookride={()=>Bookride(passenger._id)}
+                        RejectRide={()=>RejectRide(passenger._id)}
                           />
                     </div>
                 ))}   
