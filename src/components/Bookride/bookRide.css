@@ -126,8 +126,15 @@
 .book-book{
     position: absolute;
     top: 620px;
+    left: 47%;
     
-}.foot-book{
+}
+.book-book2{
+    position: absolute;
+    top: 620px;
+    left: 57%;
+}
+.foot-book{
     position: absolute;
     top: 1000px;
     width: 100%;

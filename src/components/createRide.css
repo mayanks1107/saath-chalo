@@ -30,7 +30,7 @@
 .so{
     position: absolute;
     left: 300px;
-    top: 150px;
+    top: 200px;
 }
 .desti{
     position: absolute;
@@ -40,27 +40,27 @@
 .trip{
     position: absolute;
     left: 300px;
-    top: 250px;
+    top: 300px;
 }
 .date{
     position: absolute;
     left: 300px;
-    top: 300px;
+    top: 353px;
 }
 .time{
     position: absolute;
     left: 300px;
-    top: 350px;
+    top: 401px;
 }
 .av-seat{
     position: absolute;
     left: 300px;
-    top: 400px;
+    top: 451px;
 }
 .phone{
     position: absolute;
     left: 300px;
-    top: 450px;
+    top: 503x;
 }
 .img-create{
     display: block;

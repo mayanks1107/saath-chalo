@@ -16,6 +16,7 @@ import {
   MDBModalTitle,
   MDBModalBody,
   MDBModalFooter,
+  MDBRadio,
 
 } from "mdb-react-ui-kit";
 import Footer from "../Footer/Footer";
@@ -29,7 +30,7 @@ import { Server } from "../Server/Server";
 
 
 function Signup() {
-      // For Modal and OTP
+      // For Modal for Passenger profile
   const [basicModal, setBasicModal] = useState(false);
   const toggleOpen = () => setBasicModal(!basicModal);
   
@@ -46,10 +47,18 @@ function Signup() {
     AadharNo:"",
     Vehicleno: "",
     Rc: "",
+    SourcePlace: "",
+    DestinationPlace: "",
+    typeOfTrip  : "",
+    dateOfTrip: "",
+    timeOfTrip: "",
+    Distance: "",
   });
+  const [gender,setGender] = useState();
 
   const RegisterForRider = async () => {
     try {
+      
       let response = await axios.post(`${Server}/rider/post`, {
         Name: Value.Name,
         Email: Value.Email,
@@ -94,9 +103,11 @@ function Signup() {
         });
         if (response != null) {
           if (response.data !== null) {
+            console.log(response);
             if (response.data.success === true) {
               toast.success(response.data.message);
             } else {
+
               toast.error(response.data.message);
             }
           } else {
@@ -104,9 +115,6 @@ function Signup() {
             console.log(response);
           }
         }
-        // toast.success(response.data);
-        // After 5 sec the  navigate to login page 
-        setInterval(navigate("/login"), 5000);
       }
     } catch (error) {
       toast.error("error");
@@ -117,6 +125,27 @@ function Signup() {
     console.log(document.getElementById("inp-check-rider").checked);
     setChecked(document.getElementById("inp-check-rider").checked);
   }
+  const PassengerChange = async () => { 
+  let url = `${Server}/passenger`; 
+ let response =await  fetch(url, {method: 'POST',headers: {'Content-Type': 'application/json'},body: JSON.stringify(
+   {FullName:Value.Name,
+    Email: Value.Email,
+    Gender: gender,
+    SourcePlace: Value.SourcePlace,
+    DestinationPlace: Value.DestinationPlace,
+    typeOfTrip: Value.typeOfTrip,
+    dateOfTrip: Value.dateOfTrip,
+    timeOfTrip: Value.timeOfTrip,
+    Distance: Value.Distance,
+    PhoneNumber: Value.PhoneNumber,
+      
+  
+  })});
+  let data =await response.json();
+  console.log(data);
+  (data.success === true )?  toast.success(data.message): toast.error(data.message);
+  }
+
   return (
     <>
       <Header />
@@ -280,7 +309,8 @@ function Signup() {
                   <MDBBtn
                     className="mb-4"
                     size="lg"
-                    onClick={() => RegisterForUser()}
+                    // onClick={() => RegisterForUser()}
+                    onClick={() =>{ toggleOpen();RegisterForUser()}}
                   >
                     User Register
                   </MDBBtn>
@@ -305,11 +335,7 @@ function Signup() {
             <MDBModalContent>
               <MDBModalHeader>
                 <MDBModalTitle>
-                  {/* {loading ? (
-                    <>
-                      `<h1>Signup SUCCESSFULY</h1>`
-                    </>
-                  ) : null} */}
+                  <h1>Trip Details</h1>
                 </MDBModalTitle>
                 <MDBBtn
                   className="btn-close"
@@ -318,14 +344,115 @@ function Signup() {
                 ></MDBBtn>
               </MDBModalHeader>
               <MDBModalBody>
-                df
+                
+              <div className="d-flex flex-row align-items-center mb-2">
+                  <MDBIcon fas icon="fas fa-mars-stroke-up me-3" />
+                  <MDBRadio name='inlineRadio' id='inlineRadio1' value={gender} onChange={()=>setGender("Male")} label='Male' inline />
+                  <MDBRadio name='inlineRadio' id='inlineRadio2' value={gender} onChange={()=>setGender("Female")} label='Female' inline />
+                  <MDBRadio name='inlineRadio' id='inlineRadio2' value={gender} onChange={()=>setGender("other")} label='other' inline />
+                </div>
+
+                <div className="d-flex flex-row align-items-center mb-2">
+                  <MDBIcon fas icon="fas fa-plane  me-3" size="lg" />
+                  <MDBInput
+                    label="Enter place SourcePlace "
+                    onChange={(e) =>
+                      setValues((prev) => ({
+                        ...prev,
+                        SourcePlace: e.target.value,
+                      }))
+                    }
+                    id="form2"
+                    type="text"
+                  />
+                </div>
+                
+                <div className="d-flex flex-row align-items-center mb-2 ">
+                  <MDBIcon fas icon="fas fa-plane  me-3" size="lg" />
+                  <MDBInput
+                    label="Enter place DestinationPlace "
+                    onChange={(e) =>
+                      setValues((prev) => ({
+                        ...prev,
+                        DestinationPlace: e.target.value,
+                      }))
+                    }
+                    id="form2"
+                    type="text"
+                  />
+                </div>
+
+                <div className="d-flex flex-row align-items-center md-2 ">
+                  <MDBIcon fas icon="fas fa-plane me-3" size="lg" />
+                  <MDBInput
+                    label="type Of Trip "
+                    onChange={(e) =>
+                      setValues((prev) => ({
+                        ...prev,
+                        typeOfTrip: e.target.value,
+                      }))
+                    }
+                    id="form2"
+                    type="text"
+                  />
+                </div>
+
+                <div className="d-flex flex-row align-items-center md-2 ">
+                  <MDBIcon fas icon="fas fa-plane me-3" size="lg" />
+                  <MDBInput
+                    label="Date Of Trip "
+                    onChange={(e) =>
+                      setValues((prev) => ({
+                        ...prev,
+                        dateOfTrip: e.target.value,
+                      }))
+                    }
+                    id="form2"
+                    type="text"
+                  />
+                </div>
+
+                <div className="d-flex flex-row align-items-center md-2 ">
+                  <MDBIcon fas icon="fas fa-plane me-3" size="lg" />
+                  <MDBInput
+                    label="Time Of Trip "
+                    onChange={(e) =>
+                      setValues((prev) => ({
+                        ...prev,
+                        timeOfTrip: e.target.value,
+                      }))
+                    }
+                    id="form2"
+                    type="text"
+                  />
+                </div>
+
+                <div className="d-flex flex-row align-items-center md-2">
+                  <MDBIcon fas icon="fas fa-plane me-3" size="lg" />
+                  <MDBInput
+                    label="Distance Of Trip "
+                    onChange={(e) =>
+                      setValues((prev) => ({
+                        ...prev,
+                        Distance: e.target.value,
+                      }))
+                    }
+                    id="form2"
+                    type="text"
+                  />
+                </div>
+                  
+
+
+
+
               </MDBModalBody>
 
               <MDBModalFooter>
                 <MDBBtn color="secondary" onClick={toggleOpen}>
                   Close
                 </MDBBtn>
-                <MDBBtn onClick={""}>Save changes</MDBBtn>
+                <MDBBtn onClick={()=>PassengerChange()}>Save changes</MDBBtn>
               </MDBModalFooter>
             </MDBModalContent>
           </MDBModalDialog>
