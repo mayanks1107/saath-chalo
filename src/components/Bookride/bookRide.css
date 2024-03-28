@@ -206,6 +206,6 @@
     .foot-book{
         position: absolute;
         width: 100%;
-        margin-top: 50px;
+        bottom:0;
     }
 }

@@ -149,7 +149,7 @@ function Signup() {
   return (
     <>
       <Header />
-      <MDBContainer fluid>
+      <MDBContainer className="mb-container" fluid>
         <Toaster toastOptions={{ duration: 4000 }} />
 
         <MDBCard className="text-black m-5" style={{ borderRadius: "25px" }}>
@@ -460,7 +460,7 @@ function Signup() {
       </MDBContainer>
       
       
-      <div style={!checked ? { marginTop: "86px" } : null}>
+      <div style={!checked ? { marginTop: "86px" }: null}>
         {/* <div > */}
         <Footer />
       </div>

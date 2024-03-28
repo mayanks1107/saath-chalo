@@ -228,6 +228,7 @@
 .r-f-foot{
   position: absolute;
   width: 100%;
+  bottom: -50%;
 }
 }
 @media only screen and (max-width : 480px)  {
@@ -361,5 +362,6 @@
  .media-r-f-foot{
   position: absolute;
   width: 100%;
+  bottom: -1000px;
  }
 }
