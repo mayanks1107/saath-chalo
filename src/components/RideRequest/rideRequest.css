@@ -70,3 +70,8 @@ body {
     width: 75px;
     
 }
+.Footer{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
