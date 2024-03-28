@@ -38,7 +38,7 @@ function PassengerList(props) {
                         <div class="column">Amount : <br /><span class="font">{props.Price}</span></div>
 
                     </div>
-                    <button onClick={()=>props.Bookride(props._id)}>Book⚡</button>
+                    <button onClick={()=>props.Bookride(props._id)}>Accept⚡</button>
                     <button onClick={()=>props.RejectRide(props._id)}>Reject⚡</button>
 
                 </div>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Headers from '../Header/headers';
 import './bookRide.css'
 import Footer from "../Footer/Footer";
@@ -11,7 +11,7 @@ export default function BookRide(){
   
   let location = useLocation() || undefined;
   let navigate = useNavigate();
-console.log(location.state.list[0]);
+// console.log(location.state.list[0]);
 
   const date =location.state.list[0].dateOfTrip  || null;
   const SourcePlace = location.state.list[0].SourcePlace;
@@ -27,12 +27,14 @@ console.log(location.state.list[0]);
   const bookCab = async() => {
    let RiderEmail = location.state.list[0].Email;
    let UserEmail = JSON.parse(localStorage.getItem("token")).Email;
-  //  alert(Email+" Cab Booked Successfully"+Id)
+   console.log(UserEmail+" Cab Booked Successfully")
    const url = `${Server}/passenger/update/${UserEmail}`;
    const res =  await axios.put(url, {RiderEmail: RiderEmail});
   if(res.data.success === true){
-    toast.success(res.data.message);
-  
+    if(res.data.message === "Booking"){
+      toast.success(res.data.message);
+      
+    }
   }else{
     toast.error("Cab Not Booked");
   }
@@ -40,6 +42,21 @@ console.log(location.state.list[0]);
     alert("Cab Rejected")
   } 
 }
+const getPassenger = async () => {
+  let UserEmail = JSON.parse(localStorage.getItem("token")).Email;
+  const url = `${Server}/passenger/approval/${UserEmail}`;
+  
+  const response = await fetch(url, {method: 'GET', headers: {'Content-Type': 'application/json'}});
+  if (response.ok) {
+    const data = await response.json();
+    
+    console.log(data.ConfirmRide);
+    
+  }
+}  
+useEffect(() => {
+ 
+},[])
   return(
     <div className="book-ride">
       <Headers/>  
@@ -75,7 +92,10 @@ console.log(location.state.list[0]);
         <hr className="rule"></hr>
         <button className="book-book btn btn-primary" onClick={()=>bookCab()}>Book⚡</button>
       </div>
+      <button  onClick={()=>getPassenger()}>dhyf</button>
+      {/* <button onClick={()=>props.Bookride(props._id)}>Accept⚡</button> */}
       <div className="foot-book">
+
         <Footer/>
       </div>
     </div>
