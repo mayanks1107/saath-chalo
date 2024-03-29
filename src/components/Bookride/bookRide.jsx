@@ -92,7 +92,7 @@ useEffect(() => {
         <hr className="rule"></hr>
         <button className="book-book btn btn-primary" onClick={()=>bookCab()}>Book⚡</button>
       </div>
-      <button  onClick={()=>getPassenger()}>dhyf</button>
+      {/* <button  onClick={()=>getPassenger()}>dhyf</button> */}
       {/* <button onClick={()=>props.Bookride(props._id)}>Accept⚡</button> */}
       <div className="foot-book">
 
