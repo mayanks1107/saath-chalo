@@ -36,7 +36,7 @@ function RideRequest() {
         const response = await fetch(url, {method: 'PUT', headers: {'Content-Type': 'application/json'}});
         if (response.ok) {
             const data = await response.json();
-            alert("ride booked "+data.message);
+            alert("Ride has "+data.message);
             // window.location.reload();
         }
     }
@@ -45,7 +45,7 @@ function RideRequest() {
         const response = await fetch(url, {method: 'PUT', headers: {'Content-Type': 'application/json'}});
         if (response.ok) {
             const data = await response.json();
-            alert("ride booked "+data.message);
+            alert("Ride has "+data.message);
             // window.location.reload();
         }
     }
@@ -75,7 +75,9 @@ function RideRequest() {
                 ))}   
             </div>         
                  }
+                    <div className="foot-book">
             <div className="Footer"><Footer /></div>
+            </div>
 
 
 

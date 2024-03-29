@@ -304,11 +304,11 @@ const EmailAndPassword = async () => {
               ) : (
                 <MDBBtn
                   className="mb-0 px-5 btn-login "
-                  color="primary"
+                  color="success"
                   onClick={LogEmailANDNoForRider}
                   size="lg"
                 >
-                  LoginWithRider
+                  Login
                 </MDBBtn>
               )}
               <p className="small fw-bold mt-2 pt-1 mb-2">

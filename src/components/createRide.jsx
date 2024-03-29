@@ -26,7 +26,7 @@ function CreateRide() {
         var Name=JSON.parse(localStorage.getItem("token")).FullName;
         let Email=JSON.parse(localStorage.getItem("token")).Email;
         console.log(Email);
-        console.log(Name);
+        console.log(Value.PhoneNumber);
         
         try {
             let response =await axios.post(`${Server}/tripdet`,{
@@ -40,12 +40,12 @@ function CreateRide() {
             dateOfTrip:Value.dateOfTrip,
             timeOfTrip:Value.timeOfTrip,
             availableSeat:Value.availableSeat,
-            PhoneNumber:Value.availableSeat,
+            PhoneNumber:Value.PhoneNumber,
             IsRider:true
         })
         console.log(response.data);
                         toast.success(response.data);
-                        setTimeout(navigate('/rideRequest'),200000)
+                        // setTimeout(navigate('/rideRequest'),200000)
         } catch (error) {
             console.log(error);  
         }            
