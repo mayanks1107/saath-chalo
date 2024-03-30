@@ -3,16 +3,19 @@ import "./headers.css";
 // import plus from "../../assets/plus.png";
 // import profilePic from "../../assets/proflic-pic.png";
 import { FaUser } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 import { CiCirclePlus } from "react-icons/ci";
 import { Link } from "react-router-dom";
 import a from "../../assets/logo-green.png";
 export default function Headers(){
+  const navigate = useNavigate()
+
   const [isLogin,setisLogin] = useState(false);
   
   function logout(){
     localStorage.clear();
-    navigator()
+    navigate('/')
   }
   const CheckData =()=>{
     if(localStorage.getItem("token")!=null){
@@ -52,9 +55,10 @@ useEffect(()=>{
             <li><Link class="dropdown-item" to='/login'>Login</Link></li>
             <li><Link class="dropdown-item" to="/register">Register</Link></li>
             {isLogin===false ?
+        
          null
          :
-          <li><button className="logout-btn" onClick={logout}>logout</button></li>
+         <li><button className="logout-btn" onClick={logout}>logout</button></li>
           }
 
             
