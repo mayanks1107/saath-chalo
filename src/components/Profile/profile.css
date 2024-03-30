@@ -1,4 +1,5 @@
 @media only screen  and (min-width : 1224px){
+   
 .profile-h1{
     margin-top: 2%;
 }
@@ -22,6 +23,26 @@
 }
 .pro-foot{
     margin-top: 300px;
+}
+.rat{
+    position: absolute;
+    left: 15%;
+    bottom: 18.5%
+}
+.rat-dum{
+    position: absolute;
+    left: 20%;
+    bottom: 17%;
+}
+.com{
+    position: absolute;
+    left: 15%;
+    bottom: 7%
+}
+.com-dum{
+    position: absolute;
+    left: 27%;
+    bottom: 6%;
 }
 }
 @media only screen and (max-width : 480px){

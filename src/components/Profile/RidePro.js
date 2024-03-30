@@ -1,6 +1,6 @@
 import React from "react";
 import Headers from "../Header/headers";
-import default_pro from "../../assets/default-profile-pic.jpg";
+import default_pro from "../../assets/profile-pic-def.jpg";
 import "./profile.css";
 import Footer from "../Footer/Footer";
 import Header from "../Header/headers";
@@ -24,11 +24,11 @@ export default function RiderProfile(){
     return (
         <div className = "profile">
             <Headers/>
-            
+            <h1> Profile</h1>
       <MDBContainer fluid className="p-3 my-5 h-custom">
         <Toaster toastOptions={{ duration: 6000 }} />
         <MDBRow>
-          <MDBCol col="10" md="6">
+          <MDBCol className="pro-img" col="10" md="6">
             {/* eslint-disable-next-line */}
             <img
               className="pro-img"
@@ -62,8 +62,11 @@ export default function RiderProfile(){
                 <h3 className="profile-h3">Vehicle Color: </h3>
                 <p className="profile-p">Dummy Color</p>
                 <br/>
-                <h3 className="profile-h3">Company Name: </h3>
-                <p className="profile-p">Dummy Name</p>
+                <h3 className="profile-h3 com">Company Name: </h3>
+                <p className="profile-p com-dum">Dummy Name</p>
+                <br/>
+                <h3 className="profile-h3 rat">Rating: </h3>
+                <p className="profile-p rat-dum">Dummy Rating</p>
                 <br/>
             </div>
           </MDBCol>
