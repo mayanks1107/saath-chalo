@@ -12,12 +12,9 @@ function RideRequest() {
     const [ passenger, setPassenger ] = useState([]);
   
     useEffect(() => {
-        
-         const getPassenger = async () => {
+        const getPassenger = async () => {
         const url = `${Server}/passenger/get`;
         const response = await fetch(url, {method: 'GET', headers: {'Content-Type': 'application/json'}});
-
-
         if (response.ok) {
             const data = await response.json();
             console.log(data);
