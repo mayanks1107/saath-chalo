@@ -61,7 +61,7 @@ export default function Profile(){
 
         
       </MDBContainer>
-      <div className="pro-foot" >
+      <div className="pro-foot" style={{position: "absolute", bottom: "0", width: "100%"}}>
               <Footer/>
             </div>
         </div>
