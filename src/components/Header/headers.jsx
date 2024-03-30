@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./headers.css";
 // import plus from "../../assets/plus.png";
 // import profilePic from "../../assets/proflic-pic.png";
@@ -8,6 +8,23 @@ import { CiCirclePlus } from "react-icons/ci";
 import { Link } from "react-router-dom";
 import a from "../../assets/logo-green.png";
 export default function Headers(){
+  const [isLogin,setisLogin] = useState(false);
+  
+  function logout(){
+    localStorage.clear();
+    navigator()
+  }
+  const CheckData =()=>{
+    if(localStorage.getItem("token")!=null){
+      
+      setisLogin(true);
+  }
+}
+useEffect(()=>{
+  setTimeout( CheckData(),2000)
+    
+    console.log("u are login"+isLogin);
+   },[]) 
     return(
         <div className="head">
             <nav class="navbar navbar-expand-lg">
@@ -34,6 +51,12 @@ export default function Headers(){
           <ul class="media-drop dropdown-menu">
             <li><Link class="dropdown-item" to='/login'>Login</Link></li>
             <li><Link class="dropdown-item" to="/register">Register</Link></li>
+            {isLogin===false ?
+         null
+         :
+          <li><button className="logout-btn" onClick={logout}>logout</button></li>
+          }
+
             
             
           </ul>
