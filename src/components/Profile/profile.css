@@ -27,22 +27,22 @@
 .rat{
     position: absolute;
     left: 15%;
-    bottom: 18.5%
+    bottom: 45.5%
 }
 .rat-dum{
     position: absolute;
     left: 20%;
-    bottom: 17%;
+    bottom: 44.5%;
 }
 .com{
     position: absolute;
     left: 15%;
-    bottom: 7%
+    bottom: 38%
 }
 .com-dum{
     position: absolute;
     left: 27%;
-    bottom: 6%;
+    bottom: 37%;
 }
 }
 @media only screen and (max-width : 480px){
