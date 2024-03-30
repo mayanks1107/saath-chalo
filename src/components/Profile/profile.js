@@ -1,10 +1,12 @@
-import React from "react";
+import React ,{useState,useEffect} from "react";
 import Headers from "../Header/headers";
 import default_pro from "../../assets/profile-pic-def.jpg";
 import "./profile.css";
 import Footer from "../Footer/Footer";
 import Header from "../Header/headers";
 import { toast, Toaster } from "react-hot-toast";
+import { Server } from "../Server/Server";
+
 import {
     MDBContainer,
     MDBCol,
@@ -21,6 +23,20 @@ import {
     MDBModalFooter,
   } from "mdb-react-ui-kit";
 export default function Profile(){
+  const [Profile, setProfile] = useState([]);
+  useEffect(() => {
+    const getProfile = async () => {
+    const url = `${Server}/passenger/get`;
+    const response = await fetch(url, {method: 'GET', headers: {'Content-Type': 'application/json'}});
+    if (response.ok) {
+        const data = await response.json();
+       let Email =JSON.parse(localStorage.getItem("token")).Email;
+        const newData=data.filter(profile => profile.Email ===Email);  
+        setProfile(newData[0])
+     }
+    }
+    getProfile();
+  }, []); 
     return (
         <div className = "profile">
             <Headers/>
@@ -42,16 +58,16 @@ export default function Profile(){
           <MDBCol className="right-container-pro" col="4" md="6">
           <div className="profile-info">
                 <h3 className="profile-h3">Full Name  </h3>
-                <p className="profile-p">Dummy Name</p>
+                <p className="profile-p"><h3>{Profile.FullName}</h3></p>
                 <br/>
                 <h3 className="profile-h3">Email: </h3>
-                <p className="profile-p">Dummy Email</p>
+                <p className="profile-p"><h3>{Profile.Email}</h3></p>
                 <br/>
                 <h3 className="profile-h3">Phone Number: </h3>
-                <p className="profile-p">Dummy Number</p>
+                <p className="profile-p"><h3>{Profile.PhoneNumber}</h3></p>
                 <br/>
                 <h3 className="profile-h3">Gender: </h3>
-                <p className="profile-p">Dummy Gender</p>
+                <p className="profile-p"><h3>{Profile.Gender}</h3></p>
                 <br/>
             </div>
           </MDBCol>
