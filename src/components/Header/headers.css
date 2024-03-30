@@ -45,6 +45,15 @@
 .user-icon{
     margin: 2px 2px 5px 5px;
 }
+.logout-btn{
+    margin: 5px 2px 5px 15px;
+    border: none;
+   
+    color: black; /* White text */   
+    text-align: center; /* Center text */
+    text-decoration: none; /* Remove underline */
+    display: inline-block;
+}
 }
 @media only screen and (max-width : 480px){
     .navbar{
