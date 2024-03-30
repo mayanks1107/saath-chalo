@@ -264,7 +264,7 @@ function Signup() {
                         type="text"
                       />
                     </div>
-                    <div className="d-flex flex-row align-items-center mb-4">
+                    {/* <div className="d-flex flex-row align-items-center mb-4">
                       <MDBIcon fas icon="truck-fast me-3" size="lg" />
                       <MDBInput
                         label="Vehicle Number"
@@ -277,7 +277,7 @@ function Signup() {
                         }
                         type="text"
                       />
-                    </div>
+                    </div> */}
 
                     <div className="d-flex flex-row align-items-center mb-4">
                       <MDBIcon fas icon="address-book me-3" size="lg" />
