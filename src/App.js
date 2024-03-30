@@ -12,7 +12,7 @@ import RideRequest from './components/RideRequest/rideRequest'
 import RideFeed from './components/RideFeed/RideFeed';
 import Confirm from './components/Confirmation/confirm';
 import Profile from './components/Profile/profile';
-
+import RiderProfile from './components/Profile/RidePro';
 function App() {
   return(
     <div className="App">
@@ -34,6 +34,7 @@ function App() {
                 <Route exact path="/rideFeed" element={<RideFeed/>}/>
                 <Route exact path = "/confirm" element={<Confirm/>}/>
                 <Route exact path = "/userprofile" element={<Profile/>}/>
+                <Route exact path = "/riderprofile" element={<RiderProfile/>}/>
                 {/* <Route exact path = "" element={<UserManagement/>}/> */}
             </Routes>
             {/* </ContextProvider> */}

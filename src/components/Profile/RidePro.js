@@ -20,7 +20,7 @@ import {
     MDBModalBody,
     MDBModalFooter,
   } from "mdb-react-ui-kit";
-export default function Profile(){
+export default function RiderProfile(){
     return (
         <div className = "profile">
             <Headers/>
@@ -41,17 +41,29 @@ export default function Profile(){
           </MDBCol>
           <MDBCol className="right-container-pro" col="4" md="6">
           <div className="profile-info">
-                <h3 className="profile-h3">Full Name  </h3>
-                <p className="profile-p">Dummy Name</p>
-                <br/>
-                <h3 className="profile-h3">Email: </h3>
+                <h3 className="profile-h3">Email Id: </h3>
                 <p className="profile-p">Dummy Email</p>
                 <br/>
                 <h3 className="profile-h3">Phone Number: </h3>
+                <p className="profile-p">Dummy Email</p>
+                <br/>
+                <h3 className="profile-h3">Aadhar Number: </h3>
                 <p className="profile-p">Dummy Number</p>
                 <br/>
-                <h3 className="profile-h3">Gender: </h3>
-                <p className="profile-p">Dummy Gender</p>
+                <h3 className="profile-h3">License Number: </h3>
+                <p className="profile-p">Dummy Number</p>
+                <br/>
+                <h3 className="profile-h3">Vehicle Number: </h3>
+                <p className="profile-p">Dummy Number</p>
+                <br/>
+                <h3 className="profile-h3">RC Number: </h3>
+                <p className="profile-p">Dummy Number</p>
+                <br/>
+                <h3 className="profile-h3">Vehicle Color: </h3>
+                <p className="profile-p">Dummy Color</p>
+                <br/>
+                <h3 className="profile-h3">Company Name: </h3>
+                <p className="profile-p">Dummy Name</p>
                 <br/>
             </div>
           </MDBCol>
