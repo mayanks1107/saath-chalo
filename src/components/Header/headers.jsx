@@ -9,18 +9,31 @@ import { CiCirclePlus } from "react-icons/ci";
 import { Link } from "react-router-dom";
 import a from "../../assets/logo-green.png";
 export default function Headers(){
+  var jsonObject;
   const navigate = useNavigate()
 
   const [isLogin,setisLogin] = useState(false);
+  const [uareRiders,setRider] = useState(false);
+  const [ureUser,setUser] = useState(false);
   
   function logout(){
     localStorage.clear();
     navigate('/')
+    window.location.reload();
   }
   const CheckData =()=>{
     if(localStorage.getItem("token")!=null){
-      
       setisLogin(true);
+      jsonObject = JSON.parse(localStorage.getItem("token"))
+      // console.log(jsonObject); 
+      if(jsonObject.IsRider){
+        setRider(true);
+      }else{
+        setUser(true);
+      }
+      
+      // if(localStorage.getItem("token").){
+      // }
   }
 }
 useEffect(()=>{
@@ -54,15 +67,16 @@ useEffect(()=>{
           <ul class="media-drop dropdown-menu">
             <li><Link class="dropdown-item" to='/login'>Login</Link></li>
             <li><Link class="dropdown-item" to="/register">Register</Link></li>
-            {isLogin===false ?
-        
-         null
-         :
-         <li><button className="logout-btn" onClick={logout}>logout</button></li>
+            {uareRiders===false ?null:
+            <li><Link class="dropdown-item" to="/riderprofile">Profile</Link></li>
+            }
+            {ureUser===false ?null:
+            <li><Link class="dropdown-item" to="/userprofile">Profile</Link></li>
+            }
+              
+            {isLogin===false ?null:
+            <li><button className="logout-btn" onClick={logout}>logout</button></li>
           }
-
-            
-            
           </ul>
         </li>
         
