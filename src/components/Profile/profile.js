@@ -1,6 +1,6 @@
 import React from "react";
 import Headers from "../Header/headers";
-import default_pro from "../../assets/default-profile-pic.jpg";
+import default_pro from "../../assets/profile-pic-def.jpg";
 import "./profile.css";
 import Footer from "../Footer/Footer";
 import Header from "../Header/headers";
@@ -24,7 +24,7 @@ export default function Profile(){
     return (
         <div className = "profile">
             <Headers/>
-            
+            <h1> Profile</h1>
       <MDBContainer fluid className="p-3 my-5 h-custom">
         <Toaster toastOptions={{ duration: 6000 }} />
         <MDBRow>
