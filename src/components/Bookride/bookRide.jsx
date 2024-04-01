@@ -32,7 +32,7 @@ export default function BookRide(){
    const res =  await axios.put(url, {RiderEmail: RiderEmail});
   if(res.data.success === true){
     if(res.data.message === "Booking"){
-      toast.success(res.data.message);
+      toast.success("Booking request is generated");
       
     }
   }else{
