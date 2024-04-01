@@ -18,9 +18,10 @@ function CreateRide() {
         timeOfTrip:"",
         availableSeat:"",
         PhoneNumber:"",
-        vehColor: ""
+        VehicleName:"",
+        vehColor: "",
       })
-    //  const [GetlocalData,setlocalData]=useState();
+     const [TypeofTrip,settypeofTrip]=useState("1way");
       const navigate = useNavigate();
     const handleChange= async()=>{
         var Name=JSON.parse(localStorage.getItem("token")).FullName;
@@ -87,13 +88,14 @@ function CreateRide() {
                 <br/>
                 <br/>
                 <label class='label-veh' for="typeOfTrip">Type Of Trip</label>
+                <input class='trip input-create' type="checkbox"  onChange={(e)=>setValues((prev)=>({...prev ,typeOfTrip:e.target.value}))} name="typeOfTrip" id="typeOfTrip" placeholder='1 way / 2 way'/>
                 <input class='trip input-create' type="check"  onChange={(e)=>setValues((prev)=>({...prev ,typeOfTrip:e.target.value}))} name="typeOfTrip" id="typeOfTrip" placeholder='1 way / 2 way'/>
                 <br/>
                 <br/>
                 <label class='label-veh' for="dateOfTrip">Date Of Trip</label>
                 <input class='date input-create' type="date" onChange={(e)=>setValues((prev)=>({...prev ,dateOfTrip:e.target.value}))} name="dateOfTrip" id="dateOfTrip" placeholder='Date'/>
                 <br/>
-                <br/>
+                <br/>dfv
                 <label class='label-veh' for="timeOfTrip">Time Of Trip</label>
                 <input class='time input-create' type="time"  onChange={(e)=>setValues((prev)=>({...prev ,timeOfTrip:e.target.value}))} name="timeOfTrip" id="timeOfTrip" placeholder='Time'/>
                 <br/>

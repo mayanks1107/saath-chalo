@@ -70,11 +70,20 @@ function Signup() {
         AadharNo:Value.AadharNo,
         IsRider: true,
       });
-      console.log(response.data);
-      toast.success(response.data.message);
-      setInterval(navigate("/login"), 5000);
+      console.log(response);
+      if(response.data.success === true){
+        toast.success(response.data.message);
+      } else if (response.data.success === false){
+          console.log("data is not inserted");
+      }
+      // toast.success(response.data.message);
+      // setInterval(navigate("/login"), 5000);
     } catch (error) {
-      toast.error(error.response.data.message);
+      if(error.response.status === 404){
+        toast.error(error.response.data.message);
+      }else{
+        console.log(error);
+      }
     }
   };
 
@@ -408,7 +417,7 @@ function Signup() {
                       }))
                     }
                     id="form2"
-                    type="text"
+                    type="date"
                   />
                 </div>
 
@@ -423,7 +432,7 @@ function Signup() {
                       }))
                     }
                     id="form2"
-                    type="text"
+                    type="time"
                   />
                 </div>
 
