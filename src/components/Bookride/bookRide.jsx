@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Headers from '../Header/headers';
 import './bookRide.css'
 import Footer from "../Footer/Footer";
@@ -11,8 +11,8 @@ export default function BookRide(){
   
   let location = useLocation() || undefined;
   let navigate = useNavigate();
-// console.log(location.state.list[0]);
-
+console.log(location.state.list[0]);
+  const [lazy, setlazing] = useState(false);
   const date =location.state.list[0].dateOfTrip  || null;
   const SourcePlace = location.state.list[0].SourcePlace;
   const DestinationPlace = location.state.list[0].DestinationPlace;
@@ -21,19 +21,49 @@ export default function BookRide(){
   const PhoneNumber=location.state.list[0].PhoneNumber;
   const Price= location.state.list[0].Price;
   const VehicleName= location.state.list[0].VehicleName;
+  const VehicleNumber = location.state.list[0].VehicleNumber;
   const timeOfTrip  = location.state.list[0].timeOfTrip;
   const VehicleDolour = location.state.list[0].VehicleColour
   
   const bookCab = async() => {
    let RiderEmail = location.state.list[0].Email;
    let UserEmail = JSON.parse(localStorage.getItem("token")).Email;
-   console.log(UserEmail+" Cab Booked Successfully")
+   console.log("UserEmail " +UserEmail+" Cab Booked Successfully")
    const url = `${Server}/passenger/update/${UserEmail}`;
+   // This Line will update Rider Email Id in Passenger Schema 
    const res =  await axios.put(url, {RiderEmail: RiderEmail});
+
   if(res.data.success === true){
     if(res.data.message === "Booking"){
-      toast.success(res.data.message);
+      toast.success("Booking request is generated");
+
+      try {
+        const url1 = `${Server}/passenger/approval/${UserEmail}`;
+        const response = await fetch(url1, {method: 'GET', headers: {'Content-Type': 'application/json'}});
+      if (response.ok) {
+          const data = await response.json();
+          console.log(data);
+          console.log("this is rider Email "+data.Approval);
+          
+          if(data.Approval ==="Not_Assigned"){
+            setlazing(true);
+          console.log("Cab Not Assigned");
+        }
+    
+
+    if(data.ConfirmRide){
       
+      navigate('/thankyou',{state:{ RiderName:FullName,RiderEmail:RiderEmail,SourcePlace:SourcePlace,DestinationPlace:DestinationPlace,VehicleNumber:VehicleNumber}});
+    }
+    if(data.RejectRide){
+      alert("Cab Rejected");
+    }
+
+}
+
+      } catch (error) {
+        
+      }
     }
   }else{
     toast.error("Cab Not Booked");
@@ -44,19 +74,35 @@ export default function BookRide(){
 }
 const getPassenger = async () => {
   let UserEmail = JSON.parse(localStorage.getItem("token")).Email;
-  const url = `${Server}/passenger/approval/${UserEmail}`;
+  let RiderEmail = location.state.list[0].Email;
   
-  const response = await fetch(url, {method: 'GET', headers: {'Content-Type': 'application/json'}});
+  const url1 = `${Server}/passenger/approval/${UserEmail}`;
+  
+  const response = await fetch(url1, {method: 'GET', headers: {'Content-Type': 'application/json'}});
   if (response.ok) {
     const data = await response.json();
-    
+    console.log(data.RiderEmail);
+  if(RiderEmail ==="Not Assigned "){
+    console.log("Cab Not Assigned");
+  }
     console.log(data.ConfirmRide);
+    
+
+    if(data.ConfirmRide){
+      
+      navigate('/thankyou',{state:{ RiderName:FullName,RiderEmail:RiderEmail,SourcePlace:SourcePlace,DestinationPlace:DestinationPlace,VehicleNumber:VehicleNumber}});
+    }
+    if(data.RejectRide){
+      alert("Cab Rejected");
+    }
+
     
   }
 }  
 useEffect(() => {
- 
-},[])
+ console.log(lazy)
+})
+
   return(
     <div className="book-ride">
       <Headers/>  
@@ -92,7 +138,7 @@ useEffect(() => {
         <hr className="rule"></hr>
         <button className="book-book btn btn-primary" onClick={()=>bookCab()}>Book⚡</button>
       </div>
-      {/* <button  onClick={()=>getPassenger()}>dhyf</button> */}
+      <button  onClick={()=>getPassenger()}>dhyf</button>
       {/* <button onClick={()=>props.Bookride(props._id)}>Accept⚡</button> */}
       <div className="foot-book">
 
