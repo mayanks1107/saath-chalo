@@ -65,7 +65,7 @@ useEffect(()=>{
           <FaUser className="user-icon" size={"2rem"}/>
           </a>
           <ul class="media-drop dropdown-menu">
-            <li><Link class="dropdown-item" to='/login'>Login</Link></li>
+            <li><Link class="dropdown-item" to='/gmail-login'>Login</Link></li>
             <li><Link class="dropdown-item" to="/register">Register</Link></li>
             {uareRiders===false ?null:
             <li><Link class="dropdown-item" to="/riderprofile">Profile</Link></li>
