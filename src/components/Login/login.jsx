@@ -82,33 +82,59 @@ export default function Login() {
       }
     }
   };
-   //  Login With Phone NUmber
+   //  Login With Phone NUmbercc
    const PhoneLogin = async () => {
     if (phone != null) {
-      toggleOpen();
+      
       console.log(phone);
       try {
-        // const url = `https://saatchalo.onrender.com/user/getphone/${phone}`;
-        const url = `${Server}/user/getphone/${phone}`;
+        let formattedNumber = phone.replace(/^\+91/, '');
+        if(Urider){
+          console.log("Rider");
+          let url = `${Server}/rider/phonelogin`;
+          let res= await fetch(url,{
+            method:"POST",
+            headers:{"Content-Type":"application/json"},
+            body:JSON.stringify({
+              PhoneNumber:formattedNumber
+            })
+        });
+          if(res.ok){
+            const data = await res.json();
+            console.log(data);
+            if(data.success){
+              localStorage.setItem("token", JSON.stringify(data.result));
+              // navigate("/rideRequest");
+              toggleOpen();
+            }else{
+              toast.error(data.message);
+            }
+          }
 
-        const response = await fetch(url, { method: "GET" }
-        );
-        const IsPresent = await response.json();
-        console.log(`IsPresent ${IsPresent}`);
-        if (IsPresent === true) {
-          alert(
-            "Phone And Email already exists. Please choose a number and email."
-          );
+        }else{
+         console.log("User");
+          let url = `${Server}/user/phonelogin`;
+          let res= await fetch(url,{
+            method:"POST",
+            headers:{"Content-Type":"application/json"},
+            body:JSON.stringify({
+              PhoneNumber:formattedNumber
+            })
+        });
+          if(res.ok){
+            const data = await res.json();
+            console.log(data);
+            if(data.success){
+              localStorage.setItem("token", JSON.stringify(data.result));
+              // navigate("/rideFeed");
+              toggleOpen();
+            }else{
+              toast.error(data.message);
+            }
+          }
         }
-        const recaptcha = new RecaptchaVerifier(auth, "recaptcha", {});
-        const confirmation = await signInWithPhoneNumber(
-          auth,
-          phone,
-          recaptcha
-        );
-        toast.success("OTP SENT SUCCESSFULY");
-        setUser(confirmation);
-        //
+     
+       
       } catch (error) {
         console.log(error);
       }
@@ -365,7 +391,7 @@ const EmailAndPassword = async () => {
       </MDBContainer>
        
       <div className="Botton">
-        <Footer />
+        {/* <Footer /> */}
       </div>
     
     </>
