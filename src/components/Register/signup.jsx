@@ -58,7 +58,13 @@ function Signup() {
 
   const RegisterForRider = async () => {
     try {
-      
+      if(Value.Name =="" || Value.Email =="" || Value.Password =="" || Value.PhoneNumber =="" || Value.Licenseno =="" || Value.AadharNo =="" || Value.Rc ==""){
+        toast.error("Please fill all the fields");
+        return;
+      }
+      if(Value.PhoneNumber.length !== 10 ){
+        toast.error("Phone Number must be 10 digit");
+      }else{
       let response = await axios.post(`${Server}/rider/post`, {
         Name: Value.Name,
         Email: Value.Email,
@@ -78,6 +84,7 @@ function Signup() {
       }
       // toast.success(response.data.message);
       // setInterval(navigate("/login"), 5000);
+    }
     } catch (error) {
       if(error.response.status === 404){
         toast.error(error.response.data.message);
@@ -90,40 +97,32 @@ function Signup() {
   const RegisterForUser = async () => {
     // e.preventDefault();
     try {
-      //  Checking the phone is already exist or not
-      // let url = `https://saatchalo.onrender.com/user/getphone/${Value.PhoneNumber}`;
-      let url = `${Server}/user/getboth/${Value.Email}/${Value.PhoneNumber}`;
-      // let url  = `http://localhost:4000/user/getboth/${Value.Email}/${Value.PhoneNumber}`;
-      const response = await fetch(url,{method: 'GET',headers: {'Content-Type': 'application/json'},});
-      const IsPresent = await response.json();
-      console.log(`IsPresent ${IsPresent}`);
-      if (IsPresent === true) {
-        alert(
-          "Phone And Email already exists. Please choose a number and email."
-        );
-      } else {
-        // Posting the data to backend
-        let response = await axios.post(`${Server}/user/post`, {
-          FullName: Value.Name,
-          Email: Value.Email,
-          PhoneNumber: Value.PhoneNumber,
+      if(Value.Name =="" || Value.Email =="" || Value.Password =="" || Value.PhoneNumber ==""){
+        toast.error("Please fill all the fields");
+        return;
+      }
+      if(Value.PhoneNumber.length !== 10 ){
+        toast.error("Phone Number must be 10 digit");
+      }else{
+        let url = `${Server}/user/post`;
+        let response =await  fetch(url, {method: 'POST',headers: {'Content-Type': 'application/json'},body: JSON.stringify(
+          {FullName:Value.Name,
+           Email: Value.Email,
+           Gender: gender,
+           PhoneNumber: Value.PhoneNumber,
           Password: Value.Password,
           IsRider: false,
-        });
-        if (response != null) {
-          if (response.data !== null) {
-            console.log(response);
-            if (response.data.success === true) {
-              toast.success(response.data.message);
-            } else {
-
-              toast.error(response.data.message);
-            }
-          } else {
-            console.log("559");
-            console.log(response);
+         })});
+          let data =await response.json();
+          console.log(data.success);
+          if(data.success === true){
+            toast.success(data.message);
+            // setBasicModal(true);
+            PassengerChange();
+          } else if (data.success === false){
+              toast.error(data.message);
           }
-        }
+
       }
     } catch (error) {
       toast.error("error");
@@ -140,11 +139,6 @@ function Signup() {
    {FullName:Value.Name,
     Email: Value.Email,
     Gender: gender,
-    SourcePlace: Value.SourcePlace,
-    DestinationPlace: Value.DestinationPlace,
-    typeOfTrip: Value.typeOfTrip,
-    dateOfTrip: Value.dateOfTrip,
-    timeOfTrip: Value.timeOfTrip,
     Distance: Value.Distance,
     PhoneNumber: Value.PhoneNumber,
       
@@ -213,6 +207,12 @@ function Signup() {
                   />
                   {/* {!passwordMatch && <p style={{ color: 'red' }}>Passwords do not match!</p>} */}
                 </div>
+                <div className="d-flex flex-row align-items-center mb-3">
+                  <MDBIcon fas icon="fas fa-mars-stroke-up me-1" />
+                  <MDBRadio name='inlineRadio' id='inlineRadio1' value={gender} onChange={()=>setGender("Male")} label='Male' inline />
+                  <MDBRadio name='inlineRadio' id='inlineRadio2' value={gender} onChange={()=>setGender("Female")} label='Female' inline />
+                  <MDBRadio name='inlineRadio' id='inlineRadio2' value={gender} onChange={()=>setGender("other")} label='other' inline />
+                </div>
 
                 <div className="d-flex flex-row align-items-center ">
                   <MDBIcon fas icon="phone me-3" size="lg" />
@@ -231,7 +231,7 @@ function Signup() {
                 {/* {!phoneMatch && (
                     <div className="py-0">
                       <p style={{ color: "red" }}>Phone Number must  10 length!</p>
-                    </div>
+                    </div>dc
                   )} */}
                 <div className="d-flex flex-row align-items-center" >
                   <input
@@ -318,8 +318,8 @@ function Signup() {
                   <MDBBtn
                     className="mb-4"
                     size="lg"
-                    // onClick={() => RegisterForUser()}
-                    onClick={() =>{ toggleOpen();RegisterForUser()}}
+                    onClick={() => RegisterForUser()}
+                    // onClick={() =>{ toggleOpen();}}
                   >
                     User Register
                   </MDBBtn>
@@ -339,12 +339,12 @@ function Signup() {
             </MDBRow>
           </MDBCardBody>
         </MDBCard>
-        <MDBModal open={basicModal} setopen={setBasicModal} tabIndex="12">
+        <MDBModal  open={basicModal} setopen={setBasicModal} tabIndex="12"  disableBackdropClick >
           <MDBModalDialog centered>
             <MDBModalContent>
               <MDBModalHeader>
                 <MDBModalTitle>
-                  <h1>Trip Details</h1>
+                  <p>Save Successfully</p>
                 </MDBModalTitle>
                 <MDBBtn
                   className="btn-close"
@@ -353,108 +353,6 @@ function Signup() {
                 ></MDBBtn>
               </MDBModalHeader>
               <MDBModalBody>
-                
-              <div className="d-flex flex-row align-items-center mb-2">
-                  <MDBIcon fas icon="fas fa-mars-stroke-up me-3" />
-                  <MDBRadio name='inlineRadio' id='inlineRadio1' value={gender} onChange={()=>setGender("Male")} label='Male' inline />
-                  <MDBRadio name='inlineRadio' id='inlineRadio2' value={gender} onChange={()=>setGender("Female")} label='Female' inline />
-                  <MDBRadio name='inlineRadio' id='inlineRadio2' value={gender} onChange={()=>setGender("other")} label='other' inline />
-                </div>
-
-                <div className="d-flex flex-row align-items-center mb-2">
-                  <MDBIcon fas icon="fas fa-plane  me-3" size="lg" />
-                  <MDBInput
-                    label="Enter place SourcePlace "
-                    onChange={(e) =>
-                      setValues((prev) => ({
-                        ...prev,
-                        SourcePlace: e.target.value,
-                      }))
-                    }
-                    id="form2"
-                    type="text"
-                  />
-                </div>
-                
-                <div className="d-flex flex-row align-items-center mb-2 ">
-                  <MDBIcon fas icon="fas fa-plane  me-3" size="lg" />
-                  <MDBInput
-                    label="Enter place DestinationPlace "
-                    onChange={(e) =>
-                      setValues((prev) => ({
-                        ...prev,
-                        DestinationPlace: e.target.value,
-                      }))
-                    }
-                    id="form2"
-                    type="text"
-                  />
-                </div>
-
-                <div className="d-flex flex-row align-items-center md-2 ">
-                  <MDBIcon fas icon="fas fa-plane me-3" size="lg" />
-                  <MDBInput
-                    label="type Of Trip "
-                    onChange={(e) =>
-                      setValues((prev) => ({
-                        ...prev,
-                        typeOfTrip: e.target.value,
-                      }))
-                    }
-                    id="form2"
-                    type="text"
-                  />
-                </div>
-
-                <div className="d-flex flex-row align-items-center md-2 ">
-                  <MDBIcon fas icon="fas fa-plane me-3" size="lg" />
-                  <MDBInput
-                    label="Date Of Trip "
-                    onChange={(e) =>
-                      setValues((prev) => ({
-                        ...prev,
-                        dateOfTrip: e.target.value,
-                      }))
-                    }
-                    id="form2"
-                    type="date"
-                  />
-                </div>
-
-                <div className="d-flex flex-row align-items-center md-2 ">
-                  <MDBIcon fas icon="fas fa-plane me-3" size="lg" />
-                  <MDBInput
-                    label="Time Of Trip "
-                    onChange={(e) =>
-                      setValues((prev) => ({
-                        ...prev,
-                        timeOfTrip: e.target.value,
-                      }))
-                    }
-                    id="form2"
-                    type="time"
-                  />
-                </div>
-
-                <div className="d-flex flex-row align-items-center md-2">
-                  <MDBIcon fas icon="fas fa-plane me-3" size="lg" />
-                  <MDBInput
-                    label="Distance Of Trip "
-                    onChange={(e) =>
-                      setValues((prev) => ({
-                        ...prev,
-                        Distance: e.target.value,
-                      }))
-                    }
-                    id="form2"
-                    type="text"
-                  />
-                </div>
-                  
-
-
-
-
               </MDBModalBody>
 
               <MDBModalFooter>
