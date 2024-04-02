@@ -18,7 +18,7 @@
 .cards{
     position: relative;
     
-    background-color: #0F9D58;
+    background: linear-gradient(#0F9D58, #3f86aa);
     padding: 12.5%;
 }
 .carde{
@@ -26,6 +26,13 @@
    
     
     width: 25rem;
+}
+.hidden{
+    opacity: 0;
+    transition: all 1s;
+}
+.show{
+    opacity: 1;
 }
 }
 @media only screen and (max-width : 480px){

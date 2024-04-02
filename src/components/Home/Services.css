@@ -1,7 +1,7 @@
 @media only screen  and (min-width : 1224px) {
 .service{
     position: relative;
-    background-color: #0F9D58;
+    background: linear-gradient(#3f86aa, #0F9D58);
     padding: 75px;
     color: white;
 }

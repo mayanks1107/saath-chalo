@@ -1,11 +1,26 @@
-import React from "react";
+import React, { useEffect } from "react";
 // import "./cards.css"
 import "./Cards.css"
 export default function Cards(){
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      console.log(entry)
+      if(entry.isIntersecting){
+        entry.target.classList.add('show');
+      }else{
+        entry.target.classList.remove('show');
+      }
+    })
+  })
+  useEffect(() => {
+    const hiddenEle = document.querySelectorAll('.hidden');
+    hiddenEle.forEach((el) => observer.observe(el));
+  })
+  
     return(
         <div className="cards">
        
-            <div class="ban-1 card carde">
+            <div class="hidden ban-1 card carde">
               <div class="card-body">
                 <h5 class="card-title">Your choice of transportation at affordable rates.</h5>
 
@@ -15,7 +30,7 @@ export default function Cards(){
             
            
            
-            <div class="ban-2 c-2 card carde">
+            <div class="hidden ban-2 c-2 card carde">
               <div class="card-body">
                 <h5 class="card-title">Rely on those you journey with</h5>
                 
@@ -25,7 +40,7 @@ export default function Cards(){
             
             </div>
             
-            <div class="ban-3 card carde">
+            <div class="hidden ban-3 card carde">
               <div class="card-body">
                 <h5 class="card-title">Scroll, click, tap, and you're on your way!</h5>
                 

@@ -1,6 +1,9 @@
 @media only screen  and (min-width : 1224px) {
+    .head{
+        background:linear-gradient(#0F9D58, #109756);
+    }
 .navbar{
-    background-color: #0F9D58;
+    /*  */
     padding-bottom: 0;
     padding-top: 0.2%;
 }

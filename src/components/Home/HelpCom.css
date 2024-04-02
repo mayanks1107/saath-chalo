@@ -1,31 +1,40 @@
+
 @media only screen  and (min-width : 1224px) {
 .hCom{
-    margin-top: 26%;
-    margin-left: 6.6%;
-    margin-right: 4%;
+
     position: relative;
-    margin-bottom: 6.5%;
+    width: 100%;
+    margin-top: 30%;
+    background: linear-gradient(#0F9D58, #3f86aa);
+   padding-bottom: 5%;
+   padding-top: 5%;
 }
 .help-h3{
     text-align: left;
+    color:#1b1a0b;
 }
 .h-p{
     text-align: left;
     width: 40%;
+    color:#1b1a0b;
 }
 .h-cards{
-    padding-left: 4%;
+    padding-left: 5%;
     padding-top: 3.6%;
     
 }
 .h-cards-right{
     position: absolute;
-    top: 16%;
+    top: 23%;
     left: 55%;
     padding-right: 5%;
 }
 .p-right-h{
     width: 100%;
+    color:#1b1a0b;
+}
+.faq{
+    color:#1b1a0b;
 }
 }
 @media only screen and (max-width : 480px){
