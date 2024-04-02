@@ -14,7 +14,7 @@ import Confirm from './components/Confirmation/confirm';
 import Profile from './components/Profile/profile';
 import RiderProfile from './components/Profile/RidePro';
 import GmailRegister from './components/Register/GmailRegister';
-import GmailLogin from './components/Login/GmailLogin';
+import Gmail from './components/Login/Gmail';
 // import Thankyou from './components/ThankYou/Thankyou';
 function App() {
   return(
@@ -26,8 +26,8 @@ function App() {
                 {/* login and Register page */}
                 <Route exact path="/login" element={<Login/>}/>
                 <Route exact path="/register" element={<Signup/>}/>
-                <Route exact path="/gmail-Register" element={<GmailRegister/>}/>
-                <Route exact path="/gmail-login" element={<GmailLogin/>}/>
+                <Route exact path="/gmail-register" element={<GmailRegister/>}/>
+                <Route exact path="/gmail" element={<Gmail/>}/>
               
                 {/*  */}
                 <Route exact path="/scam" element={<Scam/>}/>
