@@ -1,6 +1,7 @@
 import React ,{useState} from "react";
 import "./main.css";
 import mainIimg from "../../assets/carpool.svg"
+import { Server } from "../Server/Server";
 
 // import {dp} from "../assets/UberPOOL-Launch_Digital-Assets_Amber_blog_960x480_r1.avif";
 export default function Main(){
@@ -14,7 +15,8 @@ export default function Main(){
             alert("Please fill all the fields");
             return;
         }
-       let res= await fetch("http://localhost:4000/tripdet/getpath",{
+      let url = `${Server}/tripdet/getpath`
+       let res= await fetch(url,{
             method:"POST",
             headers:{"Content-Type":"application/json"},
             body:JSON.stringify({
