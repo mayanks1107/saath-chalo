@@ -52,7 +52,7 @@ const CheckData =()=>{
         
     }else{
         toast.error("Not Found");
-        navigate('/login');  
+        navigate('/gmail-login');  
     }
 }
 useEffect(()=>{
