@@ -66,7 +66,7 @@ import { useNavigate } from "react-router-dom";
             if (res.data.success) {
               localStorage.setItem("token", JSON.stringify(res.data.result));
               console.log("true");
-              navigate("/bookRide");
+              navigate("/rideFeed");
             } else if (res.data.success === false) {
                 toast.error(res.data.message);
             }
