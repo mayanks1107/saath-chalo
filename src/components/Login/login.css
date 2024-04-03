@@ -1,6 +1,6 @@
 .log-em{
   padding-bottom: 1%;
-  background: linear-gradient(to right,  rgb(177, 119, 185), rgb(61, 165, 184));
+  background: linear-gradient(to left,  rgb(177, 119, 185), rgb(61, 165, 184));
 }
 .footer{
   position: absolute;
@@ -68,6 +68,26 @@ MDBInput{
 }
 .have-acc{
   margin-left: -10%;
+}
+.log-g{
+  position: absolute;
+  top: 35%;
+  left: 53%;
+}
+.log-e{
+  position: absolute;
+  top: 35%;
+  margin-left: 1%;
+}
+.orrrr{
+  margin-right: 80px;
+  margin-top: 15px;
+}
+.have-acc-g{
+  margin-left: 33%;
+}
+.link{
+  color: #123456;
 }
 @media only screen and (max-width : 480px){
   .Botton{

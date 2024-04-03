@@ -343,7 +343,7 @@ const EmailAndPassword = async () => {
               )}
               <p className="have-acc small fw-bold mt-2 pt-1 mb-2">
                 Don't have an account?{" "}
-                <a href="/register" className="link-danger">
+                <a  href="/register" className="link">
                   Register
                 </a>
               </p>

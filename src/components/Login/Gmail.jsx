@@ -79,7 +79,7 @@ function Gmail() {
       });
   };
   return (
-    <>
+    <div className="log-em">
       <Header />
       <MDBContainer fluid className="p-3 my-5 h-custom">
         <Toaster toastOptions={{ duration: 6000 }} />
@@ -104,7 +104,8 @@ function Gmail() {
             {/* <div class="vl-2"></div> */}
             {state === "login" ? (
               <MDBBtn
-                className="mb-0 px-5 btn-login "
+                
+                className="mb-0 px-5 btn-login log-g"
                 color="danger"
                 size="lg"
                 onClick={signInWithGoogle}
@@ -113,7 +114,7 @@ function Gmail() {
               </MDBBtn>
             ) : (
               <MDBBtn
-                className="mb-0 px-5 btn-login "
+                className="mb-0 px-5 btn-login"
                 color="danger"
                 size="lg"
                 onClick={() => navigate("/gmail-register")}
@@ -123,13 +124,13 @@ function Gmail() {
             )}
             <br />
             <br />
-            OR
+            <p className="orrrr">OR</p>
             <br />
             <br />
             <div className="email-form">
               {state === "login" ? 
               <MDBBtn
-                className="mb-0 px-5 btn-login "
+                className="mb-0 px-5 btn-login log-e"
                 color="success"
                 onClick={() => navigate("/login")}
                 size="lg"
@@ -167,9 +168,9 @@ function Gmail() {
 
               {/* )} */}
               {state === "login" ? 
-              <p className="small fw-bold mt-2 pt-1 mb-2">
+              <p className="have-acc-g small fw-bold mt-2 pt-1 mb-2">
                 Don't have an account?{" "}
-                <Link  to='/gmail' state="register">Register</Link>
+                <Link style={{color: "#123456"}}  to='/gmail' state="register">Register</Link>
               </p>
               :
               <p className="small fw-bold mt-2 pt-1 mb-2">
@@ -185,7 +186,7 @@ function Gmail() {
       <div className="Botton">
         <Footer />
       </div>
-    </>
+    </div>
   );
 }
 
