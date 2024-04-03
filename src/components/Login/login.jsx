@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 // import {useContext} from "react";
 import { auth } from "../../Firbase/firbase";
+import gifLog from "../../assets/loganim.gif";
 import {
   RecaptchaVerifier,
   signInWithPhoneNumber,
@@ -254,7 +255,7 @@ const EmailAndPassword = async () => {
 };
 
   return (
-    <>
+    <div className="log-em">
     <Header />
       <MDBContainer fluid className="p-3 my-5 h-custom">
         <Toaster toastOptions={{ duration: 6000 }} />
@@ -264,7 +265,8 @@ const EmailAndPassword = async () => {
             <img
               className="log-img"
               src={
-                "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+                gifLog
+                // "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
               }
               class="img-fluid"
               alt="Sample image"
@@ -278,7 +280,7 @@ const EmailAndPassword = async () => {
             {/* <div class="vl-2"></div> */}
             <>
               <PhoneInput
-                style={{ width: "1250px;" }}
+                style={{ width: "50%", marginLeft: "25%" }}
                 country={"in"}
                 value={phone}
                 onChange={(phone) => setPhone("+" + phone)}
@@ -290,6 +292,7 @@ const EmailAndPassword = async () => {
             <br />
             <div className="email-form">
               <MDBInput
+                
                 className="inp-login"
                 wrapperClass="mb-4"
                 onChange={(e) => setEmail(e.target.value)}
@@ -297,6 +300,7 @@ const EmailAndPassword = async () => {
                 id="formControlLg"
                 type="email"
                 size="lg"
+                
               />
               <MDBInput
                 className="inp-login"
@@ -308,7 +312,7 @@ const EmailAndPassword = async () => {
                 size="lg"
               />
             </div>
-            <div className="d-flex justify-content-between mb-4">
+            <div className="checkkk d-flex justify-content-between mb-4">
               <MDBCheckbox
                 name="flexCheck"
                 value={Urider}
@@ -317,7 +321,7 @@ const EmailAndPassword = async () => {
                 label="Are You a Rider"
               />
             </div>
-            <div className="text-center text-md-start mt-4 pt-2">
+            <div className="log-btnn text-center text-md-start mt-4 pt-2">
               {!Urider ? (
                 <MDBBtn
                   className="mb-0 px-5 btn-login "
@@ -337,7 +341,7 @@ const EmailAndPassword = async () => {
                   Login
                 </MDBBtn>
               )}
-              <p className="small fw-bold mt-2 pt-1 mb-2">
+              <p className="have-acc small fw-bold mt-2 pt-1 mb-2">
                 Don't have an account?{" "}
                 <a href="/register" className="link-danger">
                   Register
@@ -391,9 +395,9 @@ const EmailAndPassword = async () => {
       </MDBContainer>
        
       <div className="Botton">
-        {/* <Footer /> */}
+        <Footer />
       </div>
     
-    </>
+    </div>
   );
 }

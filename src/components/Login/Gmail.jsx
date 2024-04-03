@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 // import {useContext} from "react";
-
+import gifLog from "../../assets/loganim.gif";
 import { auth } from "../../Firbase/firbase";
 import {
   MDBContainer,
@@ -89,7 +89,8 @@ function Gmail() {
             <img
               className="log-img"
               src={
-                "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+                gifLog
+                // "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
               }
               class="img-fluid"
               alt="Sample image"
@@ -147,8 +148,10 @@ function Gmail() {
                  }
             </div>
             {state === "login" ? 
-            <div className="d-flex justify-content-between mb-4">
+            
+            <div  className="checkkk d-flex justify-content-between mb-4">
               <MDBCheckbox
+                
                 name="flexCheck"
                 value={Urider}
                 onClick={() => AreuRider()}
@@ -157,6 +160,7 @@ function Gmail() {
                 required
               />
             </div>
+            
             : null}
             <div className="text-center text-md-start mt-4 pt-2">
               {/* {!Urider ? ( */}
