@@ -1,31 +1,9 @@
 import React, { useState } from "react";
 // import {useContext} from "react";
 // import { auth } from "../../Firbase/firbase";
-// import {
-//   RecaptchaVerifier,
-//   signInWithPhoneNumber,
- 
-// } from "firebase/auth";
-import {
- 
-    MDBBtn,
-    MDBContainer,
-    MDBRow,
-    MDBCol,
-    MDBCard,
-    MDBCardBody,
-    MDBCardImage,
-    MDBInput,
-    MDBIcon,
-    MDBModal,
-    MDBModalDialog,
-    MDBModalContent,
-    MDBModalHeader,
-    MDBModalTitle,
-    MDBModalBody,
-    MDBModalFooter,
-    MDBRadio,
- } from "mdb-react-ui-kit";
+import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { auth } from "../../Firbase/firbase";
+import {MDBBtn,MDBContainer,MDBRow,MDBCol,MDBCard,MDBCardBody,MDBCardImage,MDBInput,MDBIcon,MDBModal,MDBModalDialog,MDBModalContent,MDBModalHeader,MDBModalTitle,MDBModalBody,MDBModalFooter,MDBRadio,} from "mdb-react-ui-kit";
 import {Server} from "../Server/Server"
 
 import axios from "axios";
@@ -37,7 +15,7 @@ import { toast, Toaster } from "react-hot-toast";
 import "./regi.css";
 import Footer from "../Footer/Footer";
 import Header from "../Header/headers";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
     
     function GmailRegister() {
       const [basicModal, setBasicModal] = useState(false);
@@ -46,7 +24,9 @@ import { useNavigate } from "react-router-dom";
       const [checked, setChecked] = useState(false);
       // const [phoneMatch, setphoneMatch] = useState(false);
       // const phoneOpen = () => setphoneMatch(!phoneMatch);
-      const navigate = useNavigate();
+      // const navigate = useNavigate();
+      const provider = new GoogleAuthProvider();
+
       const [Value, setValues] = useState({
         Name: "",
         Email: "",
@@ -63,61 +43,93 @@ import { useNavigate } from "react-router-dom";
         timeOfTrip: "",
         Distance: "",
       });
-      const [gender,setGender] = useState();
-    
+      const [gender,setGender] = useState("");
+      
       const RegisterForRider = async () => {
         try {
-          if(Value.Name =="" || Value.Email =="" || Value.Password =="" || Value.PhoneNumber =="" || Value.Licenseno =="" || Value.AadharNo =="" || Value.Rc ==""){
+          if(gender =="" || Value.PhoneNumber =="" || Value.Licenseno =="" || Value.AadharNo =="" || Value.Rc ==""){
             toast.error("Please fill all the fields");
             return;
           }
           if(Value.PhoneNumber.length !== 10 ){
             toast.error("Phone Number must be 10 digit");
           }else{
-          let response = await axios.post(`${Server}/rider/post`, {
-            Name: Value.Name,
-            Email: Value.Email,
-            Password: Value.Password,
-            PhoneNumber: Value.PhoneNumber,
-            Licenseno: Value.Licenseno,
-            Vehicleno: Value.Vehicleno,
-            Rc: Value.Rc,
-            AadharNo:Value.AadharNo,
-            IsRider: true,
-          });
-          console.log(response);
-          if(response.data.success === true){
-            toast.success(response.data.message);
-          } else if (response.data.success === false){
-              console.log("data is not inserted");
-          }
-          // toast.success(response.data.message);
-          // setInterval(navigate("/login"), 5000);
+            signInWithPopup(auth, provider)
+            .then(async (result) => {
+              console.log(result);
+              const user = result.user;
+              console.log(user.displayName);
+              setValues({ ...Value, Name: user.displayName });
+              setValues({ ...Value, Email: user.email });
+            
+              let url2 = `${Server}/rider/getboth/${user.email}/${Value.PhoneNumber}`;
+                  let response2 =await  fetch(url2, {method: 'GET',headers: {'Content-Type': 'application/json'}})
+                  let data2 =await response2.json();
+                  console.log(data2)
+                  if(data2.success === false){
+                    toast.error(data2.message);
+                  }else{
+                let response = await axios.post(`${Server}/rider/gmailRegister`, {
+                  Name: user.displayName,
+                  Email: user.email,
+                  PhoneNumber: Value.PhoneNumber,
+                  Licenseno: Value.Licenseno,
+                  Rc: Value.Rc,
+                  AadharNo:Value.AadharNo,
+                  IsRider: true,
+                });
+                console.log(response);
+                if(response.data.success === true){
+                  toast.success(response.data.message);
+                  localStorage.setItem("token", JSON.stringify(response.data.result));
+                  // toast.success(response.data.message);
+                  navigate("/rideRequest")
+      
+                } else if (response.data.success === false){
+                    console.log("data is not inserted");
+                }
+              }
+
+            })
+            .catch((error) => {
+              console.log(error);
+            });
         }
         } catch (error) {
-          if(error.response.status === 404){
-            toast.error(error.response.data.message);
-          }else{
             console.log(error);
-          }
         }
       };
-    
+      
       const RegisterForUser = async () => {
         // e.preventDefault();
         try {
         
-          if(Value.Name =="" || Value.Email ==""  || Value.PhoneNumber ==""){
+          if(Value.PhoneNumber =="" || gender ==""){
             toast.error("Please fill all the fields");
             return;
           }
-          // if(Value.PhoneNumber.length !== 10 ){
-          //   toast.error("Phone Number must be 10 digit");
-          // }else{
-            let url = `${Server}/user/gmail/post`;
+          if(Value.PhoneNumber.length !== 10 ){
+            toast.error("Phone Number must be 10 digit");
+          }else{
+            //  Gmail Login for User
+            signInWithPopup(auth, provider)
+            .then(async (result) => {
+              const user = result.user;
+              console.log(user.displayName);
+              setValues({ ...Value, Name: user.displayName });
+              setValues({ ...Value, Email: user.email });
+             let url2 = `${Server}/user/getboth/${user.email}/${Value.PhoneNumber}`;
+            let response2 =await  fetch(url2, {method: 'GET',headers: {'Content-Type': 'application/json'}})
+            let data2 =await response2.json();
+            console.log(data2)
+            if(data2.success === false){
+              toast.error(data2.message);
+            }else{
+              console.log("not  Register'");
+            let url = `${Server}/user/gmailRegister`;
             let response =await  fetch(url, {method: 'POST',headers: {'Content-Type': 'application/json'},body: JSON.stringify(
-              {FullName:Value.Name,
-                Email: Value.Email,
+              {FullName:user.displayName,
+                Email: user.email,
                 Gender: gender,
                 PhoneNumber: Value.PhoneNumber,
                 
@@ -125,19 +137,38 @@ import { useNavigate } from "react-router-dom";
              })});
               let data =await response.json();
               console.log(data);
-              // if(data.success === true){
-              //   toast.success(data.message);
-              //   // setBasicModal(true);
-              //   PassengerChange();
-              // } else if (data.success === false){
-              //     toast.error(data.message);
-              // }
-    
-          // }
+              if(data.success === true){
+                toast.success(data.message);
+                console.log(data.result);
+                PassengerChange();
+                localStorage.setItem("token", JSON.stringify(data.result));
+                // setBasicModal(true);
+               navigator('/rideFeed')
+              } else if (data.success === false){
+                  toast.error(data.message);
+              }
+            }
+
+
+            })
+            .catch((error) => {
+              console.log(error);
+            });
+            
+            
+            
+            
+              
+          }
+      
         } catch (error) {
           toast.error("error");
         }
       };
+      function signInWithGoogle(e) {
+        console.log("Sign in with google");
+        console.log(e);
+      }
     
       function clickHelper() {
         console.log(document.getElementById("inp-check-rider").checked);
@@ -176,46 +207,6 @@ import { useNavigate } from "react-router-dom";
                   Sign up with You Gmail
                 </p>
 
-                <div className="d-flex flex-row align-items-center mb-4 ">
-                  <MDBIcon fas icon="user me-3" size="lg" />
-                  <MDBInput
-                    label="Your Name"
-                    id="form1"
-                    onChange={(e) =>
-                      setValues((prev) => ({ ...prev, Name: e.target.value }))
-                    }
-                    type="text"
-                    className="w-100"
-                  />
-                </div>
-
-                <div className="d-flex flex-row align-items-center mb-4">
-                  <MDBIcon fas icon="envelope me-3" size="lg" />
-                  <MDBInput
-                    label="Your Email"
-                    id="form2"
-                    onChange={(e) =>
-                      setValues((prev) => ({ ...prev, Email: e.target.value }))
-                    }
-                    type="email"
-                  />
-                </div>
-
-                <div className="d-flex flex-row align-items-center mb-4">
-                  <MDBIcon fas icon="unlock-alt me-3" />
-                  <MDBInput
-                    label="Password"
-                    onChange={(e) =>
-                      setValues((prev) => ({
-                        ...prev,
-                        Password: e.target.value,
-                      }))
-                    }
-                    id="form2"
-                    type="password"
-                  />
-                  {/* {!passwordMatch && <p style={{ color: 'red' }}>Passwords do not match!</p>} */}
-                </div>
                 <div className="d-flex flex-row align-items-center mb-3">
                   <MDBIcon fas icon="fas fa-mars-stroke-up me-1" />
                   <MDBRadio name='inlineRadio' id='inlineRadio1' value={gender} onChange={()=>setGender("Male")} label='Male' inline />
@@ -301,18 +292,21 @@ import { useNavigate } from "react-router-dom";
                   <MDBBtn
                     className="mb-4"
                     size="lg"
+                    color="danger"
+
                     onClick={() => RegisterForRider()}
                   >
-                    Rider Register
+                    Gmail Register
                   </MDBBtn>
                 ) : (
                   <MDBBtn
                     className="mb-4"
                     size="lg"
+                    color="danger"
                     onClick={() => RegisterForUser()}
                     // onClick={() =>{ toggleOpen();}}
                   >
-                    User Register
+                    Gmail Register
                   </MDBBtn>
                 )}
               </MDBCol>
