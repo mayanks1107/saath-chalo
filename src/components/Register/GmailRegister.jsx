@@ -143,7 +143,7 @@ import Header from "../Header/headers";
                 PassengerChange();
                 localStorage.setItem("token", JSON.stringify(data.result));
                 // setBasicModal(true);
-               navigator('/rideFeed')
+               
               } else if (data.success === false){
                   toast.error(data.message);
               }
@@ -187,7 +187,7 @@ import Header from "../Header/headers";
       })});
       let data =await response.json();
       console.log(data);
-      (data.success === true )?  toast.success(data.message): toast.error(data.message);
+      (data.success === true )?  navigator('/rideFeed') : toast.error(data.message);
       }
       return (
         <>
