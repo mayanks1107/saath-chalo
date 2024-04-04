@@ -5,30 +5,47 @@ import {Server} from "../Server/Server"
 import "./RideFeed.css";
 import FeedCard from "./FeedCard";
 import { toast, Toaster } from "react-hot-toast";
-
 // import pic from "../../assets/proflic-pic.png";
 import Footer from "../Footer/Footer";
-import { useNavigate } from "react-router-dom";
-export default function RideFeed(){
+import { useLocation, useNavigate } from "react-router-dom";
+export default function RideHome(){
     // const [RiderInfo,setRiderInfo] = useState([]);
-    const [riderInfo, setRiderInfo] = useState([])
+    const location = useLocation();
+    const [SourcePlace,setSourcePlace] = useState(location.state.SourcePlace || null);
+    const [DestinationPlace,setDestinationPlace ] = useState(location.state.DestinationPlace || null);
+    const [dateOfTrip,setdateOfTrip] = useState(location.state.dateOfTrip); 
+    const [riderInfo, setRiderInfo] = useState([]);
+    const [available,setAvailable] = useState(true);
     const navigate = useNavigate();
+    
     useEffect(()=>{
     const Riderhandle = async () => {
         try {
             // const url = `https://saatchalo.onrender.com/tripdet`;
-            const url = `${Server}/tripdet`;
+            const url = `${Server}/tripdet/getpath`;
             
-            const response = await fetch(url);
-    
+            const response = await fetch(url,{
+                method:"POST",
+                headers:{"Content-Type":"application/json"},
+                body:JSON.stringify({
+                SourcePlace:SourcePlace || "",
+                DestinationPlace: DestinationPlace || "",
+                dateOfTrip: dateOfTrip || ""
+                })
+            });
             if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status}`);
             }
-    
             const data = await response.json();
-            // console.log("efiefiebi",data);
-            setRiderInfo(data);
-            // console.log(riderInfo);
+            console.log(data);
+            if(data.success){
+                // setRiderInfo(data.query);
+            setRiderInfo(data.query);
+            }else{
+                setAvailable(false);
+                // toast.error("No Data Found");
+            }
+            console.log(riderInfo);
         } catch (error) {
             console.error('Error fetching rider data:', error);
         }
@@ -44,27 +61,18 @@ export default function RideFeed(){
     
     
    }
-//  Checking the Rider Is a Valid or not
-// const CheckData =()=>{
-//     if(localStorage.getItem("token")!=null){
-//       JSON.parse(localStorage.getItem("token"))
-//     //   setRiderInfo(localStorage.getItem("token"))
-        
-//     }else{
-//         toast.error("Not Found");
-//         navigate('/gmail-login');  
-//     }
-// }
-// useEffect(()=>{
-//     CheckData()
-//    },[]) 
+   function OfferRide(){
+    navigate('/createRide');
+    // console.log("Offer Ride");    
+   }
 
-   console.log(riderInfo);
 
     return(
         <div className="rFeed">
             <Headers/>
             <Toaster toastOptions={{ duration: 16000 }} />
+            {available === true &&
+            <>
             <div className="form-submit">
                 <input className="inp input-from" type="text" placeholder="from" name="from"/>
                 <input className="inp input-to" type="text" placeholder="to" name="to"/>
@@ -104,19 +112,26 @@ export default function RideFeed(){
                 <h3 className="h3-trust">Trust and Safety</h3>
                 </div>
             </div>
+            </>
+            }   
+           
             <div className="cards-left">
                 
-                {/* <FeedCard className = "abcd" SourcePlace = "Delhi" DestinationPlace = "Gurgaon" dateOfTrip="2024-01-02" timeOfTrip="05:20" FullName = "Mayank" Rating = "5"/>
-                
-                <FeedCard SourcePlace = "Delhi" DestinationPlace = "Gurgaon" dateOfTrip="2024-01-02" timeOfTrip="05:20" FullName = "Mayank" Rating = "5"/> */}
-                
+               
                 {riderInfo.map((info) => (
                     <FeedCard key={info.id} {...info} handleCard={handleCard} />
                 ))}
+                {available === false && <div>There are no rides yet for today between these cities
+             
+                <h1>
+                {SourcePlace} → {DestinationPlace}
+                </h1>
+                <h2>
+                Would you like to be the first to offer a ride?
+                </h2>
 
-
-            
-                                  
+                <button className="btn btn-primary" onClick={()=>OfferRide()}>Offer a ride</button>
+                    </div>}              
                     
                 </div>
                 
@@ -129,23 +144,4 @@ export default function RideFeed(){
 }
 
 
-{/* <tr key={info._id}>
-<div className="fCard">
-    <div className="card carda">
-      <div className="card-body">
-        <h5 className="card-title from">{info.SourcePlace}</h5>
-        <hr id="myhr"></hr>
-        <h5 className="card-title to">{info.DestinationPlace}</h5>
-        <p className="card-text price">{"56"}</p>
-        <p className="card-text price">₹{props.price}.00</p>
-        <p className="card-text strt">{info.typeOfTript}</p>
-        <p className="card-text end">{info.timeOfTrip}</p>
-        <a href="#" className="card-link">Card link</a>
-        <a href="#" className="card-link">Another link</a>
-        <img className = "pic" src = {pic} alt = "profile pic"/>
-        <p className="card-text name">{info.PhoneNumber}</p>
-        <p className="card-text rating">{info.availableSeat}⭐</p>
-      </div>
-    </div>
-</div>
-</tr> */}
+// Path: saath-chalo/src/components/RideFeed/FeedCard.jsx
