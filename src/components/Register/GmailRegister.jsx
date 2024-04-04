@@ -106,33 +106,34 @@ import { useNavigate } from "react-router-dom";
       const RegisterForUser = async () => {
         // e.preventDefault();
         try {
-          if(Value.Name =="" || Value.Email =="" || Value.Password =="" || Value.PhoneNumber ==""){
+        
+          if(Value.Name =="" || Value.Email ==""  || Value.PhoneNumber ==""){
             toast.error("Please fill all the fields");
             return;
           }
-          if(Value.PhoneNumber.length !== 10 ){
-            toast.error("Phone Number must be 10 digit");
-          }else{
-            let url = `${Server}/user/post`;
+          // if(Value.PhoneNumber.length !== 10 ){
+          //   toast.error("Phone Number must be 10 digit");
+          // }else{
+            let url = `${Server}/user/gmail/post`;
             let response =await  fetch(url, {method: 'POST',headers: {'Content-Type': 'application/json'},body: JSON.stringify(
               {FullName:Value.Name,
-               Email: Value.Email,
-               Gender: gender,
-               PhoneNumber: Value.PhoneNumber,
-              Password: Value.Password,
-              IsRider: false,
+                Email: Value.Email,
+                Gender: gender,
+                PhoneNumber: Value.PhoneNumber,
+                
+                IsRider: false,
              })});
               let data =await response.json();
-              console.log(data.success);
-              if(data.success === true){
-                toast.success(data.message);
-                // setBasicModal(true);
-                PassengerChange();
-              } else if (data.success === false){
-                  toast.error(data.message);
-              }
+              console.log(data);
+              // if(data.success === true){
+              //   toast.success(data.message);
+              //   // setBasicModal(true);
+              //   PassengerChange();
+              // } else if (data.success === false){
+              //     toast.error(data.message);
+              // }
     
-          }
+          // }
         } catch (error) {
           toast.error("error");
         }
