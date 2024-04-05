@@ -15,7 +15,7 @@ import { toast, Toaster } from "react-hot-toast";
 import "./regi.css";
 import Footer from "../Footer/Footer";
 import Header from "../Header/headers";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
     
     function GmailRegister() {
       const [basicModal, setBasicModal] = useState(false);
@@ -24,7 +24,7 @@ import Header from "../Header/headers";
       const [checked, setChecked] = useState(false);
       // const [phoneMatch, setphoneMatch] = useState(false);
       // const phoneOpen = () => setphoneMatch(!phoneMatch);
-      // const navigate = useNavigate();
+      const navigate = useNavigate();
       const provider = new GoogleAuthProvider();
 
       const [Value, setValues] = useState({
@@ -115,7 +115,10 @@ import Header from "../Header/headers";
             signInWithPopup(auth, provider)
             .then(async (result) => {
               const user = result.user;
+              const Email= user.email;
+              const Name = user.displayName;
               console.log(user.displayName);
+
               setValues({ ...Value, Name: user.displayName });
               setValues({ ...Value, Email: user.email });
              let url2 = `${Server}/user/getboth/${user.email}/${Value.PhoneNumber}`;
@@ -140,7 +143,7 @@ import Header from "../Header/headers";
               if(data.success === true){
                 toast.success(data.message);
                 console.log(data.result);
-                PassengerChange();
+                PassengerChange({Email:Email,Name:Name});
                 localStorage.setItem("token", JSON.stringify(data.result));
                 // setBasicModal(true);
                
@@ -174,11 +177,12 @@ import Header from "../Header/headers";
         console.log(document.getElementById("inp-check-rider").checked);
         setChecked(document.getElementById("inp-check-rider").checked);
       }
-      const PassengerChange = async () => { 
+      async function PassengerChange({Email,Name}) { 
+        console.log("this is email"+Email,Name);
       let url = `${Server}/passenger`; 
      let response =await  fetch(url, {method: 'POST',headers: {'Content-Type': 'application/json'},body: JSON.stringify(
-       {FullName:Value.Name,
-        Email: Value.Email,
+       {FullName:Name,
+        Email: Email,
         Gender: gender,
         Distance: Value.Distance,
         PhoneNumber: Value.PhoneNumber,
@@ -187,7 +191,7 @@ import Header from "../Header/headers";
       })});
       let data =await response.json();
       console.log(data);
-      (data.success === true )?  navigator('/rideFeed') : toast.error(data.message);
+      (data.success === true )?  navigate('/rideFeed') : toast.error(data.message);
       }
       return (
         <>
@@ -324,31 +328,7 @@ import Header from "../Header/headers";
             </MDBRow>
           </MDBCardBody>
         </MDBCard>
-        <MDBModal  open={basicModal} setopen={setBasicModal} tabIndex="12"  disableBackdropClick >
-          <MDBModalDialog centered>
-            <MDBModalContent>
-              <MDBModalHeader>
-                <MDBModalTitle>
-                  <p>Save Successfully</p>
-                </MDBModalTitle>
-                <MDBBtn
-                  className="btn-close"
-                  color="none"
-                  onClick={toggleOpen}
-                ></MDBBtn>
-              </MDBModalHeader>
-              <MDBModalBody>
-              </MDBModalBody>
-
-              <MDBModalFooter>
-                <MDBBtn color="secondary" onClick={toggleOpen}>
-                  Close
-                </MDBBtn>
-                <MDBBtn onClick={()=>PassengerChange()}>Save changes</MDBBtn>
-              </MDBModalFooter>
-            </MDBModalContent>
-          </MDBModalDialog>
-        </MDBModal>
+        
       </MDBContainer>
       
       
