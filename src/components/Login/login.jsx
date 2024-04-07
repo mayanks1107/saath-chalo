@@ -107,6 +107,16 @@ export default function Login() {
               localStorage.setItem("token", JSON.stringify(data.result));
               // navigate("/rideRequest");
               toggleOpen();
+              const recaptcha = new RecaptchaVerifier(auth, "recaptcha", {});
+              console.log(recaptcha);
+              const confirmation = await signInWithPhoneNumber(
+                auth,
+                phone,
+                recaptcha
+              );
+              toast.success("OTP SENT SUCCESSFULY");
+              setUser(confirmation);
+
             }else{
               toast.error(data.message);
             }
@@ -129,6 +139,14 @@ export default function Login() {
               localStorage.setItem("token", JSON.stringify(data.result));
               // navigate("/rideFeed");
               toggleOpen();
+              const recaptcha = new RecaptchaVerifier(auth, "recaptcha", {});
+              const confirmation = await signInWithPhoneNumber(
+                auth,
+                phone,
+                recaptcha
+              );
+              toast.success("OTP SENT SUCCESSFULY");
+              setUser(confirmation);
             }else{
               toast.error(data.message);
             }
@@ -395,7 +413,7 @@ const EmailAndPassword = async () => {
       </MDBContainer>
        
       <div className="Botton">
-        <Footer />
+        {/* <Footer /> */}
       </div>
     
     </div>

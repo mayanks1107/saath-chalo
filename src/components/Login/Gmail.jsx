@@ -3,32 +3,16 @@ import React, { useState } from "react";
 // import {useContext} from "react";
 import gifLog from "../../assets/loganim.gif";
 import { auth } from "../../Firbase/firbase";
-import {
-  MDBContainer,
-  MDBCol,
-  MDBRow,
-  MDBBtn,
-  // MDBInput,
-  MDBCheckbox,
-  // MDBModal,
-  // MDBModalDialog,
-  // MDBModalContent,
-  // MDBModalHeader,
-  // MDBModalTitle,
-  // MDBModalBody,
-  // MDBModalFooter,
-} from "mdb-react-ui-kit";
+import {MDBContainer,MDBCol,MDBRow,MDBBtn,MDBCheckbox} from "mdb-react-ui-kit";
 import { Server } from "../Server/Server";
 
 import axios from "axios";
-
-import PhoneInput from "react-phone-input-2";
-import "react-phone-input-2/lib/style.css";
 import { toast, Toaster } from "react-hot-toast";
 
 import "./login.css";
 import Footer from "../Footer/Footer";
 import Header from "../Header/headers";
+// GooGle Auth
 import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { useNavigate  } from "react-router-dom";
 import { useLocation } from "react-router-dom";

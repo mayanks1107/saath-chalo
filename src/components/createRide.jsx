@@ -51,17 +51,18 @@ function CreateRide() {
             console.log(error);  
         }            
     }
+    const notLogin = setTimeout(toast.error("You are not login"), 5000);
+    const notRider = setTimeout(toast.error("You are not Rider"), 5000);
     const CheckData =()=>{
         if(localStorage.getItem("token")!=null){
         jsonObject = JSON.parse(localStorage.getItem("token"));
-        if(!jsonObject.IsRider){
-            toast.error("You Are Not Rider");
-            setTimeout(navigate('/register'),200000)
-            // setInterval(navigate('/register'),200000);
+        if(!JSON.parse(localStorage.getItem("token")).IsRider){
+            
+           navigate('/register');
         }
         }else{
-            toast.error("Not Found"); 
-            setInterval(navigate('/register'),20000);
+            notLogin
+            navigate('/register');
         }
     }
     useEffect(()=>{
@@ -70,7 +71,7 @@ function CreateRide() {
     return (
         <div class='create-ride'>
             <Headers/>
-             <Toaster toastOptions={{ duration: 4000 }} />
+             <Toaster toastOptions={{ duration: 160000 }} />
             <div class='form-create'>
             <img src={'https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp'} alt='img-create' class='img-create'/>
                 <br/>
