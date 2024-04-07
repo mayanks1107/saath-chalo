@@ -1,6 +1,6 @@
 .log-em{
   padding-bottom: 1%;
-  background: linear-gradient(to left,  rgb(177, 119, 185), rgb(61, 165, 184));
+  background: linear-gradient(to right,  #15e487, white);
 }
 .footer{
   position: absolute;
@@ -49,18 +49,26 @@ MDBInput{
 }
 .btn-login{
   margin-right: 12px;
+  display: inline-block;
   
 }
 .img-fluid{
   width: 100%;
   border-radius:25px;
 }
-.email-form{
-  margin-left: 25%;
-  width: 50%;
+.email-form-log{
+  /* margin-left: 25%; */
+  width: 60%;
+  position: absolute;
+  top: 31%;
+  bottom: 59%;
+  left: 40%;
 }
 .checkkk{
   margin-left: 20%;
+  position: absolute;
+  top: 25%;
+  left: 45%;
 }
 .log-btnn{
   margin-left: 40%;
@@ -69,18 +77,14 @@ MDBInput{
 .have-acc{
   margin-left: -10%;
 }
-.log-g{
-  position: absolute;
-  top: 35%;
-  left: 53%;
-}
+
 .log-e{
   position: absolute;
-  top: 35%;
+  top: 40%;
   margin-left: 1%;
 }
 .orrrr{
-  margin-right: 80px;
+  margin-right: 150px;
   margin-top: 15px;
 }
 .have-acc-g{
@@ -89,6 +93,12 @@ MDBInput{
 .link{
   color: #123456;
 }
+.abcde{
+  position: absolute;
+  left: 52%;
+  bottom: 59%;
+}
+
 @media only screen and (max-width : 480px){
   .Botton{
     position: absolute;

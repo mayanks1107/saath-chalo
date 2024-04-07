@@ -102,17 +102,23 @@ function Gmail() {
               <p className="or text-center fw-bold mx-3 mb-0"></p>
             </div>
             {/* <div class="vl-2"></div> */}
+            
             {state === "login" ? (
+              <div className="abcde">
               <MDBBtn
                 
-                className="mb-0 px-5 btn-login log-g"
+                className="mb-0 px-5 btn-login"
                 color="danger"
                 size="lg"
                 onClick={signInWithGoogle}
               >
                 Login with Gmail
               </MDBBtn>
-            ) : (
+              </div>
+            )
+            
+             : (
+              <div className="abcde">
               <MDBBtn
                 className="mb-0 px-5 btn-login"
                 color="danger"
@@ -121,13 +127,15 @@ function Gmail() {
               >
                 Register with Gmail
               </MDBBtn>
+              </div>
             )}
+            
             <br />
             <br />
             <p className="orrrr">OR</p>
             <br />
             <br />
-            <div className="email-form">
+            <div className="email-form-log">
               {state === "login" ? 
               <MDBBtn
                 className="mb-0 px-5 btn-login log-e"
@@ -139,6 +147,7 @@ function Gmail() {
               </MDBBtn>
                  :
                  <MDBBtn
+                 style={{position: "relative", top: "30px", left: "25%"}}
                  className="mb-0 px-5 btn-login "
                  color="success"
                  onClick={() => navigate("/register")}
@@ -173,7 +182,7 @@ function Gmail() {
                 <Link style={{color: "#123456"}}  to='/gmail' state="register">Register</Link>
               </p>
               :
-              <p className="small fw-bold mt-2 pt-1 mb-2">
+              <p style={{marginLeft: "25%"}} className="small fw-bold mt-2 pt-1 mb-2">
                 Already have an account?{" "}
                 <Link  to='/gmail' state="login" >Login</Link>
               </p>

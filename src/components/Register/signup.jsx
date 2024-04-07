@@ -150,7 +150,7 @@ function Signup() {
   }
 
   return (
-    <>
+    <div className = "sign-up">
       <Header />
       <MDBContainer className="mb-container" fluid>
         <Toaster toastOptions={{ duration: 4000 }} />
@@ -371,7 +371,7 @@ function Signup() {
         {/* <div > */}
         <Footer />
       </div>
-    </>
+    </div>
   );
 }
 

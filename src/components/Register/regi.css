@@ -18,6 +18,12 @@
 .mb-container{
     margin-bottom: 7.5%;
 }
+.sign-up{
+    background: linear-gradient(#0F9D58, #3f86aa);
+}
+.log-g{
+    margin-bottom: 100px;
+}
 /* .sign-inp{
     width: 900px;
 } */
