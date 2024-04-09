@@ -167,7 +167,7 @@ function Signup() {
                   Sign up
                 </p>
 
-                <div className="d-flex flex-row align-items-center mb-4 ">
+                <div className="d-flex flex-row align-items-center mb-3 ">
                   <MDBIcon fas icon="user me-3" size="lg" />
                   <MDBInput
                     label="Your Name"
@@ -180,7 +180,7 @@ function Signup() {
                   />
                 </div>
 
-                <div className="d-flex flex-row align-items-center mb-4">
+                <div className="d-flex flex-row align-items-center mb-3">
                   <MDBIcon fas icon="envelope me-3" size="lg" />
                   <MDBInput
                     label="Your Email"
@@ -192,7 +192,7 @@ function Signup() {
                   />
                 </div>
 
-                <div className="d-flex flex-row align-items-center mb-4">
+                <div className="d-flex flex-row align-items-center mb-3">
                   <MDBIcon fas icon="unlock-alt me-3" />
                   <MDBInput
                     label="Password"
@@ -244,7 +244,7 @@ function Signup() {
                 </div>
                 {checked ? (
                   <>
-                    <div className="d-flex flex-row align-items-center mb-4">
+                    <div className="d-flex flex-row align-items-center mb-3">
                       <MDBIcon fas icon="address-card me-3" size="lg" />
                       <MDBInput
                         label="License Number"
@@ -259,7 +259,7 @@ function Signup() {
                       />
                     </div>
 
-                    <div className="d-flex flex-row align-items-center mb-4">
+                    <div className="d-flex flex-row align-items-center mb-3">
                       <MDBIcon fas icon="id-card  me-3" size="lg"/>
                       <MDBInput
                         label="Aaadhar Number"
@@ -288,7 +288,7 @@ function Signup() {
                       />
                     </div> */}
 
-                    <div className="d-flex flex-row align-items-center mb-4">
+                    <div className="d-flex flex-row align-items-center mb-3">
                       <MDBIcon fas icon="address-book me-3" size="lg" />
                       <MDBInput
                         label="(RC) Registration Number"
@@ -308,7 +308,7 @@ function Signup() {
                 {/* <MDBBtn className='mb-4' size='lg' onClick={()=>Register()}>Register</MDBBtn> */}
                 {checked ? (
                   <MDBBtn
-                    className="mb-4"
+                    className="mb-3"
                     size="lg"
                     onClick={() => RegisterForRider()}
                   >
@@ -316,7 +316,7 @@ function Signup() {
                   </MDBBtn>
                 ) : (
                   <MDBBtn
-                    className="mb-4"
+                    className="mb-3"
                     size="lg"
                     onClick={() => RegisterForUser()}
                     // onClick={() =>{ toggleOpen();}}

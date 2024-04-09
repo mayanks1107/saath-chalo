@@ -2,16 +2,30 @@
   .rFeed{
     background: linear-gradient(#0F9D58, #3f86aa);
     width: 100%;
-    padding-bottom: 21%;
+    /* padding-bottom: 21%; */
   }
+
 .form-submit{
    margin-top: 50px;
    position: relative;
 }
-
-.cards-left{
-  margin-top: 150px;
+.right{
+  background-color: rgba(255, 255, 255, 0.729);
+  padding-top: 10%;
+  padding-bottom: 12%;
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 2%;
+  margin-bottom: 25px;
   
+}
+.cards-left{
+  margin-right: 25%;
+  /* margin-top: 145px; */
+  
+}
+.right{
+  background-color: black;
 }
 .card-text strt{
   padding-right: 50px;
@@ -80,6 +94,7 @@
    left: 85px;
 }
 .text-feed{
+  
    position: absolute;
    top: 250px;
    left: 330px;
@@ -233,7 +248,7 @@
 .r-f-foot{
   position: absolute;
   width: 100%;
-  bottom: -50%;
+  
 }
 }
 @media only screen and (max-width : 480px)  {

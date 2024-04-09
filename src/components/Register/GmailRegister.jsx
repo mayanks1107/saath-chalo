@@ -294,7 +294,7 @@ import { useNavigate } from "react-router-dom";
                 {/* <MDBBtn className='mb-4' size='lg' onClick={()=>Register()}>Register</MDBBtn> */}
                 {checked ? (
                   <MDBBtn
-                    className="mb-4"
+                    className="gmail-reg mb-4"
                     size="lg"
                     color="danger"
 
@@ -304,7 +304,7 @@ import { useNavigate } from "react-router-dom";
                   </MDBBtn>
                 ) : (
                   <MDBBtn
-                    className="mb-4"
+                    className="mb-4 gmail-reg"
                     size="lg"
                     color="danger"
                     onClick={() => RegisterForUser()}

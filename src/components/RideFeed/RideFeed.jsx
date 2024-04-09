@@ -74,7 +74,23 @@ export default function RideFeed(){
                 
             </div>
             <h2 className="text-feed">Today</h2>
-            <div className = "right">
+            
+            <div style={{backgroundColor: "rgba(255, 255, 255, 0.729)"}}  className = "right">
+            <div className="cards-left">
+                
+                {/* <FeedCard className = "abcd" SourcePlace = "Delhi" DestinationPlace = "Gurgaon" dateOfTrip="2024-01-02" timeOfTrip="05:20" FullName = "Mayank" Rating = "5"/>
+                
+                <FeedCard SourcePlace = "Delhi" DestinationPlace = "Gurgaon" dateOfTrip="2024-01-02" timeOfTrip="05:20" FullName = "Mayank" Rating = "5"/> */}
+                
+                {riderInfo.map((info) => (
+                    <FeedCard key={info.id} {...info} handleCard={handleCard} />
+                ))}
+
+
+            
+                                  
+                    
+                </div>
                 <h4 className="h2-sort">Sort By</h4>
                 <h5 className="h3-clear">Clear all</h5>
                 <p className="right-p dep">Earliest Departure</p>
@@ -104,21 +120,7 @@ export default function RideFeed(){
                 <h3 className="h3-trust">Trust and Safety</h3>
                 </div>
             </div>
-            <div className="cards-left">
-                
-                {/* <FeedCard className = "abcd" SourcePlace = "Delhi" DestinationPlace = "Gurgaon" dateOfTrip="2024-01-02" timeOfTrip="05:20" FullName = "Mayank" Rating = "5"/>
-                
-                <FeedCard SourcePlace = "Delhi" DestinationPlace = "Gurgaon" dateOfTrip="2024-01-02" timeOfTrip="05:20" FullName = "Mayank" Rating = "5"/> */}
-                
-                {riderInfo.map((info) => (
-                    <FeedCard key={info.id} {...info} handleCard={handleCard} />
-                ))}
-
-
             
-                                  
-                    
-                </div>
                 
             
             <div className = "media-r-f-foot r-f-foot">

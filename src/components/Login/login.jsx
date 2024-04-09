@@ -305,9 +305,9 @@ const EmailAndPassword = async () => {
               />
               <br />
             </>
-            OR
-            <br />
-            <br />
+            <p style={{color: "#000"}}>OR</p>
+            
+            
             <div className="email-form">
               <MDBInput
                 
@@ -330,7 +330,7 @@ const EmailAndPassword = async () => {
                 size="lg"
               />
             </div>
-            <div className="checkkk d-flex justify-content-between mb-4">
+            <div className="checkkk-a d-flex justify-content-between">
               <MDBCheckbox
                 name="flexCheck"
                 value={Urider}
@@ -351,6 +351,7 @@ const EmailAndPassword = async () => {
                 </MDBBtn>
               ) : (
                 <MDBBtn
+                  
                   className="mb-0 px-5 btn-login "
                   color="success"
                   onClick={LogEmailANDNoForRider}
@@ -413,7 +414,7 @@ const EmailAndPassword = async () => {
       </MDBContainer>
        
       <div className="Botton">
-        {/* <Footer /> */}
+        <Footer />
       </div>
     
     </div>

@@ -83,7 +83,7 @@ function Gmail() {
           <MDBCol className="right-container" col="4" md="6">
             {/* <div class="vl-3"></div> */}
             <div className="divider d-flex align-items-center my-4">
-              <p className="or text-center fw-bold mx-3 mb-0"></p>
+              <p  className="or text-center fw-bold mx-3 mb-0"></p>
             </div>
             {/* <div class="vl-2"></div> */}
             
@@ -102,7 +102,7 @@ function Gmail() {
             )
             
              : (
-              <div className="abcde">
+              <div className="abcdfe">
               <MDBBtn
                 className="mb-0 px-5 btn-login"
                 color="danger"
@@ -131,7 +131,7 @@ function Gmail() {
               </MDBBtn>
                  :
                  <MDBBtn
-                 style={{position: "relative", top: "30px", left: "25%"}}
+                 style={{position: "relative", top: "80px", left: "22%"}}
                  className="mb-0 px-5 btn-login "
                  color="success"
                  onClick={() => navigate("/register")}
@@ -143,7 +143,7 @@ function Gmail() {
             </div>
             {state === "login" ? 
             
-            <div  className="checkkk d-flex justify-content-between mb-4">
+            <div  className="checkkk d-flex justify-content-between ">
               <MDBCheckbox
                 
                 name="flexCheck"
@@ -163,12 +163,12 @@ function Gmail() {
               {state === "login" ? 
               <p className="have-acc-g small fw-bold mt-2 pt-1 mb-2">
                 Don't have an account?{" "}
-                <Link style={{color: "#123456"}}  to='/gmail' state="register">Register</Link>
+                <Link style={{color: "#cdd"}}  to='/gmail' state="register">Register</Link>
               </p>
               :
-              <p style={{marginLeft: "25%"}} className="small fw-bold mt-2 pt-1 mb-2">
+              <p style={{marginLeft: "25%", color: "#000"}} className="small fw-bold mt-2 pt-1 mb-2">
                 Already have an account?{" "}
-                <Link  to='/gmail' state="login" >Login</Link>
+                <Link style={{color: "#cdd"}}  to='/gmail' state="login" >Login</Link>
               </p>
               }
             </div>

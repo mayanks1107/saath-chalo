@@ -1,6 +1,7 @@
 .log-em{
   padding-bottom: 1%;
-  background: linear-gradient(to right,  #15e487, white);
+  background:linear-gradient( #0F9D58,  #3f86aa);
+  
 }
 .footer{
   position: absolute;
@@ -49,6 +50,7 @@ MDBInput{
 }
 .btn-login{
   margin-right: 12px;
+  
   display: inline-block;
   
 }
@@ -65,9 +67,10 @@ MDBInput{
   left: 40%;
 }
 .checkkk{
+  color: #000;
   margin-left: 20%;
   position: absolute;
-  top: 25%;
+  top: 30%;
   left: 45%;
 }
 .log-btnn{
@@ -76,19 +79,24 @@ MDBInput{
 }
 .have-acc{
   margin-left: -10%;
+  color: #000;
+  
 }
 
 .log-e{
   position: absolute;
-  top: 40%;
-  margin-left: 1%;
+  top: 110%;
+  margin-left: 5%;
 }
 .orrrr{
   margin-right: 150px;
-  margin-top: 15px;
+  margin-top: 70px;
+  color: #000;
 }
 .have-acc-g{
   margin-left: 33%;
+  
+  color: #000;
 }
 .link{
   color: #123456;
@@ -96,9 +104,23 @@ MDBInput{
 .abcde{
   position: absolute;
   left: 52%;
-  bottom: 59%;
+  bottom: 52%;
 }
-
+.abcdfe{
+  position: absolute;
+  top: 42%;
+  left: 51%;
+}
+.mb-4{
+  width: 60%;
+  margin-left: 20%;
+  background-color: white;
+}
+.checkkk-a{
+  color:#000;
+  margin-top: 7%;
+  margin-left: 15%;
+}
 @media only screen and (max-width : 480px){
   .Botton{
     position: absolute;
