@@ -13,7 +13,7 @@ import AvoidScam from './AvoidScam';
 
 function Scam() {
   return (
-    <>
+    <div className='scamMain'>
     <Headers/>
       <div class="container">
       
@@ -30,9 +30,9 @@ function Scam() {
   <ScamYou/>
     
           <div className='notice-div'>
-            <h1>Noticed something suspicious? Report it</h1>
-            <p>Help us protect you from scams by reporting if you notice a suspicious message, if you have been scammed or if you think someone is trying to scam you.</p>
-            <p>Report a scam</p>
+            <h1 className='scam-txt'>Noticed something suspicious? Report it</h1>
+            <p className='scam-txt'>Help us protect you from scams by reporting if you notice a suspicious message, if you have been scammed or if you think someone is trying to scam you.</p>
+            <p className='scam-txt'>Report a scam</p>
           </div>
    
 
@@ -41,7 +41,7 @@ function Scam() {
     <Footer/>
 
 
-    </>
+    </div>
   )
 }
 

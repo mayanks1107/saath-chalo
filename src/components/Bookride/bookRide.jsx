@@ -107,17 +107,20 @@ useEffect(() => {
     <div className="book-ride">
       <Headers/>  
       <Toaster toastOptions={{ duration: 6000 }} />    
-      <h1 className="b-r-h1">{date}</h1>
+      
       {/* <div className="dot-up"  /> */}
       {/* <div className="dot-down" style={{width: 10, height: 10, background: 'white', borderRadius: 9999, border: '1px #054652 solid'}} /> */}
+     <div className="color-div">
+     <h1 className="b-r-h1">{date}</h1>
       <div className="top-card">
       
-        <p className="strt-time">{timeOfTrip}</p>
+        
         {/* <h4 className="strt-src"></h4> */}
         <p className="src-state">{SourcePlace}</p>
         <hr className="hr-vertical"/>
         
         <h4 className="dest">{Distance}</h4>
+        <p className="strt-time">{timeOfTrip}</p>
         <p className="dest-state">{DestinationPlace}</p>
       </div>
       <div className="mid-card-book">
@@ -138,7 +141,8 @@ useEffect(() => {
         <hr className="rule"></hr>
         <button className="book-book btn btn-primary" onClick={()=>bookCab()}>Book⚡</button>
       </div>
-      <button  onClick={()=>getPassenger()}>dhyf</button>
+      {/* <button  onClick={()=>getPassenger()}>dhyf</button> */}
+      </div>
       {/* <button onClick={()=>props.Bookride(props._id)}>Accept⚡</button> */}
       <div className="foot-book">
 

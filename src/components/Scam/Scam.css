@@ -1,10 +1,16 @@
+.scamMain{
+    background:linear-gradient( #0F9D58,  #3f86aa);
+}
+.scam-txt{
+    color: #000;
+}
 @media only screen  and (min-width : 1224px){
 .container{
     margin-top: 80px;
     /* display:flex; */
     /* width: 1680px; 
     height: 400px; */
-    background-color: #0F9D58;
+    /* background-color: #0F9D58; */
     padding-bottom: 40px;
 }
 .Scam-image{
@@ -38,8 +44,9 @@
   }
   
   .box {
+    background-color: white;
     flex: 1;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     padding: 5px;
     margin: 5px;
   } 
@@ -48,8 +55,8 @@
     height: 40px;
 }  
 .con4{
-    border: 1px solid black;
-    background-color: rgb(21, 110, 24);
+    /* border: 1px solid black; */
+    /* background-color: rgb(21, 110, 24); */
     color: #ffff;
     padding: 0 10px 5px 2px 5px;
     margin: 0 150px 27px 182px;
