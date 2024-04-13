@@ -4,7 +4,7 @@ function ScamYou() {
   return (
     <>
     <div className='sec-con'>
-        <h1>What to do if you think someone is trying to scam you</h1>
+        <h1 className='scam-txt'>What to do if you think someone is trying to scam you</h1>
         <div class="con3">
           <div class="box left-aligh front-size">
             <h5>If the driver sends you a link to pay for your ride</h5>

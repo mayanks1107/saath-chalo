@@ -1,15 +1,32 @@
 @media only screen  and (min-width : 1224px){
+    .color-div{
+        background-color: rgba(255, 255, 255, 0.729);
+        width: 100%;
+        margin-top: 1%;
+        width: 80%;
+        margin-left: 10%;
+        padding-top: 0.5%;
+        padding-bottom: 35%;
+        padding-right: 30%;
+    }
+    .book-ride{
+        background:linear-gradient( #0F9D58, #3f86aa);
+        padding-bottom: 5%;
+    }
 .b-r-h1{
     margin-top: 20px;
+    margin-left: 60%;
     margin-bottom: 50px;
 }
 .top-card{
     position: relative;
+    margin-left: 35%;
 }
 .strt-time{
+    
     position: absolute;
-    left: 60%;
-    top: -80px;
+    left: 15%;
+    top: 250%;
 }
 .src-state{
     position: absolute;
@@ -22,7 +39,7 @@
 }
 .dest{
     position: absolute;
-    left: 55%;
+    left: 100%;
     top: 200%;
     text-align: left;
 }
@@ -48,7 +65,7 @@
   -webkit-transform:rotate(90deg);
   width: 98px;
   position: absolute;
-  left: 455px;
+  left: 105px;
   top: 57.5px;
   height: 2.7px;
   
@@ -115,6 +132,7 @@
     top: 510px;
 }
 .bottom-card-book{
+    margin-left: 65%;
     position: relative;
     margin-bottom: 150px;
 }
@@ -126,7 +144,7 @@
 .book-book{
     position: absolute;
     top: 620px;
-    left: 47%;
+    left: 30%;
     
 }
 .book-book2{
@@ -166,6 +184,7 @@
         height: 2.7px;
     }
     .top-card{
+        
         margin-left: 7%;
         margin-bottom: 50px;
     }
