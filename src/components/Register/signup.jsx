@@ -79,7 +79,8 @@ function Signup() {
       console.log(response);
       if(response.data.success === true){
         toast.success(response.data.message);
-      } else if (response.data.success === false){
+      } 
+      if (response.data.success === false){
           console.log("data is not inserted");
       }
       // toast.success(response.data.message);
@@ -89,7 +90,12 @@ function Signup() {
       if(error.response.status === 404){
         toast.error(error.response.data.message);
       }else{
-        console.log(error);
+        if(error.response.data.success===false){
+          toast(error.response.data.message);
+        }
+        else{
+            toast.error("error");
+        }
       }
     }
   };

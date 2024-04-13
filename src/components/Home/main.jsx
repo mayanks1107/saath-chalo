@@ -16,6 +16,7 @@ export default function Main(){
         try{
             // e.preventDefault();dfhdx
         if(SourcePlace==="" || DestinationPlace===""){
+            
             alert("Please fill all the fields");
             return;
         }
