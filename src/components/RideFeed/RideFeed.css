@@ -12,12 +12,22 @@
 .right{
   background-color: rgba(255, 255, 255, 0.729);
   padding-top: 10%;
-  padding-bottom: 12%;
+  padding-bottom: 19%;
   width: 80%;
   margin-left: 10%;
   margin-top: 2%;
   margin-bottom: 25px;
   
+}
+.right-ride-home{
+  background-color: rgba(255, 255, 255, 0.729);
+  padding-top: 10%;
+  padding-right: 425px;
+  padding-bottom: 19%;
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 2%;
+  margin-bottom: 25px;
 }
 .cards-left{
   margin-right: 25%;
@@ -25,7 +35,7 @@
   
 }
 .right{
-  background-color: black;
+  /* background-color: black; */
 }
 .card-text strt{
   padding-right: 50px;

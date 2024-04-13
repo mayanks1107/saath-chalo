@@ -82,7 +82,8 @@ export default function RideHome(){
                 
             </div>
             <h2 className="text-feed">Today</h2>
-            <div className = "right">
+            <div className = "right-ride-home">
+            
                 <h4 className="h2-sort">Sort By</h4>
                 <h5 className="h3-clear">Clear all</h5>
                 <p className="right-p dep">Earliest Departure</p>
@@ -110,14 +111,6 @@ export default function RideHome(){
 
                 <div className="sep-btm" style={{width: 397.33, height: 8, background: '#EDEDED', borderRadius: 16}} />
                 <h3 className="h3-trust">Trust and Safety</h3>
-                </div>
-            </div>
-            </>
-            }   
-           
-            <div className="cards-left">
-                
-               
                 {riderInfo.map((info) => (
                     <FeedCard key={info.id} {...info} handleCard={handleCard} />
                 ))}
@@ -131,7 +124,18 @@ export default function RideHome(){
                 </h2>
 
                 <button className="btn btn-primary" onClick={()=>OfferRide()}>Offer a ride</button>
-                    </div>}              
+                    </div>} 
+                </div>
+                
+                
+            </div>
+            </>
+            }   
+           
+            <div className="cards-left">
+                
+               
+                             
                     
                 </div>
                 
