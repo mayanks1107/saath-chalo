@@ -87,6 +87,11 @@
    left: 20px;
    top: 65px;
 }
+.phone{
+    position: absolute;
+    right: 35px;
+    top: 75px;
+}
 .pic{
    position: absolute;
    bottom: 10px;

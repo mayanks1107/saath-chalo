@@ -12,16 +12,18 @@ export default function FeedCard(props){
             <div class="card carda">
               <div class="card-body">
                 <div className="source-dest">
-                  <h5 class="card-title from">{props.SourcePlace}</h5>
+                  {/* <h5 class="card-title from">{props.SourcePlace}</h5> */}
+                  <h5 class="card-title from">{props.SourcePlace[0].toUpperCase() +props.SourcePlace.substring(1)}</h5>
                   
-                  <h5 class="card-title to">{props.DestinationPlace}</h5>
+                  <h5 class="card-title to">{props.DestinationPlace[0].toUpperCase()+props.DestinationPlace.substring(1)}</h5>
                 </div>
                 <hr id="myhr" className="myhr-rideFeed"></hr>
                 <p class="card-text price">₹{"100"}.00</p>
                 <p class="card-text strt">{props.dateOfTrip}</p>
                 <p class="card-text end">{props.timeOfTrip}</p>
-                {/* <a href="#" class="card-link">Card link</a>
-                // <a href="#" class="card-link">Another link</a> */}
+                <p class="card-text phone">{props.PhoneNumber}</p>
+                
+               
                 <img className = "pic" src = {pic} alt = "profile pic"/>
                 <p class="card-text name">{props.FullName}</p>
                 <p class="card-text rating">{props.Rating}⭐</p>
