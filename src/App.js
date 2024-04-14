@@ -16,6 +16,8 @@ import RiderProfile from './components/Profile/RidePro';
 import GmailRegister from './components/Register/GmailRegister';
 import Gmail from './components/Login/Gmail';
 import RideHome from './components/RideFeed/RideHome';
+import Pay from './components/Payment/Payment'
+
 // import Thankyou from './components/ThankYou/Thankyou';
 function App() {
   return(
@@ -43,6 +45,10 @@ function App() {
                 <Route exact path = "/confirm" element={<Confirm/>}/>
                 <Route exact path = "/userprofile" element={<Profile/>}/>
                 <Route exact path = "/riderprofile" element={<RiderProfile/>}/>
+                
+                {/* payment path */}
+                <Route exact path = "/payment" element={<Pay/>}/>
+                
                 {/* <Route exact path = "/thankyou" element={<Thankyou/>}/> */}
                 {/* <Route exact path = "" element={<UserManagement/>}/> */}
             </Routes>
