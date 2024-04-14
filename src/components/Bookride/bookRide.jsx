@@ -53,7 +53,7 @@ console.log(location.state.list[0]);
 
     if(data.ConfirmRide){
       
-      navigate('/thankyou',{state:{ RiderName:FullName,RiderEmail:RiderEmail,SourcePlace:SourcePlace,DestinationPlace:DestinationPlace,VehicleNumber:VehicleNumber}});
+      navigate('/confirm',{state:{ RiderName:FullName,RiderEmail:RiderEmail,SourcePlace:SourcePlace,DestinationPlace:DestinationPlace,VehicleNumber:VehicleNumber}});
     }
     if(data.RejectRide){
       alert("Cab Rejected");
@@ -90,7 +90,7 @@ const getPassenger = async () => {
 
     if(data.ConfirmRide){
       
-      navigate('/thankyou',{state:{ RiderName:FullName,RiderEmail:RiderEmail,SourcePlace:SourcePlace,DestinationPlace:DestinationPlace,VehicleNumber:VehicleNumber}});
+      navigate('/confirm',{state:{ RiderName:FullName,RiderEmail:RiderEmail,SourcePlace:SourcePlace,DestinationPlace:DestinationPlace,VehicleNumber:VehicleNumber}});
     }
     if(data.RejectRide){
       alert("Cab Rejected");
