@@ -42,7 +42,7 @@ function App() {
                 <Route exact path="/rideFeed" element={<RideFeed/>}/>
                 <Route exact path = "/rideHome" element={<RideHome/>}/>
 
-                <Route exact path = "/confirm" element={<Confirm/>}/>
+                {/* <Route exact path = "/confirm" element={<Confirm/>}/> */}
                 <Route exact path = "/userprofile" element={<Profile/>}/>
                 <Route exact path = "/riderprofile" element={<RiderProfile/>}/>
                 
