@@ -61,7 +61,7 @@ function CreateRide() {
            navigate('/register');
         }
         }else{
-            notLogin
+            // notLogin
             navigate('/register');
         }
     }
