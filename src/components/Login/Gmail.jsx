@@ -42,8 +42,8 @@ function Gmail() {
             localStorage.setItem("token", JSON.stringify(res.data.result));
             console.log("true");
             navigate("/rideRequest");
-          } else if (response.data.success === false) {
-            toast.error(response.data.message);
+          } else if (res.data.success === false) {
+            toast.error(res.data.message);
           }
         } else {
           console.log("User");
