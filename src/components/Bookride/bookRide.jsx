@@ -24,7 +24,7 @@ console.log(location.state.list[0]);
   const VehicleNumber = location.state.list[0].VehicleNumber;
   const timeOfTrip  = location.state.list[0].timeOfTrip;
   const VehicleDolour = location.state.list[0].VehicleColour
-  
+
   const bookCab = async() => {
    let RiderEmail = location.state.list[0].Email;
    let UserEmail = JSON.parse(localStorage.getItem("token")).Email;

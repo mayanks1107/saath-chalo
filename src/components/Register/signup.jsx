@@ -83,8 +83,8 @@ function Signup() {
       if (response.data.success === false){
           console.log("data is not inserted");
       }
-      // toast.success(response.data.message);
-      // setInterval(navigate("/login"), 5000);
+      toast.success(response.data.message);
+      setInterval(navigate("/login"), 5000);
     }
     } catch (error) {
       if(error.response.status === 404){
