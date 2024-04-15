@@ -1,5 +1,5 @@
 
-@media only screen  and (min-width : 1224px) {
+/* @media only screen  and (min-width : 1224px) { */
 .hCom{
 
     position: relative;
@@ -36,7 +36,7 @@
 .faq{
     color:#1b1a0b;
 }
-}
+/* }
 @media only screen and (max-width : 480px){
     .hCom{
         margin-top: 10%;
@@ -48,4 +48,4 @@
     .h-p{
         text-align: left;
     }
-}
+} */

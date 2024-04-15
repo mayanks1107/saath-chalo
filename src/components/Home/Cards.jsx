@@ -18,19 +18,19 @@ export default function Cards(){
   })
   
     return(
-        <div className="cards">
-       
-            <div class="hidden ban-1 card carde">
+        <div className=" cards row">
+            
+            <div class="col-sm-6 col-lg-3 col-md-5 hidden ban-1 card carde">
               <div class="card-body">
                 <h5 class="card-title">Your choice of transportation at affordable rates.</h5>
 
                 <p class="card-text">Regardless of your destination, whether by bus or carpool, discover the ideal transportation option from our extensive selection of routes, all offered at budget-friendly rates.</p>
 
               </div>
-            
+      
+           </div>
            
-           
-            <div class="hidden ban-2 c-2 card carde">
+            <div class="col-sm-6 col-lg-3 col-md-5 hidden ban-2 c-2 card carde">
               <div class="card-body">
                 <h5 class="card-title">Rely on those you journey with</h5>
                 
@@ -40,7 +40,7 @@ export default function Cards(){
             
             </div>
             
-            <div class="hidden ban-3 card carde">
+            <div class="col-sm-6 col-lg-3 col-md-5  hidden ban-3 card carde">
               <div class="card-body">
                 <h5 class="card-title">Scroll, click, tap, and you're on your way!</h5>
                 
@@ -49,7 +49,7 @@ export default function Cards(){
               </div>
               </div>
             
-            </div>
+            
         </div>
     )
 }

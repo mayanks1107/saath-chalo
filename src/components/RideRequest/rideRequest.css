@@ -6,8 +6,13 @@ body {
     /* Adjust the color as needed */
 }
 /* Define the styles for the rectangular box */
-
+.ride-req{
+    background:linear-gradient( #0F9D58, #3f86aa);
+    width: 100%;
+    padding-bottom: 46%;
+}
 .wrapper1 {
+    padding-top: 2.5%;
     margin-right: calc(55% - 350px);
     display: block;
     text-align: center;

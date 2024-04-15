@@ -40,6 +40,7 @@ export default function RideFeed(){
   function handleCard(id){
     console.log("hello");
     const newlist=riderInfo.filter(rider=> rider._id ===id);   
+    console.log(newlist);
     navigate('/bookRide',{ state: { list:newlist} }); 
     
     

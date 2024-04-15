@@ -18,6 +18,7 @@ function CreateRide() {
         timeOfTrip:"",
         availableSeat:"",
         PhoneNumber:"",
+        Distance:"",
         VehicleName:"",
         vehColor: "",
       })
@@ -41,6 +42,7 @@ function CreateRide() {
             dateOfTrip:Value.dateOfTrip,
             timeOfTrip:Value.timeOfTrip,
             availableSeat:Value.availableSeat,
+            Distance:Value.Distance,
             PhoneNumber:Value.PhoneNumber,
             IsRider:true
         })
@@ -51,17 +53,23 @@ function CreateRide() {
             console.log(error);  
         }            
     }
-    const notLogin = setTimeout(toast.error("You are not login"), 5000);
-    const notRider = setTimeout(toast.error("You are not Rider"), 5000);
+    function notLogin(){
+        setTimeout(toast.error("You are not login"), 5000);
+    }
+    function notRider(){
+        setTimeout(toast.error("You are not Rider"), 5000);
+    }
+   
     const CheckData =()=>{
         if(localStorage.getItem("token")!=null){
         jsonObject = JSON.parse(localStorage.getItem("token"));
         if(!JSON.parse(localStorage.getItem("token")).IsRider){
-            
+            notRider();
            navigate('/register');
         }
         }else{
             // notLogin
+            notLogin();
             navigate('/register');
         }
     }
@@ -105,18 +113,23 @@ function CreateRide() {
                 <input class='av-seat input-create' type="number" onChange={(e)=>setValues((prev)=>({...prev ,availableSeat:e.target.value}))} name="availableSeat" id="availableSeat" placeholder='Available Seat'/>
                 <br/>
                 <br/>
-                <label class='label-veh' for="phoneNumber">Phone Number</label>
-                <input class='phone input-create' type="number"  onChange={(e)=>setValues((prev)=>({...prev ,PhoneNumber:e.target.value}))} name="phoneNumber" id="phoneNumber" placeholder='Phone Number'/>
+                <label class='label-veh' for="Distance">Distance </label>
+                <input class='desti input-create' type="text" onChange={(e)=>setValues((prev)=>({...prev ,Distance:e.target.value}))} name="Distance" id="Distance" placeholder='Distance'/>
                 <br/>
                 <br/>
-                <label class='label-veh' for="availableSeat">Vehicle Color</label>
-                <input class='veh-color input-create' type="text" onChange={(e)=>setValues((prev)=>({...prev ,vehColor:e.target.value}))} name="vehColor" id="vehColor" placeholder='Vehicle Color'/>
+
+                <label class='label-veh' for="phoneNumber">PhoneNumber</label>
+                <input class='av-phone input-create' type="number"  onChange={(e)=>setValues((prev)=>({...prev ,PhoneNumber:e.target.value}))} name="phoneNumber" id="phoneNumber" placeholder='Phone Number'/>
+                <br/>
+                <br/>
+                <label class='label-veh' for="Vehicle_Color">Vehicle Color</label>
+                <input class='veh-color input-create' type="text" onChange={(e)=>setValues((prev)=>({...prev ,vehColor:e.target.value}))} name="Vehicle_Color" id="Vehicle_Color" placeholder='Vehicle Color'/>
                 <br/>
                 <br/>
                 
                 
             </div>
-                <MDBBtn class="mb-45 py-45 px-5 btn-login" onClick={handleChange} size='lg'>Create  Ride</MDBBtn>                      
+                <MDBBtn class="mb-45 py-45 px-5 create-btn btn-login" onClick={handleChange} size='lg'>Create  Ride</MDBBtn>                      
             <Footer class="foot"/>
         </div>
     )
