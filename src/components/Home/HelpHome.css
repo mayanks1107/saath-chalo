@@ -1,4 +1,4 @@
-@media only screen  and (min-width : 1224px) {
+/* @media only screen  and (min-width : 1224px) { */
 .helpHome{
     
     position: relative;
@@ -49,7 +49,7 @@
     top: 101%;
     right: 17.5%;
 }
-}
+/* }
 @media only screen and (max-width : 480px){
     .helpHome{
         position: relative;
@@ -74,4 +74,4 @@
     .friend-img{
         width: 100%;
     }
-}
+} */

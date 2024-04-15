@@ -1,4 +1,4 @@
-@media only screen  and (min-width : 1224px) {
+/* @media only screen  and (min-width : 1224px) { */
     .safety{
     padding-top: 3.3%;
     padding-left: 3%;
@@ -30,7 +30,7 @@
     left: 140px;
     
 }
-}
+/* }
 @media only screen and (max-width : 480px){
     .safety{
         padding: 5%;
@@ -51,4 +51,4 @@
     .what-p{
         text-align: left;
     }
-}
+} */

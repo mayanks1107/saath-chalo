@@ -1,4 +1,4 @@
-@media only screen  and (min-width : 1224px) {
+/* @media only screen  and (min-width : 1224px) { */
 .service{
     position: relative;
     background: linear-gradient(#3f86aa, #0F9D58);
@@ -39,7 +39,7 @@
     left: 15%;
     
 }
-}
+/* }
 @media only screen and (max-width : 480px){
     .service{
         position: relative;
@@ -60,4 +60,4 @@
         margin-top: 10%;
         text-align: left;
     }
-}
+} */
