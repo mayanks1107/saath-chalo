@@ -28,8 +28,8 @@ export default function RideHome(){
                 method:"POST",
                 headers:{"Content-Type":"application/json"},
                 body:JSON.stringify({
-                SourcePlace:SourcePlace || "",
-                DestinationPlace: DestinationPlace || "",
+                SourcePlace:SourcePlace.toLowerCase() || "",
+                DestinationPlace: DestinationPlace.toLowerCase() || "",
                 dateOfTrip: dateOfTrip || ""
                 })
             });

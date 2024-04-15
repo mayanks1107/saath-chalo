@@ -10,12 +10,14 @@ import reportWebVitals from './reportWebVitals';
 import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import {ContextProvider } from './components/Context/ContextProvider';
-
+import { BrowserRouter as Router } from "react-router-dom";
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <ContextProvider>
+    <Router>
+    {/* <ContextProvider> */}
         <App />
-    </ContextProvider>
+    {/* </ContextProvider> */}
+    </Router>
   
 );
 

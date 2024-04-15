@@ -1,16 +1,16 @@
 import { useEffect,useState } from 'react';
-import './Thankyou.css'
+import './RideConfirmation.css'
 import Feedback from './Feedback'
 import tick from '../../assets/tick.gif'
 import {useNavigate, useLocation } from "react-router-dom";
 import { Server } from '../Server/Server';
-function Thankyou() {
+function RideConfirmation() {
   let location = useLocation() 
-  let RiderName = location.state.RiderName;
-  let RiderEmail = location.state.RiderEmail;
-  let SourcePlace = location.state.SourcePlace;
-  let DestinationPlace = location.state.DestinationPlace;
-  let VehicleNumber = location.state.VehicleNumber;
+  // let RiderName = location.state.RiderName;
+  // let RiderEmail = location.state.RiderEmail;
+  // let SourcePlace = location.state.SourcePlace;
+  // let DestinationPlace = location.state.DestinationPlace;
+  // let VehicleNumber = location.state.VehicleNumber;
 
   const [RiderInfo, setRiderInfo] = useState();
   // useEffect(() => {
@@ -40,11 +40,11 @@ function Thankyou() {
           <h2 className='media-thank-h2'>
             Your contribution to <strong>reducing emissions </strong> and <strong> traffic congestion </strong> is appreciated.
           </h2>
-
+{/* 
           <p><strong>Rider's Name: {RiderName.toUpperCase()} </strong></p>
           <p><strong>Source:  {SourcePlace.charAt(0).toUpperCase() +SourcePlace.slice(1)}</strong></p>
           <p><strong>Destination: {DestinationPlace.charAt(0).toUpperCase() + DestinationPlace.slice(1)} </strong></p>
-          <p><strong>Vehicle Number: {VehicleNumber} </strong></p>
+          <p><strong>Vehicle Number: {VehicleNumber} </strong></p> */}
 
           <p>
             We hope you had a pleasant trip. Have a great day!
@@ -60,4 +60,4 @@ function Thankyou() {
   )
 }
 
-export default Thankyou
+export default RideConfirmation
