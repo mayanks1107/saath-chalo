@@ -1,24 +1,34 @@
 .payment {
-	width: 100vw;
-	height: 100vh;
+	width: 50vw;
+	height: 50vh;
 	display: flex;
 	align-items: center;
-	justify-content: center;
+	justify-content: flex-end; /* Adjusted to flex-end */
 }
 
 .price_container {
-	width: 250px;
-	border-radius: 10px;
-	background-color: white;
-	box-shadow: 0 4px 8px rgb(0 0 0 / 25%);
+    width: auto; /* Allow the container to resize based on content */
+    max-width: 100%; /* Set a maximum width if needed */
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgb(0 0 0 / 25%);
+	margin-left: auto; /* Align to the right side of the .payment container */
 }
 
 
 .price_value {
-	font-size: 16px;
-	font-weight: 500;
-	margin: 5px 0;
-	text-align: center;
+    display: grid;
+    grid-template-columns: max-content 1fr; /* First column width to fit content, second column takes remaining space */
+    row-gap: 10px; /* Gap between rows */
+    column-gap: 20px; /* Gap between columns */
+    font-size: 16px;
+    margin: 30px 30px; /* Side margins */
+    text-align: left; /* Align text to the left */
+}
+
+
+.price_value strong {
+    font-weight: bold;
 }
 
 .price_value > span {
@@ -36,6 +46,7 @@
 	cursor: pointer;
 	border-bottom-right-radius: 10px;
 	border-bottom-left-radius: 10px;
-	background-color: #f4d072;
+	background-color: #34a853;
+	color: white; /* Set text color to white */
 	margin-top: 10px;
 }

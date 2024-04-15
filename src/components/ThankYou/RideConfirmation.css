@@ -16,7 +16,7 @@ html,body {
 }
 .thankyou-page ._body ._box {
     margin: auto;
-    max-width: 80%;
+    max-width: 90%;
     padding: 50px;
     background: white;
     border-radius: 3px;
@@ -30,7 +30,7 @@ html,body {
     color: #4ab74a;
 }
 .gap {
-    margin-top: 100px;
+    margin-top: -100px;
 }
 @media only screen  and (min-width : 1224px){
 .thankyou-page ._header .logo {
@@ -42,7 +42,7 @@ html,body {
 }
 
 .thankyou-page ._body {
-    margin: -70px 0 30px;
+    margin: -80px 0 30px;
 }
 
 

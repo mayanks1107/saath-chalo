@@ -4,6 +4,8 @@ import Feedback from './Feedback'
 import tick from '../../assets/tick.gif'
 import {useNavigate, useLocation } from "react-router-dom";
 import { Server } from '../Server/Server';
+import Payment from '../Payment/Payment';
+
 function RideConfirmation() {
   let location = useLocation() 
   // let RiderName = location.state.RiderName;
@@ -12,7 +14,7 @@ function RideConfirmation() {
   // let DestinationPlace = location.state.DestinationPlace;
   // let VehicleNumber = location.state.VehicleNumber;
 
-  const [RiderInfo, setRiderInfo] = useState();
+  // const [RiderInfo, setRiderInfo] = useState();
   // useEffect(() => {
   //   const getRiderInfo = async () => {
   //     const url = `${Server}/tripdet/getRider/${RiderEmail}`;
@@ -47,14 +49,15 @@ function RideConfirmation() {
           <p><strong>Vehicle Number: {VehicleNumber} </strong></p> */}
 
           <p>
-            We hope you had a pleasant trip. Have a great day!
+          Your ride has been <strong>successfully</strong> booked. 
+          <br/>To confirm your booking and proceed with payment, please click the button below.
           </p>
+          <div className='flex'/> <Payment/>
         </div>
       </div>
       
-      <div className='gap'>
-
-      </div>
+      <div className='gap'/>
+      <div className='flex'/> <Payment/>
       <Feedback/>
     </div>
   )
