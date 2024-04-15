@@ -129,7 +129,7 @@ function CreateRide() {
                 
                 
             </div>
-                <MDBBtn class="mb-45 py-45 px-5 btn-login" onClick={handleChange} size='lg'>Create  Ride</MDBBtn>                      
+                <MDBBtn class="mb-45 py-45 px-5 create-btn btn-login" onClick={handleChange} size='lg'>Create  Ride</MDBBtn>                      
             <Footer class="foot"/>
         </div>
     )
