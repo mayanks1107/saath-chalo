@@ -72,25 +72,30 @@ function Payment() {
 	return (
 		<div className="payment">
 			<div className="price_container">
+				<div className="sub_containers">
+					<div className="box">
+						<div class="price_value">
+							<div><strong>Rider's Name:</strong></div>
+							<div>{RiderName.toUpperCase()}</div>
+							<div><strong>Source:</strong></div>
+							<div>{SourcePlace.charAt(0).toUpperCase() + SourcePlace.slice(1)}</div>
+							<div><strong>Destination:</strong></div>
+							<div>{DestinationPlace.charAt(0).toUpperCase() + DestinationPlace.slice(1)}</div>
+							<div><strong>Vehicle Number:</strong></div>
+							<div>{VehicleNumber}</div>
+						</div>
+					</div>
 
-				<div class="price_value">
-					<div><strong>Rider's Name:</strong></div>
-					<div>{RiderName.toUpperCase()}</div>
-					<div><strong>Source:</strong></div>
-					<div>{SourcePlace.charAt(0).toUpperCase() + SourcePlace.slice(1)}</div>
-					<div><strong>Destination:</strong></div>
-					<div>{DestinationPlace.charAt(0).toUpperCase() + DestinationPlace.slice(1)}</div>
-					<div><strong>Vehicle Number:</strong></div>
-					<div>{VehicleNumber}</div>
-					<div><strong>Price :</strong></div>
-					<div><span>&#x20B9; {price.value}</span></div>
+					<div className="box">
+						<div className="price_value">
+							<div><strong>Price :</strong></div>
+							<div><span>&#x20B9; {price.value}</span></div>
+						</div>
+						<button onClick={handlePayment} className="pay_btn">
+							Confirm Payment
+						</button>
+					</div>
 				</div>
-
-
-
-				<button onClick={handlePayment} className="pay_btn">
-					Confirm Payment
-				</button>
 			</div>
 		</div>
 	);

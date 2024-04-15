@@ -1,9 +1,8 @@
 .payment {
-	width: 50vw;
-	height: 50vh;
+	width: auto;
+	height: auto;
 	display: flex;
 	align-items: center;
-	justify-content: flex-end; /* Adjusted to flex-end */
 }
 
 .price_container {
@@ -13,6 +12,7 @@
     background-color: white;
     box-shadow: 0 4px 8px rgb(0 0 0 / 25%);
 	margin-left: auto; /* Align to the right side of the .payment container */
+	margin-right: auto;
 }
 
 
@@ -44,9 +44,30 @@
 	text-transform: uppercase;
 	font-weight: bold;
 	cursor: pointer;
-	border-bottom-right-radius: 10px;
-	border-bottom-left-radius: 10px;
+	border-radius: 25px; /* Half of the button's height */
 	background-color: #34a853;
-	color: white; /* Set text color to white */
+	color: white;
 	margin-top: 10px;
-}
+  }
+  
+
+.sub_containers {
+	display: flex;
+  }
+  
+  .box {
+	flex: 1; /* This will make both boxes take equal width */
+	position: relative;
+  }
+  
+  .box:not(:last-child)::after {
+	content: '';
+	position: absolute;
+	height: 100%;
+	width: 1px;
+	background-color: #ccc; /* Adjust color as needed */
+	right: 0;
+	top: 0;
+  }
+
+  
