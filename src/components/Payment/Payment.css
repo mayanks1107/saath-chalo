@@ -1,24 +1,34 @@
 .payment {
-	width: 100vw;
-	height: 100vh;
+	width: auto;
+	height: auto;
 	display: flex;
 	align-items: center;
-	justify-content: center;
 }
 
 .price_container {
-	width: 250px;
-	border-radius: 10px;
-	background-color: white;
-	box-shadow: 0 4px 8px rgb(0 0 0 / 25%);
+    width: auto; /* Allow the container to resize based on content */
+    max-width: 100%; /* Set a maximum width if needed */
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgb(0 0 0 / 25%);
+	margin-left: auto; /* Align to the right side of the .payment container */
+	margin-right: auto;
 }
 
 
 .price_value {
-	font-size: 16px;
-	font-weight: 500;
-	margin: 5px 0;
-	text-align: center;
+    display: grid;
+    grid-template-columns: max-content 1fr; /* First column width to fit content, second column takes remaining space */
+    row-gap: 10px; /* Gap between rows */
+    column-gap: 20px; /* Gap between columns */
+    font-size: 16px;
+    margin: 30px 30px; /* Side margins */
+    text-align: left; /* Align text to the left */
+}
+
+
+.price_value strong {
+    font-weight: bold;
 }
 
 .price_value > span {
@@ -34,8 +44,30 @@
 	text-transform: uppercase;
 	font-weight: bold;
 	cursor: pointer;
-	border-bottom-right-radius: 10px;
-	border-bottom-left-radius: 10px;
-	background-color: #f4d072;
+	border-radius: 25px; /* Half of the button's height */
+	background-color: #34a853;
+	color: white;
 	margin-top: 10px;
-}
+  }
+  
+
+.sub_containers {
+	display: flex;
+  }
+  
+  .box {
+	flex: 1; /* This will make both boxes take equal width */
+	position: relative;
+  }
+  
+  .box:not(:last-child)::after {
+	content: '';
+	position: absolute;
+	height: 100%;
+	width: 1px;
+	background-color: #ccc; /* Adjust color as needed */
+	right: 0;
+	top: 0;
+  }
+
+  

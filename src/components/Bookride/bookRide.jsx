@@ -65,7 +65,6 @@ const getPassenger = async () => {
     }
     // setlazing(data.ConfirmRide);
     if(data.ConfirmRide){
-      
       navigate('/confirm',{state:{ RiderName:FullName,RiderEmail:RiderEmail,SourcePlace:SourcePlace,DestinationPlace:DestinationPlace,VehicleNumber:VehicleNumber,Price:Price,VehicleName:VehicleName,VehicleDolour:VehicleDolour,Distance:Distance,timeOfTrip:timeOfTrip, date:date}});
     }
     if(data.RejectRide){

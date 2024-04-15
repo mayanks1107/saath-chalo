@@ -1,0 +1,79 @@
+.feedback ._body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.feedback ._body ._box {
+    width: 80%;
+    max-width: 500px; /* Limit maximum width */
+    padding: 30px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    display: flex; /* Adjusted */
+    flex-direction: column; /* Adjusted */
+}
+
+.feedback ._body ._box h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #4ab74a;
+    text-align: center; /* Adjusted */
+}
+
+.feedback ._body ._box .input-field {
+    margin-bottom: 20px;
+    width: 100%; /* Adjusted */
+}
+
+.feedback ._body ._box label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+    text-align: left; /* Adjusted */
+}
+
+.feedback ._body ._box input[type="email"],
+.feedback ._body ._box textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.feedback ._body ._box button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4ab74a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.feedback ._body ._box button:hover {
+    background-color: #3a943a;
+}
+
+.feedback ._body ._box.submitted {
+    transform: translateY(-20px);
+}
+
+.feedback ._body ._box .submitted-message {
+    text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+    .feedback ._body {
+        justify-content: flex-start; /* Adjusted */
+    }
+
+    .feedback ._body ._box {
+        width: 60%;
+        align-self: flex-start; /* Adjusted */
+    }
+}
