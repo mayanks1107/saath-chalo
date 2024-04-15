@@ -57,7 +57,7 @@
     left: 300px;
     top: 451px;
 }
-.phone{
+.av-phone{
     position: absolute;
     left: 300px;
     top: 503x;
@@ -101,6 +101,7 @@
         position: absolute;
         left: 47%;
     }
+    
     .label-veh{
         position: absolute;
         left: 20%;

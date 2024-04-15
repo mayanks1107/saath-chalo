@@ -5,6 +5,7 @@ import "./RideFeed.css";
 import pic from "../../assets/proflic-pic.png";
 export default function FeedCard(props){
    console.log(props);
+   console.log(props.Price);
   //  d
     return(
         <>
@@ -18,7 +19,7 @@ export default function FeedCard(props){
                   <h5 class="card-title to">{props.DestinationPlace[0].toUpperCase()+props.DestinationPlace.substring(1)}</h5>
                 </div>
                 <hr id="myhr" className="myhr-rideFeed"></hr>
-                <p class="card-text price">₹{"100"}.00</p>
+                <p class="card-text price">₹{props.Price}.00</p>
                 <p class="card-text strt">{props.dateOfTrip}</p>
                 <p class="card-text end">{props.timeOfTrip}</p>
                 <p class="card-text phone">{props.PhoneNumber}</p>
