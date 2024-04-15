@@ -49,7 +49,7 @@ function RideRequest() {
 
     
     return (
-        <>
+        <div className='ride-req'>
             <Header />
             <div className="wrapper1">
                 <h1 >Ride Requests</h1>
@@ -78,7 +78,7 @@ function RideRequest() {
 
 
 
-        </>
+        </div>
 
     )
 }
