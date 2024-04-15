@@ -35,35 +35,9 @@ console.log(location.state.list[0]);
 
   if(res.data.success === true){
     if(res.data.message === "Booking"){
+      setlazing(true);
       toast.success("Booking request is generated");
 
-      try {
-        const url1 = `${Server}/passenger/approval/${UserEmail}`;
-        const response = await fetch(url1, {method: 'GET', headers: {'Content-Type': 'application/json'}});
-      if (response.ok) {
-          const data = await response.json();
-          console.log(data);
-          console.log("this is rider Email "+data.Approval);
-          
-          if(data.Approval ==="Not_Assigned"){
-            setlazing(true);
-          console.log("Cab Not Assigned");
-        }
-    
-
-    if(data.ConfirmRide){
-      
-      navigate('/confirm',{state:{ RiderName:FullName,RiderEmail:RiderEmail,SourcePlace:SourcePlace,DestinationPlace:DestinationPlace,VehicleNumber:VehicleNumber}});
-    }
-    if(data.RejectRide){
-      alert("Cab Rejected");
-    }
-
-}
-
-      } catch (error) {
-        
-      }
     }
   }else{
     toast.error("Cab Not Booked");
@@ -83,14 +57,16 @@ const getPassenger = async () => {
     const data = await response.json();
     console.log(data.RiderEmail);
   if(RiderEmail ==="Not Assigned "){
-    console.log("Cab Not Assigned");
+    toast.success("Cab Not Assigned");
   }
     console.log(data.ConfirmRide);
-    
-
+    if(data.ConfirmRide===false){
+    toast.error("request is not accepted yet by Rider");
+    }
+    // setlazing(data.ConfirmRide);
     if(data.ConfirmRide){
       
-      navigate('/confirm',{state:{ RiderName:FullName,RiderEmail:RiderEmail,SourcePlace:SourcePlace,DestinationPlace:DestinationPlace,VehicleNumber:VehicleNumber}});
+      navigate('/confirm',{state:{ RiderName:FullName,RiderEmail:RiderEmail,SourcePlace:SourcePlace,DestinationPlace:DestinationPlace,VehicleNumber:VehicleNumber,Price:Price,VehicleName:VehicleName,VehicleDolour:VehicleDolour,Distance:Distance,timeOfTrip:timeOfTrip, date:date}});
     }
     if(data.RejectRide){
       alert("Cab Rejected");
@@ -99,10 +75,8 @@ const getPassenger = async () => {
     
   }
 }  
-useEffect(() => {
- console.log(lazy)
-})
 
+console.log(lazy);
   return(
     <div className="book-ride">
       <Headers/>  
@@ -139,9 +113,14 @@ useEffect(() => {
       </div>
       <div className="bottom-card-book">
         <hr className="rule"></hr>
-        <button className="book-book btn btn-primary" onClick={()=>bookCab()}>Book⚡</button>
+        {lazy === false ?
+      <button className="book-book btn btn-primary" onClick={()=>bookCab()}>Book⚡</button>
+        :
+        <button  className="book-book btn btn-primary" onClick={()=>getPassenger()}>Check Status</button>
+        }
+        {/* <button className="book-book btn btn-primary" onClick={()=>bookCab()}>Book⚡</button> */}
       </div>
-      <button  onClick={()=>getPassenger()}>dhyf</button>
+      {/* <button  onClick={()=>getPassenger()}>dhyf</button> */}
       </div>
       {/* <button onClick={()=>props.Bookride(props._id)}>Accept⚡</button> */}
       <div className="foot-book">

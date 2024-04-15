@@ -22,7 +22,7 @@ import Pay from './components/Payment/Payment'
 function App() {
   return(
     <div className="App">
-        <Router>
+      
              {/* <ContextProvider> */}
             <Routes>
                 <Route exact path="/" element={<Home/>}/>
@@ -53,7 +53,7 @@ function App() {
                 {/* <Route exact path = "" element={<UserManagement/>}/> */}
             </Routes>
             {/* </ContextProvider> */}
-        </Router>
+        
     </div>
 )
 }
