@@ -57,6 +57,21 @@
     text-decoration: none; /* Remove underline */
     display: inline-block;
 }
+@media screen and (max-width: 400px){
+    .logo-brand{
+        width: 60%;
+    }
+}
+@media screen and (min-width: 400px){
+    .logo-brand{
+        width: 50%;
+    }
+}
+@media screen and (min-width: 900px){
+    .logo-brand{
+        width: 37%;
+    }
+}
 /* }
 @media only screen and (max-width : 480px){
     .navbar{
