@@ -31,8 +31,8 @@ export default function Main(){
             <img className="img-main" src={mainIimg} alt = "img"/>
             <div className="form-submit">
                 <input className="inp input-from" type="text"onChange={(e) => setSourcePlace(e.target.value)}placeholder="from" name="from"/>
-                <input className="inp input-to" type="text"  onChange={(e) => setDestinationPlace (e.target.value)} placeholder="to" name="to"/>
-                <input className="inp-media-from inp input-to" onChange={(e) => setdateOfTrip(e.target.value)}type="date" placeholder="date" name="date"/>
+                <input className="inp input-to inp-med-to" type="text"  onChange={(e) => setDestinationPlace (e.target.value)} placeholder="to" name="to"/>
+                <input className="inp inp-date " onChange={(e) => setdateOfTrip(e.target.value)}type="date" placeholder="date" name="date"/>
                 <input className="inp input-to" type="number" placeholder="number" name="number"/>
                 <button className="inp search-form btn btn-primary"onClick={()=>onhandle()}>Search</button>
                 

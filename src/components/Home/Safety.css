@@ -1,9 +1,40 @@
 /* @media only screen  and (min-width : 1224px) { */
     .safety{
+        margin-top: 5%;
+    }
+    .saf-p{
+        text-align: left;
+        margin-top: 3.4%;
+        width: 75%;
+        margin-left: 5%;
+        margin-bottom: 5%;
+    }
+    .what-p{
+        text-align: left;
+        margin-top: 3.4%;
+        width: 75%;
+        margin-left: 5%;
+        margin-bottom: 5%;
+    }
+    @media screen and(max-width: 850px){
+    .what-img{
+        width:80%;
+        margin-bottom: 5%;
+    }
+}
+    @media screen and (max-width: 1200px){
+        .what-img{
+            width: 40%;
+            margin-bottom: 5%;
+        }
+    }
+    @media screen and (min-width: 1200px){
+    .safety{
     padding-top: 3.3%;
     padding-left: 3%;
     padding-bottom: 8%;
     position: relative;
+    width: 100%;
 }
 .saf-p{
     text-align: left;
@@ -30,6 +61,8 @@
     left: 140px;
     
 }
+    }
+ 
 /* }
 @media only screen and (max-width : 480px){
     .safety{

@@ -1,5 +1,8 @@
 /* @media only screen  and (min-width : 1224px) { */
-.helpHome{
+.hh-h1{
+    margin-bottom: 5%;
+}
+   .helpHome{
     
     position: relative;
     height: 100%;
@@ -15,18 +18,19 @@
 }
 .safe{
     margin-left: 0;
-    position: absolute;
+    
     left: 3.5%;
     top: 150%;
 }
 .hh-h3{
     display: inline-block;
+    position: relative;
+    bottom: 100px;
 }
 .traffic{
     width: 25%;
-    position: absolute;
-    top: 142%;
-    left: 35.3%;
+    
+    
 }
 .h3-safe{
     position: absolute;
@@ -38,16 +42,44 @@
     top: 101%;
     left: 34%;
 }
-.friends{
-    width: 20%;
-    position: absolute;
-    top: 128%;
-    right: 7%;
-}
+
 .h3-friends{
     position: absolute;
     top: 101%;
     right: 17.5%;
+}
+.friends{
+    width: 20%;
+}
+.hh-img{
+    margin-top: 5%;
+    margin-right: 10%;
+}
+@media screen and (max-width: 800px) {
+    .hh-img{
+        display: block;
+    }
+    .safe{
+        margin-left: 5%;
+    }
+    .h3-traffic{
+        margin-top: 65%;
+        left:0;
+    }
+    .traffic{
+        margin-left: 15%;
+        margin-top: 25%;
+        width: 50%;
+    }
+    .h3-friends{
+        left: 0;
+        margin-top: 120%;
+    }
+    .friend-img{
+        margin-top: 25%;
+        margin-left: 5%;
+        width: 50%;
+    }
 }
 /* }
 @media only screen and (max-width : 480px){

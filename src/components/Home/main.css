@@ -1,39 +1,5 @@
 /* @media only screen  and (min-width : 1224px) { */
-.input-from{
-    /*color: gray;*/
-    border-radius: 25px 0 0 25px;
-    padding-right: 20px;
-    padding-left: 20px;
-}
-.input-to{
-    /*color: gray;*/
-    border-style: solid black;
-    border-width: 2px;
-}
-
-.inp{
-    height: 50px;
-    width: 220px;
-    padding-right: 20px;
-    padding-left: 20px;
-}
-.search-form{
-    position: relative;
-    bottom: 0px;
-    border-radius: 0 25px 25px 0;
-}
-
-.form-submit{
-    margin-top: 20px;
-}
-.inp::placeholder{
-    padding-left: 15px;
-}
-.main{
-    margin-bottom: 10px;
-}
-/* }
-@media only screen and (max-width : 480px)  {
+    
     .input-from{
         color: gray;
         border-radius: 25px 0 0 25px;
@@ -41,24 +7,74 @@
         padding-left: 20px;
     }
     .input-to{
-        color: gray;
-        border-radius: 0 25px 25px 0;
-        padding-left: 20px;
+        /*color: gray;*/
         border-style: solid black;
         border-width: 2px;
     }
-    .inp-media-from{
-        border-radius: 25px 0 0 25px;
+    
+    .inp{
+        height: 50px;
+        width: 220px;
         padding-right: 20px;
         padding-left: 20px;
-        margin-left: 2.5%;
-        margin-top: 5%;
-        margin-bottom: 5%;
     }
     .search-form{
-        margin-bottom: 5%;
+        position: relative;
+        bottom: 0px;
+        border-radius: 0 25px 25px 0;
     }
-    .img-main{
-        width: 100%;
+    
+    .form-submit{
+        margin-top: 20px;
     }
-} */
+    .inp::placeholder{
+        padding-left: 15px;
+    }
+    .main{
+        margin-bottom: 10px;
+    }
+    @media screen and (max-width: 800px){
+        .img-main{
+            width: 100%;
+        }
+    }
+    @media screen and (max-width: 1099px){
+       
+        .inp{
+            border:0.5px solid black;
+            margin-bottom: 2.5%;
+            border-radius: 0px;
+        }
+    }
+   
+    
+    /* @media only screen and (max-width : 480px)  {
+        .input-from{
+            color: gray;
+            border-radius: 25px 0 0 25px;
+            padding-right: 20px;
+            padding-left: 20px;
+        }
+        .input-to{
+            color: gray;
+            border-radius: 0 25px 25px 0;
+            padding-left: 20px;
+            border-style: solid black;
+            border-width: 2px;
+        }
+        .inp-media-from{
+            border-radius: 25px 0 0 25px;
+            padding-right: 20px;
+            padding-left: 20px;
+            margin-left: 2.5%;
+            margin-top: 5%;
+            margin-bottom: 5%;
+        }
+        .search-form{
+            margin-bottom: 5%;
+        }
+        .img-main{
+            width: 100%;
+        }
+    } */
+    
