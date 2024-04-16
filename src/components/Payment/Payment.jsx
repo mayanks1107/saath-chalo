@@ -28,11 +28,9 @@ function Payment() {
 		}
 		getRiderInfo();
 	}, [])
-	console.log(location.state);
+	console.log(location.state.Price);
 
-	const [price, setPrice] = useState({
-		value: 250,
-	});
+	const [price, setPrice] = useState({ value: location.state.Price});
 
 	const initPayment = (data) => {
 		const options = {
