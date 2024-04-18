@@ -17,7 +17,8 @@
 }*/
 .cards{
     /* position: relative; */
-    
+    width: 100%;
+    margin-left: 0.01%;
     background: linear-gradient(#0F9D58, #3f86aa);
     /* padding: 12.5%; */
 }

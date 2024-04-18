@@ -23,11 +23,16 @@
     padding-top: 3.6%;
     
 }
+.h-cards-left{
+    display: inline-block;
+}
 .h-cards-right{
+    display: inline-block;
     position: absolute;
-    top: 23%;
-    left: 55%;
-    padding-right: 5%;
+    width: 40%;
+    margin-left: 45%;
+    top: 25%;
+    left: 10%;
 }
 .p-right-h{
     width: 100%;
@@ -35,6 +40,21 @@
 }
 .faq{
     color:#1b1a0b;
+}
+@media screen and (max-width: 800px) {
+    .hCom{
+        width: 100%;
+        padding-bottom: 150%;
+    }
+    .h-p{
+        width: 80%;
+    }
+    .h-cards-right{
+        display: block;
+        top: 60%;
+        left: -40%;
+        width: 100%;
+    }
 }
 /* }
 @media only screen and (max-width : 480px){
