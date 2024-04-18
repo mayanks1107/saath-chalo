@@ -10,21 +10,133 @@ import { toast, Toaster } from "react-hot-toast";
 import Footer from "../Footer/Footer";
 import { useNavigate } from "react-router-dom";
 export default function RideFeed(){
-    // const [RiderInfo,setRiderInfo] = useState([]);
-    const [riderInfo, setRiderInfo] = useState([])
     const navigate = useNavigate();
-    useEffect(()=>{
+    // const [RiderInfo,setRiderInfo] = useState([]);
+
+    const [riderInfo, setRiderInfo] = useState([])
+    const [lowestPrice, setlowestPrice] = useState(false);
+    const [earliestDep, setearliestDep] = useState(false);
+    const [closeDep, setcloseDep] = useState(false);
+    const [closeArrival, setcloseArrival] = useState(false);
+    const [shortestRide, setshortestRide] = useState(false);
+    const [before6, setBefore6] = useState(false);
+    const [between6_12, setBetween6_12] = useState(false);
+    const [between12_18, setBetween12_18] = useState(false);
+    const [after6, setAfter6] = useState(false);
+    const Before6 = () => {
+        console.log("before6");
+        setBefore6(true);
+        console.log(riderInfo[0].timeOfTrip);
+        const newlist = riderInfo.filter(item => item.timeOfTrip < "06:00");
+        // console.log(newlist);
+        setRiderInfo(newlist);
+    }
+    const Between6_12 = () => {
+        console.log("between6_12");
+        setBetween6_12(true);
+        const newlist = riderInfo.filter(item => item.timeOfTrip > "06:00" && item.timeOfTrip < "12:00");
+        // console.log(newlist);
+        setRiderInfo(newlist);
+
+    }
+    const Between12_18 = () => {
+        console.log("between12_18");
+        setBetween12_18(true);
+        const newlist = riderInfo.filter(item => item.timeOfTrip > "12:00" && item.timeOfTrip < "18:00");
+        setRiderInfo(newlist);
+    }
+    const After6 = () => {  
+        console.log("after6");
+        setAfter6(true);
+        const newlist = riderInfo.filter(item => item.timeOfTrip > "18:00");
+        // console.log(newlist);
+        setRiderInfo(newlist);
+
+    }
+
+    const LowestPrice = () => {
+        console.log("lowestPrice");
+        setlowestPrice(true);
+        const newlist = [...riderInfo];
+        console.log(newlist);
+        // console.log(newlist[0].Price);
+        newlist.sort((a, b) => a.Price - b.Price);
+        console.log(newlist);
+        setRiderInfo(newlist);
+    }
+    const EarliestDeparture = () => {
+        console.log("earliestDeparture");
+        setearliestDep(true);
+
+        console.log("earliestDeparture");
+        const newlist = [...riderInfo];
+        console.log(riderInfo[0].dateOfTrip);
+        newlist.sort((a, b) => {
+            console.log(a.dateOfTrip - b.dateOfTrip);
+            return a.dateOfTrip - b.dateOfTrip;
+        
+        })
+        // console.log(newlist);
+        // setRiderInfo(newlist);
+    }
+    const CloseDeparture = () => {
+        console.log("closeDepar");
+        setcloseDep(true);
+        // const newlist = [...riderInfo];  
+        // newlist.sort((a, b) => {
+        //     const dateA = new Date(a.dateOfTrip);
+        //     const dateB = new Date(b.dateOfTrip);
+        //     return dateA - dateB;
+        
+        // })
+        // setRiderInfo(newlist);
+
+    }
+    const CloseArrival = () => {
+        console.log("CloseArrival");
+        setcloseArrival(true);
+        // const newlist = [...riderInfo];
+        // newlist.sort((a, b) => {
+        //     const dateA = new Date(a.dateOfTrip);
+        //     const dateB = new Date(b.dateOfTrip);
+        //     return dateA - dateB;
+
+        // })
+
+        // setRiderInfo(newlist);
+    }
+    const ShortestRide = () => {
+        console.log("ShortestRide");        
+        // Distance
+        setshortestRide(true);
+        const newlist = [...riderInfo];
+        newlist.sort((a, b) => a.Distance - b.Distance);
+        console.log(newlist);
+           setRiderInfo(newlist);
+
+    }
+    const clear = () => {
+        setlowestPrice(false);
+        setearliestDep(false);
+        setcloseDep(false);
+        setcloseArrival(false);
+        setshortestRide(false);
+        setBefore6(false);
+        setBetween6_12(false);
+        setBetween12_18(false);
+        setAfter6(false);
+        Riderhandle();
+
+    }
+    
     const Riderhandle = async () => {
         try {
             // const url = `https://saatchalo.onrender.com/tripdet`;
             const url = `${Server}/tripdet`;
-            
-            const response = await fetch(url);
-    
+            const response = await fetch(url);   
             if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status}`);
-            }
-    
+            }    
             const data = await response.json();
             // console.log("efiefiebi",data);
             setRiderInfo(data);
@@ -33,9 +145,10 @@ export default function RideFeed(){
             console.error('Error fetching rider data:', error);
         }
     };
-    Riderhandle()
+    useEffect(()=>{Riderhandle()
      // eslint-disable-next-line react-hooks/exhaustive-deps
    },[]) 
+   
   // To Handle the Paticular Card   
   function handleCard(id){
     console.log("hello");
@@ -60,7 +173,7 @@ export default function RideFeed(){
 //     CheckData()
 //    },[]) 
 
-   console.log(riderInfo);
+   
 
     return(
         <div className="rFeed">
@@ -93,29 +206,35 @@ export default function RideFeed(){
                     
                 </div>
                 <h4 className="h2-sort">Sort By</h4>
-                <h5 className="h3-clear">Clear all</h5>
-                <p className="right-p dep">Earliest Departure</p>
-                <input className="rad dep-rad" type="radio"/>
-                <p className="right-p low">Lowest price</p>
-                <input className="rad low-rad" type="radio"/>
+                 <span onClick={()=>clear()} style={{cursor: "pointer"}}><h5 className="h3-clear">Clear all</h5> </span>
+                <p className="right-p dep">Lowest price</p>
+                <input className="rad dep-rad" checked={lowestPrice} onClick={()=>LowestPrice()}type="radio"/>
+                <p className="right-p low" >Earliest Departure</p>
+                <input className="rad low-rad"checked={earliestDep} onClick={()=>EarliestDeparture()} type="radio"/>
                 <p className="right-p close-dep">Close to Departure</p>
-                <input className="rad close-dep-rad" type="radio"/>
+                <input className="rad close-dep-rad"checked={closeDep} onClick={()=>CloseDeparture()} type="radio"/>
                 <p className="right-p close-arr">Close to arrival</p>
-                <input className="rad close-arr-rad" type="radio"/>
+                <input className="rad close-arr-rad" checked={closeArrival} onClick={()=>CloseArrival()}  type="radio"/>
                 <p className="right-p short-ride">Shortest ride</p>
-                <input className="rad short-ride-rad" type="radio"/>
+                <input className="rad short-ride-rad"checked={shortestRide} onClick={()=>ShortestRide()} type="radio"/>
                 <div className="helper-media">
                 <div className="sep-top" style={{width: 397.33, height: 8, background: '#EDEDED', borderRadius: 16}} />
+                {/* DeParture Time */}
                 <h4 className="h2-departure">Departure time</h4>
-                
+                {/* Departure Time before 6  */}
                 <p className="media-p p-before-6">Before 06:00</p>
-                <div className="media-sq m-s-6 sq-6" style={{width: 13, height: 13, background: 'white', borderRadius: 2.50, border: '1px #767676 solid'}} />
+                <span onClick={()=>Before6()}><div className="media-sq m-s-6 sq-6"style={{width: 13, height: 13, background: before6?"blue":"white" , borderRadius: 2.50, border: '1px #767676 solid'}} /></span>
+                {/* Departure Time between 6 and 12  */}
                 <p className="media-p p-6-12">06:00 to 12:00</p>
-                <div className="media-sq m-s-6 sq-6-12" style={{width: 13, height: 13, background: 'white', borderRadius: 2.50, border: '1px #767676 solid'}} />
+                <span onClick={()=>Between6_12()}><div className="media-sq m-s-6 sq-6-12" style={{width: 13, height: 13, background: between6_12?"blue":"white", borderRadius: 2.50, border: '1px #767676 solid'}} /></span>
+                {/* Departure Time between 12 and 18  */}
                 <p className="media-p p-12-8">12:01 to 18:00</p>
-                <div className="media-sq m-s-6 sq-12-18" style={{width: 13, height: 13, background: 'white', borderRadius: 2.50, border: '1px #767676 solid'}} />
+                <span onClick={()=>Between12_18()}><div className="media-sq m-s-6 sq-12-18" style={{width: 13, height: 13, background: between12_18?"blue":"white", borderRadius: 2.50, border: '1px #767676 solid'}} /></span>
+               
+               {/* Departure Time After 6  */}
                 <p className="media-p p-after-18">After 18:00</p>
-                <div className="media-sq m-s-6 sq-after-18" style={{width: 13, height: 13, background: 'white', borderRadius: 2.50, border: '1px #767676 solid'}} />
+                <span onClick={()=>After6()}><div className="media-sq m-s-6 sq-after-18" style={{width: 13, height: 13, background: after6?"blue":"white", borderRadius: 2.50, border: '1px #767676 solid'}} /></span>
+                {/* <div className="media-sq m-s-6 sq-after-18" style={{width: 13, height: 13, background: 'white', borderRadius: 2.50, border: '1px #767676 solid'}} /> */}
 
                 <div className="sep-btm" style={{width: 397.33, height: 8, background: '#EDEDED', borderRadius: 16}} />
                 <h3 className="h3-trust">Trust and Safety</h3>

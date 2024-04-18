@@ -4,8 +4,8 @@ import "bootstrap/dist/js/bootstrap";
 import "./RideFeed.css";
 import pic from "../../assets/proflic-pic.png";
 export default function FeedCard(props){
-   console.log(props);
-   console.log(props.Price);
+  //  console.log(props);
+  //  console.log(props.Price);
   //  d
     return(
         <>
