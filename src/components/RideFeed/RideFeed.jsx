@@ -188,23 +188,7 @@ export default function RideFeed(){
                 
             </div>
             <h2 className="text-feed">Today</h2>
-            
-            <div style={{backgroundColor: "rgba(255, 255, 255, 0.729)"}}  className = "right">
-            <div className="cards-left">
-                
-                {/* <FeedCard className = "abcd" SourcePlace = "Delhi" DestinationPlace = "Gurgaon" dateOfTrip="2024-01-02" timeOfTrip="05:20" FullName = "Mayank" Rating = "5"/>
-                
-                <FeedCard SourcePlace = "Delhi" DestinationPlace = "Gurgaon" dateOfTrip="2024-01-02" timeOfTrip="05:20" FullName = "Mayank" Rating = "5"/> */}
-                
-                {riderInfo.map((info) => (
-                    <FeedCard key={info.id} {...info} handleCard={handleCard} />
-                ))}
-
-
-            
-                                  
-                    
-                </div>
+            <div className="sorter">
                 <h4 className="h2-sort">Sort By</h4>
                  <span onClick={()=>clear()} style={{cursor: "pointer"}}><h5 className="h3-clear">Clear all</h5> </span>
                 <p className="right-p dep">Lowest price</p>
@@ -239,6 +223,24 @@ export default function RideFeed(){
                 <div className="sep-btm" style={{width: 397.33, height: 8, background: '#EDEDED', borderRadius: 16}} />
                 <h3 className="h3-trust">Trust and Safety</h3>
                 </div>
+                </div>
+            <div style={{backgroundColor: "rgba(255, 255, 255, 0.729)"}}  className = "right">
+            <div className="cards-left">
+                
+                {/* <FeedCard className = "abcd" SourcePlace = "Delhi" DestinationPlace = "Gurgaon" dateOfTrip="2024-01-02" timeOfTrip="05:20" FullName = "Mayank" Rating = "5"/>
+                
+                <FeedCard SourcePlace = "Delhi" DestinationPlace = "Gurgaon" dateOfTrip="2024-01-02" timeOfTrip="05:20" FullName = "Mayank" Rating = "5"/> */}
+                
+                {riderInfo.map((info) => (
+                    <FeedCard key={info.id} {...info} handleCard={handleCard} />
+                ))}
+
+
+            
+                                  
+                    
+                </div>
+                
             </div>
             
                 

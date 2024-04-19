@@ -3,12 +3,16 @@
   background:linear-gradient( #0F9D58,  #3f86aa);
   
 }
-.footer{
+body{
+  margin: 0;
+  padding: 0;
+}
+/* .footer{
   position: absolute;
   width: 100%;
-  bottom: 0;
+  
   left: 0;
-}
+} */
 .right-container{
   display: inline-block;
   padding-left: 0;
@@ -121,9 +125,41 @@ MDBInput{
   margin-top: 7%;
   margin-left: 15%;
 }
-@media only screen and (max-width : 480px){
-  .Botton{
+@media only screen and (max-width : 800px){
+  /* .Botton{
     position: absolute;
     top: 120%;
+  } */
+  .botton{
+    
+  }
+  .checkkk{
+    margin-top: 80%;
+    left: 0;
+  }
+  .abcde{
+    width: 40%;
+    top: 51%;
+    left: 5%;
+  }
+  .orrrr{
+    position: absolute;
+    left: 45%;
+  }
+  .email-form-log{
+    top: 49%;
+    right: 5%;
+    width: 40%;
+  }
+  .log-em{
+    padding-bottom: 55%;
+    width: 100%;
+  }
+  
+  .have-acc-g{
+    position: absolute;
+    top: 75%;
+    left: 0;
+    width: 100%;
   }
 }

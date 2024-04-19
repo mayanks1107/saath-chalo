@@ -1,4 +1,4 @@
-@media only screen  and (min-width : 1224px){
+/* @media only screen  and (min-width : 1224px){ */
   .rFeed{
     background: linear-gradient(#0F9D58, #3f86aa);
     width: 100%;
@@ -265,19 +265,301 @@
   width: 100%;
   
 }
+@media screen and (max-width: 590px){
+  .carda{
+    width: 100%;
+  }
+  .sorter{
+    width: 100%;
+    margin-top: 155%;
+  }
+  .h2-sort{
+    top: 50%;
+    left: 25%;
+    color: #000;
+  }
+  .h3-clear{
+    top: 50%;
+    left: 60%;
+    color: #000;
+  }
+  .dep{
+    top: 57%;
+    left: 20%;
+    color: #000;
+  }
+  .dep-rad{
+    top: 57%;
+    left: 65%;
+  }
+  .low{
+    top: 63%;
+    left: 20%;
+    color: #000;
+  }
+  .low-rad{
+    top: 64%;
+    left: 65%;
+  }
+  .close-dep{
+    top: 68%;
+    left: 20%;
+    color: #000;
+  }
+  .close-dep-rad{
+    top: 69%;
+    left: 65%;
+    color: #000;
+  }
+  .close-arr{
+    top: 73%;
+    left: 20%;
+    color: #000;
+  }
+  .close-arr-rad{
+    top: 74%;
+    left: 65%;
+  }
+  .short-ride{
+    top: 78%;
+    left: 20%;
+    color: #000;
+  }
+  .short-ride-rad{
+    top: 79%;
+    left: 65%;
+  }
+  .sep-top{
+    top: 84%;
+    left: 7%;
+  }
+  .h2-departure{
+    top: 88%;
+    left: 20%;
+    color: #000;
+  }
+  .p-before-6{
+    top: 92%;
+    left: 20%;
+    color: #000;
+  }
+  .p-6-12{
+    top: 96%;
+    left: 20%;
+    color: #000;
+  }
+  .p-12-8{
+    top: 100%;
+    left: 20%;
+    color: #000;
+  }
+  .p-after-18{
+    top: 104%;
+    left: 20%;
+    color: #000;
+  }
+  .sq-6{
+    top: 93%;
+    left: 65%;
+  }
+  .sq-6-12{
+    top: 97%;
+    left: 65%;
+  }
+  .sq-12-18{
+    top: 101%;
+    left: 65%;
+  }
+  .sq-after-18{
+    top: 105%;
+    left: 65%;
+  }
+  .sep-btm{
+    left: 7%;
+    top: 110%;
+  }
+  .h3-trust{
+    width: 100%;
+    left: 0;
+    top: 117%;
+    color: #000;
+  }
+  .text-feed{
+    top: 127%;
+    left: 42%;
+    color: #000;
+  }
+  .price{
+    margin-top: 34%;
+    right: 5%
+  }
+  .phone{
+    margin-top: 8%;
+    right: 5%;
+  }
+  .name{
+    left: 10%;
+    width: 90%;
+  }
+  .rating{
+    left: 16%;
+  }
+  .carda{
+    width: 105%;
+  }
 }
+@media screen and (max-width: 440px){
+  .carda{
+    width: 100%;
+  }
+  .sorter{
+    width: 100%;
+    margin-top: 155%;
+  }
+  .h2-sort{
+    top: 50%;
+    left: 15%;
+    color: #000;
+  }
+  .h3-clear{
+    top: 50%;
+    left: 50%;
+    color: #000;
+  }
+  .dep{
+    top: 57%;
+    left: 15%;
+    color: #000;
+  }
+  .dep-rad{
+    top: 57%;
+    left: 60%;
+  }
+  .low{
+    top: 63%;
+    left: 15%;
+    color: #000;
+  }
+  .low-rad{
+    top: 64%;
+    left: 60%;
+  }
+  .close-dep{
+    top: 68%;
+    left: 15%;
+    color: #000;
+  }
+  .close-dep-rad{
+    top: 69%;
+    left: 60%;
+    color: #000;
+  }
+  .close-arr{
+    top: 73%;
+    left: 15%;
+    color: #000;
+  }
+  .close-arr-rad{
+    top: 74%;
+    left: 60%;
+  }
+  .short-ride{
+    top: 78%;
+    left: 15%;
+    color: #000;
+  }
+  .short-ride-rad{
+    top: 79%;
+    left: 60%;
+  }
+  .sep-top{
+    top: 84%;
+    left: 2%;
+  }
+  .h2-departure{
+    top: 88%;
+    left: 15%;
+    color: #000;
+  }
+  .p-before-6{
+    top: 92%;
+    left: 15%;
+    color: #000;
+  }
+  .p-6-12{
+    top: 96%;
+    left: 15%;
+    color: #000;
+  }
+  .p-12-8{
+    top: 100%;
+    left: 15%;
+    color: #000;
+  }
+  .p-after-18{
+    top: 104%;
+    left: 15%;
+    color: #000;
+  }
+  .sq-6{
+    top: 93%;
+    left: 60%;
+  }
+  .sq-6-12{
+    top: 97%;
+    left: 60%;
+  }
+  .sq-12-18{
+    top: 101%;
+    left: 60%;
+  }
+  .sq-after-18{
+    top: 105%;
+    left: 60%;
+  }
+  .sep-btm{
+    left: 2%;
+    top: 110%;
+  }
+  .h3-trust{
+    width: 100%;
+    left: 0;
+    top: 112%;
+    color: #000;
+  }
+  .text-feed{
+    top: 116%;
+    left: 42%;
+  }
+  .price{
+    margin-top: 45%;
+    right: 5%
+  }
+  .phone{
+    margin-top: 11%;
+    right: 5%;
+  }
+  .name{
+    left: 10%;
+    width: 90%;
+  }
+  .rating{
+    left: 16%;
+  }
+}
+/* 
 @media only screen and (max-width : 480px)  {
   .form-submit{
     margin-top: 7%;
   }
   .input-from{
-      /*color: gray;*/
+      color: gray;
       border-radius: 25px 0 0 25px;
       padding-right: 20px;
       padding-left: 20px;
   }
   .input-to{
-      /*color: gray;*/
+      color: gray;
       border-radius: 0 25px 25px 0;
       padding-left: 20px;
       border-style: solid black;
@@ -399,4 +681,4 @@
   width: 100%;
   bottom: -1000px;
  }
-}
+} */
