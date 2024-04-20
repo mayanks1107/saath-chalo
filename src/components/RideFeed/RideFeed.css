@@ -265,6 +265,255 @@
   width: 100%;
   
 }
+@media screen and (max-width: 1250px){
+  .carda{
+    width: 100%;
+  }
+  .sorter{
+    width: 100%;
+    margin-top: 105%;
+  }
+  .h2-sort{
+    top: 50%;
+    left: 25%;
+    color: #000;
+  }
+  .h3-clear{
+    top: 50%;
+    left: 60%;
+    color: #000;
+  }
+  .dep{
+    top: 57%;
+    left: 20%;
+    color: #000;
+  }
+  .dep-rad{
+    top: 57%;
+    left: 65%;
+  }
+  .low{
+    top: 63%;
+    left: 20%;
+    color: #000;
+  }
+  .low-rad{
+    top: 64%;
+    left: 65%;
+  }
+  .close-dep{
+    top: 68%;
+    left: 20%;
+    color: #000;
+  }
+  .close-dep-rad{
+    top: 69%;
+    left: 65%;
+    color: #000;
+  }
+  .close-arr{
+    top: 73%;
+    left: 20%;
+    color: #000;
+  }
+  .close-arr-rad{
+    top: 74%;
+    left: 65%;
+  }
+  .short-ride{
+    top: 78%;
+    left: 20%;
+    color: #000;
+  }
+  .short-ride-rad{
+    top: 79%;
+    left: 65%;
+  }
+  .sep-top{
+    top: 84%;
+    left: 30%;
+  }
+  .h2-departure{
+    top: 88%;
+    left: 20%;
+    color: #000;
+  }
+  .p-before-6{
+    top: 92%;
+    left: 20%;
+    color: #000;
+  }
+  .p-6-12{
+    top: 96%;
+    left: 20%;
+    color: #000;
+  }
+  .p-12-8{
+    top: 100%;
+    left: 20%;
+    color: #000;
+  }
+  .p-after-18{
+    top: 104%;
+    left: 20%;
+    color: #000;
+  }
+  .sq-6{
+    top: 93%;
+    left: 65%;
+  }
+  .sq-6-12{
+    top: 97%;
+    left: 65%;
+  }
+  .sq-12-18{
+    top: 101%;
+    left: 65%;
+  }
+  .sq-after-18{
+    top: 105%;
+    left: 65%;
+  }
+  .sep-btm{
+    left: 30%;
+    top: 110%;
+  }
+  .h3-trust{
+    width: 100%;
+    left: 0;
+    top: 117%;
+    color: #000;
+  }
+  .text-feed{
+    top: 160%;
+    left: 48%;
+    color: #000;
+  }
+}
+@media screen and (max-width: 850px){
+  .carda{
+    width: 100%;
+  }
+  .sorter{
+    width: 100%;
+    margin-top: 155%;
+  }
+  .h2-sort{
+    top: 50%;
+    left: 25%;
+    color: #000;
+  }
+  .h3-clear{
+    top: 50%;
+    left: 60%;
+    color: #000;
+  }
+  .dep{
+    top: 57%;
+    left: 20%;
+    color: #000;
+  }
+  .dep-rad{
+    top: 57%;
+    left: 65%;
+  }
+  .low{
+    top: 63%;
+    left: 20%;
+    color: #000;
+  }
+  .low-rad{
+    top: 64%;
+    left: 65%;
+  }
+  .close-dep{
+    top: 68%;
+    left: 20%;
+    color: #000;
+  }
+  .close-dep-rad{
+    top: 69%;
+    left: 65%;
+    color: #000;
+  }
+  .close-arr{
+    top: 73%;
+    left: 20%;
+    color: #000;
+  }
+  .close-arr-rad{
+    top: 74%;
+    left: 65%;
+  }
+  .short-ride{
+    top: 78%;
+    left: 20%;
+    color: #000;
+  }
+  .short-ride-rad{
+    top: 79%;
+    left: 65%;
+  }
+  .sep-top{
+    top: 84%;
+    left: 20%;
+  }
+  .h2-departure{
+    top: 88%;
+    left: 20%;
+    color: #000;
+  }
+  .p-before-6{
+    top: 92%;
+    left: 20%;
+    color: #000;
+  }
+  .p-6-12{
+    top: 96%;
+    left: 20%;
+    color: #000;
+  }
+  .p-12-8{
+    top: 100%;
+    left: 20%;
+    color: #000;
+  }
+  .p-after-18{
+    top: 104%;
+    left: 20%;
+    color: #000;
+  }
+  .sq-6{
+    top: 93%;
+    left: 65%;
+  }
+  .sq-6-12{
+    top: 97%;
+    left: 65%;
+  }
+  .sq-12-18{
+    top: 101%;
+    left: 65%;
+  }
+  .sq-after-18{
+    top: 105%;
+    left: 65%;
+  }
+  .sep-btm{
+    left: 20%;
+    top: 110%;
+  }
+  .h3-trust{
+    width: 100%;
+    left: 0;
+    top: 117%;
+    color: #000;
+  }
+  .text-feed{
+    top: 155%;
+    color: #000;
+  }
+}
 @media screen and (max-width: 590px){
   .carda{
     width: 100%;
