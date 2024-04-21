@@ -4,7 +4,7 @@ import { FaExclamationTriangle } from "react-icons/fa";
 import"./Scam.css"
 function Fake() {
   return (
-    <>
+    
     <div className='con4'>
         <div className='con4-header' >
             <h1 className='scam-txt'>How scammers try to get your money or payment details</h1>
@@ -32,7 +32,7 @@ function Fake() {
           </div>
     </div>
       
-    </>
+    
   )
 }
 

@@ -4,7 +4,7 @@
 .scam-txt{
     color: #000;
 }
-@media only screen  and (min-width : 1224px){
+/* @media only screen  and (min-width : 1224px){ */
 .container{
     margin-top: 80px;
     /* display:flex; */
@@ -15,8 +15,13 @@
 }
 .Scam-image{
     margin-top: 45px;
-    margin-left: 150px;
+    margin-left:0px;
+    margin-bottom: 5%;
     height: 300px;  
+    width: 100%;
+}
+.scam-p-p{
+    color: #000;
 }
 /* .Scam-firstdiv h1{
     display:
@@ -120,8 +125,60 @@
 .front-size{
     font-size: .75em;   
 }
+@media screen and (max-width: 1000px) {
+    .scamMain{
+        width: 100%;
+    }
+    .Scam-image{
+        margin: 0;
+        width: 100%;
+        margin: 0;
+        /* display: block; */
+    }
+    .text{
+        /* display: block; */
+        margin-top: 150%;
+       /* position: absolute; */
+        width: 100%;
+       left: 0;
+       top: -18%;
+        
+    }
+    .con3{
+        margin: 0;
+    }
+    .scam-p-p{
+        margin-top: 15%;
+    }
+    .con4{
+        width: 100%;
+        margin-top: 10%;
+        margin-left: 0;
+    }
+    .fake-p{
+        font-size: 0.9rem;
+    }
+    .notice-div{
+        width: 100%;
+        margin: 0;
+        margin-top: 5%;
+    }
+    .not-txt{
+        text-align: left;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    .con5-box{
+        width: 100%;
+        margin: 0;
+        margin-top: 10%;
+    }
+    .scam-txt{
+        margin-left: 5%;
+        margin-right: 5%;
+    }
 }
-@media only screen and (max-width : 480px){
+/* @media only screen and (max-width : 480px){
     .Scam-image{
         width: 100%;
     }
@@ -154,4 +211,4 @@
         margin-left: 5%;
         margin-right: 5%;
     }
-}
+} */

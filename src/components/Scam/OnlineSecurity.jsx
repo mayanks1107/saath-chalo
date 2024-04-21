@@ -2,7 +2,7 @@ import React from 'react'
 
 function OnlineSecurity() {
   return (
-    <>
+    
      <div className='con5-box'>
         <h1 className='scam-txt'>Online security tips</h1>
         <div className='con5-body1'>
@@ -23,7 +23,7 @@ function OnlineSecurity() {
         </div>
     </div>
       
-    </>
+    
   )
 }
 

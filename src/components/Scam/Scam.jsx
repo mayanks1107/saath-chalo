@@ -19,9 +19,8 @@ function Scam() {
       
         <div class="image">
           <img  className='Scam-image' src={image} alt="scam"/>
-        </div>
-        <div class="text">
-          <p>Help us keep you safe from scams</p>
+        
+          <p className='scam-p-p'>Help us keep you safe from scams</p>
         </div>
       </div>
 
@@ -30,9 +29,9 @@ function Scam() {
   <ScamYou/>
     
           <div className='notice-div'>
-            <h1 className='scam-txt'>Noticed something suspicious? Report it</h1>
-            <p className='scam-txt'>Help us protect you from scams by reporting if you notice a suspicious message, if you have been scammed or if you think someone is trying to scam you.</p>
-            <p className='scam-txt'>Report a scam</p>
+            <h1 className='not-txt scam-txt'>Noticed something suspicious? Report it</h1>
+            <p className='not-txt scam-txt'>Help us protect you from scams by reporting if you notice a suspicious message, if you have been scammed or if you think someone is trying to scam you.</p>
+            <p className='not-txt scam-txt'>Report a scam</p>
           </div>
    
 
