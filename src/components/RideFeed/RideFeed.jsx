@@ -11,18 +11,58 @@ import Footer from "../Footer/Footer";
 import { useNavigate } from "react-router-dom";
 export default function RideFeed(){
     const navigate = useNavigate();
-    // const [RiderInfo,setRiderInfo] = useState([]);
-
+   
     const [riderInfo, setRiderInfo] = useState([])
+    const [SourcePlace,setSourcePlace] = useState("");
+    const [DestinationPlace,setDestinationPlace] = useState("");
+    const [dateOfTrip,setdateOfTrip] = useState("");
+    const [noOfPassenger,setNoofPassenger] = useState();
     const [lowestPrice, setlowestPrice] = useState(false);
-    const [earliestDep, setearliestDep] = useState(false);
-    const [closeDep, setcloseDep] = useState(false);
-    const [closeArrival, setcloseArrival] = useState(false);
+    // const [earliestDep, setearliestDep] = useState(false);
+    // const [closeDep, setcloseDep] = useState(false);
+    // const [closeArrival, setcloseArrival] = useState(false);
     const [shortestRide, setshortestRide] = useState(false);
     const [before6, setBefore6] = useState(false);
     const [between6_12, setBetween6_12] = useState(false);
     const [between12_18, setBetween12_18] = useState(false);
     const [after6, setAfter6] = useState(false);
+
+    const RiderSearch = async () => {
+        try {
+            // const url = `https://saatchalo.onrender.com/tripdet`;
+            const url = `${Server}/tripdet/getpath`;
+            console.log(SourcePlace); 
+            console.log(DestinationPlace);
+            console.log(dateOfTrip); 
+            console.log(noOfPassenger); 
+            const response = await fetch(url,{
+                method:"POST",
+                headers:{"Content-Type":"application/json"},
+                body:JSON.stringify({
+                SourcePlace:SourcePlace.toLowerCase() || "",
+                DestinationPlace: DestinationPlace.toLowerCase() || "",
+                dateOfTrip: dateOfTrip || ""
+                })
+            });
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            const data = await response.json();
+            console.log(data);
+            if(data.success){
+                console.log("data.query");
+                // setRiderInfo(data.query);
+            setRiderInfo(data.query);
+            }else{
+                console.log(data.message);
+                setAvailable(false);
+                // toast.error("No Data Found");
+            }
+            console.log(riderInfo);
+        } catch (error) {
+            console.error('Error fetching rider data:', error);
+        }
+    };
     const Before6 = () => {
         console.log("before6");
         setBefore6(true);
@@ -64,47 +104,70 @@ export default function RideFeed(){
         console.log(newlist);
         setRiderInfo(newlist);
     }
-    const EarliestDeparture = () => {
-        console.log("earliestDeparture");
-        setearliestDep(true);
+    // // const EarliestDeparture = () => {
+    // //     console.log("earliestDeparture");
+    // //     setearliestDep(true);
 
-        console.log("earliestDeparture");
-        const newlist = [...riderInfo];
-        console.log(riderInfo[0].dateOfTrip);
-        newlist.sort((a, b) => {
-            console.log(a.dateOfTrip - b.dateOfTrip);
-            return a.dateOfTrip - b.dateOfTrip;
+    // //     console.log("earliestDeparture");
+    // //     const newlist = [...riderInfo];
+    // //     console.log(riderInfo[0].dateOfTrip);
+    // //     newlist.sort((a, b) => {
+    // //         console.log(a.dateOfTrip - b.dateOfTrip);
+    // //         return a.dateOfTrip - b.dateOfTrip;
         
-        })
-        // console.log(newlist);
-        // setRiderInfo(newlist);
-    }
-    const CloseDeparture = () => {
-        console.log("closeDepar");
-        setcloseDep(true);
-        // const newlist = [...riderInfo];  
-        // newlist.sort((a, b) => {
-        //     const dateA = new Date(a.dateOfTrip);
-        //     const dateB = new Date(b.dateOfTrip);
-        //     return dateA - dateB;
+    // //     })
+    // //     console.log(newlist);
+    // //     // setRiderInfo(newlist);
+    // // }
+    // const EarliestDeparture = () => {
+    //     // console.log("earliestDeparture");
+    //     // setearliestDep(true);
+    //     // console.log("earliestDeparture");
+    //     // // Assuming riderInfo is an array of objects with a dateOfTrip property
+    //     // const newlist = [...riderInfo];
+    //     // // Make sure riderInfo contains valid data
+    //     // console.log(riderInfo[0]?.dateOfTrip);
+
+    //     // // Parse date strings into Date objects and format them as strings
+    //     // newlist.forEach(item => {
+    //     //     const dateObject = new Date(item.dateOfTrip);
+    //     //     item.dateOfTrip = dateObject.toLocaleString(); // Format as desired
+    //     // });
+
+    //     // // Sort based on formatted date strings
+    //     // newlist.sort((a, b) => {
+    //     //     console.log(a.dateOfTrip - b.dateOfTrip);
+    //     //     return a.dateOfTrip - b.dateOfTrip;
+    //     // });
+
+    //     // console.log(newlist);
+    //     }
+    // const CloseDeparture = () => {
+    //     console.log("closeDepar");
+    //     setcloseDep(true);
+    //     // const newlist = [...riderInfo];  
+    //     // newlist.sort((a, b) => {
+    //     //     const dateA = new Date(a.dateOfTrip);
+    //     //     const dateB = new Date(b.dateOfTrip);
+    //     //     return dateA - dateB;
         
-        // })
-        // setRiderInfo(newlist);
+    //     // })
+    //     // setRiderInfo(newlist);
 
-    }
-    const CloseArrival = () => {
-        console.log("CloseArrival");
-        setcloseArrival(true);
-        // const newlist = [...riderInfo];
-        // newlist.sort((a, b) => {
-        //     const dateA = new Date(a.dateOfTrip);
-        //     const dateB = new Date(b.dateOfTrip);
-        //     return dateA - dateB;
+    // }
+    // const CloseArrival = () => {
+    //     console.log("CloseArrival");
+    //     setcloseArrival(true);
+    //     // const newlist = [...riderInfo];
+    //     // newlist.sort((a, b) => {
+    //     //     const dateA = new Date(a.dateOfTrip);
+    //     //     const dateB = new Date(b.dateOfTrip);
+    //     //     return dateA - dateB;
 
-        // })
+    //     // })
 
-        // setRiderInfo(newlist);
-    }
+    //     // setRiderInfo(newlist);
+    // }
     const ShortestRide = () => {
         console.log("ShortestRide");        
         // Distance
@@ -117,9 +180,9 @@ export default function RideFeed(){
     }
     const clear = () => {
         setlowestPrice(false);
-        setearliestDep(false);
-        setcloseDep(false);
-        setcloseArrival(false);
+        // setearliestDep(false);
+        // setcloseDep(false);
+        // setcloseArrival(false);
         setshortestRide(false);
         setBefore6(false);
         setBetween6_12(false);
@@ -180,11 +243,11 @@ export default function RideFeed(){
             <Headers/>
             <Toaster toastOptions={{ duration: 16000 }} />
             <div className="form-submit">
-                <input className="inp input-from" type="text" placeholder="from" name="from"/>
-                <input className="inp input-to" type="text" placeholder="to" name="to"/>
-                <input className="inp-media-from inp input-to" type="date" placeholder="date" name="date"/>
-                <input className="inp input-to" type="number" placeholder="number" name="number"/>
-                <button className="inp search-form btn btn-primary">Search</button>
+                <input className="inp input-from" type="text"onChange={(e) => setSourcePlace(e.target.value)} placeholder="from" name="from"/>
+                <input className="inp input-to" type="text" onChange={(e) => setDestinationPlace (e.target.value)} placeholder="to" name="to"/>
+                <input className="inp-media-from inp input-to"onChange={(e) => setdateOfTrip(e.target.value)} type="date" placeholder="date" name="date"/>
+                <input className="inp input-to" type="number" onChange={(e) => setNoofPassenger(e.target.value)} placeholder="number" name="number"/>
+                <button className="inp search-form btn btn-primary" onClick={RiderSearch}>Search</button>
                 
             </div>
             <h2 className="text-feed">Today</h2>
@@ -193,14 +256,14 @@ export default function RideFeed(){
                  <span onClick={()=>clear()} style={{cursor: "pointer"}}><h5 className="h3-clear">Clear all</h5> </span>
                 <p className="right-p dep">Lowest price</p>
                 <input className="rad dep-rad" checked={lowestPrice} onClick={()=>LowestPrice()}type="radio"/>
-                <p className="right-p low" >Earliest Departure</p>
-                <input className="rad low-rad"checked={earliestDep} onClick={()=>EarliestDeparture()} type="radio"/>
-                <p className="right-p close-dep">Close to Departure</p>
+                <p className="right-p low" >Shortest ride</p>
+                <input className="rad low-rad"checked={shortestRide} onClick={()=>ShortestRide()} type="radio"/>
+                {/* <p className="right-p close-dep">Close to Departure</p>
                 <input className="rad close-dep-rad"checked={closeDep} onClick={()=>CloseDeparture()} type="radio"/>
                 <p className="right-p close-arr">Close to arrival</p>
                 <input className="rad close-arr-rad" checked={closeArrival} onClick={()=>CloseArrival()}  type="radio"/>
                 <p className="right-p short-ride">Shortest ride</p>
-                <input className="rad short-ride-rad"checked={shortestRide} onClick={()=>ShortestRide()} type="radio"/>
+                <input className="rad short-ride-rad"checked={shortestRide} onClick={()=>ShortestRide()} type="radio"/> */}
                 <div className="helper-media">
                 <div className="sep-top" style={{width: 397.33, height: 8, background: '#EDEDED', borderRadius: 16}} />
                 {/* DeParture Time */}
