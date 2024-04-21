@@ -1,4 +1,4 @@
-@media only screen  and (min-width : 1224px){
+/* @media only screen  and (min-width : 1224px){ */
     .color-div{
         background-color: rgba(255, 255, 255, 0.729);
         width: 100%;
@@ -6,12 +6,12 @@
         width: 80%;
         margin-left: 10%;
         padding-top: 0.5%;
-        padding-bottom: 35%;
+        padding-bottom: 1%;
         padding-right: 30%;
     }
     .book-ride{
         background:linear-gradient( #0F9D58, #3f86aa);
-        padding-bottom: 5%;
+        /* padding-bottom: 5%; */
     }
 .b-r-h1{
     margin-top: 20px;
@@ -19,42 +19,51 @@
     margin-bottom: 50px;
 }
 .top-card{
-    position: relative;
+    /* position: relative; */
     margin-left: 35%;
 }
 .strt-time{
     
     position: absolute;
-    left: 15%;
-    top: 250%;
+    /* left: 15%;
+    top: 250%; */
+    top: 35%;
+    text-align: left;
+    margin-left: 2%;
+    
 }
 .src-state{
-    position: absolute;
-    left: 33.5%;
+    /* position: absolute; */
+    text-align: left;
+    margin-left: 20%;
 }
 .end-time{
-    position: absolute;
+    /* position: absolute; */
     left: 25%;
     top: 220%;
 }
 .dest{
-    position: absolute;
+    /* position: absolute; */
     left: 100%;
     top: 200%;
-    text-align: left;
+    text-align: right;
+    margin-right: -15%;
 }
 .dest-state{
-    position: relative;
-    right:15%;
-    top: 120px;
+    /* position: relative; */
+    /* right:15%;
+    top: 120px; */
+    text-align: left;
+    margin-left: 20%;
+    margin-top: 5%;
 }
 .dot-up{
-    position: relative;
+    /* position: relative; */
     left: 29%;
     top: 27px;
 }
 .dot-down{
-    position: relative;
+    /* position: relative; */
     left: 26%;
     top: 145px;
 }
@@ -65,100 +74,353 @@
   -webkit-transform:rotate(90deg);
   width: 98px;
   position: absolute;
-  left: 105px;
-  top: 57.5px;
+  left: 30%;
+  /* left: 105px;
+  top: 57.5px; */
+  
   height: 2.7px;
   
   
 }
 .sep-top-book{
-    position: absolute;
+    /* position: absolute; */
+    margin-left: 14%;
+    margin-top: 5%;
+    margin-bottom: 4%;
     top: 180px;
     width: 997.33px;
     left: 18%;
 }
 .mid-card-book{
-    position: relative;
+    /* position: relative; */
 }
 .price-p{
-    position: absolute;
-    left: 22.5%;
-    top: 220px;
+    /* position: absolute; */
+    
+    
+    width: 100%;
+    display: inline;
+    margin-top: 20%;
+    margin-left: 40%;
 }
 .price-p-amount{
-    position: absolute;
-    right: 22.5%;
-    top: 220px;
+    /* position: absolute; */
+    width: 100%;
+    /* text-align: right; */
+    display: inline;
+    margin-left: 15%;
+    
 }
-.sep-btm-book{
-    position: absolute;
-    left: 18%;
-    top: 280px;
+.sep-btm-book, .sep-btm-info, .sep-btm-ask{
+    /* position: absolute; */
+    margin-left: 14%;
+    margin-top: 5%;
+    margin-bottom: 4%;
+    top: 180px;
     width: 997.33px;
+    left: 18%;
 }
 .info-card{
-    position: relative;
+    /* position: relative; */
 }
 .info-p{
-    position: absolute;
+    /* position: absolute; */
+    margin-left: 15%;
     left: 22.7%;
     top: 320px;
 }
 .sep-btm-info{
-    position: absolute;
+    /* position: absolute; */
     left: 18%;
     top: 380px;
     width: 997.33px;
 }
 .ask-p{
-    position: absolute;
+    /* position: absolute; */
     top: 410px;
     left: 22.7%;
+    margin-left: 5%;
 }
 .sep-btm-ask{
-    position: absolute;
+    /* position: absolute; */
     left: 18%;
     top: 450px;
     width: 997.33px;
 }
 .car-type{
-    position: absolute;
+    /* position: absolute; */
     left: 22.7%;
     top: 480px;
 }
 .color-p{
-    position: absolute;
+    /* position: absolute; */
     left: 22.7%;
     top: 510px;
 }
 .bottom-card-book{
     margin-left: 65%;
-    position: relative;
+    /* position: relative; */
     margin-bottom: 150px;
 }
 .rule{
-    position: relative;
+    /* position: relative; */
     top: 580px;
    
 }
 .book-book{
-    position: absolute;
+    /* position: absolute; */
     top: 620px;
     left: 30%;
     
 }
 .book-book2{
-    position: absolute;
+    /* position: absolute; */
     top: 620px;
     left: 57%;
 }
 .foot-book{
-    position: absolute;
+    /* position: absolute; */
     top: 1000px;
     width: 100%;
 }
+@media screen and (max-width: 1400px){
+    .book-ride{
+        width: 100%;
+        padding-bottom: 0;
+    }
+    .sep-top-book{
+        margin-top: 15%;
+    }
+    .sep-top-book, .sep-btm-ask, .sep-btm-book, .sep-btm-info{
+        width: 100%;
+        margin-left: 35%;
+        
+        margin-bottom: 5%;
+    }
+    .color-div{
+        margin-top: 5%;
+        /* width: 100%; */
+        margin-bottom: 5%;
+    }
+    .b-r-h1{
+        width: 100%;
+        text-align: left;
+        margin-left: 57%;
+    }
+    .src-state, .dest-state{
+        margin-left: 30%;
+        margin-top: 9%;
+    }
+    .dest{
+        text-align: right;
+        margin-right: -20%;
+    }
+    .strt-time{
+        top: 30%;
+    }
+    .price-p{
+        margin-top: 5%;
+        margin-bottom: 5%;
+        width: 100%;
+        display: block;
+        margin-left: 32%;
+    }
+    .info-p{
+        margin-left: 25%;
+        width: 100%;
+    }
+    .ask-p{
+        width: 100%;
+        margin-left: 17%;
+    }
+    .book-book{
+        margin-top: 50%;
+        margin-bottom: 0;
+        margin-left: -15%;
+    }
 }
-@media only screen and (max-width : 480px){
+@media screen and (max-width: 900px) {
+    .book-ride{
+        width: 100%;
+        padding-bottom: 0;
+    }
+    
+    .sep-top-book, .sep-btm-ask, .sep-btm-book, .sep-btm-info{
+        width: 100%;
+        margin-left: 30%;
+        margin-bottom: 5%;
+    }
+    .color-div{
+        margin-top: 5%;
+        /* width: 100%; */
+        margin-bottom: 5%;
+    }
+    .b-r-h1{
+        width: 100%;
+        text-align: left;
+        margin-left: 57%;
+    }
+    .src-state, .dest-state{
+        margin-left: 35%;
+        margin-top: 10%;
+    }
+    .dest{
+        text-align: right;
+        margin-right: -45%;
+    }
+    .strt-time{
+        top: 30%;
+    }
+    .price-p{
+        margin-top: 5%;
+        margin-bottom: 5%;
+        width: 100%;
+        display: block;
+        margin-left: 25%;
+    }
+    .info-p{
+        margin-left: 30%;
+        width: 100%;
+    }
+    .ask-p{
+        width: 100%;
+        margin-left: 15%;
+    }
+    .book-book{
+        margin-top: 50%;
+        margin-bottom: 0;
+        margin-left: -15%;
+    }
+}
+@media screen and (max-width: 500px){
+    .color-div{
+        margin-bottom: 5%;
+    }
+    .book-ride{
+        width: 100%;
+        padding-bottom: 0;
+    }
+    
+    .sep-top-book, .sep-btm-ask, .sep-btm-book, .sep-btm-info{
+        width: 100%;
+        margin-left: 30%;
+    }
+    .b-r-h1{
+        width: 100%;
+        text-align: left;
+        margin-left: 45%;
+    }
+    .src-state, .dest-state{
+        margin-left: 30%;
+        margin-top: 20%;
+    }
+    .hr-vertical{
+        left: 20%;
+    }
+    .dest{
+        text-align: right;
+        margin-right: -50%;
+    }
+    .strt-time{
+        top: 27%;
+        left: 17%;
+    }
+    .price-p{
+        width: 100%;
+        display: block;
+        
+        margin-top: 10%;
+    }
+    .info-p{
+        width: 100%;
+        margin-top: 10%;
+        margin-left: 40%;
+        text-align: left;
+        margin-bottom: 10%;
+    }
+    .ask-p{
+        margin-top: 10%;
+        margin-bottom: 10%;
+        margin-left: 35%;
+        width: 100%;
+    }
+    .book-book{
+        margin-top: 50%;
+        margin-left: -35%;
+    }
+}
+/* @media screen and (max-width: 400px) {
+    .color-div{
+        width:80%;
+        padding-bottom: 130%;
+    }
+    .book-ride{
+        width: 100%;
+        padding-bottom: 100%;
+    }
+    .b-r-h1{
+        width: 70%;
+        
+    }
+    .sep-top-book{
+        position: absolute;
+        top: 140px;
+        left: 55%;
+    }
+    .sep-btm-book{
+        position: absolute;
+        top: 250px;
+        left: 55%;
+        
+    }
+    .price-p{
+        width: 100%;
+        top: 170px;
+    }
+    .price-p-amount{
+        position: absolute;
+        left: 120%;
+        top: 190px;
+    }
+    .sep-btm-info, .sep-btm-ask{
+        position: absolute;
+        left: 55%;
+    }
+    .book-book{
+        margin-left: 0;
+        left: -35%;
+    }
+    .ask-p{
+        width: 100%;
+    }
+    .sep-top-book, .sep-btm-info, .sep-btm-ask{
+        width: 70%;
+    }
+    .sep-btm-book{
+        width: 70%;
+    }
+    .src-state{
+        left: 50%;
+    }
+    .dest-state{
+        left: 50%;
+    }
+    .hr-vertical{
+        left: 0;
+    }
+    .dest{
+        left: 100%;
+    }
+    .strt-time{
+        left: -10%;
+    }
+    .info-p{
+        left:20%;
+        width: 100%;
+    }
+} */
+/* } */
+/* @media only screen and (max-width : 480px){
     .b-r-h1{
         margin-top: 40px;
     }
@@ -227,4 +489,4 @@
         width: 100%;
         bottom:0;
     }
-}
+} */

@@ -93,16 +93,16 @@ console.log(lazy);
         <hr className="hr-vertical"/>
         
         <h4 className="dest">{Distance}</h4>
-        <p className="strt-time">{timeOfTrip}</p>
+        
         <p className="dest-state">{DestinationPlace}</p>
+        <p className="strt-time">{timeOfTrip}</p>
       </div>
       <div className="mid-card-book">
         <div className="sep-top-book" style={{height: 8, background: '#EDEDED', borderRadius: 16}} />
-        <h4 className="price-p">Total price for 1 passenger</h4>
-        <h4 className="price-p-amount">{Price}</h4>
+        <h4 className="price-p">Total price for 1 passenger: {Price}</h4>
+        {/* <h4 className="price-p-amount">{Price}</h4> */}
         <div className="sep-btm-book" style={{height: 8, background: '#EDEDED', borderRadius: 16}} />
-      </div>
-      <div className="info-card">
+        <div className="info-card">
         <h5 className="info-p"><b>{FullName}</b> Phone no :- {PhoneNumber}</h5>
         <div className="sep-btm-info" style={{ height: 5, background: '#EDEDED', borderRadius: 16}} />
         <h5 className="ask-p">Ask {FullName} a question</h5>
@@ -110,8 +110,10 @@ console.log(lazy);
         <h5 className="car-type">{VehicleName}</h5>
         <p className="color-p">{VehicleDolour}</p>
       </div>
+      </div>
+      
       <div className="bottom-card-book">
-        <hr className="rule"></hr>
+        {/* <hr className="rule"></hr> */}
         {lazy === false ?
       <button className="book-book btn btn-primary" onClick={()=>bookCab()}>Book⚡</button>
         :
