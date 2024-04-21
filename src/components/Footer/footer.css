@@ -6,6 +6,7 @@
     height: 50%;
     background:linear-gradient(#3f86aa, #0F9D58);
     height: 70px;
+    margin-bottom: 0;
 }
 .foot-text{
     color: #ffff;

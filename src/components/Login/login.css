@@ -7,6 +7,7 @@ body{
   margin: 0;
   padding: 0;
 }
+
 /* .footer{
   position: absolute;
   width: 100%;
@@ -28,29 +29,29 @@ MDBInput{
 .vl {
   border-left: 2px solid rgb(0, 0, 0);
   height: 150px;
-  position: absolute;
+  /* position: absolute; */
   left: 49%;
   margin-left: -3px;
   top: 25%;
 }
 .or{
-  position: absolute;
+  /* position: absolute; */
   left: 47.25%;
   top: 45%;
 }
 .vl-2{
   border-left: 2px solid rgb(0, 0, 0);
   height: 150px;
-  position: absolute;
+  /* position: absolute; */
   left: 49%;
   margin-left: -3px;
   top: 48%;
 }
 .log-img{
-  position: absolute;
-  left: 0px;
-  width: 40%;
-  bottom: 220px;
+  /* position: absolute; */
+  
+  width: 10%;
+  
 }
 .btn-login{
   margin-right: 12px;
@@ -62,18 +63,30 @@ MDBInput{
   width: 100%;
   border-radius:25px;
 }
+.reg-email{
+  margin-top: -8%;
+  margin-left: 30%;
+  margin-bottom: 15%;
+}
 .email-form-log{
+  display: inline-block;
   /* margin-left: 25%; */
   width: 60%;
-  position: absolute;
-  top: 31%;
-  bottom: 59%;
-  left: 40%;
+  
+  /* position: absolute; */
+  
+}
+
+.log-block{
+  margin-top: 20%;
+  padding-left: 20%;
+  width: 100%;
 }
 .checkkk{
   color: #000;
   margin-left: 20%;
-  position: absolute;
+  margin-top: 10%;
+  /* position: absolute; */
   top: 30%;
   left: 45%;
 }
@@ -88,14 +101,23 @@ MDBInput{
 }
 
 .log-e{
-  position: absolute;
-  top: 110%;
+  /* position: absolute; */
+  
   margin-left: 5%;
 }
 .orrrr{
-  margin-right: 150px;
-  margin-top: 70px;
+  display: inline;
+  
+  
+  /* margin-right: 150px;
+  margin-bottom: 0; */
   color: #000;
+}
+.orrrr-reg{
+  display: inline;
+  color: #000;
+  margin-right: 10%;
+  
 }
 .have-acc-g{
   margin-left: 33%;
@@ -106,14 +128,19 @@ MDBInput{
   color: #123456;
 }
 .abcde{
-  position: absolute;
-  left: 52%;
-  bottom: 52%;
+  display: inline;
+  /* position: absolute; */
+  margin-top: 20%;
+  margin-left: -20%;
+  /* margin-right: 5%; */
+  
 }
 .abcdfe{
-  position: absolute;
-  top: 42%;
-  left: 51%;
+  /* position: absolute; */
+  text-align: left;
+  margin-left: -20%;
+  /* top: 42%;
+  left: 51%; */
 }
 .mb-4{
   width: 60%;
@@ -124,12 +151,105 @@ MDBInput{
   color:#000;
   margin-top: 7%;
   margin-left: 15%;
+ }
+ @media screen and (max-width: 1140px){
+  .abcdfe{
+    margin-left: 10%;
+  }
+.log-em{
+  position: relative;
+  width: 100%;
+  margin-bottom: 0;
 }
-@media only screen and (max-width : 800px){
+  .orrrr, .orrrr-reg{
+   display: block;
+   margin-top: 15%;
+   margin-left: -30%;
+  }
+  .orrrr-reg{
+    margin-left: 0;
+  }
+  .reg-email{
+    width: 100%;
+    margin-left: -5%;
+  }
+  .email-form-log{
+    width: 100%;
+    margin-left: -30%;
+  }
+  .botton{
+    margin: 0;
+    padding: 0;
+  }
+ }
+ @media screen and (max-width: 766px){
+  .log-em{
+    width: 100%;
+  }
+  
+  
+  .email-form-log{
+    margin-top: 5%;
+    width: 50%;
+  }
+  .orrrr{
+    
+    margin-right: 5%;
+  }
+  .have-acc-g{
+    margin-left: 0; 
+  }
+ }
+ @media screen and (max-width: 575px){
+  .log-em{
+    width: 100%;
+    
+  }
+  .botton{
+    margin-bottom: -100%;
+    
+  }
+  .log-img{
+    width: 50%;
+  }
+  .abcdfe{
+    margin-left: 0;
+    margin-bottom: 15%;
+  }
+  .reg-email{
+    margin-left: -5%;
+    width: 80%;
+  }
+  .orrrr-reg{
+    text-align: center;
+    display: block;
+    margin-top: 10%;
+    /* margin-left: -55%; */
+  }
+  .orrrr{
+    text-align: center;
+    display: block;
+    margin-top: 10%;
+    margin-left: -25%;
+  }
+  .email-form-log{
+    
+    
+    width: 70%;
+    margin-left: -22%;
+  }
+  .have-acc-g{
+    margin-left: 0;
+  }
+  .checkkk{
+    margin-bottom: 10%;
+  }
+ }
+/*@media only screen and (max-width : 800px){
   /* .Botton{
     position: absolute;
     top: 120%;
-  } */
+  }
   .botton{
     
   }
@@ -162,4 +282,4 @@ MDBInput{
     left: 0;
     width: 100%;
   }
-}
+} */

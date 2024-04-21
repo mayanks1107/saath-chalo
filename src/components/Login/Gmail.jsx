@@ -63,6 +63,7 @@ function Gmail() {
       });
   };
   return (
+    <>
     <div className="log-em">
       <Header />
       <MDBContainer fluid className="p-3 my-5 h-custom">
@@ -85,7 +86,7 @@ function Gmail() {
             <div className="divider d-flex align-items-center my-4">
               <p  className="or text-center fw-bold mx-3 mb-0"></p>
             </div>
-            {/* <div class="vl-2"></div> */}
+            <div class="log-block">
             
             {state === "login" ? (
               <div className="abcde">
@@ -98,6 +99,7 @@ function Gmail() {
               >
                 Login with Gmail
               </MDBBtn>
+              <p className="orrrr">OR</p>
               </div>
             )
             
@@ -114,24 +116,27 @@ function Gmail() {
               </div>
             )}
             
-            <br />
-            <br />
-            <p className="orrrr">OR</p>
-            <br />
-            <br />
-            <div className="email-form-log">
+            
+            
+            
+            
               {state === "login" ? 
+              <div className="email-form-log">
               <MDBBtn
-                className="mb-0 px-5 btn-login log-e"
+                className="mb-0 px-5 btn-login log-e loggg"
                 color="success"
                 onClick={() => navigate("/login")}
                 size="lg"
               >
                 Login with Email Or Phone No
               </MDBBtn>
+              
+              </div>
                  :
+                 <div className="reg-email">
+                 <p className="orrrr-reg">OR</p>
                  <MDBBtn
-                 style={{position: "relative", top: "80px", left: "22%"}}
+                 
                  className="mb-0 px-5 btn-login "
                  color="success"
                  onClick={() => navigate("/register")}
@@ -139,7 +144,10 @@ function Gmail() {
                >
                  Register with Email/Phone
                </MDBBtn>
+               
+               </div>
                  }
+            
             </div>
             {state === "login" ? 
             
@@ -176,10 +184,14 @@ function Gmail() {
         </MDBRow>
       </MDBContainer>
 
-      <div className="Botton">
-        <Footer />
-      </div>
+      
+        
+      
     </div>
+    <div className="botton">
+      <Footer/>
+    </div>
+    </>
   );
 }
 
