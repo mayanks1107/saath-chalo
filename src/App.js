@@ -17,7 +17,7 @@ import GmailRegister from './components/Register/GmailRegister';
 import Gmail from './components/Login/Gmail';
 import RideHome from './components/RideFeed/RideHome';
 import Pay from './components/Payment/Payment'
-
+import Contact from './components/Contact/contact';
 // import Thankyou from './components/ThankYou/Thankyou';
 function App() {
   return(
@@ -31,7 +31,7 @@ function App() {
                 <Route exact path="/register" element={<Signup/>}/>
                 <Route exact path="/gmail-register" element={<GmailRegister/>}/>
                 <Route exact path="/gmail" element={<Gmail/>}/>
-              
+
                 {/*  */}
                 <Route exact path="/scam" element={<Scam/>}/>
                 <Route exact path="/createRide" element={<CreateRide/>}/>
@@ -51,6 +51,7 @@ function App() {
                 
                 {/* <Route exact path = "/thankyou" element={<Thankyou/>}/> */}
                 {/* <Route exact path = "" element={<UserManagement/>}/> */}
+                <Route exact path = "/contact" element={<Contact/>}/>
             </Routes>
             {/* </ContextProvider> */}
         

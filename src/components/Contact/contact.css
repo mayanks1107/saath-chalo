@@ -1,0 +1,68 @@
+.contact{
+    background: linear-gradient(#0F9D58, #3f86aa);
+}
+.img-contact{
+    width: 15%;
+}
+.phone-img{
+    width: 15%;
+}
+.fax-img{
+    width: 15%;
+}
+.card-1{
+    display: inline-block;
+    margin-top: 5%;
+    margin-left: -45%;
+    width: 25%;
+    padding: 3%;
+    background-color: white;
+}
+.card-2{
+    display: inline-block;
+    margin-top: 5%;
+    margin-left: 2%;
+    background-color: white;
+    width: 25%;
+    padding: 3%;
+}
+.card-3{
+    display: inline-block;
+    margin-top: 5%;
+    margin-left: -45%;
+    background-color: white;
+    width: 25%;
+    padding: 3%;
+}
+.card-4{
+    display: inline-block;
+    margin-top: 5%;
+    margin-left: 2%;
+    background-color: white;
+    width: 25%;
+    padding: 3%;
+}
+.contact-body{
+    display: inline;
+    width: 100%;
+    
+}
+.email-card{
+    
+    margin-top: -37%;
+    margin-left: 45%;
+    
+    background-color: rgb(151, 143, 152);
+    width: 50%;
+    padding: 9%;
+    margin-bottom: 5%;
+}.cont-h1{
+    color: #000;
+}
+.inp-cont{
+    margin-top: 5%;
+    width: 80%;
+}
+.cont-sub{
+    margin-top: 5%;
+}
