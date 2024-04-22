@@ -30,6 +30,10 @@ export default function RideFeed(){
     const RiderSearch = async () => {
         try {
             // const url = `https://saatchalo.onrender.com/tripdet`;
+            if(SourcePlace === "" || DestinationPlace === "" || dateOfTrip === ""){
+                toast.error("Please Fill All The Fields");
+                return;
+            }
             const url = `${Server}/tripdet/getpath`;
             console.log(SourcePlace); 
             console.log(DestinationPlace);
@@ -250,7 +254,7 @@ export default function RideFeed(){
                 <button className="inp search-form btn btn-primary" onClick={RiderSearch}>Search</button>
                 
             </div>
-            {/* <h2 className="text-feed">Today</h2> */}
+            <h2 className="text-feed">Today</h2>
             <div className="sorter">
                 <h4 className="h2-sort">Sort By</h4>
                  <span onClick={()=>clear()} style={{cursor: "pointer"}}><h5 className="h3-clear">Clear all</h5> </span>
