@@ -399,7 +399,9 @@ const EmailAndPassword = async () => {
                   autoFocus
                   className="opt-container"
                 ></OtpInput>
-                <div style={{ marginTop: "10px" }} id="recaptcha"></div>
+                <div  style={{ marginTop: "10px" }}>
+                  <div  id="recaptcha"></div>
+                </div>
               </MDBModalBody>
 
               <MDBModalFooter>
