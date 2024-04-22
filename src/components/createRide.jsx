@@ -80,11 +80,12 @@ function CreateRide() {
         <div class='create-ride'>
             <Headers/>
              <Toaster toastOptions={{ duration: 160000 }} />
+             <img src={'https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp'} alt='img-create' class='img-create'/>
             <div class='form-create'>
-            <img src={'https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp'} alt='img-create' class='img-create'/>
+            
                 <br/>
                 <br/>
-                <label class='label-veh' for="vehicleNumber">Vehicle Number</label>
+                <label class='first-lab label-veh' for="vehicleNumber">Vehicle Number</label>
                 <input class='v-no input-create' type="text"  onChange={(e)=>setValues((prev)=>({...prev ,vehicleNumber:e.target.value}))} name="vehicleNumber" id="vehicleNumber" placeholder='Vehicle Number'/>
                 <br/>
                 <br/>
@@ -114,7 +115,7 @@ function CreateRide() {
                 <br/>
                 <br/>
                 <label class='label-veh' for="Distance">Distance </label>
-                <input class='desti input-create' type="text" onChange={(e)=>setValues((prev)=>({...prev ,Distance:e.target.value}))} name="Distance" id="Distance" placeholder='Distance'/>
+                <input class='disti input-create' type="text" onChange={(e)=>setValues((prev)=>({...prev ,Distance:e.target.value}))} name="Distance" id="Distance" placeholder='Distance'/>
                 <br/>
                 <br/>
 

@@ -7,7 +7,7 @@
     color: #fff;
     border: 0;
 }
-@media only screen  and (min-width : 1224px){
+/* @media only screen  and (min-width : 1224px){ */
 .input-create{
     display: inline-block;
     margin-bottom: 10px;
@@ -16,14 +16,13 @@
     width: 300px;
 }
 .form-create{
-    margin-top: 0px;
-    margin-left: 50px;
-    margin-left: 50px;
-    padding-left: 150px;
-    padding-right: 200px;
-    padding-top: 100px;
+    margin-top: 5%;
+    margin-left: 4%;
+    padding-left: 10%;
+    padding-right: 15%;
+    padding-top: 0;
     text-align: left;
-    position: relative;
+    
     background-color: #fff;
     padding-bottom: 70px;
     border-radius: 25px 25px 25px 25px;
@@ -33,50 +32,55 @@
 
 }
 .v-no{
-    position: absolute;
+    /* position: absolute; */
     left: 300px;
 }
 .so{
-    position: absolute;
-    left: 300px;
-    top: 200px;
+    /* position: absolute; */
+   margin-left: 11%;
 }
 .desti{
-    position: absolute;
+    /* position: absolute; */
     left: 300px;
+    margin-left: 8%;
     
 }
+.disti{
+    margin-left: 9%;
+}
 .trip{
-    position: absolute;
+    /* position: absolute; */
     left: 300px;
     top: 300px;
+    margin-left: -11.5%;
 }
 .date{
-    position: absolute;
+    /* position: absolute; */
     left: 300px;
     top: 353px;
+    margin-left: 7%;
 }
 .time{
-    position: absolute;
+    /* position: absolute; */
     left: 300px;
     top: 401px;
 }
 .av-seat{
-    position: absolute;
+    /* position: absolute; */
     left: 300px;
     top: 451px;
+    margin-left: 5.5%;
 }
 .av-phone{
-    position: absolute;
+    /* position: absolute; */
     left: 300px;
     top: 503x;
 }
 .img-create{
-    display: block;
-    width: 40%;
+    top: 22%;
+    right: 15%;
     position: absolute;
-    top: 50px;
-    right: 60px;
+    width: 30%;
 }
 .form-create{
     margin-bottom: 0px;
@@ -89,14 +93,61 @@
     margin-bottom: 30px;
 }
 .veh-color{
-    position: absolute;
+    /* position: absolute; */
     left: 300px;
+    margin-left: 6%;
+}
+.label-veh{
+    margin-top: -30%;
+    display: inline-block;
+}
+@media screen and (max-width: 1300px){
+    .img-create{
+        width: 40%;
+        top: 17%;
+        left: 30%;
+    }
+    .first-lab{
+        margin-top: 50%;
+    }
+    .input-create{
+        margin-left: 0;
+        width: 100%;
+    }
+}
+@media screen and (max-width: 850px) {
+    .img-create{
+        width: 60%;
+        top: 15%;
+        left: 20%;
+    }
+    .first-lab{
+        margin-top: 80%;
+    }
+    .input-create{
+        margin-left: 0;
+        width: 100%;
+    }
+}
+@media screen and (max-width: 650px){
+    .img-create{
+        width: 80%;
+        top: 10%;
+        left: 8%;
+    }
+    .first-lab{
+        margin-top: 100%;
+    }
+    .input-create{
+        margin-left: 0;
+        width: 100%;
+    }
 }
 /* .form-create > label{
 
 } */
-}
-@media only screen and (max-width : 480px){
+/*}*/
+/* @media only screen and (max-width : 480px){
     .img-create{
         width: 100%;
         margin-top: 5%;
@@ -118,4 +169,4 @@
     .btn-login{
         margin-bottom: 25px;
     }
-}
+} */

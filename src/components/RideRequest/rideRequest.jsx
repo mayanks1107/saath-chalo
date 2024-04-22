@@ -55,11 +55,11 @@ function RideRequest() {
                 <h1 >Ride Requests</h1>
                 <h2 className="font">Today</h2>
             </div>
-
-            {passenger.length === 0 ? <h1 className="font"> No Request available</h1> :
-             
             <div  className="wrapper">
-            {passenger.map((passenger) => (
+            {passenger.length === 0 ? (<h1 className="font"> No Request available</h1>) :
+             
+            
+            passenger.map((passenger) => (
                     <div>
                         <PassengerList
                         {...passenger}
@@ -71,10 +71,10 @@ function RideRequest() {
                     </div>
                 ))}   
             </div>         
-                 }
-                    <div className="foot-book">
+                 
+                    
             <div className="Footer"><Footer /></div>
-            </div>
+            
 
 
 

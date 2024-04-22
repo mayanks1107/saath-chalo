@@ -1,15 +1,27 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
-    height: 100vh;
+    
     margin: 0;
-    background-color: rgb(255, 252, 252);
+    
     /* Adjust the color as needed */
+}
+.ride-req{
+    width: 100%;
+    
 }
 /* Define the styles for the rectangular box */
 .ride-req{
     background:linear-gradient( #0F9D58, #3f86aa);
     width: 100%;
-    padding-bottom: 46%;
+    
+}
+.wrapper{
+    display: flex;
+    width: 70%;
+    margin-left: 17%;
+    padding-bottom: 25%;
+    background-color: white;
+    margin-bottom: 2%;
 }
 .wrapper1 {
     padding-top: 2.5%;
@@ -19,6 +31,7 @@ body {
 
 }
 .wrapper1>h1{
+    
     font-size: 30px;
     
     
@@ -28,11 +41,11 @@ body {
     margin-right: calc(44% - 350px);
 }
 
-.wrapper {
+/* .wrapper {
     width: 100%;
     display: flex;
     flex-direction: column;
-}
+} */
 
 .rectangular-box {
     align-self: center;
@@ -50,6 +63,8 @@ body {
 /* Define the styles for the rows and columns */
 
 .font {
+    margin-left: 30%;
+    text-align: left;
     color: rgb(11, 87, 40);
     font-weight: bold;
     display: inline-block;
@@ -75,8 +90,56 @@ body {
     width: 75px;
     
 }
-.Footer{
-    position: absolute;
-    width: 100%;
-    bottom: 0;
+@media screen and (max-width: 900px){
+    .wrapper{
+        padding-bottom: 50%;
+        margin-bottom: 100%;
+    }
+}
+@media screen and (max-width: 500px){
+    .ride-req{
+        width: 100%;
+    }
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        
+        margin: 0;
+        
+        /* Adjust the color as needed */
+    }
+    .rectangular-box {
+        align-self: center;
+        width: 700px;
+        padding: 10px;
+        margin-bottom: 30px;
+        box-sizing: border-box;
+        overflow: auto;
+        border-radius: 15px;
+        background-color: #fff;
+        /* Set the background color to white */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        /* Add a subtle shadow effect */
+    }
+    .wrapper{
+        display: flex;
+        width: 70%;
+        margin-left: 15%;
+        padding-bottom: 70%;
+        background-color: white;
+        
+    }
+    .font{
+        text-align: left;
+    }
+    .wrapper1 {
+        padding-top: 10%;
+        
+        display: block;
+        text-align: center;
+        margin-left: -30%;
+        margin-bottom: 15%;
+    }
+    .ride-req{
+        margin-bottom: 0;
+    }
 }

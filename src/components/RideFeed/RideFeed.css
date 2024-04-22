@@ -510,11 +510,11 @@
     color: #000;
   }
   .text-feed{
-    top: 155%;
+    margin-top: -45%;
     color: #000;
   }
 }
-@media screen and (max-width: 590px){
+@media screen and (max-width: 500px){
   .carda{
     width: 100%;
   }
@@ -647,11 +647,10 @@
     right: 5%;
   }
   .name{
-    left: 10%;
-    width: 90%;
+    margin-left: -30%;
   }
   .rating{
-    left: 16%;
+    margin-left: 15%;
   }
   .carda{
     width: 105%;

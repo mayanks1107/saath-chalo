@@ -55,7 +55,7 @@ export default function RideFeed(){
             setRiderInfo(data.query);
             }else{
                 console.log(data.message);
-                setAvailable(false);
+                // setAvailable(false);
                 // toast.error("No Data Found");
             }
             console.log(riderInfo);
@@ -250,7 +250,7 @@ export default function RideFeed(){
                 <button className="inp search-form btn btn-primary" onClick={RiderSearch}>Search</button>
                 
             </div>
-            <h2 className="text-feed">Today</h2>
+            {/* <h2 className="text-feed">Today</h2> */}
             <div className="sorter">
                 <h4 className="h2-sort">Sort By</h4>
                  <span onClick={()=>clear()} style={{cursor: "pointer"}}><h5 className="h3-clear">Clear all</h5> </span>
