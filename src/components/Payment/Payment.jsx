@@ -33,6 +33,8 @@ function Payment() {
 	const [price, setPrice] = useState({ value: location.state.Price});
 
 	const initPayment = (data) => {
+		let useremail = JSON.parse(localStorage.getItem("token")).Email; 
+		let ActualPrice = data.amount;
 		const options = {
 			key: "rzp_test_Tl8nN70qvSSoQ3",
 			amount: data.amount,
@@ -42,8 +44,24 @@ function Payment() {
 			handler: async (response) => {
 				try {
 					const verifyUrl = `${Server}/api/payment/verify`;
+
 					const { data } = await axios.post(verifyUrl, response);
-					console.log(data);
+
+					if(data.success ===true){
+						const url = `${Server}/passenger/updatepod/${useremail}`;
+						console.log(typeof (price));
+						const response = await fetch(url, { method: 'PUT', headers: { 'Content-Type': 'application/json' },
+						body:JSON.stringify({
+							Price:ActualPrice,
+							PaymentMethod:	"Online",
+							PaymentStatus:	"Paid"
+						  })});
+						if (response.ok) {
+							const data = await response.json();
+							console.log(data);
+						}
+						
+					}
 				} catch (error) {
 					console.log(error);
 				}

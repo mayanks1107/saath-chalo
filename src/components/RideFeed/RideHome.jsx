@@ -39,9 +39,11 @@ export default function RideHome(){
             const data = await response.json();
             console.log(data);
             if(data.success){
+                console.log("data.query");
                 // setRiderInfo(data.query);
             setRiderInfo(data.query);
             }else{
+                console.log(data.message);
                 setAvailable(false);
                 // toast.error("No Data Found");
             }
@@ -66,24 +68,25 @@ export default function RideHome(){
     // console.log("Offer Ride");    
    }
 
-
+console.log(available);
     return(
         <div className="rFeed">
             <Headers/>
             <Toaster toastOptions={{ duration: 16000 }} />
-            {available === true &&
+            
+            {available === true && 
             <>
             <div className="form-submit">
                 <input className="inp input-from" type="text" placeholder="from" name="from"/>
                 <input className="inp input-to" type="text" placeholder="to" name="to"/>
                 <input className="inp-media-from inp input-to" type="date" placeholder="date" name="date"/>
                 <input className="inp input-to" type="number" placeholder="number" name="number"/>
-                <button className="inp search-form btn btn-primary">Search</button>
-                
+                <button className="inp search-form btn btn-primary">Search</button>     
             </div>
+
+            
             <h2 className="text-feed">Today</h2>
             <div className = "right-ride-home">
-            
                 <h4 className="h2-sort">Sort By</h4>
                 <h5 className="h3-clear">Clear all</h5>
                 <p className="right-p dep">Earliest Departure</p>
@@ -111,10 +114,16 @@ export default function RideHome(){
 
                 <div className="sep-btm" style={{width: 397.33, height: 8, background: '#EDEDED', borderRadius: 16}} />
                 <h3 className="h3-trust">Trust and Safety</h3>
+
                 {riderInfo.map((info) => (
                     <FeedCard key={info.id} {...info} handleCard={handleCard} />
                 ))}
-                {available === false && <div>There are no rides yet for today between these cities
+                </div>
+
+            </div>
+            
+            </>}
+            {available === false && <div className="no-data-found">
              
                 <h1>
                 {SourcePlace} → {DestinationPlace}
@@ -124,13 +133,8 @@ export default function RideHome(){
                 </h2>
 
                 <button className="btn btn-primary" onClick={()=>OfferRide()}>Offer a ride</button>
-                    </div>} 
-                </div>
-                
-                
-            </div>
-            </>
-            }   
+                </div>}
+            
            
             <div className="cards-left">
                 
@@ -141,7 +145,7 @@ export default function RideHome(){
                 
             
             <div className = "media-r-f-foot r-f-foot">
-                <Footer/>
+                {/* <Footer/> */}
             </div>
         </div>
     )
