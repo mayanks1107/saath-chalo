@@ -6,7 +6,45 @@ import "./contact.css";
 import fax from "../../assets/fax.jpg";
 import email from "../../assets/emai;.jpg";
 import Footer from '../Footer/Footer';
+import { Server } from "../Server/Server";
 export default function Contact(){
+    const [FullName, setName] = React.useState("");
+    const [Email, setEmail] = React.useState("");
+    const [PhoneNumber, setPhoneNumber] = React.useState("");
+    const [Query, setQuery] = React.useState("");
+
+    const submit = async () => {
+        if(FullName === "" || Email === ""  || Query === ""){
+            alert("Please fill all the fields");
+            return;
+        }
+        console.log(FullName, Email, PhoneNumber, Query);   
+        let url = `${Server}/query/post`
+        const response = await fetch(url, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                FullName,
+                Email,
+                PhoneNumber,
+                Query
+            })
+        });
+        const data = await response.json();
+        console.log(data);
+        if(data.success){
+            alert("Query submitted successfully");
+            setName("");    
+            setEmail("");
+            setPhoneNumber("");
+            setQuery("");
+        }else{
+            alert("Something went wrong");
+        }
+    }
+
     return(
         <div className = "contact">
             <Headers/>
@@ -38,13 +76,13 @@ export default function Contact(){
                 </div>
                 <div className="email-card">
                 <h1 className="cont-h1">Contact</h1>
-                <input className="inp-cont" placeholder="Enter your name" type = "text" name = "name"/>
+                <input className="inp-cont" placeholder="Enter your name" onChange={(e)=>setName(e.target.value)} type = "text" name = "name"/>
                 <br/>
-                <input className="inp-cont" placeholder="Enter email address" type = "email" name = "email"/>
+                <input className="inp-cont" placeholder="Enter email address"onChange={(e)=>setEmail(e.target.value)} type = "email" name = "email"/>
                 <br/>
-                <textarea className="inp-cont"/>
+                <textarea className="inp-cont" onChange={(e)=>setQuery(e.target.value)}/>
                 <br/>
-                <button className="cont-sub btn btn-primary">Submit</button>
+                <button className="cont-sub btn btn-primary" onClick={()=>submit()}>Submit</button>
             </div>
             </div>
             
