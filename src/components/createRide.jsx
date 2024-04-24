@@ -54,23 +54,39 @@ function CreateRide() {
         }            
     }
     function notLogin(){
-        setTimeout(toast.error("You are not login"), 5000);
+       
+        navigate('/register');
     }
     function notRider(){
-        setTimeout(toast.error("You are not Rider"), 5000);
+        toast.error("You are not Rider")
+        // setTimeout(, 5000);
+        navigate('/register');
     }
    
+    
     const CheckData =()=>{
         if(localStorage.getItem("token")!=null){
         jsonObject = JSON.parse(localStorage.getItem("token"));
         if(!JSON.parse(localStorage.getItem("token")).IsRider){
-            notRider();
-           navigate('/register');
+            
+            // notRider();
+            var delayInMilliseconds = 3*1000; // 1 second
+            toast.error("You are not login");
+            setTimeout(function() {
+                //your code to be executed after 1 second
+                notRider();
+            }, delayInMilliseconds);
+           
         }
         }else{
             // notLogin
-            notLogin();
-            navigate('/register');
+            var delayInMilliseconds = 1*1000; //1 second
+            toast.error("You are not login");
+            setTimeout(function() {
+                //your code to be executed after 1 second
+                notLogin();
+            }, delayInMilliseconds);
+           
         }
     }
     useEffect(()=>{
