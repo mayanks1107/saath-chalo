@@ -67,12 +67,18 @@ useEffect(()=>{
           <ul class="media-drop dropdown-menu">
             <li><Link class="dropdown-item" to='/gmail' state="login" >Login</Link></li>
             <li><Link class="dropdown-item" to='/gmail' state="register">Register</Link></li>
-            <li><Link class="dropdown-item" to='/contact' >COntact</Link></li>
+            
             {uareRiders===false ?null:
-            <li><Link class="dropdown-item" to="/riderprofile">Profile</Link></li>
+            <>
+                <li><Link class="dropdown-item" to="/riderprofile">Profile</Link></li>
+                <li><Link class="dropdown-item" to='/contact' >Contact</Link></li>
+            </>
             }
             {ureUser===false ?null:
+            <>
             <li><Link class="dropdown-item" to="/userprofile">Profile</Link></li>
+            <li><Link class="dropdown-item" to='/contact' >Contact</Link></li>
+            </>
             }
               
             {isLogin===false ?null:
