@@ -71,7 +71,7 @@ function CreateRide() {
             
             // notRider();
             var delayInMilliseconds = 3*1000; // 1 second
-            toast.error("You are not login");
+            toast.error("Soory You  are Not Rider");
             setTimeout(function() {
                 //your code to be executed after 1 second
                 notRider();
@@ -81,7 +81,7 @@ function CreateRide() {
         }else{
             // notLogin
             var delayInMilliseconds = 1*1000; //1 second
-            toast.error("You are not login");
+            toast.error("Please Login First");
             setTimeout(function() {
                 //your code to be executed after 1 second
                 notLogin();
