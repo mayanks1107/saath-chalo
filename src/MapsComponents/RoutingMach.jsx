@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import './Routing.css'
 //23.2584857,77.401989
 //25.335649,83.007629
-const createRoutineMachineLayer =  ({ FromDis,ToDis }) => {
+const CreateRoutineMachineLayer =  ({ FromDis,ToDis }) => {
   
   useEffect(() => {
     console.log(FromDis);
@@ -34,6 +34,6 @@ const createRoutineMachineLayer =  ({ FromDis,ToDis }) => {
   return instance;
 };
 
-const RoutingMachine = createControlComponent(createRoutineMachineLayer);
+const RoutingMachine = createControlComponent(CreateRoutineMachineLayer);
 
 export default RoutingMachine;

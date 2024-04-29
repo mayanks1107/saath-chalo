@@ -4,12 +4,14 @@ import "./Feedback.css";
 export default function Feedback() {
     const [feedback, setFeedback] = useState("");
     const [email, setEmail] = useState("");
+    const [name, setName] = useState("");
+    const [rating, setRating] = useState("");
     const [submitted, setSubmitted] = useState(false);
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        if (!email || !feedback) {
+        if (!email || !feedback || !name || !rating) {
             alert("Please fill out all fields before submitting.");
             return;
         }
@@ -32,6 +34,10 @@ export default function Feedback() {
                             <h2>Submit Feedback</h2>
                             <form onSubmit={handleSubmit}>
                                 <div className="input-field">
+                                    <label>Name:</label>
+                                    <input type="text" value={name} onChange={(e) => setName(e.target.value)} required />
+                                </div>
+                                <div className="input-field">
                                     <label>Email:</label>
                                     <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
                                 </div>
@@ -39,7 +45,11 @@ export default function Feedback() {
                                     <label>Feedback:</label>
                                     <textarea rows="3" value={feedback} onChange={(e) => setFeedback(e.target.value)} required />
                                 </div>
-                                <button type="submit">Submit</button>
+                                <div className="input-field">
+                                    <label>Rating:</label>
+                                    <input type="number" min="1" max="5" value={rating} onChange={(e) => setRating(e.target.value)} required />
+                                </div>
+                                <button type="submit" className="feedback_btn">Submit</button>
                             </form>
                         </>
                     )}

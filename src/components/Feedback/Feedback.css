@@ -1,42 +1,39 @@
-.feedback ._body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-}
-
 .feedback ._body ._box {
-    width: 80%;
-    max-width: 500px; /* Limit maximum width */
+    width: 90%; /* Adjusted width to cover more screen space */
+    max-width: 700px; /* Limit maximum width */
     padding: 30px;
     background: white;
     border-radius: 5px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
-    display: flex; /* Adjusted */
-    flex-direction: column; /* Adjusted */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the content horizontally */
 }
 
-.feedback ._body ._box h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #4ab74a;
-    text-align: center; /* Adjusted */
+.feedback ._body ._box form {
+    width: 100%; /* Adjusted */
+    display: flex;
+    flex-wrap: wrap; /* Wrap the elements to the next line when they exceed the container width */
+    justify-content: space-between; /* Distribute space between the elements */
 }
 
 .feedback ._body ._box .input-field {
+    width: calc(45% - 10px); /* Adjusted width to fit two fields in a row with spacing */
     margin-bottom: 20px;
-    width: 100%; /* Adjusted */
 }
 
 .feedback ._body ._box label {
     display: block;
     margin-bottom: 5px;
     color: #333;
-    text-align: left; /* Adjusted */
+    text-align: left;
+    width: 100%; /* Adjusted */
 }
 
+.feedback ._body ._box input[type="text"],
 .feedback ._body ._box input[type="email"],
+.feedback ._body ._box input[type="number"],
 .feedback ._body ._box textarea {
     width: 100%;
     padding: 10px;
@@ -59,21 +56,17 @@
     background-color: #3a943a;
 }
 
-.feedback ._body ._box.submitted {
-    transform: translateY(-20px);
-}
-
-.feedback ._body ._box .submitted-message {
-    text-align: center;
-}
-
-@media screen and (min-width: 768px) {
-    .feedback ._body {
-        justify-content: flex-start; /* Adjusted */
-    }
-
-    .feedback ._body ._box {
-        width: 60%;
-        align-self: flex-start; /* Adjusted */
-    }
+.feedback_btn {
+    width: 100%;
+	height: 50px;
+	outline: none;
+	border: none;
+	font-size: 12px;
+	text-transform: uppercase;
+	font-weight: bold;
+	cursor: pointer;
+	border-radius: 25px; /* Half of the button's height */
+	background-color: #34a853;
+	color: white;
+	margin-top: 10px;
 }
