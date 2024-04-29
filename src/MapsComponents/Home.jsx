@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import { MdMyLocation } from 'react-icons/md';
+import './style.css';
 // styles
 import "leaflet/dist/leaflet.css";
 
@@ -55,9 +56,9 @@ const MapHome = () => {
     handleSearch();
  }, [])
     return (
-        <>
+        <div style={{ width: '100%', height: '100%' }}>
             <div>
-                <MapContainer center={location} zoom={5} style={{ width: "700px", height: "500px" }}>
+                <MapContainer center={location} zoom={5} className='map_dim'>
                     <TileLayer
                         attribution='&copy; Powered by <a href="https://www.geoapify.com/" target="_blank">Geoapify</a> | © OpenStreetMap <a href="https://www.openstreetmap.org/copyright" target="_blank">contributors</a>'
                         url={geoapifyUrl}
@@ -77,9 +78,9 @@ const MapHome = () => {
                   
                     
                 </div>
-                <button onClick={handleSearch2}>Check Cab Location</button>
+                <button onClick={handleSearch2} className='map_btn'>Check Cab Location</button>
             </div>
-        </>
+        </div>
     );
 };
 

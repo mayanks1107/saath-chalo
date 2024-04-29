@@ -2,8 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import "./Payment.css";
 import { Server } from "../Server/Server"
-import { useNavigate, useLocation } from "react-router-dom";
-
+import { useNavigate, useLocation, Navigate } from "react-router-dom";
 
 
 function Payment() {
@@ -14,8 +13,10 @@ function Payment() {
 	let SourcePlace = location.state.SourcePlace;
 	let DestinationPlace = location.state.DestinationPlace;
 	let VehicleNumber = location.state.VehicleNumber;
+	const navigate = useNavigate();
 
 	const [RiderInfo, setRiderInfo] = useState();
+
 	useEffect(() => {
 		const getRiderInfo = async () => {
 			const url = `${Server}/tripdet/getRider/${RiderEmail}`;
@@ -59,6 +60,7 @@ function Payment() {
 						if (response.ok) {
 							const data = await response.json();
 							console.log(data);
+							navigate('/paycon');
 						}
 						
 					}
