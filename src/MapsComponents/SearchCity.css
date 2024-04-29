@@ -1,0 +1,30 @@
+.search-container {
+    display: flex;
+    gap: 10px;
+    position: relative;
+}
+
+.search-bar {
+    border-radius: 0.5rem;
+    font-size: large;
+    width: calc(100% - 80px);
+    padding: 2px;
+}
+
+.submit-button {
+    border-radius: 0.5rem;
+    border-width: 2px;
+    /* padding: 10px 25px 10px 25px; */
+    padding: 0.5rem;
+}
+
+.result-container {
+    position: absolute;
+    height: 300px;
+    width: 204px;
+    top: calc(100% - 514px);
+}
+.leaflet-routing-container{
+    visibility: hidden;
+    z-index: 40px;
+}
