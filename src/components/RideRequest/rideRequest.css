@@ -9,6 +9,9 @@ body {
     width: 100%;
     
 }
+.efhbuef{
+    display: block;
+}
 /* Define the styles for the rectangular box */
 .ride-req{
     background:linear-gradient( #0F9D58, #3f86aa);
@@ -16,7 +19,7 @@ body {
     
 }
 .wrapper{
-    display: flex;
+    /*display: flex;*/
     width: 70%;
     margin-left: 17%;
     padding-bottom: 25%;

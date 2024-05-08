@@ -60,7 +60,7 @@ function RideRequest() {
              
             
             passenger.map((passenger) => (
-                    <div>
+                    <div className='efhbuef'>
                         <PassengerList
                         {...passenger}
                         key={passenger._id}
@@ -68,8 +68,11 @@ function RideRequest() {
                         Bookride={()=>Bookride(passenger._id)}
                         RejectRide={()=>RejectRide(passenger._id)}
                           />
+                          <br/>
                     </div>
+                    
                 ))}   
+                
             </div>         
                  
                     
