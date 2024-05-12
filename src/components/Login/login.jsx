@@ -83,7 +83,7 @@ export default function Login() {
       }
     }
   };
-   //  Login With Phone NUmbercc
+   //  Login With Phone Number
    const PhoneLogin = async () => {
     if (phone != null) {
       
