@@ -7,7 +7,8 @@ import Payment from '../Payment/Payment';
 function RideConfirmation() {
   let location = useLocation() 
 
-  console.log(location.state);
+ 
+
   return (
     <div className="thankyou-page">
       <div className="_header">
@@ -27,6 +28,7 @@ function RideConfirmation() {
           Your ride has been <strong>successfully</strong> booked. 
           <br/>To confirm your booking and proceed with payment, please click the button below.
           </p>
+     
          <Payment/>
         </div>
       </div>

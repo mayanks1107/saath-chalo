@@ -60,7 +60,7 @@ function Payment() {
 						if (response.ok) {
 							const data = await response.json();
 							console.log(data);
-							navigate('/paycon');
+							navigate('/paycon',{state:{PaymentPaid:true}});
 						}
 						
 					}
@@ -111,6 +111,11 @@ function Payment() {
 						</div>
 						<button onClick={handlePayment} className="pay_btn">
 							Confirm Payment
+						</button>
+						OR
+						{/* <button onClick={() => window.location.replace("/paycon")} className="pay-later_btn"> */}
+						<button onClick={() => navigate('/paycon',{state:{PaymentPaid:false}})} className="pay-later_btn">
+						 	Pay Later
 						</button>
 					</div>
 				</div>

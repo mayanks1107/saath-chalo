@@ -7,7 +7,7 @@ import Map from '../../MapsComponents/Home';
 function PaymentConfirmation() {
   let location = useLocation()
 
-  console.log(location.state);
+  const PaymentPaid = location.state.PaymentPaid;
   return (
     <>
       <div className="thankyou-page">
@@ -15,7 +15,7 @@ function PaymentConfirmation() {
           <div className="logo">
             <img src={tick} alt="" />
           </div>
-          <h1>Payment Confirmed </h1>
+          {PaymentPaid ?<h1>  Payment Confirmed </h1> : <h1> Ride Confirm  Pay Later To driver </h1>}
         </div>
 
         <div className="_body">
