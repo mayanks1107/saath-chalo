@@ -24,7 +24,7 @@ const MapHome = () => {
     
     const [currentPosition,setCurrentPosition]= useState([28.7041, 77.1025]);
 
-    const [location, setLocation] = useState([23.2599, 77.4126]);
+    const [location, setLocation] = useState([28.6139, 77.2088]);
   
     
     const [basicModal, setBasicModal] = useState(false);
