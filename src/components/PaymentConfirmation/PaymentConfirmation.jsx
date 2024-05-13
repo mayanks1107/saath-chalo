@@ -15,7 +15,7 @@ function PaymentConfirmation() {
           <div className="logo">
             <img src={tick} alt="" />
           </div>
-          {PaymentPaid ?<h1>  Payment Confirmed </h1> : <h1> Ride Confirm  Pay Later To driver </h1>}
+          {PaymentPaid ? <h1> Payment Confirmed</h1>:<h1> Ride Confirm  Pay Later To driver </h1>}
         </div>
 
         <div className="_body">
